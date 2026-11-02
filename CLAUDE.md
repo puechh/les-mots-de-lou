@@ -36,7 +36,8 @@ tant qu'il reste des modifications non commitées ou non poussées.
   Meta/Pinterest/Google/TikTok, douane) et **prévenir l'utilisateur dès qu'une nouveauté impose de modifier les textes**.
   Méthode et journal : `docs/veille-legale.md` (le consulter en début de session).
 - **La décision finale revient toujours à l'utilisateur.** Une fois le conseil donné, appliquer son choix sans insister.
-- Points déjà identifiés pour cette boutique : mention **« image virtuelle »** sur les visages créés par IA (loi n° 2023-451) ;
+- Points déjà identifiés pour cette boutique : caractère virtuel de Lou écrit **dans les politiques, pas dans le slogan**
+  (décision utilisateur 02/11) ; mention « image virtuelle » / étiquettes IA ajoutées par l'utilisateur en publiant (loi n° 2023-451, AI Act) ;
   ne jamais faire croire que Lou existe ou fabrique les bijoux ; acier 316L sans nickel (REACH) ; jamais « or » si c'est du plaqué ;
   **pas de droit de rétractation pour un bijou personnalisé** (à écrire dans les CGV, garantie légale due) ; boutique neuve =
   **pas de prix barrés inventés** (règle du prix le plus bas des 30 jours, L112-1-1) → « prix de lancement » ; délai de livraison
