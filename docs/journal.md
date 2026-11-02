@@ -32,3 +32,12 @@
   Outil `contenu/lou/generer_lou.py` (sortie dans contenu/lou/, nouvel essai auto sur 502). 8 images au total (qualité medium).
 - Recommandation vidéo : compte fal.ai (Kling 3.0 / Veo) — à créer par l'utilisateur si accord (étapes dans le rapport).
 - ⚖️ Décret n° 2026-233 du 30/03/2026 (modalités de la mention « image virtuelle ») signalé, à vérifier sur Légifrance.
+- Thème `theme-lou/` écrit (rose, ludique : atelier de gravure en direct, test des mots, machine à mots, cartes inclinées,
+  aperçus jonc / prénom / photo / Morse), testé sur le banc local `scripts/banc_theme.py` (ordinateur + iPhone 13 : aucune
+  erreur JS, aucun débordement). Pages (`contenu/pages/`), politiques avec `[À COMPLÉTER]` (`contenu/politiques/`).
+- Choix de prudence : pas de « carte message » (rien ne prouve que le fournisseur l'imprime) ; pas de « 316L / sans nickel »
+  sur les fiches tant que le fournisseur ne l'a pas confirmé ; image du coffret retirée des fiches (le jonc y a un motif non vendu).
+- Images IA produits + Lou (`contenu/images-ia/`) ; `gpt-image-2` donne souvent des 502 → utiliser `gpt-image-2.5-flare`
+  (conseil de la session avatar, `docs/avatar-lou.md`). Portrait et avatar du thème = planche `contenu/lou/reference/`.
+- Script `scripts/construire_boutique.py` (produits, images, collections, pages, menus, politiques, offre -50 %, thème).
+  Veille légale faite (AI Act art. 50 applicable depuis le 02/08/2026 ; douane 3 €/catégorie).

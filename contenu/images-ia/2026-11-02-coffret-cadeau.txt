@@ -1,0 +1,2 @@
+Modèle : gpt-image-2.5-flare
+Prompt : Photorealistic e-commerce product photography, soft diffused daylight, blush pink and cream palette, shallow depth of field, crisp metal reflections, minimal and elegant, no logo, no watermark. A blush pink jewelry gift box open, containing a silver-tone engraved cuff bangle on a cream cushion, dried flowers and kraft ribbon around, no text.

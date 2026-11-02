@@ -31,8 +31,8 @@ def recadrer(src, ratio, largeur, dest, haut=0.0):
 
 
 recadrer(trouver("lou-hero"), 4 / 5, 900, "lou-hero.webp", 0.5)
-recadrer(trouver("reference-visage"), 4 / 5, 700, "lou-portrait.webp", 0.15)
-recadrer(trouver("lou-avatar", "reference-visage"), 1, 240, "lou-avatar.webp", 0.12)
+recadrer(trouver("reference/04-sourire", "reference-visage"), 4 / 5, 700, "lou-portrait.webp", 0.1)
+recadrer(trouver("reference/01-face", "lou-avatar", "reference-visage"), 1, 240, "lou-avatar.webp", 0.12)
 
 # Favicon : cœur blanc sur rond framboise
 fv = Image.new("RGBA", (128, 128), (0, 0, 0, 0)); d = ImageDraw.Draw(fv)

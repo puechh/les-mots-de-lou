@@ -1,0 +1,2 @@
+Modèle : gpt-image-2.5-flare
+Prompt : Photorealistic e-commerce product photography, soft diffused daylight, blush pink and cream palette, shallow depth of field, crisp metal reflections, minimal and elegant, no logo, no watermark. A small heart-shaped pendant necklace in polished silver-tone metal with a tiny round clear crystal lens in its center, on a fine chain, lying on pink silk; a small inset circle next to it shows the soft projected photo of a smiling couple as seen through the lens.

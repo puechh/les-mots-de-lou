@@ -21,8 +21,7 @@
       "images": [
         "produit-jonc-1",
         "produit-jonc-finitions",
-        "lou-jonc",
-        "coffret-cadeau"
+        "lou-jonc"
       ],
       "accroche": "La phrase que vous n'osez pas dire, gravée sur un jonc qu'elle ne quittera plus.",
       "benefices": [
@@ -72,8 +71,7 @@
       "images": [
         "produit-collier-prenom-1",
         "produit-collier-prenom-finitions",
-        "lou-collier-prenom",
-        "coffret-cadeau"
+        "lou-collier-prenom"
       ],
       "accroche": "Son prénom (ou celui de quelqu'un qu'elle aime) écrit d'un trait, tout près du cœur.",
       "benefices": [
@@ -120,8 +118,7 @@
         "Rosée"
       ],
       "images": [
-        "produit-collier-photo-1",
-        "coffret-cadeau"
+        "produit-collier-photo-1"
       ],
       "accroche": "Un petit cœur… et quand on regarde dedans, votre plus belle photo apparaît.",
       "benefices": [
@@ -158,8 +155,7 @@
         "Beige"
       ],
       "images": [
-        "produit-bracelet-morse-1",
-        "coffret-cadeau"
+        "produit-bracelet-morse-1"
       ],
       "accroche": "Un mot écrit en code Morse : personne ne sait ce qu'il dit… sauf vous deux.",
       "benefices": [
