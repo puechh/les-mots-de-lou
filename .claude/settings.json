@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && git pull --ff-only -q origin main 2>/dev/null || true",
+            "statusMessage": "Récupération de la mémoire depuis GitHub"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/scripts/hooks/verif_memoire.sh",
+            "statusMessage": "Vérification de la mémoire GitHub"
+          }
+        ]
+      }
+    ]
+  }
+}

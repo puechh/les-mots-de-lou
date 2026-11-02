@@ -1,0 +1,7 @@
+# Secrets et jetons — ne jamais committer
+.shopify_token.json
+.env
+*.env
+__pycache__/
+.cache/
+contenu/creatives-pinterest/*.png
