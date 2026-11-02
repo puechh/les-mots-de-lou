@@ -89,3 +89,28 @@
   incrustation : creux sombre en « multiplier » (suit les reflets du métal) + liseré clair en « écran » sous le trait.
 - Testé au banc (ordinateur ×2, iPhone 13 ; textes court, long, jambages, 3 lettres ; aucune erreur JS), envoyé sur le
   thème Shopify (non publié). Captures `docs/captures/atelier-*`.
+
+## 2026-11-02 (nuit) — Refonte complète : Lou avatar de la boutique, ludique, mobile, HD, fiches alignées AliExpress
+- Demandes utilisateur : revoir toute la boutique « en cliente » (surtout téléphone), plus ludique et animée comme
+  Corps-Confiant, images nettes, produits fidèles à AliExpress ; puis « boutique axée sur Lou, qu'on comprenne que c'est
+  l'avatar du site » (exemple Lily's Treasures). Utilisateur absent : pas de questions.
+- Audit iPhone : débordement horizontal (ruban), prix sur 2 lignes, hero trop haut (atelier invisible), aperçus en dessin,
+  aperçu invisible pendant la saisie, boutons qui passent à la ligne, images trop petites (panier) ou agrandies (hero).
+- Vérification AliExpress (recherche web, AliExpress bloque les robots) : produits existants, promesses corrigées
+  (cf. reprise) ; ⚖️ annoncer un écrin ou une matière non livrés = pratique commerciale trompeuse (L121-2).
+- Images : `images_ia.py` (formats HD 2048, modèle gpt-image-2.5-flare) ; `scripts/images_hd.sh` (refonte HD fidèle de
+  toutes les images + jonc vierge doré/rosé), `scripts/images_hd2.sh` (collier sans pendentif ×3 finitions, portrait HD) ;
+  JPEG 92 dans `contenu/images-ia/*-hd.jpg`. Produits Shopify : images remplacées (`construire_boutique.py produits --images`,
+  suppression par `fileDelete`), Morse réduit au cordon noir.
+- Mesures pour les aperçus : bords du jonc vérifiés sur les 3 finitions HD (écart médian < 1,5 px) ; anneaux du collier
+  vierge (1200 px) : (501, 860) et (740, 859) ; bulle du collier photo : centre (888,5 ; 438,5), rayon 176.
+- Thème v0.2 : `lou.css` réécrit, `lou.js` (Lou assistante, panier commenté, vol au panier, sons WebAudio, gravure
+  généralisée vue bande/carré + polices), `lou-produit.js` (aperçus photo, mini-aperçu, barre d'achat, livraison estimée),
+  `lou-anim.js` (GSAP 3.12.5 + ScrollTrigger, copiés de Corps-Confiant), réglages du thème (`settings_schema.json`),
+  snippets `lou-assistante`, `entete-page` ; accueil réorganisé (Lou, atelier 3 finitions, coups de cœur, problème →
+  solution, test, machine à manette, étapes à glisser, « C'est moi, Lou », compte à rebours Noël, FAQ conversation).
+- Textes : page « Qui est Lou » et mentions légales → « avatar de la boutique » ; délais 3-7 j + 7-12 j ouvrés dans
+  livraison-retours, CGV et politique de livraison (vérifié avant : identiques au dépôt, rien d'écrasé).
+- Tests banc (iPhone 13 + ordinateur) : 15 pages OK, aucune erreur JS, pas de débordement ; parcours testé (texte, finition,
+  police, photo, validation, ajout au panier, tiroir, assistante, FAQ, menu). Thème envoyé : 64 fichiers, 0 erreur.
+- Captures : `docs/captures/v2-*`.

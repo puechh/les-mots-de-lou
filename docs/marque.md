@@ -12,6 +12,12 @@
   offre type « 2e bijou à -50 % » à envisager.
 - Autres pistes écartées pour l'instant : « Chère Agathe » (grand-mère virtuelle, cadeaux maman/mamie), « Écrit dans les étoiles ».
 
+## Décision utilisateur (02/11/2026 soir) : Lou est l'avatar du site
+- La boutique est centrée sur Lou ; **on doit comprendre que c'est l'avatar du site** (exemple : Lily's Treasures).
+- Ton : Lou parle à la 1re personne, vouvoie, chaleureuse et drôle (« je vous montre le rendu », « mes coups de cœur »,
+  « je les porterais tous… si j'avais de vrais poignets »). Elle se présente comme **avatar / personnage virtuel créé avec
+  l'IA**, ne fabrique pas les bijoux, renvoie vers « la vraie équipe » pour les vraies questions.
+
 ## Règles (⚖️ conseil donné le 02/11/2026)
 - Conseil donné : la mention dans les politiques seule ne suffit probablement pas pour les pubs et posts : mention **« image
   virtuelle »** visible sur les contenus commerciaux montrant Lou (loi influenceurs n° 2023-451 si elle s'applique ; AI Act art. 50

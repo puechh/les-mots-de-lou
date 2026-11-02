@@ -1,4 +1,4 @@
-<div class="page-hero"><span class="hand">Un petit mot ?</span><h1>Nous <em>écrire</em></h1><p>Une question sur une gravure, une commande, un cadeau ? Réponse sous 48 h ouvrées.</p></div>
+{% render 'entete-page', hand: 'Un petit mot ?', titre: "Écrire à <em>l'équipe</em>", texte: 'Une question sur une gravure, une commande, un cadeau ? Réponse sous 48 h ouvrées.', bulle: "Ici, ce n'est pas moi qui réponds : c'est la vraie équipe, en chair et en os 💌" %}
 <section class="section">
   <div class="wrap">
     {%- if page.content != blank %}<div class="texte" style="margin-bottom:30px">{{ page.content }}</div>{% endif -%}

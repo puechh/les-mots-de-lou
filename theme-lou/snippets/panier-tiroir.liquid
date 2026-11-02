@@ -4,13 +4,21 @@
     <h2>Mon panier <span class="hand">💗</span></h2>
     <button class="icon-btn" id="drawer-close" aria-label="Fermer le panier">✕</button>
   </div>
-  <div class="duo" id="duo"></div>
+  <div class="drawer-lou lou-dit">
+    <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="46" height="46" loading="lazy"></span>
+    <div class="bulle-lou"><b class="nom">Lou</b><p id="duo">Votre panier attend encore vos mots…</p><div class="jauge" aria-hidden="true"><i id="jauge"></i></div></div>
+  </div>
   <ul class="drawer-items" id="drawer-items"></ul>
   <div class="drawer-foot">
-    <div class="drawer-line" id="drawer-discount" hidden><span>Réduction</span><span></span></div>
+    <div class="drawer-line" id="drawer-discount" hidden><span>Offre 2e bijou -50 %</span><span></span></div>
     <div class="drawer-line drawer-total"><span>Total</span><span id="drawer-total">0,00 €</span></div>
-    <p class="tiny">Frais de livraison calculés à l'étape suivante. Bijoux personnalisés : vérifiez bien l'orthographe, ils sont fabriqués rien que pour vous.</p>
-    <a class="btn btn-full" href="/checkout" id="checkout">Commander</a>
-    <p class="pay">{% render 'icones-paiement' %}</p>
+    <p class="estim" id="drawer-estim"></p>
+    <p class="tiny" style="margin:0">Livraison calculée à l'étape suivante. Bijoux fabriqués avec vos mots : vérifiez bien l'orthographe (pas de rétractation pour un bijou personnalisé, garantie légale toujours due).</p>
+    <a class="btn btn-full" href="/checkout" id="checkout"><span class="brille"></span>Commander en toute sécurité 🔒</a>
+    <p class="pay" style="margin:0">{% render 'icones-paiement' %}</p>
   </div>
 </aside>
+<script type="application/json" id="duo-produits">
+{%- assign handles_duo = 'jonc-mes-mots,collier-prenom,collier-souvenir-photo,bracelet-code-secret' | split: ',' -%}
+[{%- for h in handles_duo -%}{%- assign dp = all_products[h] -%}{% if dp.title %}{ "handle": {{ h | json }}, "title": {{ dp.title | json }}, "url": {{ dp.url | json }}, "price": {{ dp.price }}, "image": {% if dp.featured_image %}{{ dp.featured_image | image_url: width: 200 | json }}{% else %}""{% endif %} }{% unless forloop.last %},{% endunless %}{% endif %}{%- endfor -%}]
+</script>

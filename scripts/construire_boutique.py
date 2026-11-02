@@ -3,6 +3,7 @@
 
     python3 scripts/construire_boutique.py              # tout, sauf la publication du thème
     python3 scripts/construire_boutique.py --publier    # … et publie le thème « Les Mots de Lou (thème) »
+    python3 scripts/construire_boutique.py produits --images   # … en remplaçant les images des produits
     python3 scripts/construire_boutique.py produits     # une seule étape : verif, produits, collections, pages,
                                                         #   menus, politiques, offre, theme
 
@@ -46,8 +47,15 @@ def publication_boutique_en_ligne():
 
 # ---------------------------------------------------------------- produits
 def image_locale(nom):
-    f = sorted(glob.glob(os.path.join(ROOT, "contenu", "**", f"*{nom}.png"), recursive=True))
+    f = sorted(glob.glob(os.path.join(ROOT, "contenu", "**", f"*{nom}.png"), recursive=True) +
+               glob.glob(os.path.join(ROOT, "contenu", "**", f"*{nom}.jpg"), recursive=True))
     return f[-1] if f else None
+
+
+def supprimer_medias(ids):
+    """Retire des images d'un produit (fileDelete sur les MediaImage)."""
+    if ids:
+        gql("mutation($ids: [ID!]!) { fileDelete(fileIds: $ids) { deletedFileIds userErrors { field message } } }", {"ids": ids}, "fileDelete")
 
 
 def produits():
@@ -74,7 +82,10 @@ def produits():
         if not prod:
             continue
         print("Produit :", prod["handle"])
-        # Images : envoyées seulement si le produit n'en a pas encore
+        # Images : envoyées si le produit n'en a pas encore, ou remplacées avec --images (ex. passage en HD)
+        if existant and existant[0]["media"]["nodes"] and "--images" in sys.argv:
+            supprimer_medias([m["id"] for m in existant[0]["media"]["nodes"]])
+            existant[0]["media"]["nodes"] = []
         if not (existant and existant[0]["media"]["nodes"]):
             medias = []
             for nom in p["images"]:
@@ -82,7 +93,7 @@ def produits():
                 if not f:
                     print("  image manquante :", nom)
                     continue
-                url = upload_file(f, "image/png", "IMAGE")
+                url = upload_file(f, "image/jpeg" if f.endswith(".jpg") else "image/png", "IMAGE")
                 medias.append({"originalSource": url, "mediaContentType": "IMAGE", "alt": p["title"]})
             if medias:
                 gql("""mutation($id: ID!, $m: [CreateMediaInput!]!) { productCreateMedia(productId: $id, media: $m) { media { id } mediaUserErrors { message } } }""",

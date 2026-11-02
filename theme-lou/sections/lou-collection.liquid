@@ -1,8 +1,12 @@
-<div class="page-hero">
-  <span class="hand">Les bijoux de Lou</span>
-  <h1>{% if collection.handle == 'all' %}Tous nos <em>bijoux à mots</em>{% else %}{{ collection.title }}{% endif %}</h1>
-  <p>{% if collection.description != blank %}{{ collection.description | strip_html }}{% else %}Choisissez votre bijou, écrivez vos mots, on s'occupe du reste. 2e bijou à -50 %.{% endif %}</p>
-</div>
+{%- liquid
+  if collection.handle == 'all'
+    assign t_coll = 'Tous mes <em>bijoux à mots</em>'
+  else
+    assign t_coll = collection.title
+  endif
+  assign d_coll = collection.description | strip_html
+-%}
+{% render 'entete-page', hand: 'Les bijoux de Lou', titre: t_coll, texte: d_coll, bulle: "Choisissez un bijou, écrivez vos mots : je vous montre le rendu en direct. Et le 2e bijou est à -50 % 🎁 Vous hésitez ? Touchez-moi en bas de l'écran, je vous aide !" %}
 <section class="section">
   <div class="wrap">
     <div class="filtres" role="group" aria-label="Filtrer les bijoux">

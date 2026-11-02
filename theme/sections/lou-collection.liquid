@@ -1,0 +1,39 @@
+{%- liquid
+  if collection.handle == 'all'
+    assign t_coll = 'Tous mes <em>bijoux à mots</em>'
+  else
+    assign t_coll = collection.title
+  endif
+  assign d_coll = collection.description | strip_html
+-%}
+{% render 'entete-page', hand: 'Les bijoux de Lou', titre: t_coll, texte: d_coll, bulle: "Choisissez un bijou, écrivez vos mots : je vous montre le rendu en direct. Et le 2e bijou est à -50 % 🎁 Vous hésitez ? Touchez-moi en bas de l'écran, je vous aide !" %}
+<section class="section">
+  <div class="wrap">
+    <div class="filtres" role="group" aria-label="Filtrer les bijoux">
+      <button class="chip is-on" data-f="" aria-pressed="true">Tout voir</button>
+      <button class="chip" data-f="jonc" aria-pressed="false">💬 Joncs</button>
+      <button class="chip" data-f="collier" aria-pressed="false">💗 Colliers</button>
+      <button class="chip" data-f="bracelet" aria-pressed="false">🤫 Bracelets</button>
+    </div>
+    {%- paginate collection.products by 24 -%}
+    <div class="grille" id="grille">
+      {%- for p in collection.products -%}
+        <div class="carte-wrap" data-tags="{{ p.tags | join: ' ' }}" style="display:contents">{% render 'carte-produit', p: p %}</div>
+      {%- else -%}
+        <p class="small">Les bijoux arrivent très vite ✨</p>
+      {%- endfor -%}
+    </div>
+    {%- endpaginate -%}
+  </div>
+</section>
+<script>
+  document.querySelectorAll(".filtres .chip").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll(".filtres .chip").forEach(function (x) { x.classList.remove("is-on"); x.setAttribute("aria-pressed", "false"); });
+      b.classList.add("is-on"); b.setAttribute("aria-pressed", "true");
+      var f = b.getAttribute("data-f");
+      document.querySelectorAll(".carte-wrap").forEach(function (w) { var c = w.firstElementChild; if (c) c.style.display = !f || (" " + w.getAttribute("data-tags") + " ").indexOf(" " + f + " ") > -1 ? "" : "none"; });
+    });
+  });
+</script>
+{% schema %}{ "name": "Collection Lou", "settings": [] }{% endschema %}

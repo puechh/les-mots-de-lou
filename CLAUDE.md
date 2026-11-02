@@ -19,6 +19,13 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
 - **Bêta construite le 02/11/2026** (carte blanche) : thème `theme-lou/`, fiches `produits/produits.json`, pages `contenu/pages/`,
   politiques `contenu/politiques/`, tout envoyé sur Shopify par `scripts/construire_boutique.py`. Banc d'essai local :
   `python3 scripts/banc_theme.py` (http://localhost:8765). Images du thème : `python3 scripts/assets_theme.py`.
+- **Lou = l'avatar de la boutique** (demande utilisateur 02/11 soir, exemple Lily's Treasures) : elle parle à la 1re personne
+  (bulles, assistante en bas de l'écran à réponses préparées, FAQ en conversation, panier commenté) et se présente comme
+  **personnage virtuel créé avec l'IA** ; elle ne fabrique pas les bijoux (« l'atelier grave », « l'équipe vous répond »).
+- **Thème publié par l'utilisateur** (02/11 soir) : `theme-lou/` est en ligne derrière le mot de passe → tester au banc AVANT
+  `envoyer_theme.py maj`. Réglages du thème (Shopify → Thèmes → Personnaliser → Paramètres) : écrin inclus (non par défaut),
+  délais fab/livraison, date limite Noël, Lou, sons. Images IA en **HD 2048 px** (JPEG, `scripts/images_hd*.sh`).
+- Inspirations (Lily's Treasures, Ciao Kombucha, Dentica) : `docs/inspirations.md`.
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).

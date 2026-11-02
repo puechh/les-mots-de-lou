@@ -1,1 +1,22 @@
-[ { "name": "theme_info", "theme_name": "Les Mots de Lou", "theme_version": "0.1.0", "theme_author": "Les Mots de Lou", "theme_documentation_url": "https://github.com/puechh/les-mots-de-lou", "theme_support_url": "https://github.com/puechh/les-mots-de-lou" } ]
+[
+  { "name": "theme_info", "theme_name": "Les Mots de Lou", "theme_version": "0.2.0", "theme_author": "Les Mots de Lou",
+    "theme_documentation_url": "https://github.com/puechh/les-mots-de-lou", "theme_support_url": "https://github.com/puechh/les-mots-de-lou" },
+  { "name": "Promesses & délais",
+    "settings": [
+      { "type": "paragraph", "content": "À régler selon le fournisseur choisi (DSers). Ne cochez « écrin » que s'il est confirmé par écrit : annoncer un emballage non livré est une pratique trompeuse." },
+      { "type": "checkbox", "id": "ecrin_inclus", "label": "Écrin cadeau inclus (confirmé par le fournisseur)", "default": false },
+      { "type": "range", "id": "fab_min", "label": "Fabrication : minimum (jours)", "min": 1, "max": 15, "step": 1, "default": 3 },
+      { "type": "range", "id": "fab_max", "label": "Fabrication : maximum (jours)", "min": 1, "max": 20, "step": 1, "default": 7 },
+      { "type": "range", "id": "liv_min", "label": "Livraison : minimum (jours ouvrés)", "min": 2, "max": 25, "step": 1, "default": 7 },
+      { "type": "range", "id": "liv_max", "label": "Livraison : maximum (jours ouvrés)", "min": 3, "max": 30, "step": 1, "default": 12 },
+      { "type": "text", "id": "noel_limite", "label": "Date limite pour Noël (texte)", "default": "1er décembre" },
+      { "type": "text", "id": "noel_iso", "label": "Date limite pour Noël (AAAA-MM-JJ, pour le compte à rebours)", "default": "2026-12-01" }
+    ]
+  },
+  { "name": "Lou",
+    "settings": [
+      { "type": "checkbox", "id": "lou_bulle", "label": "Afficher Lou en bas de l'écran (assistante)", "default": true },
+      { "type": "checkbox", "id": "sons", "label": "Petits sons (ajout au panier, cœurs)", "default": true }
+    ]
+  }
+]

@@ -1,0 +1,3 @@
+Modèle : gpt-image-2.5-flare
+Prompt : Reproduis cette photo à l'identique en haute définition : même personne (même visage, mêmes traits, mêmes taches de rousseur, même coiffure, même expression), même tenue, même bijou, même décor, même lumière, même cadrage. Améliore uniquement la netteté et les détails fins. Ne change, n'ajoute et ne retire rien.
+Images de base : contenu/images-ia/2026-11-02-lou-hero.png

@@ -1,0 +1,17 @@
+{% render 'entete-page', hand: 'Un petit mot ?', titre: "Écrire à <em>l'équipe</em>", texte: 'Une question sur une gravure, une commande, un cadeau ? Réponse sous 48 h ouvrées.', bulle: "Ici, ce n'est pas moi qui réponds : c'est la vraie équipe, en chair et en os 💌" %}
+<section class="section">
+  <div class="wrap">
+    {%- if page.content != blank %}<div class="texte" style="margin-bottom:30px">{{ page.content }}</div>{% endif -%}
+    {%- form 'contact', class: 'form-contact' -%}
+      {%- if form.posted_successfully? -%}<p class="hand" style="text-align:center">Merci ! Votre message est bien parti 💌</p>{%- endif -%}
+      {%- if form.errors %}<p role="alert">{{ form.errors | default_errors }}</p>{% endif -%}
+      <label>Votre prénom<input type="text" name="contact[name]" autocomplete="given-name" required></label>
+      <label>Votre e-mail<input type="email" name="contact[email]" autocomplete="email" required></label>
+      <label>N° de commande (si vous en avez un)<input type="text" name="contact[commande]"></label>
+      <label>Votre message<textarea name="contact[body]" rows="6" required></textarea></label>
+      <p class="tiny">Vos informations servent uniquement à vous répondre. Voir la <a href="/policies/privacy-policy">politique de confidentialité</a>.</p>
+      <button class="btn" type="submit">Envoyer</button>
+    {%- endform -%}
+  </div>
+</section>
+{% schema %}{ "name": "Contact Lou", "settings": [] }{% endschema %}

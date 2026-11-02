@@ -1,8 +1,8 @@
 {%- assign menu = linklists[section.settings.menu] -%}
-<div class="announce" id="announce">
+<div class="announce" id="announce" role="region" aria-label="Informations">
   <div class="announce-track">
     {%- for i in (1..2) -%}
-    <span>🎁 <b>2e bijou à -50 %</b></span><span>🎄 Pour Noël : commandez avant le <b>1er décembre</b></span><span>✍️ Gravé avec <b>vos mots</b>, rien que les vôtres</span><span>🎀 Livré dans un <b>écrin cadeau</b></span><span>🔒 Paiement <b>100 % sécurisé</b></span>
+    <span>🎁 <b>2e bijou à -50 %</b>, automatiquement</span><span>🎄 Pour Noël : commandez avant le <b>{{ settings.noel_limite | default: '1er décembre' }}</b> <b class="j-noel"></b></span><span>✍️ Gravé avec <b>vos mots</b>, aperçu en direct</span><span>🔒 Paiement <b>100 % sécurisé</b></span>
     {%- endfor -%}
   </div>
 </div>
@@ -23,6 +23,10 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="Menu mobile">
+    <div class="lou-dit">
+      <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="46" height="46" loading="lazy"></span>
+      <div class="bulle-lou"><b class="nom">Lou <small>· avatar de la boutique</small></b><p>On va où ? Je vous suis 👇</p></div>
+    </div>
     {%- for link in menu.links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
   </nav>
 </header>

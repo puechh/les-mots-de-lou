@@ -23,8 +23,9 @@ def money(cents):
     return f"{cents / 100:.2f}".replace(".", ",") + " €"
 
 def img_local(nom):
-    for f in sorted(glob.glob(os.path.join(ROOT, "contenu/images-ia", "*" + nom + ".png"))):
-        return "/local/" + os.path.relpath(f, ROOT)
+    for ext in ("png", "jpg"):
+        for f in sorted(glob.glob(os.path.join(ROOT, "contenu/images-ia", "*" + nom + "." + ext))):
+            return "/local/" + os.path.relpath(f, ROOT)
     return "/local/contenu/lou/reference-visage.png"
 
 def load_products():

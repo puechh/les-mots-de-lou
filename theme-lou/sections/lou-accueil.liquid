@@ -1,47 +1,69 @@
 {%- assign jonc = all_products['jonc-mes-mots'] -%}
+{%- assign url_jonc = jonc.url | default: '/products/jonc-mes-mots' -%}
+{%- capture trait -%}<svg class="trait" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 50 4, 120 4, 197 11"/></svg>{%- endcapture -%}
+
+{%- comment -%} 1. Lou se présente + atelier de gravure en direct {%- endcomment -%}
 <section class="hero">
   <div class="wrap hero-in">
-    <div class="hero-txt rv">
-      <span class="eyebrow">💗 Bijoux personnalisés · gravés pour vous</span>
-      <h1>Vos mots,<br><em>gravés pour toujours.</em></h1>
-      <p class="lead">Une phrase, un prénom, une date, un mot secret… Écrivez ce que vous n'osez pas dire. On le grave sur un bijou qu'elle ne quittera plus.</p>
-      <div class="atelier">
-        <label for="atelier-texte">✍️ Essayez : écrivez vos mots</label>
-        <div class="atelier-row">
-          <input id="atelier-texte" type="text" maxlength="30" placeholder="Tu es ma personne" autocomplete="off">
-          <a class="btn btn-small" id="atelier-lien" data-base="{{ jonc.url | default: '/products/jonc-mes-mots' }}" href="{{ jonc.url | default: '/products/jonc-mes-mots' }}">Graver</a>
-        </div>
-        <div class="atelier-photo" id="atelier-apercu">
-          <img src="{{ 'jonc-vierge.webp' | asset_url }}" alt="Le Jonc « Mes Mots » en acier argenté, avec votre texte gravé" width="920" height="460" fetchpriority="high">
-          <canvas id="atelier-gravure" aria-hidden="true"></canvas>
-        </div>
-        <p class="atelier-note">Simulation de gravure sur le Jonc « Mes Mots » argenté.</p>
+    <div class="hero-visu">
+      <div class="hero-photo">
+        <picture>
+          <source media="(max-width: 899px)" srcset="{{ 'lou-hero-mobile.webp' | asset_url }}" width="1200" height="825">
+          <img src="{{ 'lou-hero.webp' | asset_url }}" alt="Lou, l'avatar de la boutique, écrit une carte entourée de cadeaux" width="1200" height="1500" fetchpriority="high">
+        </picture>
       </div>
-      <div class="hero-cta">
-        <a class="btn" href="/collections/all">Je crée mon bijou</a>
-        <a class="btn ghost" href="#le-test">Le test des mots ✨</a>
+      <div class="sticker s2"><span aria-hidden="true">🎁</span> 2e bijou à -50 %</div>
+      <div class="sticker s1"><span aria-hidden="true">✍️</span><span class="hand">Aperçu en direct</span></div>
+      <div class="lou-dit">
+        <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="58" height="58"></span>
+        <div class="bulle-lou"><b class="nom">Lou <small>· l'avatar de la boutique</small></b><p id="lou-intro" data-texte="Coucou, moi c'est Lou ! 👋 Je vous aide à trouver les mots qu'on n'ose pas dire… et je vous montre tout de suite le rendu gravé ✨">Coucou, moi c'est Lou ! 👋 Je vous aide à trouver les mots qu'on n'ose pas dire… et je vous montre tout de suite le rendu gravé ✨</p></div>
       </div>
     </div>
-    <div class="hero-visu rv">
-      <div class="hero-photo"><img src="{{ 'lou-hero.webp' | asset_url }}" alt="Lou, l'égérie de la marque, écrit une carte entourée de cadeaux" width="900" height="1125" fetchpriority="high"></div>
-      <div class="sticker s1"><span aria-hidden="true">✍️</span><span class="hand">Gravé avec vos mots</span></div>
-      <div class="sticker s2"><span aria-hidden="true">🎁</span> 2e bijou à -50 %</div>
+    <div class="hero-txt">
+      <span class="eyebrow">💗 Bijoux personnalisés · gravés avec vos mots</span>
+      <h1><span class="ligne"><span>Vos mots,</span></span><span class="ligne"><span><em><span class="t">gravés pour toujours.</span>{{ trait }}</em></span></span></h1>
+      <div class="atelier" id="atelier">
+        <div class="atelier-haut">
+          <label for="atelier-texte">✍️ Écrivez, je grave en direct :</label>
+          <div class="pastilles" role="radiogroup" aria-label="Finition du jonc">
+            <button type="button" class="p-argentee is-on" data-fin="" role="radio" aria-checked="true" aria-label="Argentée"></button>
+            <button type="button" class="p-doree" data-fin="-doree" role="radio" aria-checked="false" aria-label="Dorée"></button>
+            <button type="button" class="p-rosee" data-fin="-rosee" role="radio" aria-checked="false" aria-label="Rosée"></button>
+          </div>
+        </div>
+        <div class="atelier-row">
+          <input id="atelier-texte" type="text" maxlength="20" placeholder="Tu es ma personne" autocomplete="off" enterkeyhint="go">
+          <a class="btn btn-small" id="atelier-lien" data-base="{{ url_jonc }}" href="{{ url_jonc }}">Graver ✨</a>
+        </div>
+        <div class="atelier-photo" id="atelier-apercu" data-base="{{ 'jonc-vierge.webp' | asset_url }}" data-doree="{{ 'jonc-vierge-doree.webp' | asset_url }}" data-rosee="{{ 'jonc-vierge-rosee.webp' | asset_url }}">
+          <img src="{{ 'jonc-vierge.webp' | asset_url }}" alt="Le Jonc « Mes Mots » avec votre texte gravé" width="1380" height="690" fetchpriority="high">
+          <canvas id="atelier-gravure" aria-hidden="true"></canvas>
+          <span class="etincelle" id="etincelle" aria-hidden="true"></span>
+        </div>
+        <p class="atelier-note">Simulation de gravure sur le Jonc « Mes Mots » (20 caractères max.).</p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn" href="/collections/all"><span class="brille"></span>Je crée mon bijou</a>
+        <a class="btn ghost" href="#le-test">Lou, aide-moi ✨</a>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true"><div class="ticker-track">
+<div class="ticker-zone" aria-hidden="true"><div class="ticker"><div class="ticker-track">
   {%- for i in (1..2) -%}<span>Tu es ma personne</span><span>Sœurs pour toujours</span><span>Merci pour tout, maman</span><span>12.07.2019</span><span>Toi, toujours</span><span>Ma partenaire de bêtises</span><span>Crois en toi</span><span>Même loin, tout près</span>{%- endfor -%}
-</div></div>
+</div></div></div>
 
+{%- comment -%} 2. Les coups de cœur de Lou {%- endcomment -%}
 <section class="section" id="bijoux">
   <div class="wrap">
     <div class="head rv">
-      <span class="hand">Les coups de cœur de Lou</span>
-      <h2>Choisissez le bijou, <em>on grave vos mots</em></h2>
-      <p>Acier inoxydable qui ne noircit pas, finition argentée, dorée ou rosée, livré dans un écrin cadeau. Prix de lancement.</p>
+      <span class="hand">Mes coups de cœur</span>
+      <h2>Choisissez le bijou, <em><span class="t">écrivez vos mots</span>{{ trait }}</em></h2>
+      <p>Mes 4 bijoux préférés (je les porterais tous… si j'avais de vrais poignets 😄). Acier inoxydable qui ne noircit pas, finitions argentée, dorée ou rosée.</p>
     </div>
-    <div class="grille">
+    <div class="grille" id="grille-accueil" style="position:relative">
+      <span class="note-lou" style="left:2%;top:-38px" aria-hidden="true">mon préféré !<svg viewBox="0 0 40 30"><path d="M4 2 C 10 18, 20 24, 34 26 M28 20 L34 26 L26 29"/></svg></span>
       {%- for p in collections.all.products limit: 8 -%}
         {% render 'carte-produit', p: p %}
       {%- endfor -%}
@@ -49,25 +71,44 @@
   </div>
 </section>
 
-<section class="section band" id="le-test">
+{%- comment -%} 3. Problème → solution (cartes qui se retournent toutes seules) {%- endcomment -%}
+<section class="section band">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="hand">On se reconnaît un peu, non ?</span>
+      <h2>Fini les cadeaux <em><span class="t">sans âme</span>{{ trait }}</em></h2>
+      <p>Touchez une carte : je vous montre ma solution.</p>
+    </div>
+    <div class="retourne" id="retourne">
+      <button class="carte-r rv" type="button"><span class="carte-r-in"><span class="face avant"><span class="emo">🕯️</span><b>Encore une bougie parfumée…</b><small>le cadeau qu'on oublie le lendemain</small></span><span class="face arriere"><span class="emo">💬</span><b>Un bijou avec SES mots</b><span class="hand">qu'elle gardera toujours</span></span></span></button>
+      <button class="carte-r rv" type="button"><span class="carte-r-in"><span class="face avant"><span class="emo">🤯</span><b>« Je ne sais pas quoi écrire »</b><small>la page blanche, le classique</small></span><span class="face arriere"><span class="emo">🎰</span><b>Ma machine à mots</b><span class="hand">une phrase en 1 clic</span></span></span></button>
+      <button class="carte-r rv" type="button"><span class="carte-r-in"><span class="face avant"><span class="emo">😬</span><b>Peur que ça fasse « bijou cheap »</b><small>qui noircit au bout d'un mois</small></span><span class="face arriere"><span class="emo">✨</span><b>Acier inoxydable</b><span class="hand">ne noircit pas</span></span></span></button>
+      <button class="carte-r rv" type="button"><span class="carte-r-in"><span class="face avant"><span class="emo">🙈</span><b>Commander sans savoir le rendu</b><small>et croiser les doigts</small></span><span class="face arriere"><span class="emo">👀</span><b>Aperçu en direct</b><span class="hand">avant de commander</span></span></span></button>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} 4. Le test des mots (conversation avec Lou) {%- endcomment -%}
+<section class="section" id="le-test">
   <div class="wrap">
     <div class="head rv">
       <span class="hand">30 secondes, 4 questions</span>
-      <h2>Le test des mots <em>de Lou</em></h2>
-      <p>Vous ne savez pas quoi offrir, ni quoi écrire ? Répondez à 4 questions : Lou trouve le bijou… et les mots.</p>
+      <h2>Mon test <em><span class="t">des mots</span>{{ trait }}</em></h2>
+      <p>Vous ne savez pas quoi offrir, ni quoi écrire ? Répondez-moi : je trouve le bijou… et les mots.</p>
     </div>
     {% render 'test-mots' %}
   </div>
 </section>
 
-<section class="section" id="machine-a-mots">
+{%- comment -%} 5. La machine à mots {%- endcomment -%}
+<section class="section band" id="machine-a-mots">
   <div class="wrap machine">
     <div class="rv">
       <span class="hand">En panne d'inspiration ?</span>
-      <h2>La machine <em>à mots</em></h2>
-      <p class="small" style="margin-top:12px">Choisissez un thème, tirez la manette… et gravez la phrase qui vous fait sourire. (Promis, Lou les a toutes testées sur ses copines.)</p>
+      <h2>Ma machine <em><span class="t">à mots</span>{{ trait }}</em></h2>
+      <p class="small" style="margin-top:12px">Choisissez un thème, tirez la manette… et gravez la phrase qui vous fait sourire. (Promis, je les ai toutes testées sur mes copines virtuelles.)</p>
     </div>
-    <div class="machine-boite rv" id="machine" data-produit="{{ jonc.url | default: '/products/jonc-mes-mots' }}">
+    <div class="machine-boite rv" id="machine" data-produit="{{ url_jonc }}">
       <div class="machine-cats" role="group" aria-label="Thème des phrases">
         <button class="chip is-on" data-cat="amour" aria-pressed="true">💞 Amour</button>
         <button class="chip" data-cat="amitie" aria-pressed="false">👯‍♀️ Amitié</button>
@@ -77,58 +118,78 @@
       </div>
       <div class="machine-fenetre"><p class="machine-phrase" aria-live="polite">Tu es ma personne</p></div>
       <div class="machine-actions">
-        <button class="btn" id="machine-tirer">🎰 Tirer des mots</button>
-        <a class="btn ghost" id="machine-graver" href="{{ jonc.url | default: '/products/jonc-mes-mots' }}">Graver cette phrase</a>
-        <button class="chip" id="machine-copier">✂️ Copier</button>
+        <button class="btn" id="machine-tirer"><span class="brille"></span>🎰 Tirer des mots</button>
+        <a class="btn ghost" id="machine-graver" href="{{ url_jonc }}">Graver cette phrase</a>
       </div>
+      <button class="manette" id="manette" type="button" aria-label="Tirer la manette"><span class="tige"></span><span class="boule"></span><span class="socle"></span></button>
     </div>
   </div>
 </section>
 
-<section class="section band">
-  <div class="wrap">
-    <div class="head rv"><span class="hand">Simple comme un petit mot</span><h2>Comment ça <em>marche</em> ?</h2></div>
-    <div class="etapes">
-      <div class="etape rv"><span class="emo" aria-hidden="true">✍️</span><h3>Vous écrivez</h3><p>Une phrase, un prénom, une photo ou un mot secret. L'aperçu se met à jour en direct.</p></div>
-      <div class="etape rv"><span class="emo" aria-hidden="true">✨</span><h3>On grave</h3><p>Votre bijou est fabriqué rien que pour vous, avec vos mots, en 2 à 4 jours.</p></div>
-      <div class="etape rv"><span class="emo" aria-hidden="true">🥹</span><h3>Elle craque</h3><p>Livré dans un écrin cadeau, prêt à offrir. Les larmes de joie ne sont pas incluses, mais fréquentes.</p></div>
-    </div>
-  </div>
-</section>
-
+{%- comment -%} 6. Comment ça marche {%- endcomment -%}
 <section class="section">
+  <div class="wrap">
+    <div class="head rv"><span class="hand">Je vous explique</span><h2>Comment ça <em><span class="t">marche</span>{{ trait }}</em> ?</h2></div>
+    <div class="etapes">
+      <div class="etape rv" data-n="1"><span class="emo" aria-hidden="true">✍️</span><h3>Vous écrivez</h3><p>Une phrase, un prénom, une photo ou un mot secret. Je vous montre le rendu en direct.</p><span class="hand">facile !</span></div>
+      <div class="etape rv" data-n="2"><span class="emo" aria-hidden="true">✨</span><h3>L'atelier grave</h3><p>Votre bijou est fabriqué rien que pour vous, avec vos mots, en {{ settings.fab_min | default: 3 }} à {{ settings.fab_max | default: 7 }} jours.</p><span class="hand">avec soin</span></div>
+      <div class="etape rv" data-n="3"><span class="emo" aria-hidden="true">🥹</span><h3>Elle craque</h3><p>Livré chez vous en {{ settings.liv_min | default: 7 }} à {{ settings.liv_max | default: 12 }} jours ouvrés, avec suivi{% if settings.ecrin_inclus %}, dans son écrin cadeau{% endif %}. Les larmes de joie ne sont pas incluses, mais fréquentes.</p><span class="hand">mission réussie</span></div>
+    </div>
+    <p class="glisser">← glissez pour voir les étapes →</p>
+  </div>
+</section>
+
+{%- comment -%} 7. C'est moi, Lou {%- endcomment -%}
+<section class="section band">
   <div class="wrap lou">
     <figure class="lou-photo rv">
-      <img src="{{ 'lou-portrait.webp' | asset_url }}" alt="Portrait de Lou, l'égérie de la marque" width="700" height="875" loading="lazy">
-      <figcaption>Coucou, moi c'est Lou ✨</figcaption>
+      <img src="{{ 'lou-portrait.webp' | asset_url }}" alt="Portrait de Lou, l'avatar virtuel de la boutique" width="1000" height="1250" loading="lazy">
+      <figcaption>C'est moi, Lou ✨</figcaption>
     </figure>
     <div class="rv">
-      <span class="hand">Qui est Lou ?</span>
-      <h2>Celle qui collectionne <em>les mots qu'on n'ose pas dire</em></h2>
-      <div class="lou-note" style="margin-top:20px">
+      <span class="hand">Enchantée !</span>
+      <h2>Celle qui collectionne <em><span class="t">les mots</span>{{ trait }}</em> qu'on n'ose pas dire</h2>
+      <div class="lou-note" style="margin-top:18px">
         <p>Je crois qu'un « je t'aime », un « merci » ou un « je suis fière de toi » valent plus que tous les cadeaux du monde.</p>
         <p>Alors on les grave. Pour qu'ils restent, même quand on oublie de les dire.</p>
         <p>— Lou 💗</p>
       </div>
-      <p class="mention-virtuelle">Lou est l'égérie virtuelle de la marque : son image est créée avec l'aide de l'IA. <a href="/pages/qui-est-lou">En savoir plus</a></p>
+      <div class="lou-infos"><span>🤖 Avatar virtuel</span><span>💌 Spécialiste des mots doux</span><span>🎁 Je vous aide à choisir</span></div>
+      <p class="mention-virtuelle">🤖 <b>Transparence :</b> Lou est l'avatar de la boutique, un personnage virtuel dont l'image est créée avec l'intelligence artificielle. Elle ne fabrique pas les bijoux ; derrière elle, une vraie équipe vous répond. <a href="/pages/qui-est-lou">En savoir plus</a></p>
     </div>
   </div>
 </section>
 
-<section class="section band">
+{%- comment -%} 8. Compte à rebours Noël {%- endcomment -%}
+<section class="section">
+  <div class="wrap">
+    <div class="noel rv" id="noel" data-limite="{{ settings.noel_iso | default: '2026-12-01' }}">
+      <div class="neige" aria-hidden="true"></div>
+      <span class="hand" style="color:var(--rose)">Psst… je vous préviens</span>
+      <h2>Pour l'avoir sous <em>le sapin</em></h2>
+      <p>Commandez avant le <b>{{ settings.noel_limite | default: '1er décembre' }}</b> : votre bijou a le temps d'être gravé et livré.</p>
+      <div class="compte" aria-live="off"><div><b data-u="j">–</b><small>jours</small></div><div><b data-u="h">–</b><small>heures</small></div><div><b data-u="m">–</b><small>min</small></div><div><b data-u="s">–</b><small>sec</small></div></div>
+      <a class="btn" href="/collections/all"><span class="brille"></span>Je choisis maintenant 🎄</a>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} 9. Réassurance {%- endcomment -%}
+<section class="section band" style="padding-block:40px">
   <div class="wrap">
     <div class="reassure">
-      <div class="rv"><span class="emo" aria-hidden="true">🎄</span>Pour Noël<small>commandez avant le 1er décembre</small></div>
-      <div class="rv"><span class="emo" aria-hidden="true">🎀</span>Écrin cadeau<small>prêt à offrir</small></div>
+      <div class="rv"><span class="emo" aria-hidden="true">👀</span>Aperçu en direct<small>avant de commander</small></div>
+      <div class="rv"><span class="emo" aria-hidden="true">🚚</span>Livraison suivie<small>France &amp; Belgique</small></div>
       <div class="rv"><span class="emo" aria-hidden="true">💧</span>Acier inoxydable<small>ne noircit pas</small></div>
       <div class="rv"><span class="emo" aria-hidden="true">🔒</span>Paiement sécurisé<small>CB, PayPal, Apple Pay</small></div>
     </div>
   </div>
 </section>
 
+{%- comment -%} 10. FAQ en conversation {%- endcomment -%}
 <section class="section">
   <div class="wrap">
-    <div class="head rv"><span class="hand">On vous dit tout</span><h2>Vos <em>questions</em></h2></div>
+    <div class="head rv"><span class="hand">Vous me demandez souvent…</span><h2>Vos questions, <em><span class="t">mes réponses</span>{{ trait }}</em></h2><p>Touchez une question, je vous réponds.</p></div>
     {% render 'faq' %}
   </div>
 </section>

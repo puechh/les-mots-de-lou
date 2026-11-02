@@ -1,9 +1,9 @@
 {%- assign c = p.metafields.lou.contenu.value -%}
-<a class="carte rv" href="{{ p.url }}">
+<a class="carte rv" href="{{ p.url }}" data-handle="{{ p.handle }}">
   {%- if p.tags contains 'best-seller' %}<span class="badge">Coup de cœur</span>{% endif -%}
   <button class="coeur" type="button" data-handle="{{ p.handle }}" aria-label="Ajouter {{ p.title | escape }} à mes coups de cœur"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.6 0 6 3.7 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg></button>
   <div class="carte-img">
-    {%- if p.featured_image -%}{{ p.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: p.title, widths: '300,450,600', sizes: '(min-width: 900px) 25vw, 50vw' }}{%- endif -%}
+    {%- if p.featured_image -%}{{ p.featured_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: p.title, widths: '400,600,800,1000', sizes: '(min-width: 900px) 25vw, 50vw' }}{%- endif -%}
   </div>
   <h3>{{ p.title }}</h3>
   {%- if c.accroche %}<p class="accroche">{{ c.accroche }}</p>{% endif -%}

@@ -1,0 +1,34 @@
+{% render 'entete-page', hand: 'Presque fini !', titre: 'Votre <em>panier</em>', bulle: "Relisez bien vos mots avant de commander : votre bijou sera gravé exactement comme écrit ✍️ Et n'oubliez pas : le 2e bijou est à -50 % 🎁" %}
+<section class="section">
+  <div class="wrap panier-page">
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post">
+        {%- for it in cart.items -%}
+          <div class="ligne-panier">
+            {%- if it.image %}{{ it.image | image_url: width: 300 | image_tag: alt: it.product.title, loading: 'lazy' }}{% else %}<span></span>{% endif -%}
+            <div>
+              <a href="{{ it.url }}"><b>{{ it.product.title }}</b></a>
+              {%- unless it.product.has_only_default_variant %}<div class="small">{{ it.variant.title }}</div>{% endunless -%}
+              <ul class="props">
+                {%- for pr in it.properties -%}
+                  {%- assign k = pr.first -%}
+                  {%- unless k.first == '_' or pr.last == blank -%}<li><b>{{ k }} :</b> {% if pr.last contains '/uploads/' %}photo envoyée ✔{% else %}{{ pr.last }}{% endif %}</li>{%- endunless -%}
+                {%- endfor -%}
+              </ul>
+              <label class="small">Quantité <input type="number" name="updates[]" value="{{ it.quantity }}" min="0" style="width:60px"></label>
+            </div>
+            <b class="prix">{{ it.final_line_price | money }}</b>
+          </div>
+        {%- endfor -%}
+        {%- if cart.total_discount > 0 %}<p class="drawer-line"><span>Réduction</span><span>− {{ cart.total_discount | money }}</span></p>{% endif -%}
+        <p class="drawer-line drawer-total"><span>Total</span><span>{{ cart.total_price | money }}</span></p>
+        <p class="tiny">Frais de livraison calculés à l'étape suivante.</p>
+        <div class="hero-cta"><button class="btn ghost" type="submit" name="update">Mettre à jour</button><button class="btn" type="submit" name="checkout"><span class="brille"></span>Commander en toute sécurité 🔒</button></div>
+      </form>
+    {%- else -%}
+      <p class="vide"><span class="emo">💌</span>Votre panier attend encore vos mots…</p>
+      <p style="text-align:center"><a class="btn" href="/collections/all">Voir les bijoux</a></p>
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}{ "name": "Panier Lou", "settings": [] }{% endschema %}

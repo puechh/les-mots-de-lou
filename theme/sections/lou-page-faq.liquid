@@ -1,0 +1,3 @@
+{% render 'entete-page', hand: 'On vous dit tout', titre: 'Vos questions, <em>mes réponses</em>', bulle: 'Touchez une question : je vous réponds tout de suite 💬' %}
+<section class="section"><div class="wrap">{% render 'faq' %}{% if page.content != blank %}<div class="texte" style="margin-top:40px">{{ page.content }}</div>{% endif %}</div></section>
+{% schema %}{ "name": "Page FAQ", "settings": [] }{% endschema %}

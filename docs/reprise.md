@@ -2,19 +2,40 @@
 
 > **Aperçu cliquable de la bêta (page privée claude.ai)** : https://claude.ai/artifact/1d7266ccUAoSGjfGXKjNz4
 > (régénérer : banc `scripts/banc_theme.py` puis `scripts/export_apercu.py <dossier>` et republier).
-> **Shopify : RIEN n'est encore envoyé** (réseau de l'environnement) → voir le bloc ⛔ ci-dessous.
+> Shopify : la boutique est construite et le thème Lou est **publié** (derrière le mot de passe) → voir ci-dessous.
 
-## ✅ 02/11/2026 soir — BÊTA ENVOYÉE SUR SHOPIFY (thème pas encore publié)
-- Sur Shopify : 4 produits actifs (images, métachamp `lou.contenu`), collections joncs/colliers/bracelets, 5 pages
-  (avec leurs gabarits), menus main-menu/footer/legal, 4 politiques (avec les `[À COMPLÉTER]`), offre automatique
-  « 2e bijou à -50 % » active. Thème « Les Mots de Lou (thème) » envoyé **sans erreur** mais **NON publié**
-  (« Horizon » reste le thème en ligne) : la publication a été bloquée par une sécurité de Claude Code, l'utilisateur
-  doit la confirmer → soit Shopify → Boutique en ligne → Thèmes → « Les Mots de Lou (thème) » → **Publier**, soit dire
-  à Claude « publie le thème » (`python3 scripts/envoyer_theme.py publier`).
-- Réseau : `*.myshopify.com` et AliExpress autorisés ; `lesmotsdelou.fr` NON autorisé dans l'environnement, or la
-  boutique redirige vers ce domaine → Claude ne peut pas afficher la vitrine en ligne (ajouter `lesmotsdelou.fr` et
-  `www.lesmotsdelou.fr` aux domaines autorisés pour les captures réelles). Captures du banc local : `docs/captures/finale-*`.
-- `lesmotsdelou.fr` est déjà domaine principal dans Shopify : vérifier qu'il s'affiche bien (DNS IONOS).
+## ✅ 02/11/2026 nuit — REFONTE « LOU, AVATAR DE LA BOUTIQUE » EN LIGNE (derrière le mot de passe)
+- **Thème « Les Mots de Lou (thème) » publié par l'utilisateur** ; refonte v0.2 envoyée sans erreur. Tester au banc
+  (`python3 scripts/banc_theme.py`) AVANT tout `envoyer_theme.py maj` : c'est le thème en ligne.
+- **Lou parle partout** (avatar virtuel assumé) : bulle d'accueil qui s'écrit toute seule, assistante en bas à droite
+  (réponses préparées : choisir, idée de phrase, Noël, matière, offre, livraison, « tu es qui ? », contact équipe),
+  conseils sur chaque fiche, panier commenté avec jauge -50 %, FAQ en conversation, menu mobile, 404, page d'attente.
+- **Aperçus réalistes sur photo** : jonc gravé (3 finitions × 2 polices, gravure qui épouse la face), collier prénom
+  accroché à la vraie chaîne (3 finitions), photo de la cliente dans la bulle du collier photo, bracelet Morse dessiné.
+  Mini-aperçu flottant sur téléphone, barre « Ajouter au panier » collante, livraison estimée, produit qui vole au panier.
+- **Ludique / animé** (GSAP) : titre révélé, cartes qui tombent, cartes problème → solution qui se retournent, machine à
+  mots à manette, test des mots, compte à rebours de Noël avec neige, étincelle du laser, cœurs, petits sons, confettis.
+- **Images HD 2048 px** sur Shopify et dans le thème (fin du flou sur téléphone).
+- **Fiches alignées sur AliExpress** (rapport du 02/11, voir `produits/sourcing-aliexpress.md`) : jonc 20 caractères,
+  2 polices, « plupart des poignets » ; collier photo = pendentif métal plaqué + chaîne inox ; Morse = cordon noir seul,
+  « perles métalliques » ; **plus aucune promesse d'écrin** (réglage du thème à cocher seulement si le fournisseur le
+  confirme par écrit) ; délais 3-7 j + 7-12 j ouvrés (réglages du thème).
+- Réseau : `lesmotsdelou.fr` (et `lilytreasures.fr`, `dentica.fr`, `ciaokombucha.com`) non autorisés dans l'environnement
+  → Claude ne voit pas la vitrine réelle ni les sites d'inspiration : les ajouter aux domaines autorisés si besoin.
+
+### ⚠️ À faire AVANT d'ouvrir (le mot de passe reste en place)
+1. **Fournisseurs (DSers)** : choisir l'annonce de chaque bijou, vérifier prix livré, délais réels, nombre de caractères,
+   polices proposées (faire correspondre « Manuscrite / Classique / Moderne » à leurs numéros), finitions, longueur de chaîne,
+   **écrin inclus ?** (si oui : cocher le réglage du thème), matière par écrit (grade de l'acier, nickel). Commander un exemplaire
+   test de chaque bijou. Comment transmettre le texte/la photo au vendeur (note de commande, maquette avant fabrication).
+2. **Photos** : remplacer les images IA par les vraies photos fournisseur si la forme/couleur diffère (puis re-mesurer les
+   aperçus du jonc et du collier : méthode dans `docs/journal.md`).
+3. **Mentions légales / CGV** : remplir les `[À COMPLÉTER]` directement dans Shopify (identité, SIRET, médiateur).
+4. **Paramètres** : livraison France + Belgique, caisse (décocher l'inscription marketing pré-cochée), bannière cookies,
+   paiements, domaine `lesmotsdelou.fr` (principal) + `les-mots-de-lou.fr` (redirection).
+5. Ajuster les **délais** et la **date limite de Noël** dans les réglages du thème selon le fournisseur choisi
+   (si fabrication 8-10 j : date limite plutôt vers le 25-28/11).
+6. Commande test (gravure + photo) puis remboursement ; vérifier que la photo et le texte arrivent bien dans la commande.
 
 ## 🔥 État au 02/11/2026 fin d'après-midi — BÊTA PRÊTE (carte blanche, utilisateur absent)
 **Tout est dans le dépôt ; l'envoi sur Shopify se fait avec `python3 scripts/construire_boutique.py --publier`**

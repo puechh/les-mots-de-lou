@@ -1,5 +1,5 @@
 {
-  "_note": "Source des fiches de la bêta (02/11/2026). Créées sur Shopify par scripts/construire_boutique.py. Images = IA (à vérifier/remplacer par les photos fournisseur avant ouverture). Ne pas écrire 316L / sans nickel tant que le fournisseur ne l'a pas confirmé par écrit.",
+  "_note": "Source des fiches (MAJ 02/11/2026 soir, alignées sur les annonces AliExpress repérées : produits/sourcing-aliexpress.md). Créées sur Shopify par scripts/construire_boutique.py. Images = IA HD (à comparer aux photos fournisseur avant ouverture). Ne pas écrire 316L / sans nickel / écrin tant que le fournisseur ne l'a pas confirmé par écrit (l'écrin s'affiche via le réglage du thème « Écrin cadeau inclus »).",
   "produits": [
     {
       "handle": "jonc-mes-mots",
@@ -19,22 +19,22 @@
         "Rosée"
       ],
       "images": [
-        "produit-jonc-1",
-        "produit-jonc-finitions",
-        "lou-jonc"
+        "produit-jonc-1-hd",
+        "produit-jonc-finitions-hd",
+        "lou-jonc-hd"
       ],
       "accroche": "La phrase que vous n'osez pas dire, gravée sur un jonc qu'elle ne quittera plus.",
       "benefices": [
-        "Gravure de votre texte (jusqu'à 30 caractères)",
-        "Acier inoxydable : ne noircit pas, résiste à l'eau",
-        "Jonc ouvert, s'ajuste à tous les poignets",
-        "Livré dans un écrin cadeau, prêt à offrir"
+        "Gravure de votre phrase (jusqu'à 20 caractères)",
+        "Acier inoxydable : ne noircit pas, supporte l'eau du quotidien",
+        "Jonc fin et ouvert, s'adapte à la plupart des poignets",
+        "Aperçu de la gravure en direct, avant de commander"
       ],
       "perso": [
         {
           "cle": "Texte gravé",
           "type": "texte",
-          "max": 30,
+          "max": 20,
           "requis": true,
           "exemple": "Tu es ma personne"
         },
@@ -43,13 +43,12 @@
           "type": "choix",
           "valeurs": [
             "Manuscrite",
-            "Classique",
-            "Moderne"
+            "Classique"
           ]
         }
       ],
       "apercu": "jonc",
-      "seo": "Jonc gravé personnalisé avec votre message, acier inoxydable, livré en coffret cadeau. L'idée cadeau qui fait pleurer (de joie)."
+      "seo": "Jonc gravé personnalisé avec votre message, en acier inoxydable, finition argentée, dorée ou rosée. L'idée cadeau qui fait pleurer (de joie)."
     },
     {
       "handle": "collier-prenom",
@@ -69,16 +68,16 @@
         "Rosée"
       ],
       "images": [
-        "produit-collier-prenom-1",
-        "produit-collier-prenom-finitions",
-        "lou-collier-prenom"
+        "produit-collier-prenom-1-hd",
+        "produit-collier-prenom-finitions-hd",
+        "lou-collier-prenom-hd"
       ],
       "accroche": "Son prénom (ou celui de quelqu'un qu'elle aime) écrit d'un trait, tout près du cœur.",
       "benefices": [
         "Prénom découpé d'un seul trait (jusqu'à 10 lettres)",
         "Acier inoxydable : ne noircit pas",
-        "Chaîne fine avec rallonge réglable",
-        "Livré dans un écrin cadeau, prêt à offrir"
+        "Chaîne fine avec rallonge (environ 40 + 5 cm)",
+        "Aperçu du prénom en direct, avant de commander"
       ],
       "perso": [
         {
@@ -98,7 +97,7 @@
         }
       ],
       "apercu": "prenom",
-      "seo": "Collier prénom personnalisé en acier inoxydable, finition argentée, dorée ou rosée, livré en coffret cadeau."
+      "seo": "Collier prénom personnalisé en acier inoxydable, finition argentée, dorée ou rosée, prénom découpé d'un seul trait."
     },
     {
       "handle": "collier-souvenir-photo",
@@ -118,14 +117,14 @@
         "Rosée"
       ],
       "images": [
-        "produit-collier-photo-1"
+        "produit-collier-photo-1-hd"
       ],
       "accroche": "Un petit cœur… et quand on regarde dedans, votre plus belle photo apparaît.",
       "benefices": [
         "Votre photo cachée dans une minuscule lentille",
         "On la voit en regardant à travers, vers la lumière",
-        "Pendentif cœur, chaîne réglable",
-        "Livré dans un écrin cadeau, prêt à offrir"
+        "Pendentif cœur en métal plaqué, chaîne en acier inoxydable",
+        "Conseil : une photo nette et bien contrastée"
       ],
       "perso": [
         {
@@ -135,7 +134,7 @@
         }
       ],
       "apercu": "photo",
-      "seo": "Collier photo à projection personnalisé : votre photo cachée dans un pendentif cœur. Cadeau souvenir livré en coffret."
+      "seo": "Collier photo à projection personnalisé : votre photo cachée dans la lentille d'un pendentif cœur. Le cadeau souvenir qui émeut."
     },
     {
       "handle": "bracelet-code-secret",
@@ -150,17 +149,15 @@
       "prix": "24.90",
       "option": "Cordon",
       "variantes": [
-        "Noir",
-        "Rose poudré",
-        "Beige"
+        "Noir"
       ],
       "images": [
-        "produit-bracelet-morse-1"
+        "produit-bracelet-morse-1-hd"
       ],
       "accroche": "Un mot écrit en code Morse : personne ne sait ce qu'il dit… sauf vous deux.",
       "benefices": [
         "Votre mot traduit en points et traits (jusqu'à 8 lettres)",
-        "Perles en acier inoxydable",
+        "Perles métalliques argentées sur cordon noir",
         "Cordon réglable, se porte tous les jours",
         "La clé du code expliquée sur la fiche"
       ],

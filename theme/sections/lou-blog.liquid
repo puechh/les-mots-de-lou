@@ -1,0 +1,5 @@
+{%- assign t_blog = blog.title | default: article.title -%}{% render 'entete-page', titre: t_blog %}
+<section class="section"><div class="wrap texte">
+  {%- if article -%}{{ article.content }}{%- else -%}{%- for a in blog.articles -%}<h2><a href="{{ a.url }}">{{ a.title }}</a></h2><p>{{ a.excerpt_or_content | strip_html | truncate: 200 }}</p>{%- else -%}<p>Bientôt, les idées de Lou ✨</p>{%- endfor -%}{%- endif -%}
+</div></section>
+{% schema %}{ "name": "Blog Lou", "settings": [] }{% endschema %}

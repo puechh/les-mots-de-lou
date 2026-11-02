@@ -24,9 +24,10 @@ from pathlib import Path
 import requests
 
 API = "https://api.openai.com/v1"
-MODELE = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2")
+MODELE = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2.5-flare")
 SORTIE = Path(__file__).resolve().parent.parent / "contenu" / "images-ia"
-FORMATS = {"carre": "1024x1024", "portrait": "1024x1536", "paysage": "1536x1024"}
+FORMATS = {"carre": "1024x1024", "portrait": "1024x1536", "paysage": "1536x1024",
+           "carre-hd": "2048x2048", "portrait-hd": "2048x3072", "paysage-hd": "3072x2048"}  # HD : nettes sur téléphone
 
 
 def _entetes():
@@ -71,7 +72,7 @@ def check():
 
 def creer(prompt, nom, taille, qualite, nombre):
     payload = {"model": MODELE, "prompt": prompt, "size": taille, "quality": qualite, "n": nombre}
-    data = _verifier(requests.post(f"{API}/images/generations", headers=_entetes(), json=payload, timeout=300))
+    data = _verifier(requests.post(f"{API}/images/generations", headers=_entetes(), json=payload, timeout=600))
     _enregistrer(data, nom, prompt)
 
 
@@ -81,7 +82,7 @@ def modifier(prompt, images, nom, taille, qualite, nombre):
     ]
     champs = {"model": MODELE, "prompt": prompt, "size": taille, "quality": qualite, "n": str(nombre)}
     data = _verifier(
-        requests.post(f"{API}/images/edits", headers=_entetes(), data=champs, files=fichiers, timeout=300)
+        requests.post(f"{API}/images/edits", headers=_entetes(), data=champs, files=fichiers, timeout=600)
     )
     _enregistrer(data, nom, prompt, images)
 

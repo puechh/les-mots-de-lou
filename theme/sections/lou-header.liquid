@@ -1,0 +1,41 @@
+{%- assign menu = linklists[section.settings.menu] -%}
+<div class="announce" id="announce" role="region" aria-label="Informations">
+  <div class="announce-track">
+    {%- for i in (1..2) -%}
+    <span>🎁 <b>2e bijou à -50 %</b>, automatiquement</span><span>🎄 Pour Noël : commandez avant le <b>{{ settings.noel_limite | default: '1er décembre' }}</b> <b class="j-noel"></b></span><span>✍️ Gravé avec <b>vos mots</b>, aperçu en direct</span><span>🔒 Paiement <b>100 % sécurisé</b></span>
+    {%- endfor -%}
+  </div>
+</div>
+<header class="header" id="header">
+  <div class="header-in">
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    <a class="logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }} : accueil">
+      <span class="logo-les">Les</span> <span class="logo-mots">Mots</span> <span class="logo-de">de</span> <span class="logo-lou">Lou<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.6 0 6 3.7 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg></span>
+    </a>
+    <nav class="nav" aria-label="Menu principal">
+      {%- for link in menu.links -%}
+        <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+      {%- endfor -%}
+    </nav>
+    <div class="header-icons">
+      <a class="icon-btn" href="{{ routes.search_url }}" aria-label="Rechercher"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20 20"/></svg></a>
+      <button class="icon-btn" id="cart-btn" aria-label="Ouvrir le panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="count" id="cart-count">{{ cart.item_count }}</span></button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Menu mobile">
+    <div class="lou-dit">
+      <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="46" height="46" loading="lazy"></span>
+      <div class="bulle-lou"><b class="nom">Lou <small>· avatar de la boutique</small></b><p>On va où ? Je vous suis 👇</p></div>
+    </div>
+    {%- for link in menu.links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "En-tête",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" }
+  ]
+}
+{% endschema %}

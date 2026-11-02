@@ -1,7 +1,7 @@
 <div class="test rv" id="test-mots">
-  <div class="test-top">
-    <div class="test-avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="Lou" width="54" height="54" loading="lazy"></div>
-    <p class="bulle" aria-live="polite">Coucou ! Je vais vous aider à trouver le bijou parfait… et les mots qui vont avec 💌</p>
+  <div class="test-top lou-dit">
+    <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="Lou" width="46" height="46" loading="lazy"></span>
+    <div class="bulle-lou"><b class="nom">Lou</b><p class="bulle" aria-live="polite">Coucou ! Je vais vous aider à trouver le bijou parfait… et les mots qui vont avec 💌</p></div>
   </div>
   <div class="test-prog" aria-hidden="true"><i></i></div>
   <div class="test-zone"></div>
@@ -11,7 +11,7 @@
 {
 {%- for h in handles_test -%}
   {%- assign tp = all_products[h] -%}
-  {{ h | json }}: { "title": {{ tp.title | json }}, "url": {{ tp.url | json }}, "price": {{ tp.price | money | json }}, "image": {% if tp.featured_image %}{{ tp.featured_image | image_url: width: 300 | json }}{% else %}""{% endif %} }{% unless forloop.last %},{% endunless %}
+  {{ h | json }}: { "title": {{ tp.title | json }}, "url": {{ tp.url | json }}, "price": {{ tp.price | money | json }}, "image": {% if tp.featured_image %}{{ tp.featured_image | image_url: width: 400 | json }}{% else %}""{% endif %} }{% unless forloop.last %},{% endunless %}
 {%- endfor -%}
 }
 </script>

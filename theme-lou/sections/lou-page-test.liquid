@@ -1,4 +1,4 @@
-<div class="page-hero"><span class="hand">30 secondes, 4 questions</span><h1>Le test des mots <em>de Lou</em></h1><p>Lou trouve le bijou idéal… et les mots qui vont avec.</p></div>
+{% render 'entete-page', hand: '30 secondes, 4 questions', titre: 'Mon test <em>des mots</em>', texte: 'Je trouve le bijou idéal… et les mots qui vont avec.' %}
 <section class="section band"><div class="wrap">{% render 'test-mots' %}</div></section>
 <section class="section"><div class="wrap texte">{{ page.content }}</div></section>
 {% schema %}{ "name": "Page Test des mots", "settings": [] }{% endschema %}

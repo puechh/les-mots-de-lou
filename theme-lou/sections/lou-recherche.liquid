@@ -1,8 +1,8 @@
-<div class="page-hero"><h1>Rechercher</h1>
+<div class="page-hero"><div class="wrap"><h1>Rechercher</h1>
   <form action="{{ routes.search_url }}" method="get" class="atelier" style="margin:18px auto 0" role="search">
     <div class="atelier-row"><label class="sr" for="q">Rechercher</label><input id="q" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Jonc, collier, prénom…"><input type="hidden" name="type" value="product"><button class="btn btn-small" type="submit">Chercher</button></div>
   </form>
-</div>
+</div></div>
 <section class="section"><div class="wrap">
   {%- if search.performed -%}
     <p class="small" style="text-align:center">{{ search.results_count }} résultat(s) pour « {{ search.terms | escape }} »</p>

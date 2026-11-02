@@ -1,0 +1,3 @@
+Modèle : gpt-image-2.5-flare
+Prompt : Retouche minimale : retire entièrement le pendentif prénom « Emma » du collier. La chaîne reste exactement identique (même position, même finesse, même couleur argentée) ; ses deux extrémités s'arrêtent là où commençait et finissait le prénom, en laissant un espace vide entre elles, sans aucun pendentif. Ne change rien d'autre : même buste en velours rose, même fleurs, même cadrage, même lumière.
+Images de base : /tmp/collier-src.png

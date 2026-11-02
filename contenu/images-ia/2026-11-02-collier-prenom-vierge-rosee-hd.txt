@@ -1,0 +1,3 @@
+Modèle : gpt-image-2.5-flare
+Prompt : Retouche minimale : change uniquement la couleur du métal de la chaîne en rosé (finition or rose, rose cuivré doux). Ne change rien d'autre : exactement la même chaîne, au même endroit, avec les deux extrémités au même endroit et l'espace vide entre elles, même buste, mêmes fleurs, même cadrage, même lumière.
+Images de base : contenu/images-ia/2026-11-02-collier-prenom-vierge-hd.png

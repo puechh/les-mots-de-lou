@@ -21,9 +21,7 @@
       {
         "name": "Cordon",
         "values": [
-          "Noir",
-          "Rose poudré",
-          "Beige"
+          "Noir"
         ]
       }
     ],
@@ -50,51 +48,11 @@
           "requiresShipping": true,
           "unitCost": null
         }
-      },
-      {
-        "title": "Rose poudré",
-        "sku": null,
-        "price": "24.90",
-        "compareAtPrice": null,
-        "taxable": true,
-        "inventoryPolicy": "CONTINUE",
-        "selectedOptions": [
-          {
-            "name": "Cordon",
-            "value": "Rose poudré"
-          }
-        ],
-        "image": null,
-        "inventoryItem": {
-          "tracked": false,
-          "requiresShipping": true,
-          "unitCost": null
-        }
-      },
-      {
-        "title": "Beige",
-        "sku": null,
-        "price": "24.90",
-        "compareAtPrice": null,
-        "taxable": true,
-        "inventoryPolicy": "CONTINUE",
-        "selectedOptions": [
-          {
-            "name": "Cordon",
-            "value": "Beige"
-          }
-        ],
-        "image": null,
-        "inventoryItem": {
-          "tracked": false,
-          "requiresShipping": true,
-          "unitCost": null
-        }
       }
     ],
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-bracelet-morse-1.png?v=1793633897",
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-bracelet-morse-1-hd.jpg?v=1793637826",
         "altText": "Le Bracelet Code Secret"
       }
     ]
@@ -112,10 +70,10 @@
       "prenom"
     ],
     "templateSuffix": null,
-    "descriptionHtml": "<p>Son prénom (ou celui de quelqu'un qu'elle aime) écrit d'un trait, tout près du cœur.</p><p>Collier prénom personnalisé en acier inoxydable, finition argentée, dorée ou rosée, livré en coffret cadeau.</p>",
+    "descriptionHtml": "<p>Son prénom (ou celui de quelqu'un qu'elle aime) écrit d'un trait, tout près du cœur.</p><p>Collier prénom personnalisé en acier inoxydable, finition argentée, dorée ou rosée, prénom découpé d'un seul trait.</p>",
     "seo": {
       "title": "Le Collier Prénom personnalisé | Les Mots de Lou",
-      "description": "Collier prénom personnalisé en acier inoxydable, finition argentée, dorée ou rosée, livré en coffret cadeau."
+      "description": "Collier prénom personnalisé en acier inoxydable, finition argentée, dorée ou rosée, prénom découpé d'un seul trait."
     },
     "options": [
       {
@@ -194,15 +152,15 @@
     ],
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-1.png?v=1793633891",
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-1-hd.jpg?v=1793637820",
         "altText": "Le Collier Prénom"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-finitions.png?v=1793633891",
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-finitions-hd.jpg?v=1793637820",
         "altText": "Le Collier Prénom"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-lou-collier-prenom.png?v=1793633891",
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-lou-collier-prenom-hd.jpg?v=1793637820",
         "altText": "Le Collier Prénom"
       }
     ]
@@ -220,10 +178,10 @@
       "souvenir"
     ],
     "templateSuffix": null,
-    "descriptionHtml": "<p>Un petit cœur… et quand on regarde dedans, votre plus belle photo apparaît.</p><p>Collier photo à projection personnalisé : votre photo cachée dans un pendentif cœur. Cadeau souvenir livré en coffret.</p>",
+    "descriptionHtml": "<p>Un petit cœur… et quand on regarde dedans, votre plus belle photo apparaît.</p><p>Collier photo à projection personnalisé : votre photo cachée dans la lentille d'un pendentif cœur. Le cadeau souvenir qui émeut.</p>",
     "seo": {
       "title": "Le Collier Souvenir (photo cachée) personnalisé | Les Mots de Lou",
-      "description": "Collier photo à projection personnalisé : votre photo cachée dans un pendentif cœur. Cadeau souvenir livré en coffret."
+      "description": "Collier photo à projection personnalisé : votre photo cachée dans la lentille d'un pendentif cœur. Le cadeau souvenir qui émeut."
     },
     "options": [
       {
@@ -302,7 +260,7 @@
     ],
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-photo-1.png?v=1793633894",
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-photo-1-hd.jpg?v=1793637823",
         "altText": "Le Collier Souvenir (photo cachée)"
       }
     ]
@@ -320,10 +278,10 @@
       "noel"
     ],
     "templateSuffix": null,
-    "descriptionHtml": "<p>La phrase que vous n'osez pas dire, gravée sur un jonc qu'elle ne quittera plus.</p><p>Jonc gravé personnalisé avec votre message, acier inoxydable, livré en coffret cadeau. L'idée cadeau qui fait pleurer (de joie).</p>",
+    "descriptionHtml": "<p>La phrase que vous n'osez pas dire, gravée sur un jonc qu'elle ne quittera plus.</p><p>Jonc gravé personnalisé avec votre message, en acier inoxydable, finition argentée, dorée ou rosée. L'idée cadeau qui fait pleurer (de joie).</p>",
     "seo": {
       "title": "Le Jonc « Mes Mots » personnalisé | Les Mots de Lou",
-      "description": "Jonc gravé personnalisé avec votre message, acier inoxydable, livré en coffret cadeau. L'idée cadeau qui fait pleurer (de joie)."
+      "description": "Jonc gravé personnalisé avec votre message, en acier inoxydable, finition argentée, dorée ou rosée. L'idée cadeau qui fait pleurer (de joie)."
     },
     "options": [
       {
@@ -404,15 +362,15 @@
     ],
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-jonc-1.png?v=1793633885",
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-jonc-1-hd.jpg?v=1793637815",
         "altText": "Le Jonc « Mes Mots »"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-jonc-finitions.png?v=1793633886",
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-jonc-finitions-hd.jpg?v=1793637815",
         "altText": "Le Jonc « Mes Mots »"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-lou-jonc.png?v=1793633886",
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-lou-jonc-hd.jpg?v=1793637815",
         "altText": "Le Jonc « Mes Mots »"
       }
     ]

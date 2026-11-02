@@ -1,0 +1,3 @@
+Modèle : gpt-image-2.5-flare
+Prompt : Retouche minimale : change uniquement la couleur du métal du jonc en acier rosé (finition or rose, rose cuivré doux et brillant). Ne change rien d'autre : exactement la même forme, la même position, la même largeur, les mêmes reflets et ombres, la même face avant lisse et vierge sans aucune gravure, le même cadrage, la même boîte rose, le même tissu, la même lumière.
+Images de base : contenu/images-ia/2026-11-02-produit-jonc-vierge-hd.png
