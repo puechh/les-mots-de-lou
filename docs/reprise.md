@@ -1,5 +1,8 @@
 # Reprendre le travail dans une nouvelle session
 
+## 🎭 Avatar de Lou (02/11/2026 soir)
+- Planche de référence prête (`contenu/lou/reference/`, à faire valider par l'utilisateur) ; méthode : `gpt-image-2.5-flare` en retouche avec 2 images de la planche (`docs/avatar-lou.md`). Vidéos : clé fal.ai à ajouter (Kling/Veo).
+
 ## 🔥 État au 02/11/2026 (1re session sur ce dépôt)
 - Environnement cloud OK : variables `SHOPIFY_*` présentes (boutique `xs4brq-7y.myshopify.com`, app « Claude api LOU »).
 - ❌ **Shopify inaccessible** : la politique réseau de l'environnement bloque `xs4brq-7y.myshopify.com` (403 au proxy) →

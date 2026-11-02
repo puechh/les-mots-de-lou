@@ -22,3 +22,13 @@
 - L'utilisateur veut **un seul visage (Lou), le plus réaliste possible** → session Claude séparée « avatar de Lou ultra-réaliste »
   créée pour chercher la meilleure méthode (rapport attendu dans `docs/avatar-lou.md`, planche dans `contenu/lou/reference/`).
 - Annonces AliExpress repérées (non vérifiées) : `produits/sourcing-aliexpress.md`. Fiches de la bêta : `produits/produits.json`.
+
+## 2026-11-02 (soir) — Avatar de Lou : méthode et planche de référence (session parallèle, utilisateur absent)
+- Recherche web (nov. 2026) sur les égéries IA cohérentes (OpenAI, Nano Banana, Flux.2, Seedream, Midjourney, Higgsfield, LoRA,
+  vidéo Kling/Veo/Sora/Runway/HeyGen) → rapport `docs/avatar-lou.md`.
+- 3 essais de réalisme (gpt-image-2, 2.5-flare, 2.5-sunburst) à partir du visage C → **flare retenu** (peau la plus naturelle,
+  11 s, pas de 502). Visage C conservé.
+- Planche de référence (face, trois-quarts, profil, sourire, mains) dans `contenu/lou/reference/` + `planche-lou.jpg`, prompts en .txt.
+  Outil `contenu/lou/generer_lou.py` (sortie dans contenu/lou/, nouvel essai auto sur 502). 8 images au total (qualité medium).
+- Recommandation vidéo : compte fal.ai (Kling 3.0 / Veo) — à créer par l'utilisateur si accord (étapes dans le rapport).
+- ⚖️ Décret n° 2026-233 du 30/03/2026 (modalités de la mention « image virtuelle ») signalé, à vérifier sur Légifrance.
