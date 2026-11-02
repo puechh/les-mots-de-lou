@@ -41,3 +41,9 @@
   (conseil de la session avatar, `docs/avatar-lou.md`). Portrait et avatar du thème = planche `contenu/lou/reference/`.
 - Script `scripts/construire_boutique.py` (produits, images, collections, pages, menus, politiques, offre -50 %, thème).
   Veille légale faite (AI Act art. 50 applicable depuis le 02/08/2026 ; douane 3 €/catégorie).
+
+## 2026-11-02 (fin de journée) — Session d'envoi de la bêta sur Shopify : bloquée
+- `shopify.py check` → 403 du proxy sur `xs4brq-7y.myshopify.com` (journal du proxy : « policy denial »). Le domaine n'est
+  toujours pas autorisé dans l'environnement « Les Mots de Lou » (ou la session a été lancée avant le changement).
+- Rien envoyé, rien modifié côté Shopify. Consigne ajoutée en haut de `docs/reprise.md` (où cliquer pour autoriser le domaine,
+  puis nouvelle session et `construire_boutique.py --publier`).

@@ -1,5 +1,15 @@
 # Reprendre le travail dans une nouvelle session
 
+## ⛔ 02/11/2026 (session d'envoi de la bêta) — Shopify ENCORE BLOQUÉ, rien n'a été envoyé
+- `python3 scripts/shopify.py check` → **403 du proxy** sur `xs4brq-7y.myshopify.com` (politique réseau de l'environnement).
+- **À faire par l'utilisateur** : sur claude.ai/code, menu de l'environnement cloud **« Les Mots de Lou »** (barre de titre
+  de la session) → **Modifier** → **Accès réseau** : niveau « Limité » (ou « Personnalisé ») et ajouter dans
+  **Domaines autorisés** : `*.myshopify.com` (ou exactement `xs4brq-7y.myshopify.com`), en laissant cochée la case
+  « Autoriser les gestionnaires de paquets ». Enregistrer, puis **ouvrir une NOUVELLE session** (le réglage ne s'applique
+  pas aux sessions déjà lancées). Aide : https://code.claude.com/docs/en/cloud-environments#network-access
+- Ensuite, dans la nouvelle session : `python3 scripts/shopify.py check` (vérifier que c'est Les Mots de Lou),
+  puis `python3 scripts/construire_boutique.py --publier` (jamais exécuté contre l'API réelle : corriger si une mutation est refusée).
+
 ## 🔥 État au 02/11/2026 fin d'après-midi — BÊTA PRÊTE (carte blanche, utilisateur absent)
 **Tout est dans le dépôt ; l'envoi sur Shopify se fait avec `python3 scripts/construire_boutique.py --publier`**
 (produits + images, collections, pages, menus, politiques, offre « 2e bijou à -50 % », thème créé ET publié).
