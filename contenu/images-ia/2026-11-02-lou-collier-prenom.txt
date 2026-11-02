@@ -1,0 +1,3 @@
+Modèle : gpt-image-2
+Prompt : Same woman (keep her face, red hair, blue-grey eyes and features exactly identical). New scene: portrait at home by a window, wearing a cream top with a delicate silver-tone cursive name necklace reading 'Lou', she touches the pendant with a playful smile. Blush pink tones, soft daylight, photorealistic.
+Images de base : contenu/lou/reference-visage.png

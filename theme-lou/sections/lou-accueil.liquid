@@ -1,0 +1,134 @@
+{%- assign jonc = all_products['jonc-mes-mots'] -%}
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-txt rv">
+      <span class="eyebrow">💗 Bijoux personnalisés · gravés pour vous</span>
+      <h1>Vos mots,<br><em>gravés pour toujours.</em></h1>
+      <p class="lead">Une phrase, un prénom, une date, un mot secret… Écrivez ce que vous n'osez pas dire. On le grave sur un bijou qu'elle ne quittera plus.</p>
+      <div class="atelier">
+        <label for="atelier-texte">✍️ Essayez : écrivez vos mots</label>
+        <div class="atelier-row">
+          <input id="atelier-texte" type="text" maxlength="30" placeholder="Tu es ma personne" autocomplete="off">
+          <a class="btn btn-small" id="atelier-lien" data-base="{{ jonc.url | default: '/products/jonc-mes-mots' }}" href="{{ jonc.url | default: '/products/jonc-mes-mots' }}">Graver</a>
+        </div>
+        <div class="apercu" id="atelier-apercu" aria-live="polite"></div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn" href="/collections/all">Je crée mon bijou</a>
+        <a class="btn ghost" href="#le-test">Le test des mots ✨</a>
+      </div>
+    </div>
+    <div class="hero-visu rv">
+      <div class="hero-photo"><img src="{{ 'lou-hero.webp' | asset_url }}" alt="Lou, l'égérie de la marque, écrit une carte entourée de cadeaux" width="900" height="1125" fetchpriority="high"></div>
+      <div class="sticker s1"><span aria-hidden="true">✍️</span><span class="hand">Gravé avec vos mots</span></div>
+      <div class="sticker s2"><span aria-hidden="true">🎁</span> 2e bijou à -50 %</div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+  {%- for i in (1..2) -%}<span>Tu es ma personne</span><span>Sœurs pour toujours</span><span>Merci pour tout, maman</span><span>12.07.2019</span><span>Toi, toujours</span><span>Ma partenaire de bêtises</span><span>Crois en toi</span><span>Même loin, tout près</span>{%- endfor -%}
+</div></div>
+
+<section class="section" id="bijoux">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="hand">Les coups de cœur de Lou</span>
+      <h2>Choisissez le bijou, <em>on grave vos mots</em></h2>
+      <p>Acier inoxydable qui ne noircit pas, finition argentée, dorée ou rosée, livré dans un écrin cadeau. Prix de lancement.</p>
+    </div>
+    <div class="grille">
+      {%- for p in collections.all.products limit: 8 -%}
+        {% render 'carte-produit', p: p %}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section band" id="le-test">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="hand">30 secondes, 4 questions</span>
+      <h2>Le test des mots <em>de Lou</em></h2>
+      <p>Vous ne savez pas quoi offrir, ni quoi écrire ? Répondez à 4 questions : Lou trouve le bijou… et les mots.</p>
+    </div>
+    {% render 'test-mots' %}
+  </div>
+</section>
+
+<section class="section" id="machine-a-mots">
+  <div class="wrap machine">
+    <div class="rv">
+      <span class="hand">En panne d'inspiration ?</span>
+      <h2>La machine <em>à mots</em></h2>
+      <p class="small" style="margin-top:12px">Choisissez un thème, tirez la manette… et gravez la phrase qui vous fait sourire. (Promis, Lou les a toutes testées sur ses copines.)</p>
+    </div>
+    <div class="machine-boite rv" id="machine" data-produit="{{ jonc.url | default: '/products/jonc-mes-mots' }}">
+      <div class="machine-cats" role="group" aria-label="Thème des phrases">
+        <button class="chip is-on" data-cat="amour" aria-pressed="true">💞 Amour</button>
+        <button class="chip" data-cat="amitie" aria-pressed="false">👯‍♀️ Amitié</button>
+        <button class="chip" data-cat="famille" aria-pressed="false">🏡 Famille</button>
+        <button class="chip" data-cat="drole" aria-pressed="false">😂 Drôle</button>
+        <button class="chip" data-cat="courage" aria-pressed="false">🌈 Courage</button>
+      </div>
+      <div class="machine-fenetre"><p class="machine-phrase" aria-live="polite">Tu es ma personne</p></div>
+      <div class="machine-actions">
+        <button class="btn" id="machine-tirer">🎰 Tirer des mots</button>
+        <a class="btn ghost" id="machine-graver" href="{{ jonc.url | default: '/products/jonc-mes-mots' }}">Graver cette phrase</a>
+        <button class="chip" id="machine-copier">✂️ Copier</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <div class="head rv"><span class="hand">Simple comme un petit mot</span><h2>Comment ça <em>marche</em> ?</h2></div>
+    <div class="etapes">
+      <div class="etape rv"><span class="emo" aria-hidden="true">✍️</span><h3>Vous écrivez</h3><p>Une phrase, un prénom, une photo ou un mot secret. L'aperçu se met à jour en direct.</p></div>
+      <div class="etape rv"><span class="emo" aria-hidden="true">✨</span><h3>On grave</h3><p>Votre bijou est fabriqué rien que pour vous, avec vos mots, en 2 à 4 jours.</p></div>
+      <div class="etape rv"><span class="emo" aria-hidden="true">🥹</span><h3>Elle craque</h3><p>Livré dans un écrin cadeau, prêt à offrir. Les larmes de joie ne sont pas incluses, mais fréquentes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap lou">
+    <figure class="lou-photo rv">
+      <img src="{{ 'lou-portrait.webp' | asset_url }}" alt="Portrait de Lou, l'égérie de la marque" width="700" height="875" loading="lazy">
+      <figcaption>Coucou, moi c'est Lou ✨</figcaption>
+    </figure>
+    <div class="rv">
+      <span class="hand">Qui est Lou ?</span>
+      <h2>Celle qui collectionne <em>les mots qu'on n'ose pas dire</em></h2>
+      <div class="lou-note" style="margin-top:20px">
+        <p>Je crois qu'un « je t'aime », un « merci » ou un « je suis fière de toi » valent plus que tous les cadeaux du monde.</p>
+        <p>Alors on les grave. Pour qu'ils restent, même quand on oublie de les dire.</p>
+        <p>— Lou 💗</p>
+      </div>
+      <p class="mention-virtuelle">Lou est l'égérie virtuelle de la marque : son image est créée avec l'aide de l'IA. <a href="/pages/qui-est-lou">En savoir plus</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <div class="reassure">
+      <div class="rv"><span class="emo" aria-hidden="true">🎄</span>Pour Noël<small>commandez avant le 1er décembre</small></div>
+      <div class="rv"><span class="emo" aria-hidden="true">🎀</span>Écrin cadeau<small>prêt à offrir</small></div>
+      <div class="rv"><span class="emo" aria-hidden="true">💧</span>Acier inoxydable<small>ne noircit pas</small></div>
+      <div class="rv"><span class="emo" aria-hidden="true">🔒</span>Paiement sécurisé<small>CB, PayPal, Apple Pay</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="head rv"><span class="hand">On vous dit tout</span><h2>Vos <em>questions</em></h2></div>
+    {% render 'faq' %}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Accueil Les Mots de Lou", "settings": [] }
+{% endschema %}

@@ -1,0 +1,3 @@
+Modèle : gpt-image-2
+Prompt : Same woman (keep her face, red hair, blue-grey eyes and features exactly identical). New scene: close-up of her laughing softly, sitting at a café table, her wrist in the foreground wearing a thin polished silver-tone open cuff bangle engraved 'Tu es ma personne'. Blush pink and cream tones, soft daylight, photorealistic, no text other than the engraving.
+Images de base : contenu/lou/reference-visage.png

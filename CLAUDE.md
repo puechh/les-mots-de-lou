@@ -16,6 +16,11 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
 - **Tout en IA** : photos **et vidéos** (pas de tournage).
 - **Pub** : environ 300 € par boutique + **420 € de crédit Pinterest offert**. Pinterest en priorité (femmes 25-55 ans), puis Meta/TikTok.
 - Leçons tirées de Corps-Confiant (pièges Shopify, Klaviyo, cookies, pubs) : `docs/lecons-corps-confiant.md`.
+- **Bêta construite le 02/11/2026** (carte blanche) : thème `theme-lou/`, fiches `produits/produits.json`, pages `contenu/pages/`,
+  politiques `contenu/politiques/`, tout envoyé sur Shopify par `scripts/construire_boutique.py`. Banc d'essai local :
+  `python3 scripts/banc_theme.py` (http://localhost:8765). Images du thème : `python3 scripts/assets_theme.py`.
+- ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
+  légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).
 
 ## Mémoire du projet sur GitHub (règle obligatoire)

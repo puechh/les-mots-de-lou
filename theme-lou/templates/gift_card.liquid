@@ -1,0 +1,3 @@
+{% layout none %}
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carte cadeau {{ shop.name }}</title>{{ 'lou.css' | asset_url | stylesheet_tag }}</head>
+<body><div class="bientot" style="margin:auto"><h1>Votre carte cadeau <em>{{ shop.name }}</em></h1><p class="prix" style="font-size:2rem">{{ gift_card.balance | money }}</p><p>Code : <b>{{ gift_card.code | format_code }}</b></p><a class="btn" href="{{ shop.url }}">Aller à la boutique</a></div></body></html>

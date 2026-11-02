@@ -1,0 +1,143 @@
+{%- assign c = product.metafields.lou.contenu.value -%}
+{%- assign v0 = product.selected_or_first_available_variant -%}
+<div class="wrap fiche" id="fiche" data-apercu="{{ c.apercu | default: 'jonc' }}">
+  <div class="fiche-galerie">
+    <div class="galerie-principale" id="galerie">
+      <div class="vue-apercu" id="vue-apercu" aria-live="polite"></div>
+      {%- for img in product.images -%}
+        {{ img | image_url: width: 1100 | image_tag: alt: product.title, class: 'vue-img', loading: 'lazy', style: 'opacity:0', widths: '500,800,1100', sizes: '(min-width: 960px) 50vw, 100vw' }}
+      {%- endfor -%}
+    </div>
+    <div class="vignettes" role="tablist" aria-label="Images du bijou">
+      <button class="v-apercu is-on" type="button" data-vue="-1" aria-label="Aperçu de votre gravure">✍️<br>Mon<br>aperçu</button>
+      {%- for img in product.images -%}
+        <button type="button" data-vue="{{ forloop.index0 }}" aria-label="Image {{ forloop.index }}">{{ img | image_url: width: 160 | image_tag: alt: '', loading: 'lazy' }}</button>
+      {%- endfor -%}
+    </div>
+    <p class="tiny">L'aperçu est une simulation pour vous aider à choisir : le rendu réel de la gravure (taille, police) peut légèrement varier.</p>
+  </div>
+
+  <div class="fiche-info">
+    <span class="eyebrow">💗 Personnalisé pour vous</span>
+    <h1>{{ product.title }}</h1>
+    {%- if c.accroche %}<p class="hand" style="margin:0">{{ c.accroche }}</p>{% endif -%}
+    <div class="fiche-prix"><span class="prix" id="prix">{{ v0.price | money }}</span><span class="etiquette">Prix de lancement</span></div>
+    {%- if c.benefices -%}
+      <ul class="benefices">{%- for b in c.benefices -%}<li>{{ b }}</li>{%- endfor -%}</ul>
+    {%- endif -%}
+
+    <form id="form-produit" action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" novalidate>
+      <input type="hidden" name="id" id="variante" value="{{ v0.id }}">
+      <input type="hidden" name="quantity" value="1">
+      <div class="bloc">
+        {%- unless product.has_only_default_variant -%}
+          <div>
+            <div class="bloc-titre"><span>1. {{ product.options.first }} : <span id="finition-nom">{{ v0.option1 }}</span></span></div>
+            <div class="finitions" style="margin-top:10px" role="radiogroup" aria-label="{{ product.options.first }}">
+              {%- for v in product.variants -%}
+                {%- liquid
+                  assign coul = '#d8d8de'
+                  case v.option1
+                    when 'Dorée'
+                      assign coul = 'linear-gradient(135deg,#fff1c9,#d7a647)'
+                    when 'Rosée'
+                      assign coul = 'linear-gradient(135deg,#ffe4dc,#d99a8c)'
+                    when 'Argentée'
+                      assign coul = 'linear-gradient(135deg,#ffffff,#b9bcc6)'
+                    when 'Noir'
+                      assign coul = '#222'
+                    when 'Rose poudré'
+                      assign coul = '#f2b8c6'
+                    when 'Beige'
+                      assign coul = '#d9c3a5'
+                  endcase
+                -%}
+                <button type="button" class="finition{% if v.id == v0.id %} is-on{% endif %}" role="radio" aria-checked="{% if v.id == v0.id %}true{% else %}false{% endif %}" data-id="{{ v.id }}" data-nom="{{ v.option1 | escape }}" data-prix="{{ v.price | money }}"{% if v.featured_image %} data-img="{{ v.featured_image.position | minus: 1 }}"{% endif %}><span class="pastille" style="background:{{ coul }}"></span>{{ v.option1 }}</button>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endunless -%}
+
+        {%- assign num = 2 -%}
+        {%- if product.has_only_default_variant %}{% assign num = 1 %}{% endif -%}
+        {%- for f in c.perso -%}
+          {%- case f.type -%}
+            {%- when 'texte' -%}
+              <div class="champ">
+                <label for="p-{{ forloop.index }}"><span>{{ num }}. {{ f.cle }}{% if f.requis %} *{% endif %}</span><small class="compteur" data-max="{{ f.max }}">0 / {{ f.max }}</small></label>
+                <input type="text" id="p-{{ forloop.index }}" class="perso-texte{% if f.majuscules %} maj{% endif %}" name="properties[{{ f.cle }}]" maxlength="{{ f.max }}" placeholder="Ex. : {{ f.exemple }}" {% if f.requis %}required{% endif %} autocomplete="off" data-principal="{% if forloop.first %}1{% endif %}">
+                {%- if c.apercu == 'jonc' -%}
+                  <div class="suggestions" aria-label="Idées de Lou"><span class="small">Idées de Lou :</span>
+                    <button type="button">Tu es ma personne</button><button type="button">Sœurs pour toujours</button><button type="button">Merci pour tout, maman</button><button type="button">Toi, toujours</button><button type="button">Crois en toi</button>
+                  </div>
+                {%- elsif c.apercu == 'morse' -%}
+                  <p class="tiny">Lettres A à Z uniquement (sans accent). Votre mot devient des points (•) et des traits (—).</p>
+                {%- endif -%}
+              </div>
+            {%- when 'choix' -%}
+              <div class="champ">
+                <label><span>{{ num }}. {{ f.cle }}</span></label>
+                <input type="hidden" name="properties[{{ f.cle }}]" id="police" value="{{ f.valeurs.first }}">
+                <div class="finitions" role="radiogroup" aria-label="{{ f.cle }}">
+                  {%- for val in f.valeurs -%}
+                    <button type="button" class="finition police-btn{% if forloop.first %} is-on{% endif %}" role="radio" aria-checked="{% if forloop.first %}true{% else %}false{% endif %}" data-police="{{ val }}"><span class="grave {{ val | downcase }}" style="font-size:1.1rem;padding-left:8px">Abc</span>{{ val }}</button>
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- when 'photo' -%}
+              <div class="champ">
+                <label for="p-photo"><span>{{ num }}. Votre photo *</span></label>
+                <label class="depot" id="depot" for="p-photo">
+                  <span style="font-size:2rem" aria-hidden="true">📸</span>
+                  <b>Choisir une photo</b>
+                  <span class="tiny">Nette, bien éclairée, visage au centre (JPG ou PNG)</span>
+                  <input type="file" id="p-photo" name="properties[{{ f.cle }}]" accept="image/jpeg,image/png,image/heic,image/webp" required>
+                </label>
+              </div>
+          {%- endcase -%}
+          {%- assign num = num | plus: 1 -%}
+        {%- endfor -%}
+
+        <label class="verif"><input type="checkbox" id="verif" required> <span>J'ai vérifié l'orthographe : mon bijou sera fabriqué exactement comme je l'ai écrit.</span></label>
+        <button class="btn btn-full" type="submit" id="ajouter">Ajouter au panier · <span id="prix-btn">{{ v0.price | money }}</span></button>
+        <p class="tiny" id="form-erreur" role="alert" style="color:var(--framboise-f)"></p>
+      </div>
+    </form>
+
+    <div class="duo-pub"><span aria-hidden="true">🎁</span><span>Le 2e bijou est à <b>-50 %</b> : faites-vous plaisir aussi !</span></div>
+    <div class="delai">
+      <span>✨ <b>Fabrication</b> rien que pour vous : 2 à 4 jours</span>
+      <span>🚚 <b>Livraison</b> France &amp; Belgique : 8 à 12 jours ouvrés, avec suivi</span>
+      <span>🎄 <b>Pour Noël</b> : commandez avant le <b>1er décembre</b></span>
+    </div>
+
+    <div class="accordeons">
+      {%- if product.description != blank -%}<details open><summary>Le bijou</summary><div>{{ product.description }}</div></details>{%- endif -%}
+      <details><summary>Matière &amp; entretien</summary><div>Acier inoxydable : il ne noircit pas et supporte l'eau du quotidien. Les finitions dorée et rosée sont des finitions colorées sur acier (ce n'est pas de l'or). Pour garder l'éclat, évitez le parfum directement sur le bijou et rangez-le dans son écrin.</div></details>
+      <details><summary>Livraison</summary><div>Fabrication en 2 à 4 jours, puis livraison en 8 à 12 jours ouvrés en France et en Belgique, avec numéro de suivi. <a href="/pages/livraison-retours">Tout savoir</a>.</div></details>
+      <details><summary>Retours &amp; garantie</summary><div>Ce bijou est fabriqué selon vos indications : il ne bénéficie pas du droit de rétractation (art. L221-28 du Code de la consommation). Vous restez couverte par la garantie légale de conformité : un souci à la réception ? Écrivez-nous avec une photo, on trouve une solution.</div></details>
+    </div>
+  </div>
+</div>
+<div class="barre-achat" id="barre-achat"><span class="prix">{{ v0.price | money }}</span><a class="btn" href="#form-produit">Personnaliser</a></div>
+
+<section class="section band">
+  <div class="wrap">
+    <div class="head"><span class="hand">Le 2e est à -50 %…</span><h2>Et pour <em>l'offrir à deux</em> ?</h2></div>
+    <div class="grille">
+      {%- for p in collections.all.products limit: 5 -%}
+        {%- unless p.handle == product.handle -%}{% render 'carte-produit', p: p %}{%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Product", "name": {{ product.title | json }}, "image": {% if product.featured_image %}{{ product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }}{% else %}""{% endif %},
+  "description": {{ c.seo | default: product.description | strip_html | json }}, "brand": { "@type": "Brand", "name": {{ shop.name | json }} },
+  "offers": { "@type": "Offer", "priceCurrency": "EUR", "price": {{ v0.price | divided_by: 100.0 | json }}, "availability": "https://schema.org/InStock", "url": {{ request.origin | append: product.url | json }} } }
+</script>
+
+{% schema %}
+{ "name": "Fiche produit Lou", "settings": [] }
+{% endschema %}

@@ -1,0 +1,35 @@
+<div class="page-hero">
+  <span class="hand">Les bijoux de Lou</span>
+  <h1>{% if collection.handle == 'all' %}Tous nos <em>bijoux à mots</em>{% else %}{{ collection.title }}{% endif %}</h1>
+  <p>{% if collection.description != blank %}{{ collection.description | strip_html }}{% else %}Choisissez votre bijou, écrivez vos mots, on s'occupe du reste. 2e bijou à -50 %.{% endif %}</p>
+</div>
+<section class="section">
+  <div class="wrap">
+    <div class="filtres" role="group" aria-label="Filtrer les bijoux">
+      <button class="chip is-on" data-f="" aria-pressed="true">Tout voir</button>
+      <button class="chip" data-f="jonc" aria-pressed="false">💬 Joncs</button>
+      <button class="chip" data-f="collier" aria-pressed="false">💗 Colliers</button>
+      <button class="chip" data-f="bracelet" aria-pressed="false">🤫 Bracelets</button>
+    </div>
+    {%- paginate collection.products by 24 -%}
+    <div class="grille" id="grille">
+      {%- for p in collection.products -%}
+        <div class="carte-wrap" data-tags="{{ p.tags | join: ' ' }}" style="display:contents">{% render 'carte-produit', p: p %}</div>
+      {%- else -%}
+        <p class="small">Les bijoux arrivent très vite ✨</p>
+      {%- endfor -%}
+    </div>
+    {%- endpaginate -%}
+  </div>
+</section>
+<script>
+  document.querySelectorAll(".filtres .chip").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll(".filtres .chip").forEach(function (x) { x.classList.remove("is-on"); x.setAttribute("aria-pressed", "false"); });
+      b.classList.add("is-on"); b.setAttribute("aria-pressed", "true");
+      var f = b.getAttribute("data-f");
+      document.querySelectorAll(".carte-wrap").forEach(function (w) { var c = w.firstElementChild; if (c) c.style.display = !f || (" " + w.getAttribute("data-tags") + " ").indexOf(" " + f + " ") > -1 ? "" : "none"; });
+    });
+  });
+</script>
+{% schema %}{ "name": "Collection Lou", "settings": [] }{% endschema %}

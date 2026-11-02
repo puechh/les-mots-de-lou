@@ -1,0 +1,2 @@
+Modèle : gpt-image-2
+Prompt : Photorealistic e-commerce product photography, soft diffused daylight, blush pink and cream palette, shallow depth of field, crisp metal reflections, minimal and elegant, no logo, no watermark. Three dainty cursive name necklaces in polished stainless steel laid on pink silk: silver tone reading 'Jade', gold tone reading 'Léa', rose gold tone reading 'Chloé'. Top view, fine chains.
