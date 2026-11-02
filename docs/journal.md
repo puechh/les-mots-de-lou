@@ -76,3 +76,16 @@
   `OPENAI_IMAGE_MODEL=gpt-image-2.5-flare` (gpt-image-2 renvoyait 502).
 - À faire quand le fournisseur sera choisi : remplacer la photo par celle du vrai jonc vierge, puis réajuster la courbe
   (`d="M 90 352 Q 470 425 865 250"` dans `sections/lou-accueil.liquid`).
+
+## 2026-11-02 (soir, suite 2) — Atelier : la gravure épouse vraiment le jonc
+- Demande utilisateur : texte qui suit la forme du bracelet, aspect vraiment gravé, aucune lettre qui dépasse.
+- Mesure des bords de la face avant sur la photo (profil de luminosité colonne par colonne : chute « liseré brillant →
+  face » pour le bord haut, ligne d'ombre pour le bord bas ; lissage polynôme degré 4, écart < 2 px) + extrémités du
+  jonc (x ≈ 130 et 950 → ellipse cx 540, a 410 dans l'image 1024). Tables dans `JONC` de `theme-lou/assets/lou.js`
+  (repère du recadrage 920×460).
+- Rendu canvas (`LOU_graverJonc`) : texte écrit à plat sur une bande « déroulée », taille calculée pour que l'encre
+  tienne dans 78 % de la hauteur de la face ; repli colonne par colonne entre bord haut et bord bas (verticales
+  verticales, resserrement vers les côtés x = cx + a·sin θ) ; découpe à la forme exacte de la face (rien ne dépasse) ;
+  incrustation : creux sombre en « multiplier » (suit les reflets du métal) + liseré clair en « écran » sous le trait.
+- Testé au banc (ordinateur ×2, iPhone 13 ; textes court, long, jambages, 3 lettres ; aucune erreur JS), envoyé sur le
+  thème Shopify (non publié). Captures `docs/captures/atelier-*`.

@@ -146,22 +146,85 @@
       "</svg>";
   };
 
+  /* ---------- Gravure sur la photo du jonc (accueil) ----------
+     Bords de la face avant mesurés sur assets/jonc-vierge.webp (repère 920×460, un point tous les 10 px à partir de x=100).
+     Le texte est écrit à plat sur une bande « déroulée », puis replié colonne par colonne entre le bord haut et le bord bas
+     de la face (les verticales restent verticales, comme sur un cylindre) ; il se resserre vers les côtés (x = cx + a·sin θ).
+     Si on change la photo : re-mesurer haut/bas/cx/a (méthode dans docs/journal.md, 02/11/2026). */
+  var JONC = {
+    x0: 100, pas: 10, cx: 450, a: 410, xg: 125, xd: 800, zone: 0.78, ecrase: 0.85,
+    haut: [281.6,286.6,291.3,295.7,299.7,303.5,307.0,310.3,313.3,316.1,318.6,321.0,323.1,325.1,326.8,328.4,329.9,331.2,332.3,333.4,334.2,335.0,335.7,336.2,336.6,337.0,337.2,337.4,337.5,337.5,337.4,337.3,337.1,336.8,336.4,336.0,335.5,335.0,334.4,333.7,333.0,332.1,331.3,330.3,329.3,328.2,327.0,325.8,324.4,323.0,321.5,319.8,318.1,316.2,314.3,312.2,309.9,307.5,305.0,302.3,299.4,296.4,293.2,289.7,286.1,282.2,278.1,273.8,269.1,264.3,259.1,253.6,247.9,241.8],
+    bas: [327.1,332.4,337.5,342.2,346.6,350.7,354.5,358.1,361.4,364.4,367.2,369.8,372.2,374.4,376.4,378.3,379.9,381.4,382.7,383.9,385.0,385.9,386.7,387.4,387.9,388.4,388.7,389.0,389.1,389.2,389.2,389.1,388.9,388.6,388.3,387.8,387.3,386.8,386.1,385.4,384.6,383.7,382.8,381.8,380.6,379.4,378.1,376.8,375.3,373.7,372.0,370.2,368.3,366.3,364.1,361.8,359.4,356.8,354.1,351.1,348.1,344.8,341.3,337.6,333.8,329.6,325.3,320.7,315.8,310.7,305.2,299.5,293.5,287.1]
+  };
+  var bordJonc = function (t, x) {
+    var k = (x - JONC.x0) / JONC.pas, i = Math.max(0, Math.min(t.length - 2, Math.floor(k))), f = k - i;
+    return t[i] + (t[i + 1] - t[i]) * f;
+  };
+  var calque = function (w, h) { var c = document.createElement("canvas"); c.width = w; c.height = h; return c; };
+  var teinter = function (src, couleur) {
+    var c = calque(src.width, src.height), x = c.getContext("2d");
+    x.drawImage(src, 0, 0); x.globalCompositeOperation = "source-in"; x.fillStyle = couleur; x.fillRect(0, 0, c.width, c.height);
+    return c;
+  };
+  window.LOU_graverJonc = function (canvas, img, texte) {
+    var W = canvas.clientWidth, H = canvas.clientHeight;
+    if (!W || !H || !img.complete || !img.naturalWidth) return;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+    var s = canvas.width / 920, ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    if (!texte) return;
+    var J = JONC, thG = Math.asin((J.xg - J.cx) / J.a), thD = Math.asin((J.xd - J.cx) / J.a), dTh = thD - thG;
+    // 1. Bande déroulée (sur-échantillonnée ×2)
+    var hFace = 52, SH = Math.ceil(hFace * J.zone / J.ecrase * s * 2), SW = Math.ceil(J.a * dTh * s * 2);
+    var bande = calque(SW, SH), b = bande.getContext("2d"), police = '"Great Vibes", cursive';
+    b.font = "100px " + police;
+    var m = b.measureText(texte), ref = b.measureText("Tu es ma personne");
+    var asc = Math.max(m.actualBoundingBoxAscent || 80, ref.actualBoundingBoxAscent || 80);
+    var desc = Math.max(m.actualBoundingBoxDescent || 30, ref.actualBoundingBoxDescent || 30);
+    var gauche = m.actualBoundingBoxLeft, droite = m.actualBoundingBoxRight;
+    var encre = (gauche != null && droite != null) ? gauche + droite : m.width;
+    var k = Math.min(SH * 0.96 / (asc + desc), SW * 0.94 / encre);   // l'encre tient toujours dans la bande
+    b.font = (100 * k).toFixed(2) + "px " + police;
+    b.textAlign = "left"; b.fillStyle = "#000";   // mesures faites en alignement « start » : on centre l'encre à la main
+    b.fillText(texte, SW / 2 - encre * k / 2 + (gauche || 0) * k, SH / 2 + (asc - desc) / 2 * k);
+    // 2. Repli colonne par colonne sur la face avant, avec découpe à la forme exacte de la face
+    var masque = calque(canvas.width, canvas.height), mc = masque.getContext("2d"), x, X;
+    mc.beginPath();
+    for (x = J.xg - 15; x <= J.xd + 15; x += 5) mc.lineTo(x * s, (bordJonc(J.haut, x) + 1.5) * s);
+    for (x = J.xd + 15; x >= J.xg - 15; x -= 5) mc.lineTo(x * s, (bordJonc(J.bas, x) - 1.5) * s);
+    mc.closePath(); mc.clip();
+    for (X = Math.floor(J.xg * s); X <= Math.ceil(J.xd * s); X++) {
+      x = X / s;
+      var th = Math.asin(Math.max(-1, Math.min(1, (x - J.cx) / J.a)));
+      var u = (th - thG) / dTh;
+      if (u < 0 || u > 1) continue;
+      var srcL = Math.max(1, SW / (J.a * Math.cos(th) * dTh * s));      // largeur de bande vue par 1 px d'écran
+      var hb = bordJonc(J.haut, x), bb = bordJonc(J.bas, x), h = bb - hb;
+      mc.drawImage(bande, Math.max(0, Math.min(SW - srcL, u * SW - srcL / 2)), 0, srcL, SH, X, (hb + h * (1 - J.zone) / 2) * s, 1, h * J.zone * s);
+    }
+    // 3. Incrustation dans le métal : reflet clair sous le trait (bord du sillon), puis creux sombre (multiplié = suit les reflets)
+    var flou = "blur(" + (0.35 * dpr).toFixed(2) + "px)", dy = Math.max(1, 0.9 * s);
+    ctx.save();
+    if ("filter" in ctx) ctx.filter = flou;
+    ctx.globalCompositeOperation = "screen"; ctx.globalAlpha = 0.55; ctx.drawImage(teinter(masque, "#ffffff"), 0, dy);
+    ctx.globalCompositeOperation = "multiply"; ctx.globalAlpha = 0.9; ctx.drawImage(teinter(masque, "#55494f"), 0, 0);
+    ctx.globalAlpha = 0.35; ctx.drawImage(teinter(masque, "#3a3034"), 0, -dy * 0.5);
+    ctx.restore();
+  };
+
   /* ---------- Accueil : atelier (on tape, ça se grave) ---------- */
   var atelier = $("#atelier-texte");
   if (atelier) {
-    var lien = $("#atelier-lien"), tp = $("#atelier-apercu textPath"), courbe = $("#atelier-courbe");
-    var longueurMax = courbe && courbe.getTotalLength ? courbe.getTotalLength() * 0.56 : 480;
+    var lien = $("#atelier-lien"), toile = $("#atelier-gravure"), photo = $("#atelier-apercu img");
     var maj = function () {
       var v = atelier.value.slice(0, 30);
-      if (tp) {
-        var txt = tp.parentNode;
-        tp.textContent = v || "Tu es ma personne";
-        txt.setAttribute("font-size", 50);  // le texte rétrécit s'il dépasse la face avant du jonc
-        var l = txt.getComputedTextLength ? txt.getComputedTextLength() : 0;
-        if (l > longueurMax) txt.setAttribute("font-size", Math.max(24, 50 * longueurMax / l).toFixed(1));
-      }
+      if (toile && photo && toile.getContext) window.LOU_graverJonc(toile, photo, v || "Tu es ma personne");
       if (lien) lien.href = lien.getAttribute("data-base") + (v ? "?texte=" + encodeURIComponent(v) : "");
     };
+    if (photo && !photo.complete) photo.addEventListener("load", function () { maj(); });
+    var attente; window.addEventListener("resize", function () { clearTimeout(attente); attente = setTimeout(maj, 120); });
+    if (document.fonts && document.fonts.load) document.fonts.load('40px "Great Vibes"').then(function () { maj(); });
     atelier.addEventListener("input", maj); maj();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(maj);  // re-mesure avec la vraie police
     // Démo : le texte s'écrit tout seul tant qu'on n'a pas touché au champ
