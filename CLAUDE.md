@@ -12,7 +12,7 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
 - **Produits : bijoux personnalisés en acier inoxydable 316L** (dropshipping AliExpress via DSers) : jonc gravé, collier prénom,
   collier photo à projection, éventuellement bracelet code Morse. Recherche complète, prix et sources : `docs/recherche-produits.md`.
 - **Marque : « Les Mots de Lou »**, incarnée par **Lou, égérie virtuelle (personne créée par IA)**, idée de l'utilisateur.
-  **Slogan : « Vos mots, gravés pour toujours. »** (choisi le 02/11/2026). Concept, ton et règles : `docs/marque.md`. Domaines `lesmotsdelou.fr` / `.com` libres au 02/11 (à réserver par l'utilisateur, IONOS).
+  **Slogan : « Vos mots, gravés pour toujours. »** (choisi le 02/11/2026). Concept, ton et règles : `docs/marque.md`. Domaines : l'utilisateur possède déjà **`les-mots-de-lou.fr`** (avec tirets, IONOS) et prend **`lesmotsdelou.fr`** (sans tirets) comme **adresse principale** (l'autre redirigera).
 - **Tout en IA** : photos **et vidéos** (pas de tournage).
 - **Pub** : environ 300 € par boutique + **420 € de crédit Pinterest offert**. Pinterest en priorité (femmes 25-55 ans), puis Meta/TikTok.
 - Leçons tirées de Corps-Confiant (pièges Shopify, Klaviyo, cookies, pubs) : `docs/lecons-corps-confiant.md`.
@@ -55,7 +55,7 @@ tant qu'il reste des modifications non commitées ou non poussées.
 
 ## Connexion à Shopify
 Identifiants dans les variables d'environnement de l'environnement cloud **« Les Mots de Lou »** (jamais dans le dépôt) :
-`SHOPIFY_STORE` (`xxxx.myshopify.com`), `SHOPIFY_CLIENT_ID`, `SHOPIFY_CLIENT_SECRET`. App « Claude api » créée dans le Dev
+`SHOPIFY_STORE` (`xxxx.myshopify.com`), `SHOPIFY_CLIENT_ID`, `SHOPIFY_CLIENT_SECRET`. App **« Claude api LOU »** créée dans le Dev
 Dashboard Shopify, installée sur la boutique avec toutes les portées Admin API ; jeton par *client credentials* (~24 h), mis en
 cache dans `.shopify_token.json` (ignoré par git).
 

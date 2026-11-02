@@ -1,5 +1,14 @@
 # Reprendre le travail dans une nouvelle session
 
+## 🔥 État au 02/11/2026 (1re session sur ce dépôt)
+- Environnement cloud OK : variables `SHOPIFY_*` présentes (boutique `xs4brq-7y.myshopify.com`, app « Claude api LOU »).
+- ❌ **Shopify inaccessible** : la politique réseau de l'environnement bloque `xs4brq-7y.myshopify.com` (403 au proxy) →
+  l'utilisateur doit ajouter `*.myshopify.com` (ou le domaine exact) aux domaines autorisés de l'environnement « Les Mots de Lou ».
+  Puis refaire `python3 scripts/shopify.py check` et **vérifier que c'est Les Mots de Lou et pas Corps-Confiant**.
+- ✅ Clé OpenAI OK (gpt-image-2 dispo) mais ❌ **crédit OpenAI épuisé** (429) → l'utilisateur doit recharger (platform.openai.com
+  → Billing). Les 3 visages de Lou sont prêts à générer : `contenu/lou/prompts-visages.md`.
+- Domaines : `les-mots-de-lou.fr` déjà possédé ; `lesmotsdelou.fr` à prendre = adresse principale. DSers : recherches pas faites.
+
 ## 🔥 État au 02/11/2026 soir (création du projet)
 - Dépôt créé par l'utilisateur et préparé depuis la session Corps-Confiant : outils copiés (`scripts/`), instructions (`CLAUDE.md`),
   recherche produits (`docs/recherche-produits.md`), marque (`docs/marque.md`), leçons (`docs/lecons-corps-confiant.md`).
