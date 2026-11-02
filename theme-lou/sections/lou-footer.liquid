@@ -34,7 +34,8 @@
   <div class="wrap footer-bottom">
     <p>© {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
     <nav aria-label="Informations légales">
-      {%- for link in linklists[section.settings.menu3].links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
+      {%- assign menu_legal = section.settings.menu3 | default: 'legal' -%}
+      {%- for link in linklists[menu_legal].links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
     </nav>
     <p class="pay">{% render 'icones-paiement' %}</p>
   </div>
@@ -46,7 +47,7 @@
   "settings": [
     { "type": "link_list", "id": "menu1", "label": "Colonne Les bijoux", "default": "main-menu" },
     { "type": "link_list", "id": "menu2", "label": "Colonne Aide", "default": "footer" },
-    { "type": "link_list", "id": "menu3", "label": "Liens légaux", "default": "legal" }
+    { "type": "link_list", "id": "menu3", "label": "Liens légaux (vide = menu « legal »)" }
   ]
 }
 {% endschema %}

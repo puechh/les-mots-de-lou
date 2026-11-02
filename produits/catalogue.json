@@ -1,0 +1,420 @@
+[
+  {
+    "handle": "bracelet-code-secret",
+    "title": "Le Bracelet Code Secret",
+    "status": "ACTIVE",
+    "vendor": "Les Mots de Lou",
+    "productType": "Bracelet morse",
+    "tags": [
+      "bracelet",
+      "duo",
+      "morse",
+      "noel"
+    ],
+    "templateSuffix": null,
+    "descriptionHtml": "<p>Un mot écrit en code Morse : personne ne sait ce qu'il dit… sauf vous deux.</p><p>Bracelet code Morse personnalisé : votre mot secret en perles d'acier inoxydable. Idée cadeau duo, meilleure amie, couple.</p>",
+    "seo": {
+      "title": "Le Bracelet Code Secret personnalisé | Les Mots de Lou",
+      "description": "Bracelet code Morse personnalisé : votre mot secret en perles d'acier inoxydable. Idée cadeau duo, meilleure amie, couple."
+    },
+    "options": [
+      {
+        "name": "Cordon",
+        "values": [
+          "Noir",
+          "Rose poudré",
+          "Beige"
+        ]
+      }
+    ],
+    "collections": [
+      "bracelets"
+    ],
+    "variants": [
+      {
+        "title": "Noir",
+        "sku": null,
+        "price": "24.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Cordon",
+            "value": "Noir"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      },
+      {
+        "title": "Rose poudré",
+        "sku": null,
+        "price": "24.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Cordon",
+            "value": "Rose poudré"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      },
+      {
+        "title": "Beige",
+        "sku": null,
+        "price": "24.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Cordon",
+            "value": "Beige"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-bracelet-morse-1.png?v=1793633897",
+        "altText": "Le Bracelet Code Secret"
+      }
+    ]
+  },
+  {
+    "handle": "collier-prenom",
+    "title": "Le Collier Prénom",
+    "status": "ACTIVE",
+    "vendor": "Les Mots de Lou",
+    "productType": "Collier prénom",
+    "tags": [
+      "best-seller",
+      "collier",
+      "noel",
+      "prenom"
+    ],
+    "templateSuffix": null,
+    "descriptionHtml": "<p>Son prénom (ou celui de quelqu'un qu'elle aime) écrit d'un trait, tout près du cœur.</p><p>Collier prénom personnalisé en acier inoxydable, finition argentée, dorée ou rosée, livré en coffret cadeau.</p>",
+    "seo": {
+      "title": "Le Collier Prénom personnalisé | Les Mots de Lou",
+      "description": "Collier prénom personnalisé en acier inoxydable, finition argentée, dorée ou rosée, livré en coffret cadeau."
+    },
+    "options": [
+      {
+        "name": "Finition",
+        "values": [
+          "Argentée",
+          "Dorée",
+          "Rosée"
+        ]
+      }
+    ],
+    "collections": [
+      "colliers"
+    ],
+    "variants": [
+      {
+        "title": "Argentée",
+        "sku": null,
+        "price": "29.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Finition",
+            "value": "Argentée"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      },
+      {
+        "title": "Dorée",
+        "sku": null,
+        "price": "29.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Finition",
+            "value": "Dorée"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      },
+      {
+        "title": "Rosée",
+        "sku": null,
+        "price": "29.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Finition",
+            "value": "Rosée"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-1.png?v=1793633891",
+        "altText": "Le Collier Prénom"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-finitions.png?v=1793633891",
+        "altText": "Le Collier Prénom"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-lou-collier-prenom.png?v=1793633891",
+        "altText": "Le Collier Prénom"
+      }
+    ]
+  },
+  {
+    "handle": "collier-souvenir-photo",
+    "title": "Le Collier Souvenir (photo cachée)",
+    "status": "ACTIVE",
+    "vendor": "Les Mots de Lou",
+    "productType": "Collier photo",
+    "tags": [
+      "collier",
+      "noel",
+      "photo",
+      "souvenir"
+    ],
+    "templateSuffix": null,
+    "descriptionHtml": "<p>Un petit cœur… et quand on regarde dedans, votre plus belle photo apparaît.</p><p>Collier photo à projection personnalisé : votre photo cachée dans un pendentif cœur. Cadeau souvenir livré en coffret.</p>",
+    "seo": {
+      "title": "Le Collier Souvenir (photo cachée) personnalisé | Les Mots de Lou",
+      "description": "Collier photo à projection personnalisé : votre photo cachée dans un pendentif cœur. Cadeau souvenir livré en coffret."
+    },
+    "options": [
+      {
+        "name": "Finition",
+        "values": [
+          "Argentée",
+          "Dorée",
+          "Rosée"
+        ]
+      }
+    ],
+    "collections": [
+      "colliers"
+    ],
+    "variants": [
+      {
+        "title": "Argentée",
+        "sku": null,
+        "price": "34.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Finition",
+            "value": "Argentée"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      },
+      {
+        "title": "Dorée",
+        "sku": null,
+        "price": "34.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Finition",
+            "value": "Dorée"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      },
+      {
+        "title": "Rosée",
+        "sku": null,
+        "price": "34.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Finition",
+            "value": "Rosée"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-photo-1.png?v=1793633894",
+        "altText": "Le Collier Souvenir (photo cachée)"
+      }
+    ]
+  },
+  {
+    "handle": "jonc-mes-mots",
+    "title": "Le Jonc « Mes Mots »",
+    "status": "ACTIVE",
+    "vendor": "Les Mots de Lou",
+    "productType": "Jonc gravé",
+    "tags": [
+      "best-seller",
+      "bracelet",
+      "jonc",
+      "noel"
+    ],
+    "templateSuffix": null,
+    "descriptionHtml": "<p>La phrase que vous n'osez pas dire, gravée sur un jonc qu'elle ne quittera plus.</p><p>Jonc gravé personnalisé avec votre message, acier inoxydable, livré en coffret cadeau. L'idée cadeau qui fait pleurer (de joie).</p>",
+    "seo": {
+      "title": "Le Jonc « Mes Mots » personnalisé | Les Mots de Lou",
+      "description": "Jonc gravé personnalisé avec votre message, acier inoxydable, livré en coffret cadeau. L'idée cadeau qui fait pleurer (de joie)."
+    },
+    "options": [
+      {
+        "name": "Finition",
+        "values": [
+          "Argentée",
+          "Dorée",
+          "Rosée"
+        ]
+      }
+    ],
+    "collections": [
+      "frontpage",
+      "joncs",
+      "bracelets"
+    ],
+    "variants": [
+      {
+        "title": "Argentée",
+        "sku": null,
+        "price": "29.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Finition",
+            "value": "Argentée"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      },
+      {
+        "title": "Dorée",
+        "sku": null,
+        "price": "29.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Finition",
+            "value": "Dorée"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      },
+      {
+        "title": "Rosée",
+        "sku": null,
+        "price": "29.90",
+        "compareAtPrice": null,
+        "taxable": true,
+        "inventoryPolicy": "CONTINUE",
+        "selectedOptions": [
+          {
+            "name": "Finition",
+            "value": "Rosée"
+          }
+        ],
+        "image": null,
+        "inventoryItem": {
+          "tracked": false,
+          "requiresShipping": true,
+          "unitCost": null
+        }
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-jonc-1.png?v=1793633885",
+        "altText": "Le Jonc « Mes Mots »"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-jonc-finitions.png?v=1793633886",
+        "altText": "Le Jonc « Mes Mots »"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-lou-jonc.png?v=1793633886",
+        "altText": "Le Jonc « Mes Mots »"
+      }
+    ]
+  }
+]

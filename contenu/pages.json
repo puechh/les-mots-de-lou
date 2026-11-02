@@ -1,0 +1,37 @@
+[
+  {
+    "handle": "contact",
+    "title": "Nous écrire",
+    "body": "<p>📧 Vous pouvez aussi nous écrire directement à <b>[À COMPLÉTER : adresse e-mail de contact]</b>.</p>\n",
+    "isPublished": true,
+    "templateSuffix": "contact"
+  },
+  {
+    "handle": "faq",
+    "title": "Questions fréquentes",
+    "body": "<p>Vous ne trouvez pas votre réponse ? <a href=\"/pages/contact\">Écrivez-nous</a>, on vous répond sous 48 h ouvrées.</p>\n",
+    "isPublished": true,
+    "templateSuffix": "faq"
+  },
+  {
+    "handle": "le-test",
+    "title": "Le test des mots",
+    "body": "<p>Le test des mots est un petit jeu pour vous aider à choisir : les suggestions de Lou sont des idées, vous restez libre d'écrire ce que vous voulez sur votre bijou.</p>\n",
+    "isPublished": true,
+    "templateSuffix": "test"
+  },
+  {
+    "handle": "livraison-retours",
+    "title": "Livraison & retours",
+    "body": "<h2>🚚 Livraison</h2>\n<ul>\n<li>\n<b>Pays livrés</b> : France métropolitaine et Belgique.</li>\n<li>\n<b>Fabrication</b> : chaque bijou est fabriqué à la commande, avec vos mots, en 2 à 4 jours.</li>\n<li>\n<b>Livraison</b> : 8 à 12 jours ouvrés après la fabrication, avec un numéro de suivi envoyé par e-mail.</li>\n<li>\n<b>Frais de livraison</b> : indiqués avant le paiement, à l'étape de commande.</li>\n<li>\n<b>Pour Noël</b> : commandez avant le <b>1er décembre</b> pour une livraison avant le 24 décembre (hors aléas du transporteur).</li>\n</ul>\n<p>Les bijoux sont expédiés depuis l'atelier de notre fournisseur, hors Union européenne. Les éventuels droits et taxes d'importation sont pris en charge par nos soins : vous n'avez rien à payer à la livraison. [À VÉRIFIER avec le fournisseur / DSers avant ouverture]</p>\n<h2>💌 Retours</h2>\n<p><b>Bijoux personnalisés</b> : un bijou gravé avec vos mots (texte, prénom, photo, mot secret) est fabriqué selon vos indications. Conformément à l'article L221-28 3° du Code de la consommation, il <b>ne bénéficie pas du droit de rétractation</b>. Vérifiez bien l'orthographe avant de valider !</p>\n<p><b>Garantie légale de conformité</b> : si votre bijou arrive abîmé, ne correspond pas à votre commande (faute de gravure de notre part, mauvaise finition…) ou présente un défaut, vous bénéficiez de la garantie légale de conformité (articles L217-3 et suivants du Code de la consommation) : nous le remplaçons ou vous remboursons. Écrivez-nous avec votre numéro de commande et une photo via la page <a href=\"/pages/contact\">Nous écrire</a>.</p>\n",
+    "isPublished": true,
+    "templateSuffix": null
+  },
+  {
+    "handle": "qui-est-lou",
+    "title": "Qui est Lou ?",
+    "body": "<h2>Bonjour, moi c'est Lou ✨</h2>\n<p>Lou, c'est la petite voix qui vous souffle les mots qu'on n'ose pas toujours dire : un « merci », un « je suis fière de toi », un « tu me manques ». Elle vous aide à trouver la phrase juste, elle porte nos bijoux dans de petites scènes de la vie, et elle a un faible pour les cadeaux qui font pleurer de joie.</p>\n<h2>Lou est une égérie virtuelle</h2>\n<p>Soyons transparents : <b>Lou n'existe pas en vrai</b>. C'est l'égérie virtuelle de la marque Les Mots de Lou : son visage et ses photos sont <b>créés avec l'aide de l'intelligence artificielle</b>. Les images où elle apparaît sont des images virtuelles. Lou ne fabrique pas et ne grave pas les bijoux, et elle ne donne pas d'avis de cliente.</p>\n<p>Ce qui est bien réel, en revanche : vos mots, et les bijoux qui les portent. Chaque bijou est fabriqué à la commande, avec exactement le texte que vous avez écrit.</p>\n<h2>Pourquoi « Les Mots de Lou » ?</h2>\n<p>Parce qu'on a tous dans la tête des phrases qu'on garde pour plus tard. Nous, on pense que « plus tard », c'est maintenant. <b>Vos mots, gravés pour toujours.</b></p>\n",
+    "isPublished": true,
+    "templateSuffix": "qui-est-lou"
+  }
+]

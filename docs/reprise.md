@@ -4,15 +4,17 @@
 > (régénérer : banc `scripts/banc_theme.py` puis `scripts/export_apercu.py <dossier>` et republier).
 > **Shopify : RIEN n'est encore envoyé** (réseau de l'environnement) → voir le bloc ⛔ ci-dessous.
 
-## ⛔ 02/11/2026 (session d'envoi de la bêta) — Shopify ENCORE BLOQUÉ, rien n'a été envoyé
-- `python3 scripts/shopify.py check` → **403 du proxy** sur `xs4brq-7y.myshopify.com` (politique réseau de l'environnement).
-- **À faire par l'utilisateur** : sur claude.ai/code, menu de l'environnement cloud **« Les Mots de Lou »** (barre de titre
-  de la session) → **Modifier** → **Accès réseau** : niveau « Limité » (ou « Personnalisé ») et ajouter dans
-  **Domaines autorisés** : `*.myshopify.com` (ou exactement `xs4brq-7y.myshopify.com`), en laissant cochée la case
-  « Autoriser les gestionnaires de paquets ». Enregistrer, puis **ouvrir une NOUVELLE session** (le réglage ne s'applique
-  pas aux sessions déjà lancées). Aide : https://code.claude.com/docs/en/cloud-environments#network-access
-- Ensuite, dans la nouvelle session : `python3 scripts/shopify.py check` (vérifier que c'est Les Mots de Lou),
-  puis `python3 scripts/construire_boutique.py --publier` (jamais exécuté contre l'API réelle : corriger si une mutation est refusée).
+## ✅ 02/11/2026 soir — BÊTA ENVOYÉE SUR SHOPIFY (thème pas encore publié)
+- Sur Shopify : 4 produits actifs (images, métachamp `lou.contenu`), collections joncs/colliers/bracelets, 5 pages
+  (avec leurs gabarits), menus main-menu/footer/legal, 4 politiques (avec les `[À COMPLÉTER]`), offre automatique
+  « 2e bijou à -50 % » active. Thème « Les Mots de Lou (thème) » envoyé **sans erreur** mais **NON publié**
+  (« Horizon » reste le thème en ligne) : la publication a été bloquée par une sécurité de Claude Code, l'utilisateur
+  doit la confirmer → soit Shopify → Boutique en ligne → Thèmes → « Les Mots de Lou (thème) » → **Publier**, soit dire
+  à Claude « publie le thème » (`python3 scripts/envoyer_theme.py publier`).
+- Réseau : `*.myshopify.com` et AliExpress autorisés ; `lesmotsdelou.fr` NON autorisé dans l'environnement, or la
+  boutique redirige vers ce domaine → Claude ne peut pas afficher la vitrine en ligne (ajouter `lesmotsdelou.fr` et
+  `www.lesmotsdelou.fr` aux domaines autorisés pour les captures réelles). Captures du banc local : `docs/captures/finale-*`.
+- `lesmotsdelou.fr` est déjà domaine principal dans Shopify : vérifier qu'il s'affiche bien (DNS IONOS).
 
 ## 🔥 État au 02/11/2026 fin d'après-midi — BÊTA PRÊTE (carte blanche, utilisateur absent)
 **Tout est dans le dépôt ; l'envoi sur Shopify se fait avec `python3 scripts/construire_boutique.py --publier`**

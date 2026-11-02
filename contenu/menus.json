@@ -1,0 +1,116 @@
+[
+  {
+    "handle": "main-menu",
+    "title": "Menu principal",
+    "items": [
+      {
+        "title": "Tous les bijoux",
+        "type": "HTTP",
+        "url": "/collections/all",
+        "items": []
+      },
+      {
+        "title": "Joncs gravés",
+        "type": "HTTP",
+        "url": "/collections/joncs",
+        "items": []
+      },
+      {
+        "title": "Colliers",
+        "type": "HTTP",
+        "url": "/collections/colliers",
+        "items": []
+      },
+      {
+        "title": "Le test des mots",
+        "type": "HTTP",
+        "url": "/pages/le-test",
+        "items": []
+      },
+      {
+        "title": "Qui est Lou ?",
+        "type": "HTTP",
+        "url": "/pages/qui-est-lou",
+        "items": []
+      }
+    ]
+  },
+  {
+    "handle": "footer",
+    "title": "Aide",
+    "items": [
+      {
+        "title": "Questions fréquentes",
+        "type": "HTTP",
+        "url": "/pages/faq",
+        "items": []
+      },
+      {
+        "title": "Livraison & retours",
+        "type": "HTTP",
+        "url": "/pages/livraison-retours",
+        "items": []
+      },
+      {
+        "title": "Nous écrire",
+        "type": "HTTP",
+        "url": "/pages/contact",
+        "items": []
+      }
+    ]
+  },
+  {
+    "handle": "customer-account-main-menu",
+    "title": "Customer account main menu",
+    "items": [
+      {
+        "title": "Orders",
+        "type": "CUSTOMER_ACCOUNT_PAGE",
+        "url": "https://shopify.com/109699793233/account/orders",
+        "items": []
+      },
+      {
+        "title": "Profile",
+        "type": "CUSTOMER_ACCOUNT_PAGE",
+        "url": "https://shopify.com/109699793233/account/profile",
+        "items": []
+      }
+    ]
+  },
+  {
+    "handle": "legal",
+    "title": "Informations légales",
+    "items": [
+      {
+        "title": "Mentions légales",
+        "type": "HTTP",
+        "url": "/policies/legal-notice",
+        "items": []
+      },
+      {
+        "title": "CGV",
+        "type": "HTTP",
+        "url": "/policies/terms-of-service",
+        "items": []
+      },
+      {
+        "title": "Retours",
+        "type": "HTTP",
+        "url": "/policies/refund-policy",
+        "items": []
+      },
+      {
+        "title": "Livraison",
+        "type": "HTTP",
+        "url": "/policies/shipping-policy",
+        "items": []
+      },
+      {
+        "title": "Confidentialité",
+        "type": "HTTP",
+        "url": "/policies/privacy-policy",
+        "items": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "handle": "frontpage",
+    "title": "Home page",
+    "descriptionHtml": "",
+    "templateSuffix": null,
+    "ruleSet": null,
+    "productsCount": {
+      "count": 1
+    }
+  },
+  {
+    "handle": "joncs",
+    "title": "Joncs gravés",
+    "descriptionHtml": "<p>Des joncs gravés avec vos mots : une phrase, une date, un prénom.</p>",
+    "templateSuffix": null,
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "jonc"
+        }
+      ]
+    },
+    "productsCount": {
+      "count": 1
+    }
+  },
+  {
+    "handle": "colliers",
+    "title": "Colliers",
+    "descriptionHtml": "<p>Colliers prénom et colliers photo, personnalisés pour elle.</p>",
+    "templateSuffix": null,
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "collier"
+        }
+      ]
+    },
+    "productsCount": {
+      "count": 2
+    }
+  },
+  {
+    "handle": "bracelets",
+    "title": "Bracelets",
+    "descriptionHtml": "<p>Bracelets à message secret.</p>",
+    "templateSuffix": null,
+    "ruleSet": {
+      "appliedDisjunctively": false,
+      "rules": [
+        {
+          "column": "TAG",
+          "relation": "EQUALS",
+          "condition": "bracelet"
+        }
+      ]
+    },
+    "productsCount": {
+      "count": 2
+    }
+  }
+]

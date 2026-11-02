@@ -50,3 +50,16 @@
 - Shopify toujours bloqué (la session d'envoi a confirmé le 403). Aperçu statique cliquable publié pour l'utilisateur :
   https://claude.ai/artifact/1d7266ccUAoSGjfGXKjNz4 (script `scripts/export_apercu.py`). Accueil mobile : photo de Lou en tête.
   Captures : `docs/captures/`.
+
+## 2026-11-02 (soir) — Bêta envoyée sur Shopify
+- L'utilisateur a ouvert l'accès réseau : `shopify.py check` ✅ « Les Mots De Lou » (xs4brq-7y), boutique vide au départ.
+- `construire_boutique.py` exécuté : 4 produits + 8 images, 3 collections, 5 pages, 3 menus, 4 politiques, offre BXGY.
+- Corrections : offre « 2e bijou à -50 % » → Shopify refuse « tous les produits » pour une offre BXGY, on liste
+  maintenant les produits actifs (et le script signale un vrai échec) ; thème : `lou-footer` refusé (« default » d'un
+  link_list ne peut être que main-menu/footer) → défaut retiré, le pied de page lit le menu `legal` par défaut ;
+  l'étape thème ne publie plus si l'envoi a des erreurs.
+- Thème créé et envoyé sans erreur ; banc local ✅ (accueil, fiche, collection, panier, FAQ ; ordinateur + iPhone 13,
+  aucune erreur Liquid/JS). **Publication bloquée** par la sécurité de Claude Code → à confirmer par l'utilisateur.
+- Vitrine en ligne non visible depuis la session : redirection vers `lesmotsdelou.fr`, domaine non autorisé dans le réseau.
+- `sauvegarde.py` : catalogue, collections, pages, menus, politiques, thème Horizon publié. Vérifié : aucune donnée
+  personnelle (seulement des `[À COMPLÉTER]` et contact@lesmotsdelou.fr).

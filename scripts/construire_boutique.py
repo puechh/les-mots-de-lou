@@ -181,19 +181,25 @@ def offre():
     if any((n.get("discount") or {}).get("title") == titre for n in ex):
         print("Offre déjà créée :", titre)
         return
-    gql("""mutation($d: DiscountAutomaticBxgyInput!) { discountAutomaticBxgyCreate(automaticBxgyDiscount: $d) { automaticDiscountNode { id } userErrors { field message } } }""",
-        {"d": {"title": titre, "startsAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-               "customerBuys": {"items": {"all": True}, "value": {"quantity": "1"}},
-               "customerGets": {"items": {"all": True}, "value": {"discountOnQuantity": {"quantity": "1", "effect": {"percentage": 0.5}}}},
-               "usesPerOrderLimit": "5"}}, "discountAutomaticBxgyCreate")
-    print("Offre créée :", titre)
+    # « Tous les produits » est refusé pour une offre BXGY : on liste les produits de la boutique.
+    ids = [n["id"] for n in gql("{ products(first: 100, query: \"status:active\") { nodes { id } } }")["products"]["nodes"]]
+    items = {"products": {"productsToAdd": ids}}
+    r = gql("""mutation($d: DiscountAutomaticBxgyInput!) { discountAutomaticBxgyCreate(automaticBxgyDiscount: $d) { automaticDiscountNode { id } userErrors { field message } } }""",
+            {"d": {"title": titre, "startsAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                   "customerBuys": {"items": items, "value": {"quantity": "1"}},
+                   "customerGets": {"items": items, "value": {"discountOnQuantity": {"quantity": "1", "effect": {"percentage": 0.5}}}},
+                   "usesPerOrderLimit": "5"}}, "discountAutomaticBxgyCreate")
+    print("Offre créée :" if r.get("automaticDiscountNode") else "❌ Offre NON créée :", titre)
 
 
 # ---------------------------------------------------------------- thème
 def theme(publier=False):
     import envoyer_theme as et
     t = et.find_theme() or et.creer()
-    et.maj()
+    ok = et.maj()
+    if publier and not ok:
+        print("❌ Erreurs dans le thème : publication annulée (corriger theme-lou/ puis relancer).")
+        return
     if publier:
         et.publier()
     print("Thème :", "publié" if publier else "envoyé (non publié)")
