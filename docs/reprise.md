@@ -1,5 +1,9 @@
 # Reprendre le travail dans une nouvelle session
 
+> **Aperçu cliquable de la bêta (page privée claude.ai)** : https://claude.ai/artifact/1d7266ccUAoSGjfGXKjNz4
+> (régénérer : banc `scripts/banc_theme.py` puis `scripts/export_apercu.py <dossier>` et republier).
+> **Shopify : RIEN n'est encore envoyé** (réseau de l'environnement) → voir le bloc ⛔ ci-dessous.
+
 ## ⛔ 02/11/2026 (session d'envoi de la bêta) — Shopify ENCORE BLOQUÉ, rien n'a été envoyé
 - `python3 scripts/shopify.py check` → **403 du proxy** sur `xs4brq-7y.myshopify.com` (politique réseau de l'environnement).
 - **À faire par l'utilisateur** : sur claude.ai/code, menu de l'environnement cloud **« Les Mots de Lou »** (barre de titre

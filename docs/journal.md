@@ -47,3 +47,6 @@
   toujours pas autorisé dans l'environnement « Les Mots de Lou » (ou la session a été lancée avant le changement).
 - Rien envoyé, rien modifié côté Shopify. Consigne ajoutée en haut de `docs/reprise.md` (où cliquer pour autoriser le domaine,
   puis nouvelle session et `construire_boutique.py --publier`).
+- Shopify toujours bloqué (la session d'envoi a confirmé le 403). Aperçu statique cliquable publié pour l'utilisateur :
+  https://claude.ai/artifact/1d7266ccUAoSGjfGXKjNz4 (script `scripts/export_apercu.py`). Accueil mobile : photo de Lou en tête.
+  Captures : `docs/captures/`.
