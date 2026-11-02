@@ -149,13 +149,21 @@
   /* ---------- Accueil : atelier (on tape, ça se grave) ---------- */
   var atelier = $("#atelier-texte");
   if (atelier) {
-    var cible = $("#atelier-apercu"), lien = $("#atelier-lien");
+    var lien = $("#atelier-lien"), tp = $("#atelier-apercu textPath"), courbe = $("#atelier-courbe");
+    var longueurMax = courbe && courbe.getTotalLength ? courbe.getTotalLength() * 0.56 : 480;
     var maj = function () {
       var v = atelier.value.slice(0, 30);
-      window.LOU_jonc(cible, v || "Tu es ma personne", "Manuscrite", "Argentée");
+      if (tp) {
+        var txt = tp.parentNode;
+        tp.textContent = v || "Tu es ma personne";
+        txt.setAttribute("font-size", 50);  // le texte rétrécit s'il dépasse la face avant du jonc
+        var l = txt.getComputedTextLength ? txt.getComputedTextLength() : 0;
+        if (l > longueurMax) txt.setAttribute("font-size", Math.max(24, 50 * longueurMax / l).toFixed(1));
+      }
       if (lien) lien.href = lien.getAttribute("data-base") + (v ? "?texte=" + encodeURIComponent(v) : "");
     };
     atelier.addEventListener("input", maj); maj();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(maj);  // re-mesure avec la vraie police
     // Démo : le texte s'écrit tout seul tant qu'on n'a pas touché au champ
     if (!reduit) {
       var demo = ["Tu es ma personne", "Sœurs pour toujours", "Merci maman", "Toi, toujours"], di = 0, ci = 0, touche = false;

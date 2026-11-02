@@ -44,3 +44,9 @@ except OSError:
 d.text((64, 62), "L", font=f, fill="white", anchor="mm")
 fv.save(os.path.join(A, "favicon.png"))
 print("favicon.png")
+
+# Atelier de l'accueil : photo du jonc vierge, recadrée autour du jonc (le texte est posé dessus en SVG, cf. lou.js).
+# Recadrage x 90→1010, y 360→820 de l'image 1024×1024 : si on change l'image, ajuster la courbe JONC_COURBE de lou.js.
+_src = trouver("produit-jonc-vierge")
+Image.open(_src).convert("RGB").crop((90, 360, 1010, 820)).save(os.path.join(A, "jonc-vierge.webp"), "WEBP", quality=86)
+print("jonc-vierge.webp ←", os.path.relpath(_src, ROOT))

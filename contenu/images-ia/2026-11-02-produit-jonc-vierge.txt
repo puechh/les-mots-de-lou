@@ -1,0 +1,6 @@
+Retouche (gpt-image-2.5-flare) de 2026-11-02-produit-jonc-1.png :
+« Retouche minimale : efface entièrement le texte gravé sur le jonc pour que sa face avant soit en acier poli lisse et vierge,
+sans aucune lettre. Ne change rien d'autre : même jonc (forme, largeur, couleur argentée, reflets), même cadrage, même boîte
+rose, même tissu, même lumière. »
+Usage : atelier de gravure de l'accueil (theme-lou/assets/jonc-vierge.webp), texte posé en direct par lou.js.
+À remplacer par la photo fournisseur du jonc vierge quand le fournisseur sera choisi (puis réajuster la courbe).

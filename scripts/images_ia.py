@@ -24,7 +24,7 @@ from pathlib import Path
 import requests
 
 API = "https://api.openai.com/v1"
-MODELE = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-1")
+MODELE = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2")
 SORTIE = Path(__file__).resolve().parent.parent / "contenu" / "images-ia"
 FORMATS = {"carre": "1024x1024", "portrait": "1024x1536", "paysage": "1536x1024"}
 

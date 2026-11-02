@@ -63,3 +63,16 @@
 - Vitrine en ligne non visible depuis la session : redirection vers `lesmotsdelou.fr`, domaine non autorisé dans le réseau.
 - `sauvegarde.py` : catalogue, collections, pages, menus, politiques, thème Horizon publié. Vérifié : aucune donnée
   personnelle (seulement des `[À COMPLÉTER]` et contact@lesmotsdelou.fr).
+
+## 2026-11-02 (soir, suite) — Atelier de l'accueil : vraie photo du jonc
+- Demande utilisateur : remplacer le dessin du jonc par le « vrai » bijou, avec le texte tapé gravé dessus en direct.
+- Photo fournisseur impossible à récupérer (AliExpress bloque les robots, fournisseur pas encore choisi) → retouche IA
+  de la photo produit du jonc **sans la gravure** (`contenu/images-ia/2026-11-02-produit-jonc-vierge.png`, même bijou,
+  même décor), recadrée en `theme-lou/assets/jonc-vierge.webp` (`assets_theme.py`).
+- Le texte est posé en SVG sur une courbe calée sur la face avant du jonc (police manuscrite, effet gravé), il rétrécit
+  s'il est long ; mention « Simulation de gravure » sous l'image. Testé au banc (ordinateur + iPhone, sans erreur JS),
+  envoyé sur le thème Shopify (toujours non publié). Captures : `docs/captures/atelier-photo-*`.
+- `images_ia.py` : modèle par défaut `gpt-image-1` (retiré par OpenAI) → `gpt-image-2` ; la retouche a marché avec
+  `OPENAI_IMAGE_MODEL=gpt-image-2.5-flare` (gpt-image-2 renvoyait 502).
+- À faire quand le fournisseur sera choisi : remplacer la photo par celle du vrai jonc vierge, puis réajuster la courbe
+  (`d="M 90 352 Q 470 425 865 250"` dans `sections/lou-accueil.liquid`).
