@@ -73,12 +73,45 @@ for nom, dest in [("produit-jonc-vierge-hd", "jonc-carre.webp"), ("produit-jonc-
     im = Image.open(trouver(nom)).convert("RGB"); k = im.width / 1024
     enregistrer(im.crop((round(90 * k), round(104 * k), round(1010 * k), round(1024 * k))), dest, 1200, 84)
 
-# Collier prénom (aperçu en direct) : chaîne sans pendentif, 3 finitions, si elles existent
+# Collier prénom (aperçu en direct) : chaîne sans pendentif, 3 finitions. Le bas des deux brins (sous y = 640, anneaux
+# compris) est effacé : le thème redessine les brins jusqu'aux bords du prénom, qui s'écartent ou se resserrent selon
+# sa longueur (lou-produit.js, BRIN_G / BRIN_D). Brins mesurés sur l'image 1200 px (identiques dans les 3 finitions).
+BRIN_G = [(626, 361), (640, 367), (680, 394), (720, 411), (760, 437), (800, 466), (840, 490), (860, 501)]
+BRIN_D = [(626, 879), (640, 872), (680, 849), (720, 829), (760, 803), (800, 783), (840, 757), (860, 740)]
+
+
+def effacer_bas_chaine(im):
+    """Efface le bas des brins : velours recopié à côté (vers l'intérieur du V), puis lumière corrigée pour qu'il se fonde."""
+    import numpy as np
+    from PIL import ImageFilter
+    a = np.asarray(im, dtype=float)
+    out = a.copy()
+    flou = lambda x, r: np.stack([np.asarray(Image.fromarray(np.clip(x[..., c], 0, 255).astype("uint8")).filter(ImageFilter.GaussianBlur(r)), dtype=float) for c in range(3)], axis=-1)
+    for brin, decal in ((BRIN_G, 30), (BRIN_D, -30)):
+        m = Image.new("L", im.size, 0); d = ImageDraw.Draw(m)
+        d.line([(x, y) for y, x in brin], fill=255, width=26, joint="curve")
+        y, x = brin[-1]; d.ellipse((x - 16, y - 16, x + 16, y + 16), fill=255)
+        dur = np.asarray(m, dtype=float) / 255
+        m = np.asarray(m.filter(ImageFilter.GaussianBlur(1.5)), dtype=float) / 255
+        rampe = np.clip((np.arange(a.shape[0]) - 626) / 18, 0, 1)[:, None]   # la vraie chaîne s'efface en douceur
+        m = m * rampe
+        source = np.roll(out, -decal, axis=1)
+        # correction de lumière : moyenne locale du velours autour du brin (hors brin) contre celle de la source
+        hors = (dur < .01)[..., None]
+        poids = flou(hors.repeat(3, axis=2) * 255.0, 18) / 255 + 1e-3
+        fond = flou(out * hors, 18) / poids
+        src_m = flou(source, 18)
+        source = source + (fond - src_m)
+        out = out * (1 - m[..., None]) + source * m[..., None]
+    return Image.fromarray(np.clip(out, 0, 255).astype("uint8"))
+
+
 for nom, dest in [("collier-prenom-vierge-hd", "collier-vierge.webp"), ("collier-prenom-vierge-doree-hd", "collier-vierge-doree.webp"),
                   ("collier-prenom-vierge-rosee-hd", "collier-vierge-rosee.webp")]:
     src = trouver(nom)
     if "vierge" in os.path.basename(src):
-        enregistrer(Image.open(src).convert("RGB"), dest, 1200, 84)
+        im = Image.open(src).convert("RGB").resize((1200, 1200), Image.LANCZOS)
+        enregistrer(effacer_bas_chaine(im), dest, 1200, 84)
 
 # Collier photo (aperçu en direct) : photo produit HD, la photo de la cliente se pose dans la bulle
 enregistrer(Image.open(trouver("produit-collier-photo-1-hd", "produit-collier-photo-1")).convert("RGB"), "collier-photo.webp", 1200, 84)

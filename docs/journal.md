@@ -114,3 +114,14 @@
 - Tests banc (iPhone 13 + ordinateur) : 15 pages OK, aucune erreur JS, pas de débordement ; parcours testé (texte, finition,
   police, photo, validation, ajout au panier, tiroir, assistante, FAQ, menu). Thème envoyé : 64 fichiers, 0 erreur.
 - Captures : `docs/captures/v2-*`.
+
+## 2026-11-02 (nuit, suite) — Collier prénom : la chaîne s'adapte à la longueur du prénom
+- Demande utilisateur (capture iPhone) : dans l'aperçu, la chaîne doit toucher les deux bords du prénom, s'ouvrir pour un
+  prénom long et se resserrer pour un prénom court — sans rien changer d'autre (taille des lettres comprise).
+- `assets_theme.py` : le bas des deux brins (sous y ≈ 630, anneaux compris) est effacé des 3 photos `collier-vierge*.webp`
+  (velours recopié 30 px à côté + correction de lumière). Brins mesurés : gauche (640, 367) → (860, 501), droite
+  (640, 872) → (860, 740), identiques dans les 3 finitions.
+- `lou-produit.js` : les brins sont redessinés maillon par maillon (même éclat que la vraie chaîne) depuis la chaîne de la
+  photo jusqu'à un anneau posé sur le premier et le dernier pixel du prénom ; plus de limite de largeur (garde-fou à
+  560 px seulement), formule de taille des lettres inchangée. Testé : je, Lou, Emma, Chloé, Marguerite, Léa ; 3 finitions,
+  2 polices ; aucune erreur. Envoyé sur le thème en ligne. Capture : `docs/captures/collier-chaine-adaptee.jpg`.
