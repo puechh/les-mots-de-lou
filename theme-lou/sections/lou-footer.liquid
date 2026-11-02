@@ -1,0 +1,52 @@
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <p class="logo logo-footer"><span class="logo-les">Les</span> <span class="logo-mots">Mots</span> <span class="logo-de">de</span> <span class="logo-lou">Lou</span></p>
+      <p class="hand">Vos mots, gravés pour toujours.</p>
+      <p class="small">Bijoux personnalisés en acier inoxydable, gravés avec vos mots et livrés dans un écrin cadeau.</p>
+    </div>
+    <div>
+      <h3>Les bijoux</h3>
+      {%- for link in linklists[section.settings.menu1].links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
+    </div>
+    <div>
+      <h3>Besoin d'aide ?</h3>
+      {%- for link in linklists[section.settings.menu2].links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
+    </div>
+    <div class="footer-news">
+      <h3>Les petits mots de Lou 💌</h3>
+      <p class="small">Des idées de phrases, les nouveautés et les offres, une à deux fois par mois.</p>
+      {%- form 'customer', class: 'news-form' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        {%- if form.posted_successfully? -%}
+          <p class="news-ok">Merci ! C'est noté 💗</p>
+        {%- else -%}
+          <div class="news-row">
+            <label class="sr" for="news-email">Votre e-mail</label>
+            <input id="news-email" type="email" name="contact[email]" placeholder="votre@email.fr" required autocomplete="email">
+            <button class="btn btn-small" type="submit">Je m'inscris</button>
+          </div>
+          <p class="tiny">En vous inscrivant, vous acceptez de recevoir nos e-mails. Désinscription en un clic dans chaque e-mail. Voir la <a href="{{ shop.privacy_policy.url | default: '/policies/privacy-policy' }}">politique de confidentialité</a>.</p>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
+    <nav aria-label="Informations légales">
+      {%- for link in linklists[section.settings.menu3].links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
+    </nav>
+    <p class="pay">{% render 'icones-paiement' %}</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Pied de page",
+  "settings": [
+    { "type": "link_list", "id": "menu1", "label": "Colonne Les bijoux", "default": "main-menu" },
+    { "type": "link_list", "id": "menu2", "label": "Colonne Aide", "default": "footer" },
+    { "type": "link_list", "id": "menu3", "label": "Liens légaux", "default": "legal" }
+  ]
+}
+{% endschema %}

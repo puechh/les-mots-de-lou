@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff5f8">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
+  {%- liquid
+    assign titre = page_title
+    unless page_title contains shop.name
+      assign titre = titre | append: ' | ' | append: shop.name
+    endunless
+  -%}
+  <title>{{ titre }}</title>
+  {%- if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+  <meta property="og:site_name" content="{{ shop.name }}">
+  <meta property="og:title" content="{{ titre | escape }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  {%- if product and product.featured_image %}<meta property="og:image" content="https:{{ product.featured_image | image_url: width: 1200 }}">{% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Caveat:wght@500;700&family=Great+Vibes&family=Cormorant+Garamond:wght@600&family=Montserrat:wght@500;700&display=swap">
+  {{ 'lou.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'lou.js' | asset_url }}" defer></script>
+  {%- if template.name == 'product' %}<script src="{{ 'lou-produit.js' | asset_url }}" defer></script>{% endif %}
+  {{ content_for_header }}
+</head>
+<body class="tpl-{{ template.name }}{% if template.suffix %} tpl-{{ template.suffix }}{% endif %}">
+  <a class="skip" href="#main">Aller au contenu</a>
+  <script>
+    window.LOU = {
+      routes: { root: {{ routes.root_url | json }}, cart: {{ routes.cart_url | json }}, cartAdd: {{ routes.cart_add_url | json }}, cartChange: {{ routes.cart_change_url | json }} },
+      cart: {{ cart | json }}
+    };
+  </script>
+  {% section 'lou-header' %}
+  <main id="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+  {% section 'lou-footer' %}
+  {% render 'panier-tiroir' %}
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+</body>
+</html>

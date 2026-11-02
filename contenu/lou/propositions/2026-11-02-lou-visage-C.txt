@@ -1,0 +1,2 @@
+Modèle : gpt-image-2
+Prompt : Photorealistic editorial portrait photo, head and shoulders, of a fictional French woman about 28 years old named Lou, warm funny kind expression, natural skin texture, soft natural window light, 85mm, blush pink and cream tones, cosy Parisian apartment softly blurred, thin silver stainless steel necklace. Version C: copper auburn long hair loosely tied in a low messy bun, blue-grey eyes, fair skin with rosy cheeks, playful mischievous smile, oatmeal turtleneck, holding a pen near her chin as if searching for the right words. No text.

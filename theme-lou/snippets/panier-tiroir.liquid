@@ -1,0 +1,16 @@
+<div class="drawer-bg" id="drawer-bg"></div>
+<aside class="drawer" id="drawer" aria-label="Mon panier" aria-hidden="true">
+  <div class="drawer-head">
+    <h2>Mon panier <span class="hand">💗</span></h2>
+    <button class="icon-btn" id="drawer-close" aria-label="Fermer le panier">✕</button>
+  </div>
+  <div class="duo" id="duo"></div>
+  <ul class="drawer-items" id="drawer-items"></ul>
+  <div class="drawer-foot">
+    <div class="drawer-line" id="drawer-discount" hidden><span>Réduction</span><span></span></div>
+    <div class="drawer-line drawer-total"><span>Total</span><span id="drawer-total">0,00 €</span></div>
+    <p class="tiny">Frais de livraison calculés à l'étape suivante. Bijoux personnalisés : vérifiez bien l'orthographe, ils sont fabriqués rien que pour vous.</p>
+    <a class="btn btn-full" href="/checkout" id="checkout">Commander</a>
+    <p class="pay">{% render 'icones-paiement' %}</p>
+  </div>
+</aside>

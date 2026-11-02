@@ -1,0 +1,194 @@
+{
+  "_note": "Source des fiches de la bêta (02/11/2026). Créées sur Shopify par scripts/construire_boutique.py. Images = IA (à vérifier/remplacer par les photos fournisseur avant ouverture). Ne pas écrire 316L / sans nickel tant que le fournisseur ne l'a pas confirmé par écrit.",
+  "produits": [
+    {
+      "handle": "jonc-mes-mots",
+      "title": "Le Jonc « Mes Mots »",
+      "type": "Jonc gravé",
+      "tags": [
+        "jonc",
+        "bracelet",
+        "best-seller",
+        "noel"
+      ],
+      "prix": "29.90",
+      "option": "Finition",
+      "variantes": [
+        "Argentée",
+        "Dorée",
+        "Rosée"
+      ],
+      "images": [
+        "produit-jonc-1",
+        "produit-jonc-finitions",
+        "lou-jonc",
+        "coffret-cadeau"
+      ],
+      "accroche": "La phrase que vous n'osez pas dire, gravée sur un jonc qu'elle ne quittera plus.",
+      "benefices": [
+        "Gravure de votre texte (jusqu'à 30 caractères)",
+        "Acier inoxydable : ne noircit pas, résiste à l'eau",
+        "Jonc ouvert, s'ajuste à tous les poignets",
+        "Livré dans un écrin cadeau, prêt à offrir"
+      ],
+      "perso": [
+        {
+          "cle": "Texte gravé",
+          "type": "texte",
+          "max": 30,
+          "requis": true,
+          "exemple": "Tu es ma personne"
+        },
+        {
+          "cle": "Police",
+          "type": "choix",
+          "valeurs": [
+            "Manuscrite",
+            "Classique",
+            "Moderne"
+          ]
+        }
+      ],
+      "apercu": "jonc",
+      "seo": "Jonc gravé personnalisé avec votre message, acier inoxydable, livré en coffret cadeau. L'idée cadeau qui fait pleurer (de joie)."
+    },
+    {
+      "handle": "collier-prenom",
+      "title": "Le Collier Prénom",
+      "type": "Collier prénom",
+      "tags": [
+        "collier",
+        "prenom",
+        "best-seller",
+        "noel"
+      ],
+      "prix": "29.90",
+      "option": "Finition",
+      "variantes": [
+        "Argentée",
+        "Dorée",
+        "Rosée"
+      ],
+      "images": [
+        "produit-collier-prenom-1",
+        "produit-collier-prenom-finitions",
+        "lou-collier-prenom",
+        "coffret-cadeau"
+      ],
+      "accroche": "Son prénom (ou celui de quelqu'un qu'elle aime) écrit d'un trait, tout près du cœur.",
+      "benefices": [
+        "Prénom découpé d'un seul trait (jusqu'à 10 lettres)",
+        "Acier inoxydable : ne noircit pas",
+        "Chaîne fine avec rallonge réglable",
+        "Livré dans un écrin cadeau, prêt à offrir"
+      ],
+      "perso": [
+        {
+          "cle": "Prénom",
+          "type": "texte",
+          "max": 10,
+          "requis": true,
+          "exemple": "Emma"
+        },
+        {
+          "cle": "Police",
+          "type": "choix",
+          "valeurs": [
+            "Manuscrite",
+            "Moderne"
+          ]
+        }
+      ],
+      "apercu": "prenom",
+      "seo": "Collier prénom personnalisé en acier inoxydable, finition argentée, dorée ou rosée, livré en coffret cadeau."
+    },
+    {
+      "handle": "collier-souvenir-photo",
+      "title": "Le Collier Souvenir (photo cachée)",
+      "type": "Collier photo",
+      "tags": [
+        "collier",
+        "photo",
+        "souvenir",
+        "noel"
+      ],
+      "prix": "34.90",
+      "option": "Finition",
+      "variantes": [
+        "Argentée",
+        "Dorée",
+        "Rosée"
+      ],
+      "images": [
+        "produit-collier-photo-1",
+        "coffret-cadeau"
+      ],
+      "accroche": "Un petit cœur… et quand on regarde dedans, votre plus belle photo apparaît.",
+      "benefices": [
+        "Votre photo cachée dans une minuscule lentille",
+        "On la voit en regardant à travers, vers la lumière",
+        "Pendentif cœur, chaîne réglable",
+        "Livré dans un écrin cadeau, prêt à offrir"
+      ],
+      "perso": [
+        {
+          "cle": "Photo",
+          "type": "photo",
+          "requis": true
+        }
+      ],
+      "apercu": "photo",
+      "seo": "Collier photo à projection personnalisé : votre photo cachée dans un pendentif cœur. Cadeau souvenir livré en coffret."
+    },
+    {
+      "handle": "bracelet-code-secret",
+      "title": "Le Bracelet Code Secret",
+      "type": "Bracelet morse",
+      "tags": [
+        "bracelet",
+        "morse",
+        "duo",
+        "noel"
+      ],
+      "prix": "24.90",
+      "option": "Cordon",
+      "variantes": [
+        "Noir",
+        "Rose poudré",
+        "Beige"
+      ],
+      "images": [
+        "produit-bracelet-morse-1",
+        "coffret-cadeau"
+      ],
+      "accroche": "Un mot écrit en code Morse : personne ne sait ce qu'il dit… sauf vous deux.",
+      "benefices": [
+        "Votre mot traduit en points et traits (jusqu'à 8 lettres)",
+        "Perles en acier inoxydable",
+        "Cordon réglable, se porte tous les jours",
+        "La clé du code expliquée sur la fiche"
+      ],
+      "perso": [
+        {
+          "cle": "Mot secret",
+          "type": "texte",
+          "max": 8,
+          "requis": true,
+          "exemple": "TOUJOURS",
+          "majuscules": true
+        }
+      ],
+      "apercu": "morse",
+      "seo": "Bracelet code Morse personnalisé : votre mot secret en perles d'acier inoxydable. Idée cadeau duo, meilleure amie, couple."
+    }
+  ],
+  "offre": {
+    "titre": "2e bijou à -50 %",
+    "type": "2e article à -50 % (le moins cher)"
+  },
+  "livraison": {
+    "fabrication": "2 à 4 jours",
+    "livraison": "8 à 12 jours ouvrés",
+    "noel": "Commandez avant le 1er décembre pour Noël"
+  }
+}
