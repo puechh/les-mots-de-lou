@@ -126,6 +126,15 @@ p { margin: 0 0 1em; }
 .atelier-row { display: flex; gap: 8px; }
 .atelier input { flex: 1; min-width: 0; border: 2px solid var(--rose); border-radius: 999px; padding: 12px 18px; background: var(--creme); }
 .atelier input:focus { outline: none; border-color: var(--framboise); }
+@media (max-width: 899px) {
+  .hero-in { padding-block: 18px 44px; gap: 22px; }
+  .hero-visu { order: -1; }
+  .hero-photo { aspect-ratio: 5 / 4; border-radius: 26px 26px 90px 26px; }
+  .hero-photo img { object-position: 60% 30%; }
+  .sticker { font-size: .8rem; padding: 7px 11px; }
+  .sticker.s1 { bottom: 10%; left: 6px; }
+  .eyebrow { font-size: .7rem; letter-spacing: .12em; }
+}
 @media (min-width: 900px) {
   .hero-in { grid-template-columns: 1.05fr .95fr; padding-block: 56px 80px; gap: 56px; }
 }
