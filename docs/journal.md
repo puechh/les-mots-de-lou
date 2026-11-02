@@ -6,3 +6,4 @@
 - Dépôt préparé : `CLAUDE.md`, outils (`shopify.py`, `sauvegarde.py`, `envoyer_theme.py` → `theme-lou/`, `images_ia.py`,
   `klaviyo.py`, hook de mémoire), `docs/` (reprise, marque, recherche, leçons Corps-Confiant, veille légale).
 - Décision : le slogan ne dit pas que Lou n'existe pas ; mention dans les politiques ; slogans proposés dans `docs/marque.md`.
+- Slogan choisi par l'utilisateur : « Vos mots, gravés pour toujours. »

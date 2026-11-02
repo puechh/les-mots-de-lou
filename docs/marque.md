@@ -5,8 +5,8 @@
   obsédée par **les mots qu'on n'ose pas dire**. Elle aide à trouver la phrase à graver, « écrit » la carte glissée dans chaque
   coffret, porte les bijoux dans de petites scènes de vie.
 - **Décision utilisateur (02/11/2026) : le slogan ne doit PAS dire que Lou n'existe pas** ; le caractère virtuel de Lou est
-  indiqué dans les politiques / mentions du site. Slogans proposés : « Ce que vous n'osez pas dire, portez-le. »,
-  « Vos mots, gravés pour toujours. », « Les mots qu'on garde près du cœur. » (choix à faire).
+  indiqué dans les politiques / mentions du site. **Slogan choisi par l'utilisateur
+  (02/11/2026) : « Vos mots, gravés pour toujours. »**
 - Cible : femmes 25-45 ans qui offrent (amie, sœur, mère, amoureux) ; Noël, puis Saint-Valentin, fête des mères, anniversaires.
 - Produits : jonc à message, collier prénom, collier photo « souvenir » ; coffret cadeau + carte message inclus (≈ 34,90 €) ;
   offre type « 2e bijou à -50 % » à envisager.
