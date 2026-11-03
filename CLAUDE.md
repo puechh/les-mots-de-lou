@@ -39,6 +39,9 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   mèches, lumière naturelle, pas de filtre ni studio) et **toujours « réalisée avec l'iPhone 18 Pro »** → chaque prompt commence
   par **« Shot on iPhone 18 Pro. »**. Toujours repartir de `B-chignon.png` (ou d'un plan de `reference-v2/`) en retouche ;
   `gpt-image-2.5-flare` + `--fidelite aucune` (il refuse `input_fidelity`), qualité high. Tenues sobres (pubs).
+  **Anti-pixelisation** : toujours `scripts/images_ia.py modifier … --format portrait-hd --qualite high` (2048×3072) +
+  « extremely sharp, high resolution, no pixelation, no compression artifacts » ; vérifier un recadrage à 100 % avant d'envoyer.
+  Le filtre OpenAI refuse « bikini » + selfie → maillot une pièce / chemise en lin.
   Ses photos d'exemple (selfies) = inspiration en mots seulement, jamais envoyées au modèle (vraies personnes possibles).
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).

@@ -10,6 +10,9 @@
 - **Toujours ultra-réaliste et toujours « Shot on iPhone 18 Pro. » en tête du prompt** (règle dans CLAUDE.md).
 - Planche de 6 plans faite : `contenu/lou/reference-v2/` (face, trois-quarts, profil, rire au café, mains avec tasse, selfie
   miroir en pied) + `planche-lou-v2.jpg`. Prompts dans les .txt. À faire valider par l'utilisateur.
+- Images bijoux portés (03/11, demande utilisateur) : `contenu/images-ia/2026-11-03-lou-v2-*.png` (2048×3072) — plage en maillot
+  (jonc, collier « Lou », duo) + gros plans sans visage (cou collier prénom, cou collier photo, poignet jonc, poignet Morse).
+  ⚠️ Bijoux copiés des images IA des fiches : à refaire avec les vraies photos fournisseur si elles diffèrent.
 - Ensuite (accord utilisateur) : remplacer les images de Lou du thème et des pages (banc avant envoi) ; Lou portant les bijoux
   seulement à partir des vraies photos fournisseur ; LoRA fal.ai si besoin de beaucoup d'images.
 

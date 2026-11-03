@@ -265,3 +265,5 @@
 - Choix : visage **B** avec **cheveux longs bouclés** → 2 retouches `B2-boucles-1/2.png` (≈ 0,60 $). Variante finale en attente.
 - Revirement : l'utilisateur préfère **B avec le chignon** (définitive). Règle notée : **toujours ultra-réaliste, toujours
   « Shot on iPhone 18 Pro. »**. Planche de 6 plans `contenu/lou/reference-v2/` (≈ 2 $ OpenAI).
+- Bijoux portés : 7 images HD (plage en maillot : jonc / collier « Lou » / duo ; gros plans cou et poignet, sans visage)
+  → `contenu/images-ia/2026-11-03-lou-v2-*.png` (≈ 3 $). Bikini refusé par le filtre OpenAI → maillot une pièce.

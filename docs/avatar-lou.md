@@ -166,4 +166,7 @@ Requêtes gratuites uniquement, clé jamais affichée. Une fausse clé donne 401
   « Shot on iPhone 18 Pro. Ultra-realistic, unretouched candid smartphone photo. Keep exactly the same woman as in the reference
   photo: identical face… same dark chestnut-brown hair in a loose messy bun… » + plan. Tenues couvertes (pulls, cardigan).
   Résultat : visage très constant sur les 6. Le « profil » est plutôt un trois-quarts arrière (à refaire si un vrai profil est utile).
-
+- 03/11 — Bijoux portés (demande utilisateur : plage en maillot + gros plans cou/poignet, ultra-réaliste, pas pixelisé) :
+  7 images `contenu/images-ia/2026-11-03-lou-v2-*.png` en 2048×3072, qualité high (≈ 3 $). Références : `reference-v2/01-face.png`
+  + photo de fiche du bijou (`2026-11-02-produit-*-hd.jpg`). Collier prénom = « Lou ». Recadrages à 100 % nets (gravure lisible).
+  Le selfie « bikini » a été refusé par le filtre OpenAI (sexual) → refait en maillot une pièce + chemise en lin.
