@@ -196,3 +196,7 @@
 - Grande bulle « Mon conseil » de Lou retirée du haut de la fiche ; à la place, petit message d'une ligne (mini photo de Lou)
   qui apparaît sous le champ dès qu'elle écrit (ou sous l'envoi de photo) : « Lou : 10 à 20 caractères, c'est parfait 💗 »…
 - Message d'accueil de Lou adapté au collier photo (plus de « Besoin d'une idée de phrase ? »).
+
+## 2026-11-03 (suite 7) — Carte « Ma machine à mots » : lien vers la machine
+- Au dos de la carte « Ma machine à mots » (section problème → solution) : pastille « Je l'essaie ↑ » ; toucher la carte
+  retournée fait remonter à la machine à mots (accueil) et tire la manette automatiquement.

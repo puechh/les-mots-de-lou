@@ -282,6 +282,7 @@ h1 em > .t, h2 em > .t { position: relative; z-index: 1; }
 .carte-r .avant b { text-decoration: underline; text-decoration-color: var(--framboise); text-decoration-thickness: 3px; text-underline-offset: 5px; }
 .carte-r small { font-size: .8rem; line-height: 1.35; opacity: .9; }
 .carte-r .arriere .hand { color: #fff; font-size: 1.3rem; }
+.carte-r .aller { margin-top: 4px; background: #fff; color: var(--framboise-f); border-radius: 999px; padding: 6px 13px; font-weight: 800; font-size: .8rem; box-shadow: 0 6px 14px -8px rgba(59, 31, 43, .6); animation: flotte 2.4s ease-in-out infinite; }
 
 /* Machine à mots (machine à sous avec manette) */
 .machine { display: grid; gap: 24px; align-items: center; }

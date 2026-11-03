@@ -595,7 +595,19 @@
   /* ---------- Cartes « problème → solution » : se retournent toutes seules, et au toucher ---------- */
   var cartesR = $$(".carte-r");
   if (cartesR.length) {
-    cartesR.forEach(function (c) { c.addEventListener("click", function () { c.classList.toggle("flip"); c.dataset.touche = "1"; son("pop"); }); });
+    cartesR.forEach(function (c) {
+      c.addEventListener("click", function () {
+        var cible = c.getAttribute("data-cible") && $(c.getAttribute("data-cible"));
+        // Carte « machine à mots » déjà retournée : on remonte à la machine et on tire la manette
+        if (cible && c.classList.contains("flip")) {
+          c.dataset.touche = "1"; son("pop");
+          scrollTo({ top: cible.getBoundingClientRect().top + scrollY - 70, behavior: reduit ? "auto" : "smooth" });
+          var tir = $(".machine-tirer", cible); if (tir) setTimeout(function () { tir.click(); }, reduit ? 0 : 900);
+          return;
+        }
+        c.classList.toggle("flip"); c.dataset.touche = "1"; son("pop");
+      });
+    });
     if (!reduit) {
       // Une carte à la fois, lentement : on commence par la 2e (le temps de lire la 1re), puis 3e, 4e, 1re…
       var ordre = [1, 2, 3, 0], ir = 0, visible = false, lance = false;
