@@ -125,3 +125,6 @@ higgsfield.ai/academy/how-to-use/how-to-create-ai-influencer · dreamina.capcut.
   `fal.media` et `v3.fal.media` (téléchargement des images). Si le formulaire n'accepte que « Bearer » : variable
   d'environnement **`FAL_KEY`** à la place (lue par le script). Jamais dans le chat ni le dépôt.
 - La clé n'est prise en compte que dans une **nouvelle session**.
+- Fait par l'utilisateur (03/11) : le formulaire n'accepte qu'un site par secret → **3 secrets** avec la même clé
+  (`fal.run`, `queue.fal.run`, `rest.fal.ai`) ; possible faute de frappe sur les 2 derniers → à tester en nouvelle session
+  (sans rien dépenser, sans afficher la clé).

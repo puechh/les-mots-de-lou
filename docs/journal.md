@@ -247,3 +247,4 @@
 ## 2026-11-03 (suite 14) — Option fal.ai choisie : création de la clé
 - L'utilisateur crée sa clé fal.ai (préréglage « API » validé). Marche à suivre pour l'ajouter à l'environnement notée dans
   `docs/avatar-lou.md`. Prochaine étape (nouvelle session) : vérifier la clé, entraîner le LoRA de Lou sur 20 images validées.
+- Clé ajoutée en 3 « Network secrets » (un par site). Test de la clé à faire dans une nouvelle session.
