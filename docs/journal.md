@@ -159,3 +159,8 @@
   textes mis à jour (fiche, FAQ, étapes, Lou, livraison-retours, CGV, politique de livraison).
   ⚖️ Conseil donné : délai très court pour du sur-mesure AliExpress (souvent 2-4 semaines) ; dépassement = la cliente
   peut annuler (L216-2) → à confirmer avec le fournisseur choisi.
+
+## 2026-11-03 (suite 2) — Atelier de l'accueil : on efface l'exemple pour écrire ses mots
+- Demande utilisateur : quand on touche le champ de l'atelier, le message d'exemple (démo qui s'écrit toute seule) s'efface
+  pour écrire son propre mot. Jonc vierge tant que le champ est vide ; si on quitte le champ vide, l'exemple revient sur le
+  jonc ; un texte écrit par la cliente n'est jamais effacé en retouchant le champ. Indication du champ : « Vos mots ici… ».

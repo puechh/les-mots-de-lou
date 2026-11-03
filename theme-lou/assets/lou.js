@@ -418,7 +418,7 @@
   var atelier = $("#atelier-texte");
   if (atelier) {
     var lien = $("#atelier-lien"), toile = $("#atelier-gravure"), boite = $("#atelier-apercu"), photo = boite && $("img", boite), etinc = $("#etincelle");
-    var finA = "Argentée", dernier = "";
+    var finA = "Argentée", dernier = "", aEcrit = false, dedans = false;
     var etincelle = function (p) {
       if (!p || !etinc || reduit) return;
       etinc.style.left = p.x + "px"; etinc.style.top = p.y + "px";
@@ -430,7 +430,7 @@
     var maj = function (feu) {
       var v = atelier.value.slice(0, 20);
       var p = null;
-      if (toile && photo && toile.getContext) p = LOU.graverJonc(toile, photo, v || "Tu es ma personne", { vue: "bande", encre: finA === "Argentée" ? "#55494f" : "#5a3f2a" });
+      if (toile && photo && toile.getContext) p = LOU.graverJonc(toile, photo, v || (dedans ? "" : "Tu es ma personne"), { vue: "bande", encre: finA === "Argentée" ? "#55494f" : "#5a3f2a" });
       if (feu && v && v !== dernier) etincelle(p);
       dernier = v;
       if (lien) lien.href = lien.getAttribute("data-base") + "?" + (v ? "texte=" + encodeURIComponent(v) + "&" : "") + "finition=" + encodeURIComponent(finA);
@@ -445,8 +445,12 @@
         atelier.value = v.slice(0, i) + up + v.slice(i + 1);
         try { atelier.setSelectionRange(a, b); } catch (e) {}
       }
+      aEcrit = !!atelier.value;
       maj(true); son("clic");
     });
+    // Quand on touche le champ : l'exemple s'efface pour écrire ses propres mots (jonc vierge en attendant)
+    atelier.addEventListener("focus", function () { dedans = true; if (!aEcrit) { atelier.value = ""; maj(); } });
+    atelier.addEventListener("blur", function () { dedans = false; if (!atelier.value) maj(); });
     maj();
     $$(".pastilles button", $("#atelier")).forEach(function (b) {
       b.addEventListener("click", function () {
