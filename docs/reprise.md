@@ -7,8 +7,9 @@
 ## 🚀 03/11/2026 — OUVERTURE EN COURS (Pinterest / Google)
 - ✅ **Politiques en ligne, copiées sur Corps-Confiant** (mentions légales, coordonnées, CGV, retours, expédition),
   e-mail `contact@lesmotsdelou.fr`. Reste : **médiateur de la consommation** à souscrire puis ajouter (absent aussi sur
-  Corps-Confiant) ; **Belgique** citée sur le site (pages, thème, FAQ) mais **pas de zone de livraison Belgique** dans Shopify
-  → ajouter la zone ou retirer la Belgique (choix utilisateur) ; vérifier que la boîte contact@lesmotsdelou.fr reçoit bien. Mot de passe à retirer par l'utilisateur. Ensuite : Pinterest (appli Shopify,
+  Corps-Confiant) ; **Livraison copiée sur Corps-Confiant** (France + Belgique, 4,90 € / offerte dès 39,90 € / Garantie 2 mois 7,90 €) ;
+  ⚠️ **FAQ et fiche produit du thème mises à jour au banc mais PAS ENCORE ENVOYÉES** (`envoyer_theme.py maj snippets/faq.liquid
+  sections/lou-produit.liquid` refusé par le contrôle des permissions → accord utilisateur) ; vérifier que la boîte contact@lesmotsdelou.fr reçoit bien. Mot de passe à retirer par l'utilisateur. Ensuite : Pinterest (appli Shopify,
   validation du site, catalogue), Google & YouTube (Merchant Center). Fournisseurs DSers à relier AVANT la 1re vente.
 
 ## 🎭 03/11/2026 (fin) — LOU DÉFINITIVE : photo `contenu/lou/reference-v3/00-source-lou.webp` + Nano Banana Pro 4K

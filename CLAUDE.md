@@ -51,7 +51,10 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   tant que la fabrication n'a pas commencé ; garantie légale 2 ans, frais à notre charge). Modèles : `contenu/politiques/*.html`
   avec `{{EDITEUR}}` / `{{ADRESSE}}` ; envoi : `python3 scripts/publier_politiques.py --depuis /home/user/boutique-corps-confiant/contenu/politiques.json`
   (cloner ce dépôt d'abord) ou variables `LOU_EDITEUR` / `LOU_ADRESSE`. `sauvegarde.py` ne recopie plus les mentions légales
-  ni les coordonnées (identité). Livraison réelle Shopify : **France seule** (standard 7,99 €, offerte dès 65 €, express 10,99 €).
+  ni les coordonnées (identité). **Livraison = exactement Corps-Confiant (décision utilisateur 03/11)** : zone « France et Belgique » (marché Belgique créé) :
+  « Livraison standard » 4,90 € (< 39,90 €), « Livraison standard offerte » dès 39,90 €, **« Livraison + Garantie 2 mois 🛡️ » 7,90 €**
+  (même délai ; pour Lou = 2 mois pour renvoyer le bijou **même personnalisé**, remboursé, non porté, emballage d'origine, renvoi à
+  la charge de la cliente). Pas d'international (pas demandé).
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).

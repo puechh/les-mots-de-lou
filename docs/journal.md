@@ -292,3 +292,8 @@
   `sauvegarde.py` masque désormais mentions légales et coordonnées. Hébergeur indiqué : Shopify International Limited (Dublin),
   entité contractante, au lieu de l'adresse parisienne utilisée sur Corps-Confiant. Lien vers la plateforme européenne RLL retiré
   (fermée depuis le 20/07/2025).
+- Livraison copiée sur Corps-Confiant (demande utilisateur) : zone « France et Belgique » (ancienne zone France : Standard 7,99 €,
+  offerte dès 65 €, Express 10,99 € supprimés) → Livraison standard 4,90 €, offerte dès 39,90 €, Livraison + Garantie 2 mois 🛡️
+  7,90 € ; marché « Belgique » créé. Garantie 2 mois adaptée : 2 mois pour renvoyer le bijou même personnalisé. Politiques
+  (expédition, retours, CGV) et page Livraison mises à jour sur Shopify. FAQ + fiche produit du thème modifiées et testées au banc ;
+  envoi sur le thème en ligne refusé par le contrôle des permissions (en attente d'accord).
