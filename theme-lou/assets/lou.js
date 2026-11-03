@@ -149,21 +149,59 @@
     })();
   };
 
-  /* ---------- Favoris (cœurs) ---------- */
-  var favs = [];
+  /* ---------- Coups de cœur (favoris) : cœurs sur les vignettes et les fiches, panneau « Mes coups de cœur » ---------- */
+  var favs = [], CATA = [];
   try { favs = JSON.parse(localStorage.getItem("lou-favs") || "[]"); } catch (e) {}
-  $$(".coeur").forEach(function (b) {
-    var h = b.getAttribute("data-handle");
-    if (favs.indexOf(h) > -1) b.classList.add("is-on");
-    b.addEventListener("click", function (ev) {
+  try { CATA = JSON.parse(($("#lou-catalogue") || {}).textContent || "[]"); } catch (e) {}
+  var favBtn = $("#fav-btn"), favCount = $("#fav-count");
+  function sauverFavs() { try { localStorage.setItem("lou-favs", JSON.stringify(favs)); } catch (e) {} }
+  function majFavs(bump) {
+    favs = favs.filter(function (h) { return CATA.some(function (p) { return p.handle === h; }) || !CATA.length; });
+    if (favCount) { favCount.textContent = favs.length; favCount.hidden = !favs.length; }
+    if (favBtn) { favBtn.classList.toggle("a-des", !!favs.length); if (bump) { favBtn.classList.remove("bump"); void favBtn.offsetWidth; favBtn.classList.add("bump"); } }
+    $$(".coeur").forEach(function (b) { b.classList.toggle("is-on", favs.indexOf(b.getAttribute("data-handle")) > -1); });
+    var ul = $("#fav-items"); if (!ul) return;
+    var liste = favs.map(function (h) { return CATA.filter(function (p) { return p.handle === h; })[0]; }).filter(Boolean);
+    var lou = $("#fav-lou");
+    if (lou) lou.textContent = !liste.length ? "Touchez le ♡ sur un bijou : je vous le garde ici." : liste.length === 1 ? "Joli choix 💗 Et si vous en preniez deux ? Le 2e est à -50 % !" : "Vous avez bon goût 💗 À deux, le 2e bijou est à -50 % !";
+    ul.innerHTML = !liste.length ? '<li class="vide" style="display:block;background:none"><span class="emo">♡</span>Aucun coup de cœur pour l\'instant…</li>' :
+      liste.map(function (p) {
+        return '<li><a href="' + esc(p.url) + '"><img src="' + esc(p.image) + '" alt="" width="76" height="76" loading="lazy"></a><div><a class="t" href="' + esc(p.url) + '" style="text-decoration:none">' + esc(p.title) + '</a>' +
+          '<div class="prix">' + euros(p.price) + '</div><div class="fav-actions"><a class="btn btn-small" href="' + esc(p.url) + '">✍️ Personnaliser</a><button class="fav-retirer" type="button" data-h="' + esc(p.handle) + '">Retirer</button></div></div></li>';
+      }).join("");
+  }
+  function ouvrirFavs() { majFavs(); document.body.classList.add("fav-ouvert"); var d = $("#fav-drawer"); if (d) d.setAttribute("aria-hidden", "false"); son("pop"); }
+  function fermerFavs() { document.body.classList.remove("fav-ouvert"); var d = $("#fav-drawer"); if (d) d.setAttribute("aria-hidden", "true"); }
+  LOU.ouvrirFavs = ouvrirFavs;
+  function coeurVole(depuis) {
+    if (reduit || !favBtn || !depuis) return;
+    var a = depuis.getBoundingClientRect(), b = favBtn.getBoundingClientRect();
+    var h = document.createElement("span"); h.className = "mini-coeur"; h.textContent = "♥"; h.style.fontSize = "22px";
+    h.style.left = (a.left + a.width / 2 - 8) + "px"; h.style.top = (a.top + a.height / 2 - 11) + "px"; document.body.appendChild(h);
+    h.animate([{ transform: "translate(0,0) scale(1)" }, { transform: "translate(" + ((b.left - a.left) * .5) + "px," + ((b.top - a.top) * .5 - 60) + "px) scale(1.4)", offset: .5 },
+      { transform: "translate(" + (b.left + b.width / 2 - a.left - a.width / 2) + "px," + (b.top + b.height / 2 - a.top - a.height / 2) + "px) scale(.5)", opacity: .6 }], { duration: 750, easing: "cubic-bezier(.5,0,.3,1)" })
+      .onfinish = function () { h.remove(); majFavs(true); };
+  }
+  document.addEventListener("click", function (ev) {
+    var b = ev.target.closest && ev.target.closest(".coeur");
+    if (b) {
       ev.preventDefault(); ev.stopPropagation();
-      var on = !b.classList.contains("is-on"); b.classList.toggle("is-on", on);
+      var h = b.getAttribute("data-handle"), on = favs.indexOf(h) < 0;
       favs = favs.filter(function (x) { return x !== h; }); if (on) favs.push(h);
-      try { localStorage.setItem("lou-favs", JSON.stringify(favs)); } catch (e) {}
-      if (on) { coeurs(b); son("pop"); }
-      if (LOU.dit) LOU.dit(on ? "Ajouté à vos coups de cœur 💗 Bon goût, je note !" : "Retiré de vos coups de cœur… je ne dirai rien 🤐", 3200);
-    });
-  });
+      sauverFavs(); b.classList.toggle("is-on", on);
+      if (on) { coeurs(b); son("pop"); coeurVole(b); } else majFavs();
+      if (LOU.dit) LOU.dit(on ? "Ajouté à vos coups de cœur 💗 Retrouvez-les en haut, dans le ♡" : "Retiré de vos coups de cœur… je ne dirai rien 🤐", 3500);
+      return;
+    }
+    var r = ev.target.closest && ev.target.closest(".fav-retirer");
+    if (r) { favs = favs.filter(function (x) { return x !== r.getAttribute("data-h"); }); sauverFavs(); majFavs(); son("clic"); }
+  }, true);
+  if (favBtn) favBtn.addEventListener("click", ouvrirFavs);
+  var favMenu = $("#fav-menu");
+  if (favMenu) favMenu.addEventListener("click", function (e) { e.preventDefault(); var bg = $("#burger"); if (bg && bg.getAttribute("aria-expanded") === "true") bg.click(); ouvrirFavs(); });
+  var fc = $("#fav-close"); if (fc) fc.addEventListener("click", fermerFavs);
+  if (location.hash === "#coups-de-coeur") setTimeout(ouvrirFavs, 300);
+  majFavs();
 
   /* ---------- Panier ---------- */
   var DUO = [];
@@ -247,8 +285,8 @@
   });
   var cb = $("#cart-btn"); if (cb) cb.addEventListener("click", function () { chargerPanier(); ouvrirPanier(); });
   var dc = $("#drawer-close"); if (dc) dc.addEventListener("click", fermerPanier);
-  var dbg = $("#drawer-bg"); if (dbg) dbg.addEventListener("click", fermerPanier);
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { fermerPanier(); if (LOU.fermerLou) LOU.fermerLou(); } });
+  var dbg = $("#drawer-bg"); if (dbg) dbg.addEventListener("click", function () { fermerPanier(); fermerFavs(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { fermerPanier(); fermerFavs(); if (LOU.fermerLou) LOU.fermerLou(); } });
   if (LOU.cart && LOU.cart.items) { dejaDuo = LOU.cart.item_count >= 2; dessinerPanier(LOU.cart); }
 
   /* ---------- Gravure réaliste sur la photo du jonc ----------
@@ -743,11 +781,12 @@
       offre: function () { louRepond("Mettez <b>2 bijoux</b> dans le panier : le moins cher est automatiquement à <b>-50 %</b>. Un pour elle, un pour vous ? 🎁", proposer); },
       livraison: function () { louRepond("Livraison suivie en France et en Belgique. Commandé aujourd'hui, reçu " + esc(LOU.estimation()) + " (estimation) 🚚<br><a class=\"btn\" href=\"" + root + "pages/livraison-retours\">Livraison &amp; retours</a>", proposer); },
       qui: function () { louRepond("Je suis <b>Lou, l'avatar de la boutique</b> : un personnage virtuel, créé avec l'IA 🤖💗 Je ne fabrique pas les bijoux, je vous guide. Derrière moi, une vraie équipe répond à vos messages.", proposer); },
+      favoris: function () { louRepond(favs.length ? "Vous avez " + favs.length + " coup" + (favs.length > 1 ? "s" : "") + " de cœur 💗 Je vous les ouvre !" : "Pas encore de coup de cœur… Touchez le ♡ sur un bijou, je vous le garde 💗", function () { if (favs.length) setTimeout(function () { fermer(); ouvrirFavs(); }, 900); proposer(); }); },
       equipe: function () { louRepond("Une question précise ? L'équipe vous répond par e-mail, en vrai 💌<br><a class=\"btn\" href=\"" + root + "pages/contact\">Écrire à l'équipe</a>", proposer); }
     };
-    var LIB = { choisir: "🎁 Aide-moi à choisir", idee: "✍️ Une idée de phrase", noel: "🎄 Reçu pour Noël ?", matiere: "💎 C'est en quoi ?", offre: "🏷️ L'offre -50 %", livraison: "🚚 Livraison", qui: "🤖 Tu es qui ?", equipe: "💌 Parler à l'équipe" };
+    var LIB = { choisir: "🎁 Aide-moi à choisir", idee: "✍️ Une idée de phrase", noel: "🎄 Reçu pour Noël ?", matiere: "💎 C'est en quoi ?", offre: "🏷️ L'offre -50 %", livraison: "🚚 Livraison", favoris: "💗 Mes coups de cœur", qui: "🤖 Tu es qui ?", equipe: "💌 Parler à l'équipe" };
     var proposer = function (liste) {
-      liste = liste || ["choisir", "idee", "noel", "matiere", "offre", "livraison", "qui", "equipe"];
+      liste = liste || ["choisir", "idee", "noel", "favoris", "matiere", "offre", "livraison", "qui", "equipe"];
       choix.innerHTML = liste.map(function (k) { return '<button type="button" data-k="' + k + '">' + LIB[k] + "</button>"; }).join("");
     };
     choix.addEventListener("click", function (e) {

@@ -200,3 +200,11 @@
 ## 2026-11-03 (suite 7) — Carte « Ma machine à mots » : lien vers la machine
 - Au dos de la carte « Ma machine à mots » (section problème → solution) : pastille « Je l'essaie ↑ » ; toucher la carte
   retournée fait remonter à la machine à mots (accueil) et tire la manette automatiquement.
+
+## 2026-11-03 (suite 8) — « Mes coups de cœur » enfin visibles
+- L'utilisatrice ne trouvait pas ses coups de cœur (enregistrés dans le navigateur, sans page pour les voir). Ajouts :
+  icône ♡ dans l'en-tête (remplie + compteur quand il y en a), panneau latéral « Mes coups de cœur » (photo, prix,
+  « Personnaliser », « Retirer », Lou qui rappelle l'offre -50 %), lien « 💗 Mes coups de cœur » dans le menu mobile et dans
+  l'assistante Lou, cœur aussi sur la galerie des fiches produits, petit cœur qui s'envole vers l'en-tête.
+  Catalogue pour le panneau : `snippets/coups-de-coeur.liquid` (JSON des produits). En-tête : 4 icônes, testé 360-430 px.
+- Les coups de cœur restent propres à chaque navigateur (pas liés au compte client). Capture : `docs/captures/coups-de-coeur.jpg`.

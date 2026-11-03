@@ -18,6 +18,7 @@
   data-img-doree="{% if type == 'jonc' %}{{ 'jonc-carre-doree.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-doree.webp' | asset_url }}{% endif %}"
   data-img-rosee="{% if type == 'jonc' %}{{ 'jonc-carre-rosee.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-rosee.webp' | asset_url }}{% endif %}">
   <div class="fiche-galerie">
+    <button class="coeur coeur-fiche" type="button" data-handle="{{ product.handle }}" aria-label="Ajouter {{ product.title | escape }} à mes coups de cœur"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.6 0 6 3.7 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg></button>
     <div class="galerie" id="galerie" tabindex="0" aria-label="Images du bijou (glissez pour voir les photos)">
       <div class="slide vue-apercu" id="vue-apercu" data-i="-1"><span class="etiquette-apercu">✍️ Aperçu en direct · simulation</span><div class="scene" id="scene" aria-live="polite"></div></div>
       {%- for img in product.images -%}
