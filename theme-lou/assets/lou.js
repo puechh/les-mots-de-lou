@@ -660,10 +660,10 @@
   var cartesR = $$(".carte-r");
   if (cartesR.length) {
     cartesR.forEach(function (c) {
-      c.addEventListener("click", function () {
+      c.addEventListener("click", function (ev) {
         var cible = c.getAttribute("data-cible") && $(c.getAttribute("data-cible"));
-        // Carte « machine à mots » déjà retournée : on remonte à la machine et on tire la manette
-        if (cible && c.classList.contains("flip")) {
+        // Seulement le bouton « Je l'essaie », carte déjà retournée : on remonte à la machine et on tire la manette
+        if (cible && c.classList.contains("flip") && ev.target.closest && ev.target.closest(".aller")) {
           c.dataset.touche = "1"; son("pop");
           scrollTo({ top: cible.getBoundingClientRect().top + scrollY - 70, behavior: reduit ? "auto" : "smooth" });
           var tir = $(".machine-tirer", cible); if (tir) setTimeout(function () { tir.click(); }, reduit ? 0 : 900);

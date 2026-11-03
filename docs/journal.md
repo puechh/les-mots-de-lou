@@ -233,3 +233,9 @@
 - « = point / = trait » jugé incompréhensible (utilisateur) → remplacé par « Chaque lettre a son code secret en perles 🤫 » ;
   aide du champ et caractéristique reformulées (« perles rondes et longues », « mot secret traduit en perles »).
 - Collier photo : case « J'ai vérifié l'orthographe » retirée (aucun texte). Bulle de Lou du bracelet : « idée de mot secret ».
+
+## 2026-11-03 (suite 12) — Cartes « Fini les cadeaux sans âme » : on comprend qu'on peut les toucher
+- Toucher la carte « Ma machine à mots » ne fait plus que la retourner ; seul le bouton « Je l'essaie ↑ » (carte retournée)
+  remonte à la machine et tire la manette.
+- Pastille « 👆 Touchez-moi » qui pulse sur chaque carte, flèche ↻ au dos, légère rotation au survol (ordinateur),
+  consigne « Touchez une carte pour la retourner : je vous montre ma solution 👇 » ; guillemets insécables.
