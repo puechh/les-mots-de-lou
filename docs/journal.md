@@ -187,3 +187,12 @@
 - **Noël : commandez avant le 10 décembre** (décision utilisateur ; délai max 10 j → livré au plus tard le 20/12) : réglages du
   thème (en ligne vérifiés identiques avant l'envoi), bandeau, compte à rebours, fiche, FAQ, Lou, page livraison-retours,
   politique de livraison.
+
+## 2026-11-03 (suite 6) — Fiche : aperçu animé ; conseil de Lou compact sous le champ
+- Grand aperçu de la fiche animé comme les vignettes tant que la cliente n'a rien écrit : phrase gravée lettre par lettre avec
+  étincelle (jonc), prénoms qui s'écrivent (collier), photos d'exemple dans la bulle (collier photo), mots en Morse (bracelet).
+  S'arrête dès qu'elle touche le champ / choisit sa photo ; reprend si elle quitte le champ vide. Rien si « animations
+  réduites » ou si elle arrive avec un texte (accueil, machine à mots). Étincelle aussi quand elle tape.
+- Grande bulle « Mon conseil » de Lou retirée du haut de la fiche ; à la place, petit message d'une ligne (mini photo de Lou)
+  qui apparaît sous le champ dès qu'elle écrit (ou sous l'envoi de photo) : « Lou : 10 à 20 caractères, c'est parfait 💗 »…
+- Message d'accueil de Lou adapté au collier photo (plus de « Besoin d'une idée de phrase ? »).

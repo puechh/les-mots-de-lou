@@ -454,6 +454,10 @@ h1 em > .t, h2 em > .t { position: relative; z-index: 1; }
 .champ input.erreur { border-color: var(--framboise); animation: secoue .4s; }
 @keyframes secoue { 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
 .champ .compteur.trop { color: var(--framboise-f); }
+.lou-mini { display: flex; align-items: center; gap: 7px; width: fit-content; max-width: 100%; margin: 2px 0 0; padding: 3px 10px 3px 3px; background: #fff; border: 1px solid var(--blush); border-radius: 999px; font-size: .78rem; line-height: 1.3; color: var(--doux); transform-origin: left center; }
+.lou-mini:not([hidden]) { animation: pop .4s var(--ressort); }
+.lou-mini img { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; flex: none; }
+.lou-mini b { color: var(--framboise-f); }
 .suggestions { display: flex; gap: 6px; overflow-x: auto; padding: 2px 2px 6px; scrollbar-width: none; margin-inline: -2px; }
 .suggestions::-webkit-scrollbar { display: none; }
 .suggestions button { flex: none; border: 1px dashed var(--rose); background: #fff; border-radius: 999px; padding: 6px 12px; font-family: var(--f-main); font-size: 1.15rem; line-height: 1.1; min-height: 38px; transition: transform .2s var(--ressort), background .2s; }
