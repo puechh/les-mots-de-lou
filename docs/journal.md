@@ -286,3 +286,9 @@
   (marqueur « À VÉRIFIER » retiré ; la phrase « droits et taxes pris en charge » reste à confirmer avec DSers/AliExpress).
 - Reste à l'utilisateur, directement dans Shopify (dépôt public) : mentions légales (identité, adresse, SIREN, TVA, e-mail,
   directeur de publication, médiateur). Retrait du mot de passe = l'utilisateur (Préférences de la boutique en ligne).
+- Politiques refaites **sur le modèle exact de Corps-Confiant** (demande utilisateur) : mentions légales, coordonnées, CGV,
+  expédition, retours ; e-mail contact@lesmotsdelou.fr ; retours adaptés au personnalisé. Envoyées sur Shopify par le nouveau
+  `scripts/publier_politiques.py` (identité prise dans le dépôt Corps-Confiant au moment de l'envoi, jamais écrite ici) ;
+  `sauvegarde.py` masque désormais mentions légales et coordonnées. Hébergeur indiqué : Shopify International Limited (Dublin),
+  entité contractante, au lieu de l'adresse parisienne utilisée sur Corps-Confiant. Lien vers la plateforme européenne RLL retiré
+  (fermée depuis le 20/07/2025).

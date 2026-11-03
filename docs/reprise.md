@@ -5,8 +5,10 @@
 > Shopify : la boutique est construite et le thème Lou est **publié** (derrière le mot de passe) → voir ci-dessous.
 
 ## 🚀 03/11/2026 — OUVERTURE EN COURS (Pinterest / Google)
-- Politiques et pages sans « À COMPLÉTER » sauf **mentions légales** (à remplir par l'utilisateur dans Shopify → Paramètres →
-  Politiques) et **médiateur** (à souscrire). Mot de passe à retirer par l'utilisateur. Ensuite : Pinterest (appli Shopify,
+- ✅ **Politiques en ligne, copiées sur Corps-Confiant** (mentions légales, coordonnées, CGV, retours, expédition),
+  e-mail `contact@lesmotsdelou.fr`. Reste : **médiateur de la consommation** à souscrire puis ajouter (absent aussi sur
+  Corps-Confiant) ; **Belgique** citée sur le site (pages, thème, FAQ) mais **pas de zone de livraison Belgique** dans Shopify
+  → ajouter la zone ou retirer la Belgique (choix utilisateur) ; vérifier que la boîte contact@lesmotsdelou.fr reçoit bien. Mot de passe à retirer par l'utilisateur. Ensuite : Pinterest (appli Shopify,
   validation du site, catalogue), Google & YouTube (Merchant Center). Fournisseurs DSers à relier AVANT la 1re vente.
 
 ## 🎭 03/11/2026 (fin) — LOU DÉFINITIVE : photo `contenu/lou/reference-v3/00-source-lou.webp` + Nano Banana Pro 4K

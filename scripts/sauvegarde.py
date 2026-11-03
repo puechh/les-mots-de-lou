@@ -123,6 +123,12 @@ def save_content():
         pageInfo { hasNextPage endCursor }
         nodes { handle title items { title type url items { title type url } } } } }""", ["menus"])
     policies = graphql("{ shop { shopPolicies { type title body } } }")["shop"]["shopPolicies"]
+    # Dépôt PUBLIC : les politiques qui contiennent l'identité de l'éditeur (nom, adresse) ne sont pas recopiées.
+    # Leur modèle (avec {{EDITEUR}} / {{ADRESSE}}) est dans contenu/politiques/ ; envoi : scripts/publier_politiques.py
+    modeles = {"LEGAL_NOTICE": "legal-notice", "CONTACT_INFORMATION": "contact-information"}
+    for p in policies:
+        if p["type"] in modeles:
+            p["body"] = f"(non sauvegardé : contient l'identité de l'éditeur — modèle dans contenu/politiques/{modeles[p['type']]}.html)"
     write_json("contenu/collections.json", collections)
     write_json("contenu/pages.json", pages)
     write_json("contenu/menus.json", menus)
