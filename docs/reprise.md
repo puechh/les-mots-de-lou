@@ -12,6 +12,12 @@
   07 rue de Paris en automne, 08 canapé. 04 et 07 refaits avec 2 références (ressemblance). ≈ 3 $ fal au total.
 - **Étape suivante demandée par l'utilisateur : les plans avec les bijoux** (plage en maillot, gros plans cou / poignet), même
   méthode, bijoux d'après les photos fournisseur. Jonc réel = fin + cœur ajouré à chaque extrémité.
+- ✅ **Images bijoux pour le site faites : `contenu/lou/bijoux-v3/`** (Nano Banana Pro 4K, ≈ 2,40 $). Thème choisi : **Noël**
+  (lancement avant Black Friday, recherches « idée cadeau » de novembre) + 2 images « toute l'année ». La plage = plus tard
+  (fête des mères / été). 01 accueil sapin 16:9 (jonc + collier « Lou ») · 02 marché de Noël · 03 poignet jonc (gravure + cœur)
+  1:1 · 04 cou collier prénom 1:1 · 05 collier photo devant la cheminée · 06 Morse, carte de Noël 1:1 · 07 café Paris · 08 rue Paris.
+  Bijoux d'après les images de fiches + description du jonc réel (fin, cœurs). **Prochaine étape : les placer sur le site
+  (accueil, fiches, Lou) → banc d'abord, accord utilisateur avant envoi.**
 - Les images `contenu/images-ia/2026-11-03-lou-v2-*` (ancienne méthode) sont à remplacer.
 - Fiche Jonc Shopify à mettre à jour avec les cœurs : il faut la photo fournisseur **en fichier**.
 

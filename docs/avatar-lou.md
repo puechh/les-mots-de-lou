@@ -185,3 +185,7 @@ Requêtes gratuites uniquement, clé jamais affichée. Une fausse clé donne 401
   seedream v5 pro edit 0,0675 $/unité. Comparatif : `contenu/lou/comparatif-ia/` → **Nano Banana Pro retenu**.
 - Outil : `scripts/fal_images.py` (envoi des références sur rest.fal.ai, appel fal.run, téléchargement, .txt du prompt).
 - Ressemblance : 2 références (source + 01-face) améliorent nettement le visage (04-rire et 07-rue refaits).
+- 03/11 — Images bijoux v3 (`contenu/lou/bijoux-v3/`, prompts dans les .txt) : références = `00-source-lou.webp` + `01-face.jpg`
+  + photo de fiche du bijou ; jonc décrit en mots (fin ≈ 4 mm, cœur ajouré à chaque extrémité, gravure « Tu es ma personne »).
+  Gros plans en 1:1 (4096²) pour les fiches, accueil en 16:9 (5504×3072). Contrôle à 100 % : gravure lisible, cœur visible, Morse net.
+  Choix « Noël » plutôt que plage (proposé par Claude, utilisateur hésitant) : lancement novembre, cible cadeaux.

@@ -276,3 +276,5 @@
   (`contenu/lou/reference-v3/00-source-lou.webp`) ; peau lisse, peu de taches, iPhone 18 Pro par un amateur, 4K.
 - Nouvel outil `scripts/fal_images.py`. Comparatif Nano Banana Pro / Flux 2 Pro / Seedream 5 Pro → Nano Banana Pro 4K retenu.
 - Planche de 8 plans `contenu/lou/reference-v3/` (≈ 3 $ fal). Prochaine étape : plans avec les bijoux.
+- Images bijoux pour le site (`contenu/lou/bijoux-v3/`, 8 images 4K, ≈ 2,40 $) : univers Noël (sapin, marché de Noël,
+  cheminée, chocolat chaud, carte de Noël) + café et rue de Paris pour l'après-Noël. Plage gardée pour le printemps/été.

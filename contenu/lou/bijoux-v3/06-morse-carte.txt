@@ -1,0 +1,4 @@
+Modèle : fal fal-ai/nano-banana-pro/edit
+Paramètres : {"resolution": "4K", "aspect_ratio": "1:1", "output_format": "jpeg"}
+Prompt : Shot on iPhone 18 Pro by an amateur photographer. Close-up of a young woman's hand and wrist (no face) writing a Christmas card with a pen on a wooden table, kraft-paper wrapped presents with red ribbon and pine sprigs around, warm light. Smooth sun-kissed skin, natural short nails, realistic hand with exactly five fingers. She wears the Morse code bracelet from the product reference photo: same thin black cord, same small silver-tone beads and bars, same sliding knot. The bracelet perfectly sharp. Ultra-realistic, true-to-life 4K iPhone photo: extremely sharp, fine detail in eyes, hair and metal, clean natural colors, no pixelation, no compression artifacts, no AI smoothing, no beauty filter, no studio lighting.
+Images de référence : contenu/images-ia/2026-11-02-produit-bracelet-morse-1-hd.jpg

@@ -1,0 +1,4 @@
+Modèle : fal fal-ai/nano-banana-pro/edit
+Paramètres : {"resolution": "4K", "aspect_ratio": "1:1", "output_format": "jpeg"}
+Prompt : Shot on iPhone 18 Pro by an amateur photographer. Close-up of the neck and collarbone of a young woman, cropped at the chin (no face), wearing a cream V-neck cable-knit sweater, a few strands of dark chestnut-brown hair, smooth sun-kissed skin, warm Christmas fairy lights bokeh behind. She wears the name necklace from the product reference photo: same dainty fine silver-tone chain and same single-line cursive cut-out name pendant, the name reads 'Lou'. The pendant and chain perfectly sharp. Ultra-realistic, true-to-life 4K iPhone photo: extremely sharp, fine detail in eyes, hair and metal, clean natural colors, no pixelation, no compression artifacts, no AI smoothing, no beauty filter, no studio lighting.
+Images de référence : contenu/images-ia/2026-11-02-produit-collier-prenom-1-hd.jpg
