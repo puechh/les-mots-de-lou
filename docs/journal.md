@@ -334,3 +334,7 @@
   (haut-gauche = ancienne « pointe-gauche », nouvelles bas-gauche, haut-droite, bas-droite ; la nouvelle haut-gauche, bras
   au-dessus de la tête, rejetée), pastilles placées dans le prolongement du doigt (positions mesurées, lou.css), pastilles un peu
   rentrées sur téléphone (étiquettes plus coupées), sticker -50 % en bas à gauche. Testé au banc (iPhone 13 + ordinateur) puis envoyé.
+- Bug signalé par l'utilisateur : Lou s'arrêtait de montrer les bijoux. Cause : sur téléphone, toucher une pastille (ou commencer
+  à faire défiler dessus) mettait l'animation en pause en attendant un « mouseleave » qui n'arrive jamais au doigt. Corrigé : après
+  un survol / toucher, Lou montre ce bijou puis reprend seule au suivant 5 s après. Vérifié au banc : boucle infinie, avec et sans
+  toucher (50 s). Envoyé (lou.js).

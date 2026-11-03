@@ -528,7 +528,7 @@
   (function () {   // bloc isolé : les noms (ordre, montrer…) ne se mélangent pas avec le reste du fichier
   var scene = $("#scene-lou");
   if (scene) {
-    var poses = $$(".pose", scene), bijoux = $$(".bijou", scene), bulle = $("#lou-intro"), sT = null, sI = 0, sVu = true, main = false;
+    var poses = $$(".pose", scene), bijoux = $$(".bijou", scene), bulle = $("#lou-intro"), sT = null, sI = 0, sVu = true;
     var pose = function (p) {
       poses.forEach(function (x) { var on = x.getAttribute("data-pose") === p; if (on && !x.classList.contains("on")) { x.classList.remove("hop"); void x.offsetWidth; x.classList.add("hop"); } x.classList.toggle("on", on); });
     };
@@ -540,15 +540,16 @@
     };
     var ordre = [$(".b-jonc", scene), $(".b-prenom", scene), $(".b-photo", scene), $(".b-morse", scene)];
     var tourS = function () {
-      clearTimeout(sT); if (!sVu || main) return;
+      clearTimeout(sT); if (!sVu) return;
       montrer(ordre[sI++ % ordre.length]);
       sT = setTimeout(tourS, 4600);   // bijou suivant directement (pas de coucou entre deux bijoux)
     };
     bijoux.forEach(function (bj) {
-      var go = function () { main = true; clearTimeout(sT); montrer(bj); };
+      // survol ou toucher : Lou montre ce bijou, puis la tournée reprend toute seule au suivant (sur téléphone, le doigt
+      // ne « quitte » jamais la pastille : on ne doit jamais attendre ce signal, sinon l'animation reste figée)
+      var go = function () { clearTimeout(sT); montrer(bj); sI = ordre.indexOf(bj) + 1; if (sVu) sT = setTimeout(tourS, 5000); };
       bj.addEventListener("mouseenter", go); bj.addEventListener("focus", go);
       bj.addEventListener("touchstart", go, { passive: true });
-      bj.addEventListener("mouseleave", function () { main = false; clearTimeout(sT); sI = ordre.indexOf(bj) + 1; sT = setTimeout(tourS, 2600); });
     });
     if (!reduit) {
       if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
