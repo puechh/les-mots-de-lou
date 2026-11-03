@@ -1,0 +1,2 @@
+Modèle : gpt-image-2.5-flare
+Prompt : Photo souvenir naturelle prise au smartphone, cadrage serré : un chiot golden retriever souriant, tête bien au centre, regard vers l'objectif, lumière douce, fond flou d'un salon cosy, très nette, couleurs chaleureuses.

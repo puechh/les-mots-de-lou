@@ -141,3 +141,21 @@
 - En-tête : icône **« Mon compte »** (profil) entre la loupe et le panier + lien dans le menu mobile.
 - `construire_boutique.py politiques` : ne touche plus une politique modifiée dans Shopify depuis la dernière sauvegarde.
 - Testé au banc (iPhone 13) : « anaïs » → « Anaïs », aucune erreur ; envoyé sur le thème en ligne.
+
+## 2026-11-03 (suite) — Accueil : Lou porte ses bijoux ; vignettes animées ; délai total 5-10 jours
+- Demande : sur téléphone, comprendre tout de suite que c'est une boutique de bijoux en voyant Lou. Nouvelle image
+  `contenu/images-ia/2026-11-03-lou-hero-bijoux-hd.jpg` (retouche de lou-hero-hd avec les photos produit en référence) : Lou
+  porte le jonc « Tu es ma personne » au poignet et le collier « Emma ». Recadrage téléphone 5:4 serré (x 1000→2601,
+  y 230→1511), ordinateur 4:5. Repères animés (point qui pulse + étiquette « mon collier prénom », « mon jonc gravé »,
+  liens vers les fiches) ; pastille « 💍 Bijoux gravés » ; bulle de Lou : « Vous voyez mon jonc et mon collier ? ».
+- Vignettes produits animées (toutes les grilles) : la phrase se grave lettre par lettre sur le jonc vierge, le prénom
+  s'écrit sur le collier (la chaîne suit), la photo change dans la bulle du collier photo (couple, mamie et petite-fille,
+  chiot : `souvenir-*.webp`, images IA d'exemple), le mot s'écrit en Morse. Seulement à l'écran, rien si « animations
+  réduites ». Le dessin du collier prénom est passé dans `lou.js` (`LOU.dessinerPrenom`), partagé avec la fiche.
+- Fiche : le petit texte « L'aperçu est une simulation… » est masqué sur téléphone (déplacé dans « Caractéristiques ») ;
+  l'étiquette de l'aperçu dit « Aperçu en direct · simulation ».
+- Délai (décision utilisateur) : **5 à 10 jours au total entre la commande et la livraison, fabrication comprise**, en jours
+  calendaires (commande le 03/11 → reçu entre le 8 et le 13 novembre, comme demandé). Réglages fab_min/fab_max supprimés ;
+  textes mis à jour (fiche, FAQ, étapes, Lou, livraison-retours, CGV, politique de livraison).
+  ⚖️ Conseil donné : délai très court pour du sur-mesure AliExpress (souvent 2-4 semaines) ; dépassement = la cliente
+  peut annuler (L216-2) → à confirmer avec le fournisseur choisi.

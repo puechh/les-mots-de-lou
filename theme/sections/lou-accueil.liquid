@@ -9,18 +9,20 @@
       <div class="hero-photo">
         <picture>
           <source media="(max-width: 899px)" srcset="{{ 'lou-hero-mobile.webp' | asset_url }}" width="1200" height="825">
-          <img src="{{ 'lou-hero.webp' | asset_url }}" alt="Lou, l'avatar de la boutique, écrit une carte entourée de cadeaux" width="1200" height="1500" fetchpriority="high">
+          <img src="{{ 'lou-hero.webp' | asset_url }}" alt="Lou, l'avatar de la boutique, porte un jonc gravé « Tu es ma personne » et un collier prénom « Emma »" width="1200" height="1500" fetchpriority="high">
         </picture>
+        <a class="repere r-collier" href="/products/collier-prenom"><i aria-hidden="true"></i><span>mon collier prénom</span></a>
+        <a class="repere r-jonc" href="{{ url_jonc }}"><i aria-hidden="true"></i><span>mon jonc gravé</span></a>
       </div>
       <div class="sticker s2"><span aria-hidden="true">🎁</span> 2e bijou à -50 %</div>
-      <div class="sticker s1"><span aria-hidden="true">✍️</span><span class="hand">Aperçu en direct</span></div>
+      <div class="sticker s1"><span aria-hidden="true">💍</span><span class="hand">Bijoux gravés</span></div>
       <div class="lou-dit">
         <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="58" height="58"></span>
-        <div class="bulle-lou"><b class="nom">Lou <small>· l'avatar de la boutique</small></b><p id="lou-intro" data-texte="Coucou, moi c'est Lou ! 👋 Je vous aide à trouver les mots qu'on n'ose pas dire… et je vous montre tout de suite le rendu gravé ✨">Coucou, moi c'est Lou ! 👋 Je vous aide à trouver les mots qu'on n'ose pas dire… et je vous montre tout de suite le rendu gravé ✨</p></div>
+        <div class="bulle-lou"><b class="nom">Lou <small>· l'avatar de la boutique</small></b><p id="lou-intro" data-texte="Coucou, moi c'est Lou ! 👋 Vous voyez mon jonc et mon collier ? Gravés avec mes mots. Écrivez les vôtres : je vous montre le rendu en direct ✨">Coucou, moi c'est Lou ! 👋 Vous voyez mon jonc et mon collier ? Gravés avec mes mots. Écrivez les vôtres : je vous montre le rendu en direct ✨</p></div>
       </div>
     </div>
     <div class="hero-txt">
-      <span class="eyebrow">💗 Bijoux personnalisés · gravés avec vos mots</span>
+      <span class="eyebrow">💍 Bijoux personnalisés<span class="pas-mobile"> · gravés avec vos mots</span></span>
       <h1><span class="ligne"><span>Vos mots,</span></span><span class="ligne"><span><em><span class="t">gravés pour toujours.</span>{{ trait }}</em></span></span></h1>
       <div class="atelier" id="atelier">
         <div class="atelier-haut">
@@ -132,8 +134,8 @@
     <div class="head rv"><span class="hand">Je vous explique</span><h2>Comment ça <em><span class="t">marche</span>{{ trait }}</em> ?</h2></div>
     <div class="etapes">
       <div class="etape rv" data-n="1"><span class="emo" aria-hidden="true">✍️</span><h3>Vous écrivez</h3><p>Une phrase, un prénom, une photo ou un mot secret. Je vous montre le rendu en direct.</p><span class="hand">facile !</span></div>
-      <div class="etape rv" data-n="2"><span class="emo" aria-hidden="true">✨</span><h3>L'atelier grave</h3><p>Votre bijou est fabriqué rien que pour vous, avec vos mots, en {{ settings.fab_min | default: 3 }} à {{ settings.fab_max | default: 7 }} jours.</p><span class="hand">avec soin</span></div>
-      <div class="etape rv" data-n="3"><span class="emo" aria-hidden="true">🥹</span><h3>Elle craque</h3><p>Livré chez vous en {{ settings.liv_min | default: 5 }} à {{ settings.liv_max | default: 10 }} jours ouvrés, avec suivi{% if settings.ecrin_inclus %}, dans son écrin cadeau{% endif %}. Les larmes de joie ne sont pas incluses, mais fréquentes.</p><span class="hand">mission réussie</span></div>
+      <div class="etape rv" data-n="2"><span class="emo" aria-hidden="true">✨</span><h3>L'atelier grave</h3><p>Votre bijou est fabriqué rien que pour vous, avec vos mots.</p><span class="hand">avec soin</span></div>
+      <div class="etape rv" data-n="3"><span class="emo" aria-hidden="true">🥹</span><h3>Elle craque</h3><p>Reçu chez vous en {{ settings.liv_min | default: 5 }} à {{ settings.liv_max | default: 10 }} jours (fabrication comprise), avec suivi{% if settings.ecrin_inclus %}, dans son écrin cadeau{% endif %}. Les larmes de joie ne sont pas incluses, mais fréquentes.</p><span class="hand">mission réussie</span></div>
     </div>
     <p class="glisser">← glissez pour voir les étapes →</p>
   </div>

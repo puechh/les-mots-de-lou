@@ -1,0 +1,2 @@
+Modèle : gpt-image-2.5-flare
+Prompt : Photo souvenir naturelle prise au smartphone, cadrage serré sur les visages : une grand-mère aux cheveux blancs et sa petite-fille de 6 ans qui rient joue contre joue, lumière chaude de fin de journée, couleurs douces, très nette, visages bien éclairés au centre.

@@ -36,10 +36,12 @@
     window.LOU = {
       routes: { root: {{ routes.root_url | json }}, cart: {{ routes.cart_url | json }}, cartAdd: {{ routes.cart_add_url | json }}, cartChange: {{ routes.cart_change_url | json }} },
       cart: {{ cart | json }},
-      reglages: { ecrin: {{ settings.ecrin_inclus | json }}, fabMin: {{ settings.fab_min | default: 3 }}, fabMax: {{ settings.fab_max | default: 7 }}, livMin: {{ settings.liv_min | default: 5 }}, livMax: {{ settings.liv_max | default: 10 }}, noel: {{ settings.noel_iso | default: '2026-12-01' | json }}, noelTexte: {{ settings.noel_limite | default: '1er décembre' | json }}, sons: {{ settings.sons | json }} },
+      reglages: { ecrin: {{ settings.ecrin_inclus | json }}, livMin: {{ settings.liv_min | default: 5 }}, livMax: {{ settings.liv_max | default: 10 }}, noel: {{ settings.noel_iso | default: '2026-12-01' | json }}, noelTexte: {{ settings.noel_limite | default: '1er décembre' | json }}, sons: {{ settings.sons | json }} },
       page: {{ template.name | json }},
       avatar: {{ 'lou-avatar.webp' | asset_url | json }},
-      produit: {% if product %}{{ product.title | json }}{% else %}null{% endif %}
+      produit: {% if product %}{{ product.title | json }}{% else %}null{% endif %},
+      anim: { jonc: {{ 'jonc-vierge-plein.webp' | asset_url | json }}, collier: {{ 'collier-vierge-carte.webp' | asset_url | json }},
+              souvenirs: [{{ 'souvenir-couple.webp' | asset_url | json }}, {{ 'souvenir-mamie.webp' | asset_url | json }}, {{ 'souvenir-chiot.webp' | asset_url | json }}] }
     };
   </script>
   {% section 'lou-header' %}

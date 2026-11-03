@@ -19,7 +19,7 @@
   data-img-rosee="{% if type == 'jonc' %}{{ 'jonc-carre-rosee.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-rosee.webp' | asset_url }}{% endif %}">
   <div class="fiche-galerie">
     <div class="galerie" id="galerie" tabindex="0" aria-label="Images du bijou (glissez pour voir les photos)">
-      <div class="slide vue-apercu" id="vue-apercu" data-i="-1"><span class="etiquette-apercu">✍️ Votre aperçu en direct</span><div class="scene" id="scene" aria-live="polite"></div></div>
+      <div class="slide vue-apercu" id="vue-apercu" data-i="-1"><span class="etiquette-apercu">✍️ Aperçu en direct · simulation</span><div class="scene" id="scene" aria-live="polite"></div></div>
       {%- for img in product.images -%}
         <div class="slide" data-i="{{ forloop.index0 }}">{{ img | image_url: width: 1400 | image_tag: alt: product.title, loading: 'lazy', widths: '600,900,1200,1400', sizes: '(min-width: 960px) 50vw, 100vw' }}</div>
       {%- endfor -%}
@@ -30,7 +30,7 @@
         <button type="button" data-vue="{{ forloop.index0 }}" aria-label="Photo {{ forloop.index }}">{{ img | image_url: width: 240 | image_tag: alt: '', loading: 'lazy' }}</button>
       {%- endfor -%}
     </div>
-    <p class="tiny">L'aperçu est une simulation pour vous aider à choisir : le rendu réel (taille, police, position) peut légèrement varier. Photos non contractuelles.</p>
+    <p class="tiny pas-mobile">L'aperçu est une simulation pour vous aider à choisir : le rendu réel (taille, police, position) peut légèrement varier. Photos non contractuelles.</p>
   </div>
 
   <div class="fiche-info">
@@ -123,14 +123,13 @@
 
     <div class="delai">
       <span class="estim" id="estim">🚚 Livraison estimée : calcul en cours…</span>
-      <span>✨ <b>Fabrication</b> rien que pour vous : {{ settings.fab_min | default: 3 }} à {{ settings.fab_max | default: 7 }} jours</span>
-      <span>📦 <b>Livraison suivie</b> France &amp; Belgique : {{ settings.liv_min | default: 5 }} à {{ settings.liv_max | default: 10 }} jours ouvrés</span>
+      <span>✨ <b>Fabriqué rien que pour vous</b>, puis 📦 <b>livraison suivie</b> France &amp; Belgique : {{ settings.liv_min | default: 5 }} à {{ settings.liv_max | default: 10 }} jours au total</span>
       <span>🎄 <b>Pour Noël</b> : commandez avant le <b>{{ settings.noel_limite | default: '1er décembre' }}</b></span>
     </div>
     <div class="duo-pub"><span aria-hidden="true">🎁</span><span>Le 2e bijou est à <b>-50 %</b>, automatiquement : un pour elle, un pour vous ?</span></div>
 
     <div class="accordeons">
-      {%- if c.benefices -%}<details open><summary>Caractéristiques</summary><div><ul class="benefices">{%- for b in c.benefices -%}<li>{{ b }}</li>{%- endfor -%}{% if settings.ecrin_inclus %}<li>Livré dans un écrin cadeau, prêt à offrir</li>{% endif %}</ul></div></details>{%- endif -%}
+      {%- if c.benefices -%}<details open><summary>Caractéristiques</summary><div><ul class="benefices">{%- for b in c.benefices -%}<li>{{ b }}</li>{%- endfor -%}{% if settings.ecrin_inclus %}<li>Livré dans un écrin cadeau, prêt à offrir</li>{% endif %}</ul><p class="tiny">L'aperçu est une simulation : le rendu réel (taille, police, position) peut légèrement varier. Photos non contractuelles.</p></div></details>{%- endif -%}
       {%- if product.description != blank -%}<details open><summary>Le bijou</summary><div>{{ product.description }}</div></details>{%- endif -%}
       <details><summary>Matière &amp; entretien</summary><div>
         {%- case type -%}
@@ -139,7 +138,7 @@
           {%- else -%}Acier inoxydable : il ne noircit pas et supporte l'eau du quotidien. Les finitions dorée et rosée sont des finitions colorées sur acier (ce n'est pas de l'or). Pour garder l'éclat, évitez le parfum directement sur le bijou.
         {%- endcase -%}
       </div></details>
-      <details><summary>Livraison</summary><div>Fabrication en {{ settings.fab_min | default: 3 }} à {{ settings.fab_max | default: 7 }} jours, puis livraison en {{ settings.liv_min | default: 5 }} à {{ settings.liv_max | default: 10 }} jours ouvrés en France et en Belgique, avec numéro de suivi. <a href="/pages/livraison-retours">Tout savoir</a>.</div></details>
+      <details><summary>Livraison</summary><div>Votre bijou est fabriqué à la commande puis livré en France et en Belgique en {{ settings.liv_min | default: 5 }} à {{ settings.liv_max | default: 10 }} jours au total (fabrication comprise), avec numéro de suivi. <a href="/pages/livraison-retours">Tout savoir</a>.</div></details>
       <details><summary>Retours &amp; garantie</summary><div>Ce bijou est fabriqué selon vos indications : il ne bénéficie pas du droit de rétractation (art. L221-28 du Code de la consommation). Vous restez couverte par la garantie légale de conformité : un souci à la réception ? Écrivez-nous avec une photo, on trouve une solution.</div></details>
     </div>
   </div>

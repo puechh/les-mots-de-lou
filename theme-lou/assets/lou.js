@@ -6,7 +6,7 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var LOU = window.LOU = window.LOU || {};
-  var R = LOU.reglages || { fabMin: 3, fabMax: 7, livMin: 5, livMax: 10, noel: "2026-12-01", noelTexte: "1er décembre", sons: true };
+  var R = LOU.reglages || { livMin: 5, livMax: 10, noel: "2026-12-01", noelTexte: "1er décembre", sons: true };
   var reduit = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
   var euros = function (c) { return (c / 100).toFixed(2).replace(".", ",") + " €"; };
@@ -89,10 +89,10 @@
     while (n > 0) { x.setDate(x.getDate() + 1); if (!ouvres || (x.getDay() !== 0 && x.getDay() !== 6)) n--; }
     return x;
   }
-  var fmt = function (d) { return d.toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "short" }); };
+  var fmt = function (d) { return d.toLocaleDateString("fr-FR", { day: "numeric", month: "long" }); };
   LOU.estimation = function () {
     var now = new Date();
-    var a = ajouterJours(ajouterJours(now, R.fabMin), R.livMin, true), b = ajouterJours(ajouterJours(now, R.fabMax), R.livMax, true);
+    var a = ajouterJours(now, R.livMin), b = ajouterJours(now, R.livMax);   // délai total, fabrication comprise
     return "entre le " + fmt(a) + " et le " + fmt(b);
   };
   function joursNoel() {
@@ -254,7 +254,7 @@
     haut: [281.6,286.6,291.3,295.7,299.7,303.5,307.0,310.3,313.3,316.1,318.6,321.0,323.1,325.1,326.8,328.4,329.9,331.2,332.3,333.4,334.2,335.0,335.7,336.2,336.6,337.0,337.2,337.4,337.5,337.5,337.4,337.3,337.1,336.8,336.4,336.0,335.5,335.0,334.4,333.7,333.0,332.1,331.3,330.3,329.3,328.2,327.0,325.8,324.4,323.0,321.5,319.8,318.1,316.2,314.3,312.2,309.9,307.5,305.0,302.3,299.4,296.4,293.2,289.7,286.1,282.2,278.1,273.8,269.1,264.3,259.1,253.6,247.9,241.8],
     bas: [327.1,332.4,337.5,342.2,346.6,350.7,354.5,358.1,361.4,364.4,367.2,369.8,372.2,374.4,376.4,378.3,379.9,381.4,382.7,383.9,385.0,385.9,386.7,387.4,387.9,388.4,388.7,389.0,389.1,389.2,389.2,389.1,388.9,388.6,388.3,387.8,387.3,386.8,386.1,385.4,384.6,383.7,382.8,381.8,380.6,379.4,378.1,376.8,375.3,373.7,372.0,370.2,368.3,366.3,364.1,361.8,359.4,356.8,354.1,351.1,348.1,344.8,341.3,337.6,333.8,329.6,325.3,320.7,315.8,310.7,305.2,299.5,293.5,287.1]
   };
-  var VUES = { bande: { x0: 90, y0: 360, w: 920, h: 460 }, carre: { x0: 90, y0: 104, w: 920, h: 920 } };
+  var VUES = { bande: { x0: 90, y0: 360, w: 920, h: 460 }, carre: { x0: 90, y0: 104, w: 920, h: 920 }, plein: { x0: 0, y0: 0, w: 1024, h: 1024 } };
   var bordJonc = function (t, x) {
     var k = (x - JONC.x0) / JONC.pas, i = Math.max(0, Math.min(t.length - 2, Math.floor(k))), f = k - i;
     return t[i] + (t[i + 1] - t[i]) * f;
@@ -332,6 +332,88 @@
     return { x: (xF + ox) * s / dpr, y: ((bordJonc(J.haut, xF) + bordJonc(J.bas, xF)) / 2 + oy) * s / dpr };
   };
 
+  /* ---------- Collier prénom : prénom en métal, la chaîne s'accroche aux deux bords du prénom ----------
+     Sur assets/collier-vierge*.webp (repère 1200 px), le bas des deux brins est effacé (sous y ≈ 630, cf. scripts/assets_theme.py) :
+     les brins sont redessinés depuis la vraie chaîne jusqu'à la première et la dernière lettre. Prénom court : la chaîne se
+     resserre ; prénom long : elle s'ouvre. La taille des lettres ne dépend pas de la longueur du prénom. */
+  var METAL = { "Argentée": ["#ffffff", "#d9dbe2", "#9a9eaa", "#eef0f4", "#7c808c"], "Dorée": ["#fff6d2", "#f0cd72", "#b88a2c", "#ffe7a3", "#8a6420"], "Rosée": ["#fff0ea", "#f2bfae", "#c4806f", "#ffd9cc", "#975c4f"] };
+  var BRIN = { g: { x: 361, y: 626, dx: .45 }, d: { x: 879, y: 626, dx: -.5 } };   // départ des brins redessinés + direction
+  LOU.dessinerPrenom = function (toile, photo, nom, pol, finition) {
+    if (!toile || !photo.complete || !photo.naturalWidth) return;
+    var W = toile.clientWidth, dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+    toile.width = Math.round(W * dpr); toile.height = Math.round(toile.clientHeight * dpr);
+    var s = toile.width / 1200, ctx = toile.getContext("2d"); ctx.clearRect(0, 0, toile.width, toile.height);
+    if (!nom) return;
+    var m = METAL[finition] || METAL["Argentée"];
+    var script = pol !== "Moderne", font = script ? '"Allura", cursive' : '700 {t}px Montserrat, Arial, sans-serif';
+    var css = function (t) { return script ? t + "px " + font : font.replace("{t}", t); };
+    ctx.font = css(100);
+    var mt = ctx.measureText(nom), L = mt.actualBoundingBoxLeft || 0, Rr = mt.actualBoundingBoxRight || mt.width;
+    var asc = mt.actualBoundingBoxAscent || 70, desc = mt.actualBoundingBoxDescent || 20;
+    var hMax = script ? 92 : 44;
+    var k = Math.min(hMax / (asc + desc), script ? 1.15 : .62);
+    if ((L + Rr) * k > 560) k = 560 / (L + Rr);            // garde-fou (prénom très long) : reste sur le buste
+    var fs = 100 * k, encre = (L + Rr) * k, cx = 620.5;
+    var base = 860 + (script ? .2 : .36) * fs;
+    var xg = cx - encre / 2, yAttache = base - (script ? .22 : .36) * fs;
+    var px = xg + L * k;
+    // Bords réels du prénom à hauteur d'accroche (premier et dernier pixel d'encre)
+    var mes = document.createElement("canvas"); mes.width = 1200; mes.height = 1200; var mx = mes.getContext("2d");
+    mx.font = css(fs.toFixed(2)); mx.textBaseline = "alphabetic"; mx.lineJoin = "round"; mx.lineWidth = fs * (script ? .055 : .03);
+    mx.fillStyle = mx.strokeStyle = "#000"; mx.strokeText(nom, px, base); mx.fillText(nom, px, base);
+    var y0 = Math.max(0, Math.round(yAttache - fs * .16)), y1 = Math.min(1199, Math.round(yAttache + fs * .16));
+    var zx0 = Math.max(0, Math.floor(xg - 20)), zw = Math.min(1200 - zx0, Math.ceil(encre + 40));
+    var dat = mx.getImageData(zx0, y0, zw, y1 - y0 + 1).data, ag = null, ad = null;
+    for (var yy = 0; yy <= y1 - y0; yy++) for (var xx = 0; xx < zw; xx++) if (dat[(yy * zw + xx) * 4 + 3] > 140) {
+      if (!ag || xx + zx0 < ag.x) ag = { x: xx + zx0, y: yy + y0 };
+      if (!ad || xx + zx0 > ad.x) ad = { x: xx + zx0, y: yy + y0 };
+    }
+    ag = ag || { x: xg, y: yAttache }; ad = ad || { x: xg + encre, y: yAttache };
+    var rA = 6.5, RG = { x: ag.x - rA + 2, y: ag.y }, RD = { x: ad.x + rA - 2, y: ad.y };
+    // calque métal (en pixels de l'image 1200, puis mis à l'échelle)
+    var c = document.createElement("canvas"); c.width = toile.width; c.height = toile.height; var x = c.getContext("2d");
+    x.scale(s, s);
+    // un brin : courbe douce depuis la vraie chaîne jusqu'à l'anneau, maillons alternés (à plat / de profil)
+    var brin = function (b, R) {
+      var dl = Math.hypot(R.x - b.x, R.y - b.y), n0 = Math.hypot(b.dx, 1);
+      var Q = { x: b.x + b.dx / n0 * dl * .5, y: b.y + 1 / n0 * dl * .5 };
+      var pt = function (t) { var u = 1 - t; return { x: u * u * b.x + 2 * u * t * Q.x + t * t * R.x, y: u * u * b.y + 2 * u * t * Q.y + t * t * R.y }; };
+      var tab = [{ t: 0, l: 0, p: pt(0) }], N = 200;
+      for (var i = 1; i <= N; i++) { var q = pt(i / N); tab.push({ t: i / N, l: tab[i - 1].l + Math.hypot(q.x - tab[i - 1].p.x, q.y - tab[i - 1].p.y), p: q }); }
+      var Lt = tab[N].l - rA, pas = 10.5, n = Math.max(1, Math.round(Lt / pas)); pas = Lt / n;
+      var j = 0;
+      for (var kk = 0; kk < n; kk++) {
+        var l = (kk + .5) * pas; while (j < N && tab[j + 1].l < l) j++;
+        var a = tab[j].p, bb = tab[Math.min(N, j + 1)].p, ang = Math.atan2(bb.y - a.y, bb.x - a.x);
+        x.save(); x.translate(a.x, a.y); x.rotate(ang);
+        var ry = kk % 2 ? 1.3 : 3.6;
+        // maillon métal : contour foncé, corps clair, reflet blanc (même éclat que la chaîne de la photo)
+        x.beginPath(); x.ellipse(0, 0, 6.3, ry, 0, 0, Math.PI * 2); x.lineWidth = 2.5; x.strokeStyle = m[4]; x.globalAlpha = .55; x.stroke(); x.globalAlpha = 1;
+        x.beginPath(); x.ellipse(0, 0, 6.3, ry, 0, 0, Math.PI * 2); x.lineWidth = 1.6; x.strokeStyle = m[1]; x.stroke();
+        x.beginPath(); x.ellipse(0, -.3, 6, Math.max(.6, ry - .3), 0, Math.PI * 1.1, Math.PI * 1.9); x.lineWidth = .9; x.strokeStyle = m[0]; x.stroke();
+        x.restore();
+      }
+      // anneau d'accroche
+      x.beginPath(); x.arc(R.x, R.y, rA, 0, Math.PI * 2); x.lineWidth = 3; x.strokeStyle = m[4]; x.globalAlpha = .55; x.stroke(); x.globalAlpha = 1;
+      x.beginPath(); x.arc(R.x, R.y, rA, 0, Math.PI * 2); x.lineWidth = 2; x.strokeStyle = m[1]; x.stroke();
+      x.beginPath(); x.arc(R.x, R.y - .4, rA - .2, Math.PI * 1.1, Math.PI * 1.9); x.lineWidth = 1; x.strokeStyle = m[0]; x.stroke();
+    };
+    brin(BRIN.g, RG); brin(BRIN.d, RD);
+    x.font = css(fs.toFixed(2)); x.textBaseline = "alphabetic"; x.lineJoin = "round";
+    var gr = x.createLinearGradient(0, base - asc * k, 0, base + desc * k);
+    gr.addColorStop(0, m[0]); gr.addColorStop(.35, m[1]); gr.addColorStop(.6, m[3]); gr.addColorStop(1, m[2]);
+    x.lineWidth = fs * (script ? .055 : .03); x.strokeStyle = gr; x.fillStyle = gr;
+    x.strokeText(nom, px, base); x.fillText(nom, px, base);
+    // biseau : bord haut plus clair, bas plus sombre (copie décalée en « source-atop »)
+    x.globalCompositeOperation = "source-atop"; x.globalAlpha = .35; x.fillStyle = m[4];
+    x.lineWidth = fs * (script ? .055 : .03); x.strokeStyle = m[4];
+    x.strokeText(nom, px, base + fs * .025); x.fillText(nom, px, base + fs * .025);
+    x.globalAlpha = .55; x.fillStyle = "#fff"; x.fillText(nom, px - fs * .006, base - fs * .018);
+    // ombre portée sur le velours, puis le métal
+    ctx.save(); ctx.shadowColor = "rgba(70,35,40,.42)"; ctx.shadowBlur = 7 * s; ctx.shadowOffsetX = 2 * s; ctx.shadowOffsetY = 5 * s;
+    ctx.drawImage(c, 0, 0); ctx.restore();
+  };
+
   /* ---------- Accueil : atelier (on tape, ça se grave) ---------- */
   var atelier = $("#atelier-texte");
   if (atelier) {
@@ -390,6 +472,72 @@
   // Lou se présente dans la bulle du haut
   var intro = $("#lou-intro");
   if (intro && !reduit) { var txt = intro.getAttribute("data-texte"); intro.textContent = ""; setTimeout(function () { LOU.ecrire(intro, txt, 22); }, 450); }
+
+
+  /* ---------- Vignettes produits animées : l'image se « remplit » de la personnalisation ----------
+     Jonc : la phrase se grave lettre par lettre ; collier : le prénom s'écrit (la chaîne suit) ; collier photo : la photo
+     apparaît dans la bulle ; bracelet : le mot secret s'écrit en Morse. Seulement quand la vignette est à l'écran. */
+  var MORSE_C = { A: ".-", B: "-...", C: "-.-.", D: "-..", E: ".", F: "..-.", G: "--.", H: "....", I: "..", J: ".---", K: "-.-", L: ".-..", M: "--", N: "-.", O: "---", P: ".--.", Q: "--.-", R: ".-.", S: "...", T: "-", U: "..-", V: "...-", W: ".--", X: "-..-", Y: "-.--", Z: "--.." };
+  var ANIM = LOU.anim || {};
+  function vignette(box) {
+    var type = box.getAttribute("data-anim"), calqueA = document.createElement("div"), vu = false, t = null, i = 0, k = 0, enCours = false;
+    calqueA.className = "carte-anim"; calqueA.setAttribute("aria-hidden", "true");
+    var img = null, cv = null, bulleP = null, morse = null, lignes = null;
+    var pause = function (f, d) { clearTimeout(t); t = setTimeout(function () { if (vu) f(); else enCours = false; }, d); };
+    var pret = function () { calqueA.classList.add("on"); };
+    if (type === "jonc" || type === "prenom") {
+      img = new Image(); img.alt = ""; img.decoding = "async"; img.src = type === "jonc" ? ANIM.jonc : ANIM.collier;
+      cv = document.createElement("canvas"); calqueA.appendChild(img); calqueA.appendChild(cv);
+      lignes = type === "jonc" ? ["Tu es ma personne", "Merci maman", "Sœurs pour toujours", "Toi, toujours", "Crois en toi"] : ["Emma", "Léa", "Chloé", "Inès", "Jade", "Louise"];
+    } else if (type === "photo") {
+      bulleP = document.createElement("div"); bulleP.className = "bulle-photo";
+      bulleP.style.cssText = "left:59.37%;top:21.87%;width:29.34%;height:29.34%";
+      calqueA.appendChild(bulleP); lignes = ANIM.souvenirs || [];
+    } else if (type === "morse") {
+      morse = document.createElement("div"); morse.className = "carte-morse"; morse.innerHTML = "<b></b><small></small>";
+      calqueA.appendChild(morse); lignes = ["NOUS", "TOUJOURS", "AMIES", "MAMAN", "JETAIME"];
+    } else return;
+    box.appendChild(calqueA);
+    var dessine = function (txt) {
+      if (type === "jonc") LOU.graverJonc(cv, img, txt, { vue: "plein", fond: false });
+      else LOU.dessinerPrenom(cv, img, txt, "Manuscrite", "Argentée");
+    };
+    var tour = function () {
+      enCours = true;
+      if (type === "photo") {
+        if (!lignes.length) return;
+        bulleP.style.backgroundImage = 'url("' + lignes[i % lignes.length] + '")';
+        bulleP.classList.remove("pop"); void bulleP.offsetWidth; bulleP.classList.add("pop"); pret();
+        i++; return pause(tour, 2600);
+      }
+      var mot = lignes[i % lignes.length];
+      if (type === "morse") {
+        k++;
+        var m = mot.slice(0, k);
+        morse.firstChild.textContent = m;
+        morse.lastChild.textContent = m.split("").map(function (l) { return (MORSE_C[l] || "").replace(/\./g, "•").replace(/-/g, "—"); }).join("  ");
+        pret();
+        if (k < mot.length) return pause(tour, 260);
+        k = 0; i++; return pause(tour, 2000);
+      }
+      if (!img.complete || !img.naturalWidth) return pause(tour, 200);
+      var lettres = Array.from(mot);
+      k++;
+      dessine(lettres.slice(0, k).join("")); pret();
+      if (k < lettres.length) return pause(tour, type === "jonc" ? 95 : 190);
+      k = type === "jonc" ? 0 : 0; i++;
+      pause(tour, 2300);
+    };
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
+      vu = es[0].isIntersecting;
+      if (vu && !enCours) pause(tour, 350);
+    }, { threshold: .35 }).observe(box);
+    addEventListener("resize", function () { if (cv && cv.width) { var l = Array.from(lignes[(i ? i - 1 : 0) % lignes.length]); if (type !== "photo" && type !== "morse") dessine(l.join("")); } });
+  }
+  if (!reduit) {
+    var lancerVignettes = function () { $$(".carte-img[data-anim]").forEach(vignette); };
+    if (document.fonts && document.fonts.load) Promise.all([document.fonts.load('40px "Allura"')]).then(lancerVignettes, lancerVignettes); else lancerVignettes();
+  }
 
   /* ---------- Machine à mots ---------- */
   var machine = $("#machine");
@@ -550,7 +698,7 @@
     var REP = {
       choisir: function () { louRepond("Facile ! Répondez à mon <b>test des mots</b> : 4 questions, 30 secondes, et je vous trouve le bijou… et les mots 💌<br><a class=\"btn\" href=\"" + root + "#le-test\">Faire le test</a>", proposer); },
       idee: function () { var p = LOU.idee(); louRepond("Que diriez-vous de :<span class=\"phrase\">« " + esc(p) + " »</span><a class=\"btn\" href=\"" + urlJonc + "?texte=" + encodeURIComponent(p) + "\">La graver sur le jonc ✍️</a>", function () { proposer(["idee", "choisir", "noel"]); }); },
-      noel: function () { louRepond(j > 0 ? "Pour l'avoir sous le sapin, commandez avant le <b>" + esc(R.noelTexte) + "</b> (plus que <b>" + j + " jour" + (j > 1 ? "s" : "") + "</b> ⏳). Fabrication " + R.fabMin + " à " + R.fabMax + " jours, puis livraison " + R.livMin + " à " + R.livMax + " jours ouvrés, avec suivi 🎄" : "Pour Noël, la date conseillée est passée… mais un bijou à mots, ça s'offre toute l'année 💗", proposer); },
+      noel: function () { louRepond(j > 0 ? "Pour l'avoir sous le sapin, commandez avant le <b>" + esc(R.noelTexte) + "</b> (plus que <b>" + j + " jour" + (j > 1 ? "s" : "") + "</b> ⏳). Fabrication et livraison suivie : " + R.livMin + " à " + R.livMax + " jours au total 🎄" : "Pour Noël, la date conseillée est passée… mais un bijou à mots, ça s'offre toute l'année 💗", proposer); },
       matiere: function () { louRepond("Le jonc et le collier prénom sont en <b>acier inoxydable</b> : ils ne noircissent pas. Le collier photo : chaîne en acier inoxydable, pendentif en métal plaqué. Doré et rosé sont des finitions colorées, pas de l'or (je préfère être honnête 😇).", proposer); },
       offre: function () { louRepond("Mettez <b>2 bijoux</b> dans le panier : le moins cher est automatiquement à <b>-50 %</b>. Un pour elle, un pour vous ? 🎁", proposer); },
       livraison: function () { louRepond("Livraison suivie en France et en Belgique. Commandé aujourd'hui, reçu " + esc(LOU.estimation()) + " (estimation) 🚚<br><a class=\"btn\" href=\"" + root + "pages/livraison-retours\">Livraison &amp; retours</a>", proposer); },

@@ -41,9 +41,12 @@ def recadrer(src, ratio, largeur, dest, haut=0.0, gauche=0.5, qualite=82):
     enregistrer(im, dest, largeur, qualite)
 
 
-# Lou (accueil) : grande photo ordinateur (4:5) et bandeau téléphone (16:11), recadré sur Lou
-recadrer(trouver("lou-hero-hd", "lou-hero"), 4 / 5, 1200, "lou-hero.webp", 0.5, 0.68)
-recadrer(trouver("lou-hero-hd", "lou-hero"), 16 / 11, 1200, "lou-hero-mobile.webp", 0.18, 0.5)
+# Lou (accueil) : Lou qui porte le jonc gravé et le collier prénom (image 3072×2048).
+# Ordinateur : 4:5 (x 975 → 2613) ; téléphone : 5:4 serré sur Lou et ses bijoux (x 1000 → 2601, y 230 → 1511).
+# Si on change ces recadrages, ajuster les repères .repere (lou.css) qui pointent sur les bijoux.
+_hero = trouver("lou-hero-bijoux-hd", "lou-hero-hd", "lou-hero")
+recadrer(_hero, 4 / 5, 1200, "lou-hero.webp", 0.5, 0.68)
+enregistrer(Image.open(_hero).convert("RGB").crop((1000, 230, 2601, 1511)), "lou-hero-mobile.webp", 1200, 84)
 recadrer(trouver("lou-portrait-hd", "reference/04-sourire", "reference-visage"), 4 / 5, 1000, "lou-portrait.webp", 0.1)
 recadrer(trouver("lou-portrait-hd", "reference/01-face", "lou-avatar", "reference-visage"), 1, 400, "lou-avatar.webp", 0.12)
 
@@ -115,3 +118,15 @@ for nom, dest in [("collier-prenom-vierge-hd", "collier-vierge.webp"), ("collier
 
 # Collier photo (aperçu en direct) : photo produit HD, la photo de la cliente se pose dans la bulle
 enregistrer(Image.open(trouver("produit-collier-photo-1-hd", "produit-collier-photo-1")).convert("RGB"), "collier-photo.webp", 1200, 84)
+
+# Vignettes produits animées (lou.js) : jonc vierge plein cadre (même cadrage que la photo produit), collier sans prénom,
+# photos d'exemple pour la bulle du collier photo
+enregistrer(Image.open(trouver("produit-jonc-vierge-hd")).convert("RGB"), "jonc-vierge-plein.webp", 800, 82)
+enregistrer(Image.open(os.path.join(A, "collier-vierge.webp")).convert("RGB"), "collier-vierge-carte.webp", 800, 82)
+_cp = Image.open(trouver("produit-collier-photo-1-hd")).convert("RGB").resize((1200, 1200), Image.LANCZOS)
+enregistrer(_cp.crop((724, 274, 1053, 603)), "souvenir-couple.webp", 360, 84)
+for nom in ("souvenir-mamie", "souvenir-chiot"):
+    f = trouver(nom)
+    if nom in os.path.basename(f):
+        im = Image.open(f).convert("RGB"); w, h = im.size; c = min(w, h)
+        enregistrer(im.crop(((w - c) // 2, (h - c) // 2, (w + c) // 2, (h + c) // 2)), nom + ".webp", 360, 84)

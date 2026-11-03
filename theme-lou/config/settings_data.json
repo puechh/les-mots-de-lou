@@ -1,1 +1,1 @@
-{ "current": { "ecrin_inclus": false, "fab_min": 3, "fab_max": 7, "liv_min": 5, "liv_max": 10, "noel_limite": "1er décembre", "noel_iso": "2026-12-01", "lou_bulle": true, "sons": true } }
+{ "current": { "ecrin_inclus": false, "liv_min": 5, "liv_max": 10, "noel_limite": "1er décembre", "noel_iso": "2026-12-01", "lou_bulle": true, "sons": true } }

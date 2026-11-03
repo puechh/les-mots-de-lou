@@ -27,8 +27,9 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   délais fab/livraison, date limite Noël, Lou, sons. Images IA en **HD 2048 px** (JPEG, `scripts/images_hd*.sh`).
 - Inspirations (Lily's Treasures, Ciao Kombucha, Dentica) : `docs/inspirations.md`.
 - Fiches (décisions utilisateur 03/11) : écriture manuscrite **Allura** ; **première lettre toujours en majuscule** ; bénéfices
-  dans « Caractéristiques » en bas de fiche ; case « orthographe vérifiée » **cochée d'office** ; livraison **5 à 10 jours
-  ouvrés** (fabrication 3-7 j) ; icône « Mon compte » dans l'en-tête.
+  dans « Caractéristiques » en bas de fiche ; case « orthographe vérifiée » **cochée d'office** ; délai **5 à 10 jours au total,
+  fabrication comprise** (jours calendaires, décision 03/11) ; icône « Mon compte » dans l'en-tête ; accueil = Lou qui
+  porte le jonc et le collier (repères animés) ; vignettes produits animées (la personnalisation se « remplit »).
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).
