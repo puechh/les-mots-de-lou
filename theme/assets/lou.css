@@ -171,8 +171,9 @@ h1 em > .t, h2 em > .t { position: relative; z-index: 1; }
 .hero-photo { position: relative; border-radius: 26px; overflow: hidden; box-shadow: var(--ombre); aspect-ratio: 5 / 4; background: var(--blush); }
 /* Repères sur les bijoux que porte Lou (positions = bijoux sur lou-hero*.webp, cf. scripts/assets_theme.py) */
 .repere { position: absolute; left: var(--x); top: var(--y); width: 0; height: 0; z-index: 2; text-decoration: none; }
-.hero-photo picture { display: block; width: 100%; height: 100%; transform-origin: var(--zo, 50% 50%); transition: transform 1.4s cubic-bezier(.6, 0, .2, 1); will-change: transform; }
-.hero-photo.zoom picture { transform: scale(var(--zs, 2)); }
+.hero-photo picture { display: block; width: 100%; height: 100%; transform-origin: 0 0; transition: transform 1.4s cubic-bezier(.6, 0, .2, 1); will-change: transform; }
+.hero-photo.zoom picture { transform: translate(var(--ztx, 0), var(--zty, 0)) scale(var(--zs, 2)); }
+.hero-photo .repere { transition: left 1.4s cubic-bezier(.6, 0, .2, 1), top 1.4s cubic-bezier(.6, 0, .2, 1); }
 /* Flèche : part du bijou (point 0,0 du repère) vers l'étiquette, s'arrête 10 px avant le bijou */
 .repere .fleche { position: absolute; left: 0; top: -1px; width: var(--l); height: 2px; background: linear-gradient(90deg, transparent 0 var(--g, 10px), #fff var(--g, 10px)); transform-origin: 0 50%; transform: rotate(var(--a)); filter: drop-shadow(0 1px 1.5px rgba(59, 31, 43, .55)); transition: opacity .4s; }
 .repere.actif .fleche { --g: 26px; }
@@ -181,8 +182,8 @@ h1 em > .t, h2 em > .t { position: relative; z-index: 1; }
 .repere.cache span, .repere.cache .fleche { opacity: 0; }
 .repere.actif span { transform: translate(var(--tx), -100%) rotate(var(--r, -4deg)) scale(1.12); }
 .r-collier { --x: 50.1%; --y: 63.5%; --a: -145deg; --l: 64px; --ex: -52px; --ey: -37px; --tx: -88%; }
-.r-jonc { --x: 46.1%; --y: 87.1%; --a: 0deg; --l: 60px; --ex: 62px; --ey: 12px; --tx: 0%; --r: -3deg; }
-@media (min-width: 900px) { .r-collier { --x: 54.1%; --y: 63.5%; --l: 80px; --ex: -66px; --ey: -46px; } .r-jonc { --x: 48%; --y: 87.1%; --l: 78px; --ex: 80px; --ey: 12px; } }
+.r-jonc { --x: 46.1%; --y: 87.1%; --a: -35deg; --l: 58px; --ex: 46px; --ey: -26px; --tx: 0%; --r: -3deg; }
+@media (min-width: 900px) { .r-collier { --x: 54.1%; --y: 63.5%; --l: 80px; --ex: -66px; --ey: -46px; } .r-jonc { --x: 48%; --y: 87.1%; --l: 70px; --ex: 56px; --ey: -36px; } }
 @media (max-width: 899px) { .pas-mobile { display: none !important; } }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 .hero .lou-dit { position: relative; margin: -30px 6px 0 6px; z-index: 3; }

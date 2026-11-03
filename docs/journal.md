@@ -308,3 +308,8 @@
 - Thème : photo d'accueil (Lou au sapin), portrait, avatar, repères, alt « Lou », + FAQ et onglet retours (Garantie 2 mois) envoyés
   (8 fichiers). Testé au banc avant (ordinateur + iPhone 13, 0 erreur JS, repères sur les bijoux).
 - Reste : aperçu de gravure du jonc avec l'ancien jonc large (à refaire + re-mesurer).
+- Accueil sur téléphone (retour utilisateur, capture) : le jonc restait caché sous la bulle de Lou pendant le zoom et l'image
+  zoomée était floue. Corrigé : le zoom fait maintenant glisser le bijou vers le centre (translate + scale, bords jamais visibles,
+  repère qui suit) au lieu de zoomer sur place ; photos HD `lou-hero-hd.webp` (2458 px) et `lou-hero-mobile-hd.webp` (2600 px)
+  chargées en arrière-plan après l'ouverture puis échangées ; zoom ×2,1 téléphone, ×2 ordinateur ; étiquette du jonc au-dessus.
+  Testé au banc (iPhone 13 + ordinateur, 0 erreur JS) puis envoyé (5 fichiers).

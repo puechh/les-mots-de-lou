@@ -8,8 +8,8 @@
     <div class="hero-visu">
       <div class="hero-photo">
         <picture>
-          <source media="(max-width: 899px)" srcset="{{ 'lou-hero-mobile.webp' | asset_url }}" width="1400" height="1120">
-          <img src="{{ 'lou-hero.webp' | asset_url }}" alt="Lou, l'avatar de la boutique, porte un jonc gravé « Tu es ma personne » et un collier prénom « Lou », près du sapin de Noël" width="1400" height="1750" fetchpriority="high">
+          <source media="(max-width: 899px)" srcset="{{ 'lou-hero-mobile.webp' | asset_url }}" data-hd="{{ 'lou-hero-mobile-hd.webp' | asset_url }}" width="1400" height="1120">
+          <img src="{{ 'lou-hero.webp' | asset_url }}" data-hd="{{ 'lou-hero-hd.webp' | asset_url }}" alt="Lou, l'avatar de la boutique, porte un jonc gravé « Tu es ma personne » et un collier prénom « Lou », près du sapin de Noël" width="1400" height="1750" fetchpriority="high">
         </picture>
         <a class="repere r-collier" href="/products/collier-prenom"><b class="fleche" aria-hidden="true"></b><span>mon collier prénom</span></a>
         <a class="repere r-jonc" href="{{ url_jonc }}"><b class="fleche" aria-hidden="true"></b><span>mon jonc gravé</span></a>

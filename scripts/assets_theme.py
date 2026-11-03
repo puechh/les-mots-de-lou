@@ -48,6 +48,9 @@ _hero = os.path.join(ROOT, "contenu/lou/bijoux-v3/01-accueil-sapin.jpg")
 _h = Image.open(_hero).convert("RGB")
 enregistrer(_h.crop((1523, 0, 3981, 3072)), "lou-hero.webp", 1400, 74)
 enregistrer(_h.crop((930, 0, 4770, 3072)), "lou-hero-mobile.webp", 1400, 72)
+# Versions HD chargées en arrière-plan par lou.js juste avant le zoom (zoom x2,1 sur iPhone : il faut ~2 500 px de large)
+enregistrer(_h.crop((1523, 0, 3981, 3072)), "lou-hero-hd.webp", 2458, 76)
+enregistrer(_h.crop((930, 0, 4770, 3072)), "lou-hero-mobile-hd.webp", 2600, 76)
 _face = Image.open(os.path.join(ROOT, "contenu/lou/reference-v3/01-face.jpg")).convert("RGB")   # 3584×4800
 enregistrer(_face.crop((0, 240, 3584, 4720)), "lou-portrait.webp", 1000, 78)                     # 4:5
 enregistrer(_face.crop((650, 1100, 3050, 3500)), "lou-avatar.webp", 192, 80)                     # visage, carré

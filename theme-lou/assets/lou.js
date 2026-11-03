@@ -523,13 +523,25 @@
   }
   /* ---------- Accueil : zoom animé sur les bijoux que porte Lou (collier, puis jonc) ---------- */
   var heroPh = $(".hero-photo"), reps = heroPh ? $$(".repere", heroPh) : [];
+  // Photo HD chargée en arrière-plan après l'ouverture de la page, puis échangée (nette même zoomée x2)
+  if (heroPh) window.addEventListener("load", function () {
+    $$("[data-hd]", heroPh).forEach(function (el) {
+      var hd = el.getAttribute("data-hd"), test = new Image(), source = el.tagName === "SOURCE";
+      test.onload = function () { if (source) el.srcset = hd; else el.src = hd; };
+      if (source ? matchMedia(el.media).matches : !matchMedia("(max-width: 899px)").matches) test.src = hd;
+    });
+  });
   if (heroPh && reps.length && !reduit) {
     var zVu = true, zEtape = 0, zT = null;
     var zoomSur = function (r) {
-      if (!r) { heroPh.classList.remove("zoom"); reps.forEach(function (x) { x.classList.remove("cache", "actif"); }); return; }
-      var cs = getComputedStyle(r);
-      heroPh.style.setProperty("--zo", cs.left + " " + cs.top);
-      heroPh.style.setProperty("--zs", matchMedia("(min-width: 900px)").matches ? 1.8 : 2.1);
+      if (!r) { heroPh.classList.remove("zoom"); reps.forEach(function (x) { x.classList.remove("cache", "actif"); x.style.left = x.style.top = ""; }); return; }
+      reps.forEach(function (x) { x.style.left = x.style.top = ""; });
+      var cs = getComputedStyle(r), W = heroPh.clientWidth || 1, H = heroPh.clientHeight || 1;
+      var fx = parseFloat(cs.left) / W, fy = parseFloat(cs.top) / H, s = matchMedia("(min-width: 900px)").matches ? 2 : 2.1;
+      // le bijou glisse vers le centre (un peu au-dessus, loin de la bulle de Lou), sans faire apparaître les bords de la photo
+      var tx = Math.min(0, Math.max(1 - s, .5 - s * fx)), ty = Math.min(0, Math.max(1 - s, .42 - s * fy));
+      heroPh.style.setProperty("--zs", s); heroPh.style.setProperty("--ztx", (tx * 100) + "%"); heroPh.style.setProperty("--zty", (ty * 100) + "%");
+      r.style.left = ((tx + s * fx) * 100) + "%"; r.style.top = ((ty + s * fy) * 100) + "%";
       reps.forEach(function (x) { x.classList.toggle("cache", x !== r); x.classList.toggle("actif", x === r); });
       heroPh.classList.add("zoom");
     };
