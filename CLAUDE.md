@@ -31,6 +31,10 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   fabrication comprise** (jours calendaires, décision 03/11) ; icône « Mon compte » dans l'en-tête ; accueil = Lou qui
   porte le jonc et le collier (repères animés) ; vignettes produits animées (la personnalisation se « remplit »).
   Machine à mots sous les bijoux (accueil) et sous « Caractéristiques » (jonc, bracelet) ; **Noël : avant le 10 décembre**.
+- **Nouveau physique de Lou (décision utilisateur 03/11)** : l'ancien visage C ne plaît plus → femme de **20-22 ans, brune,
+  vraiment mignonne**, style selfie naturel ; images **extrêmement réalistes**. **Chaque prompt commence par « Shot on iPhone 18 Pro. »**
+  Ses photos d'exemple (selfies) = inspiration en mots seulement, jamais envoyées au modèle (vraies personnes possibles).
+  Propositions : `contenu/lou/propositions-v2/` (choix en attente).
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).

@@ -258,3 +258,7 @@
   ✅ `v3.fal.media` / `v3b.fal.media` ; fausse clé → 401 partout (aucun secret réseau ne remplace l'en-tête) ; `fal.media` seul
   n'a pas d'adresse DNS (sans importance). Détail dans `docs/avatar-lou.md`.
 - L'utilisateur indique qu'il ne pense pas garder Lou : **tout travail sur l'avatar est suspendu** jusqu'à discussion.
+
+## 2026-11-03 (suite 16) — Nouvelle Lou
+- L'utilisateur ne veut plus de l'ancien physique : brune 20-22 ans, très mignonne, ultra-réaliste, « Shot on iPhone 18 Pro. »
+  dans chaque prompt. 3 propositions générées (≈ 1 $ OpenAI) → `contenu/lou/propositions-v2/`. Choix en attente.

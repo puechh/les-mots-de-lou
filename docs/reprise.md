@@ -4,8 +4,11 @@
 > (régénérer : banc `scripts/banc_theme.py` puis `scripts/export_apercu.py <dossier>` et republier).
 > Shopify : la boutique est construite et le thème Lou est **publié** (derrière le mot de passe) → voir ci-dessous.
 
-## ⏸️ 03/11/2026 — AVATAR EN PAUSE : l'utilisateur ne pense plus garder Lou
-- **Ne rien lancer sur Lou (fal.ai, images, vidéos, thème) avant d'en avoir parlé avec l'utilisateur.** Décision en discussion.
+## 🎭 03/11/2026 — NOUVELLE LOU : changement de physique (choix du visage en attente)
+- L'utilisateur garde le principe de Lou mais pas son physique : femme **20-22 ans, brune, très mignonne**, images
+  **extrêmement réalistes**, « Shot on iPhone 18 Pro. » dans **chaque** prompt (voir CLAUDE.md).
+- 3 propositions (gpt-image-2.5-flare, qualité high, ≈ 1 $) : `contenu/lou/propositions-v2/` A ondulée, B chignon, C sourire.
+- Ensuite : nouvelle planche de référence → remplacer les images de Lou du thème (banc avant envoi) → LoRA fal.ai si accord.
 
 ## ✅ 03/11/2026 — clé fal.ai opérationnelle
 - Variable `FAL_KEY` (plus de Network secret fal). Test gratuit OK sur `fal.run`, `queue.fal.run`, `rest.fal.ai`,

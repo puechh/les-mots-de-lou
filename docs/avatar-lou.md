@@ -145,3 +145,15 @@ Requêtes gratuites uniquement, clé jamais affichée. Une fausse clé donne 401
 | `fal.media` (sans sous-domaine) | GET | ⚪ n'existe pas dans le DNS (502 « upstream », pas un refus du réseau) : sans importance, les fichiers fal sont servis par `v3.fal.media` / `v3b.fal.media` |
 → Prêt pour l'entraînement du LoRA et les générations (qui, elles, coûtent : demander l'accord avant de lancer).
 
+## 03/11/2026 — Nouveau physique de Lou (demande utilisateur)
+- L'ancien visage C ne plaît pas. Cible : **20-22 ans, brune, vraiment mignonne**, selfie naturel, **extrêmement réaliste** ;
+  **« Shot on iPhone 18 Pro. » en tête de chaque prompt**. 4 selfies d'exemple envoyés par l'utilisateur (non rangés dans le
+  dépôt) : cheveux bruns longs ondulés, raie au milieu, yeux bruns, taches de rousseur, lumière du jour, chambre.
+- ⚖️ Ces exemples peuvent être de vraies personnes (droit à l'image, art. 9 Code civil) : seulement décrits en mots, jamais
+  envoyés au modèle ; on crée une personne inventée. Tenue sobre (pubs Meta/Pinterest refusent le contenu suggestif ; la
+  marque vend des bijoux, le décolleté ne doit pas être le sujet).
+- Base commune des prompts (`contenu/lou/propositions-v2/*.txt`) : « Shot on iPhone 18 Pro. Extremely realistic, unretouched
+  candid smartphone photo of an invented, fictional young woman, 21 years old, clearly an adult. Real skin texture with visible
+  pores… no beauty filter, no studio lighting… girl-next-door, very cute and approachable. » + description propre à chaque version.
+- Résultat : très réaliste (pores, mèches, décor vécu). A paraît un peu plus âgée ; B la plus proche des exemples ; C la plus
+  souriante (main à vérifier de près).
