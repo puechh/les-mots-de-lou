@@ -176,3 +176,14 @@
   2e → 3e → 4e → 1re, côté solution affiché 4 s, 1,8 s entre deux cartes ; retournement plus doux (1,1 s). Une carte
   touchée par la cliente n'est plus retournée toute seule.
 - Le problème n'est plus barré mais **souligné en rose framboise** (lisible).
+
+## 2026-11-03 (suite 5) — Machine à mots sous les bijoux et sur les fiches ; Noël au 10 décembre
+- Machine à mots devenue un composant (`snippets/machine-mots.liquid`, JS multi-machines dans `lou.js`).
+  Accueil : juste sous les bijoux (fonds réalternés : problème → solution en blanc, test en bande).
+  Fiches qui proposent une phrase ou un mot : **jonc** (phrases ≤ 20 caractères) et **bracelet code secret** (mots en
+  majuscules ≤ 8 lettres, banque `MOTS`), juste sous « Caractéristiques » ; « Je prends cette phrase / ce mot » remplit le
+  champ, remonte à l'aperçu et Lou confirme. Pas de machine sur le collier prénom ni le collier photo.
+- Phrases raccourcies à 20 caractères max. (« La best, c'est toi », « Duo de choc », « Toi, ma préférée », « Plus forte que tout »).
+- **Noël : commandez avant le 10 décembre** (décision utilisateur ; délai max 10 j → livré au plus tard le 20/12) : réglages du
+  thème (en ligne vérifiés identiques avant l'envoi), bandeau, compte à rebours, fiche, FAQ, Lou, page livraison-retours,
+  politique de livraison.

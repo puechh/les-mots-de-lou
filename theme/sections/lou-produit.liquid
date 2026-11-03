@@ -124,12 +124,19 @@
     <div class="delai">
       <span class="estim" id="estim">🚚 Livraison estimée : calcul en cours…</span>
       <span>✨ <b>Fabriqué rien que pour vous</b>, puis 📦 <b>livraison suivie</b> France &amp; Belgique : {{ settings.liv_min | default: 5 }} à {{ settings.liv_max | default: 10 }} jours au total</span>
-      <span>🎄 <b>Pour Noël</b> : commandez avant le <b>{{ settings.noel_limite | default: '1er décembre' }}</b></span>
+      <span>🎄 <b>Pour Noël</b> : commandez avant le <b>{{ settings.noel_limite | default: '10 décembre' }}</b></span>
     </div>
     <div class="duo-pub"><span aria-hidden="true">🎁</span><span>Le 2e bijou est à <b>-50 %</b>, automatiquement : un pour elle, un pour vous ?</span></div>
 
     <div class="accordeons">
       {%- if c.benefices -%}<details open><summary>Caractéristiques</summary><div><ul class="benefices">{%- for b in c.benefices -%}<li>{{ b }}</li>{%- endfor -%}{% if settings.ecrin_inclus %}<li>Livré dans un écrin cadeau, prêt à offrir</li>{% endif %}</ul><p class="tiny">L'aperçu est une simulation : le rendu réel (taille, police, position) peut légèrement varier. Photos non contractuelles.</p></div></details>{%- endif -%}
+      {%- if type == 'jonc' or type == 'morse' -%}
+        <div class="machine-fiche">
+          <span class="hand">En panne d'inspiration ?</span>
+          <h3>Ma machine à {% if type == 'morse' %}mots secrets{% else %}mots{% endif %}</h3>
+          {%- if type == 'morse' %}{% render 'machine-mots', produit: product.url, mode: 'remplir', sorte: 'mot' %}{% else %}{% render 'machine-mots', produit: product.url, mode: 'remplir', sorte: 'phrase' %}{% endif -%}
+        </div>
+      {%- endif -%}
       {%- if product.description != blank -%}<details open><summary>Le bijou</summary><div>{{ product.description }}</div></details>{%- endif -%}
       <details><summary>Matière &amp; entretien</summary><div>
         {%- case type -%}

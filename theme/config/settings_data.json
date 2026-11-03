@@ -12,8 +12,8 @@
     "ecrin_inclus": false,
     "liv_min": 5,
     "liv_max": 10,
-    "noel_limite": "1er décembre",
-    "noel_iso": "2026-12-01",
+    "noel_limite": "10 décembre",
+    "noel_iso": "2026-12-10",
     "lou_bulle": true,
     "sons": true
   }

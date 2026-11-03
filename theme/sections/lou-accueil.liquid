@@ -34,8 +34,8 @@
           </div>
         </div>
         <div class="atelier-row">
-          <input id="atelier-texte" type="text" maxlength="20" placeholder="Tu es ma personne" autocomplete="off" enterkeyhint="go">
-          <a class="btn btn-small" id="atelier-lien" data-base="{{ url_jonc }}" href="{{ url_jonc }}">Graver ✨</a>
+          <input id="atelier-texte" type="text" maxlength="20" placeholder="Vos mots ici…" autocomplete="off" enterkeyhint="go">
+          <a class="btn btn-small" id="atelier-lien" data-base="{{ url_jonc }}" href="{{ url_jonc }}#personnaliser">Graver ✨</a>
         </div>
         <div class="atelier-photo" id="atelier-apercu" data-base="{{ 'jonc-vierge.webp' | asset_url }}" data-doree="{{ 'jonc-vierge-doree.webp' | asset_url }}" data-rosee="{{ 'jonc-vierge-rosee.webp' | asset_url }}">
           <img src="{{ 'jonc-vierge.webp' | asset_url }}" alt="Le Jonc « Mes Mots » avec votre texte gravé" width="1380" height="690" fetchpriority="high">
@@ -45,7 +45,7 @@
         <p class="atelier-note">Simulation de gravure sur le Jonc « Mes Mots » (20 caractères max.).</p>
       </div>
       <div class="hero-cta">
-        <a class="btn" href="/collections/all"><span class="brille"></span>Je crée mon bijou</a>
+        <a class="btn" id="atelier-cta" href="{{ url_jonc }}#personnaliser"><span class="brille"></span>Je crée mon bijou</a>
         <a class="btn ghost" href="#le-test">Lou, aide-moi ✨</a>
       </div>
     </div>
@@ -73,8 +73,20 @@
   </div>
 </section>
 
+{%- comment -%} 3. La machine à mots (juste sous les bijoux) {%- endcomment -%}
+<section class="section band" id="machine-a-mots">
+  <div class="wrap machine">
+    <div class="rv">
+      <span class="hand">En panne d'inspiration ?</span>
+      <h2>Ma machine <em><span class="t">à mots</span>{{ trait }}</em></h2>
+      <p class="small" style="margin-top:12px">Choisissez un thème, tirez la manette… et gravez la phrase qui vous fait sourire. (Promis, je les ai toutes testées sur mes copines virtuelles.)</p>
+    </div>
+    {% render 'machine-mots', produit: url_jonc, mode: 'lien' %}
+  </div>
+</section>
+
 {%- comment -%} 3. Problème → solution (cartes qui se retournent toutes seules) {%- endcomment -%}
-<section class="section band">
+<section class="section">
   <div class="wrap">
     <div class="head rv">
       <span class="hand">On se reconnaît un peu, non ?</span>
@@ -91,7 +103,7 @@
 </section>
 
 {%- comment -%} 4. Le test des mots (conversation avec Lou) {%- endcomment -%}
-<section class="section" id="le-test">
+<section class="section band" id="le-test">
   <div class="wrap">
     <div class="head rv">
       <span class="hand">30 secondes, 4 questions</span>
@@ -99,32 +111,6 @@
       <p>Vous ne savez pas quoi offrir, ni quoi écrire ? Répondez-moi : je trouve le bijou… et les mots.</p>
     </div>
     {% render 'test-mots' %}
-  </div>
-</section>
-
-{%- comment -%} 5. La machine à mots {%- endcomment -%}
-<section class="section band" id="machine-a-mots">
-  <div class="wrap machine">
-    <div class="rv">
-      <span class="hand">En panne d'inspiration ?</span>
-      <h2>Ma machine <em><span class="t">à mots</span>{{ trait }}</em></h2>
-      <p class="small" style="margin-top:12px">Choisissez un thème, tirez la manette… et gravez la phrase qui vous fait sourire. (Promis, je les ai toutes testées sur mes copines virtuelles.)</p>
-    </div>
-    <div class="machine-boite rv" id="machine" data-produit="{{ url_jonc }}">
-      <div class="machine-cats" role="group" aria-label="Thème des phrases">
-        <button class="chip is-on" data-cat="amour" aria-pressed="true">💞 Amour</button>
-        <button class="chip" data-cat="amitie" aria-pressed="false">👯‍♀️ Amitié</button>
-        <button class="chip" data-cat="famille" aria-pressed="false">🏡 Famille</button>
-        <button class="chip" data-cat="drole" aria-pressed="false">😂 Drôle</button>
-        <button class="chip" data-cat="courage" aria-pressed="false">🌈 Courage</button>
-      </div>
-      <div class="machine-fenetre"><p class="machine-phrase" aria-live="polite">Tu es ma personne</p></div>
-      <div class="machine-actions">
-        <button class="btn" id="machine-tirer"><span class="brille"></span>🎰 Tirer des mots</button>
-        <a class="btn ghost" id="machine-graver" href="{{ url_jonc }}">Graver cette phrase</a>
-      </div>
-      <button class="manette" id="manette" type="button" aria-label="Tirer la manette"><span class="tige"></span><span class="boule"></span><span class="socle"></span></button>
-    </div>
   </div>
 </section>
 
@@ -165,11 +151,11 @@
 {%- comment -%} 8. Compte à rebours Noël {%- endcomment -%}
 <section class="section">
   <div class="wrap">
-    <div class="noel rv" id="noel" data-limite="{{ settings.noel_iso | default: '2026-12-01' }}">
+    <div class="noel rv" id="noel" data-limite="{{ settings.noel_iso | default: '2026-12-10' }}">
       <div class="neige" aria-hidden="true"></div>
       <span class="hand" style="color:var(--rose)">Psst… je vous préviens</span>
       <h2>Pour l'avoir sous <em>le sapin</em></h2>
-      <p>Commandez avant le <b>{{ settings.noel_limite | default: '1er décembre' }}</b> : votre bijou a le temps d'être gravé et livré.</p>
+      <p>Commandez avant le <b>{{ settings.noel_limite | default: '10 décembre' }}</b> : votre bijou a le temps d'être gravé et livré.</p>
       <div class="compte" aria-live="off"><div><b data-u="j">–</b><small>jours</small></div><div><b data-u="h">–</b><small>heures</small></div><div><b data-u="m">–</b><small>min</small></div><div><b data-u="s">–</b><small>sec</small></div></div>
       <a class="btn" href="/collections/all"><span class="brille"></span>Je choisis maintenant 🎄</a>
     </div>

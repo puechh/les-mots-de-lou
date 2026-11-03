@@ -6,7 +6,7 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var LOU = window.LOU = window.LOU || {};
-  var R = LOU.reglages || { livMin: 5, livMax: 10, noel: "2026-12-01", noelTexte: "1er décembre", sons: true };
+  var R = LOU.reglages || { livMin: 5, livMax: 10, noel: "2026-12-10", noelTexte: "10 décembre", sons: true };
   var reduit = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
   var euros = function (c) { return (c / 100).toFixed(2).replace(".", ",") + " €"; };
@@ -19,10 +19,18 @@
     amour: ["Tu es ma personne", "Toi, toujours", "Je choisis toi", "Pour toujours", "Mon plus beau cadeau", "Toi et moi"],
     amitie: ["Amies pour la vie", "Ma personne préférée", "Merci d'exister", "Ensemble, toujours", "Même loin, tout près", "Ma binôme de vie"],
     famille: ["Ma sœur, mon pilier", "Même sang, même cœur", "Merci maman", "Tu es ma maison", "Ma mamie d'amour", "Je t'aime gros"],
-    drole: ["Supporte-moi encore", "Officiellement la best", "Partenaire de bêtises", "Classée n°1", "Toi, en mieux ? Non", "Garde-la, elle est top"],
-    courage: ["Plus forte que tu crois", "Un pas après l'autre", "Crois en toi", "Respire, tu gères", "Je suis capable", "Après la pluie, toi"]
+    drole: ["Supporte-moi encore", "La best, c'est toi", "Duo de choc", "Classée n°1", "Toi, en mieux ? Non", "Toi, ma préférée"],
+    courage: ["Plus forte que tout", "Un pas après l'autre", "Crois en toi", "Respire, tu gères", "Je suis capable", "Après la pluie, toi"]
   };
   LOU.PHRASES = window.LOU_PHRASES = PHRASES;
+  // Mots secrets (bracelet Morse) : A à Z, 8 lettres maximum
+  var MOTS = {
+    amour: ["JETAIME", "AMOUR", "TOUJOURS", "MONCOEUR", "TOIETMOI"],
+    amitie: ["AMIES", "BFF", "COMPLICE", "BINOME", "TOUJOURS"],
+    famille: ["MAMAN", "PAPA", "SOEURS", "FAMILLE", "MAMIE"],
+    drole: ["BISOUS", "CHOUPI", "LOVE", "BIBOU", "PIPELET"],
+    courage: ["COURAGE", "FORCE", "CROIS", "FONCE", "LIBRE"]
+  };
   LOU.idee = function () { var t = Object.keys(PHRASES), l = PHRASES[t[Math.floor(Math.random() * t.length)]]; return l[Math.floor(Math.random() * l.length)]; };
 
   /* ---------- Sons doux (créés par le navigateur, aucun fichier) ---------- */
@@ -96,7 +104,7 @@
     return "entre le " + fmt(a) + " et le " + fmt(b);
   };
   function joursNoel() {
-    var lim = new Date((R.noel || "2026-12-01") + "T23:59:59");
+    var lim = new Date((R.noel || "2026-12-10") + "T23:59:59");
     return Math.ceil((lim - new Date()) / 864e5);
   }
   LOU.joursNoel = joursNoel;
@@ -545,21 +553,21 @@
     if (document.fonts && document.fonts.load) Promise.all([document.fonts.load('40px "Allura"')]).then(lancerVignettes, lancerVignettes); else lancerVignettes();
   }
 
-  /* ---------- Machine à mots ---------- */
-  var machine = $("#machine");
-  if (machine) {
+  /* ---------- Machine à mots (accueil : ouvre la fiche du jonc ; fiche produit : remplit le champ) ---------- */
+  $$(".machine-boite").forEach(function (machine) {
     var phrase = $(".machine-phrase", machine), cat = "amour", base = machine.getAttribute("data-produit") || (root + "products/jonc-mes-mots");
-    var graver = $("#machine-graver"), manette = $("#manette"), roule = false;
+    var mode = machine.getAttribute("data-mode") || "lien", banque = machine.getAttribute("data-sorte") === "mot" ? MOTS : PHRASES;
+    var graver = $(".machine-graver", machine), manette = $(".manette", machine), roule = false;
     $$(".machine-cats .chip", machine).forEach(function (c) {
       c.addEventListener("click", function () {
         $$(".machine-cats .chip", machine).forEach(function (x) { x.classList.remove("is-on"); x.setAttribute("aria-pressed", "false"); });
         c.classList.add("is-on"); c.setAttribute("aria-pressed", "true"); cat = c.getAttribute("data-cat"); tirer();
       });
     });
-    var fin = function (p) { if (graver) graver.href = base + "?texte=" + encodeURIComponent(p); };
+    var fin = function (p) { if (graver && mode === "lien") graver.href = base + "?texte=" + encodeURIComponent(p) + "#personnaliser"; };
     var tirer = function () {
       if (roule) return;
-      var liste = PHRASES[cat], finale = liste[Math.floor(Math.random() * liste.length)];
+      var liste = banque[cat], finale = liste[Math.floor(Math.random() * liste.length)];
       if (finale === phrase.textContent) finale = liste[(liste.indexOf(finale) + 1) % liste.length];
       if (manette) { manette.classList.add("tire"); setTimeout(function () { manette.classList.remove("tire"); }, 420); }
       if (reduit) { phrase.textContent = finale; return fin(finale); }
@@ -572,10 +580,17 @@
         }
       }, 70);
     };
-    var bt = $("#machine-tirer"); if (bt) bt.addEventListener("click", tirer);
+    var bt = $(".machine-tirer", machine); if (bt) bt.addEventListener("click", tirer);
     if (manette) manette.addEventListener("click", tirer);
+    if (graver && mode === "remplir") graver.addEventListener("click", function () {
+      var champ = $(".perso-texte[data-principal='1']") || $(".perso-texte"), gal = $("#galerie");
+      if (!champ) return;
+      champ.value = phrase.textContent.slice(0, +champ.maxLength || 20); champ.dispatchEvent(new Event("input")); son("pop");
+      if (gal) { gal.scrollTo({ left: 0 }); gal.scrollIntoView({ behavior: reduit ? "auto" : "smooth", block: "center" }); }
+      if (LOU.dit) setTimeout(function () { LOU.dit("« " + champ.value + " »… c'est noté ✍️ Regardez l'aperçu !", 3500); }, 700);
+    });
     fin(phrase.textContent);
-  }
+  });
 
   /* ---------- Cartes « problème → solution » : se retournent toutes seules, et au toucher ---------- */
   var cartesR = $$(".carte-r");
@@ -639,7 +654,7 @@
       noel: "Noël ! Il reste le temps, mais pas trop 🎄", anniv: "Joyeux anniversaire en avance 🎂", rien: "Les cadeaux sans raison sont les meilleurs 💌", pardon: "Oups… on va arranger ça 🙈", naissance: "Bienvenue au petit cœur 👶", courage: "On va lui envoyer de la force 🌈",
       Argentée: "Noté : tout en finesse 🤍", Dorée: "Un peu de soleil, j'adore 🌾", Rosée: "Glamour, j'adore 💄" };
     var PAR_QUI = { amie: PHRASES.amitie, soeur: ["Ma sœur, mon pilier", "Même sang, même cœur", "Sœurs pour toujours", "Ma première amie"], maman: ["Merci maman", "Ma maman, mon repère", "Tu es ma maison", "Je t'aime gros"], amour: PHRASES.amour, mamie: ["Ma mamie d'amour", "Mamie, mon trésor", "Tes mots me guident"], moi: ["Je suis capable", "Un pas après l'autre", "Crois en toi", "Ma vie, mes règles"] };
-    var PAR_QUAND = { noel: ["Mon plus beau cadeau"], anniv: ["Un an de plus, toi"], pardon: ["Pardon, je t'aime", "On recommence ?"], naissance: ["Bienvenue petit cœur"], courage: ["Plus forte que tu crois", "Respire, tu gères"], rien: ["Juste parce que"] };
+    var PAR_QUAND = { noel: ["Mon plus beau cadeau"], anniv: ["Un an de plus, toi"], pardon: ["Pardon, je t'aime", "On recommence ?"], naissance: ["Bienvenue petit cœur"], courage: ["Plus forte que tout", "Respire, tu gères"], rien: ["Juste parce que"] };
     var MORSE = { amie: "AMIES", soeur: "SOEURS", maman: "MAMAN", amour: "JETAIME", mamie: "MAMIE", moi: "COURAGE" };
     var PRODUITS = {};
     try { PRODUITS = JSON.parse(($("#test-produits") || {}).textContent || "{}"); } catch (e) {}

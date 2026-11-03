@@ -30,6 +30,7 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   dans « Caractéristiques » en bas de fiche ; case « orthographe vérifiée » **cochée d'office** ; délai **5 à 10 jours au total,
   fabrication comprise** (jours calendaires, décision 03/11) ; icône « Mon compte » dans l'en-tête ; accueil = Lou qui
   porte le jonc et le collier (repères animés) ; vignettes produits animées (la personnalisation se « remplit »).
+  Machine à mots sous les bijoux (accueil) et sous « Caractéristiques » (jonc, bracelet) ; **Noël : avant le 10 décembre**.
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).

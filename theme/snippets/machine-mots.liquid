@@ -1,0 +1,26 @@
+{%- comment -%}
+  Machine à mots (réutilisable). Paramètres :
+  - produit : adresse de la fiche à ouvrir avec la phrase (accueil) ;
+  - mode : 'lien' (accueil : ouvre la fiche) ou 'remplir' (fiche produit : remplit le champ de personnalisation) ;
+  - sorte : 'phrase' (jonc) ou 'mot' (bracelet Morse : mots en majuscules, 8 lettres max.).
+{%- endcomment -%}
+{%- assign sorte = sorte | default: 'phrase' -%}
+<div class="machine-boite rv" data-produit="{{ produit }}" data-mode="{{ mode | default: 'lien' }}" data-sorte="{{ sorte }}">
+  <div class="machine-cats" role="group" aria-label="Thème des {% if sorte == 'mot' %}mots{% else %}phrases{% endif %}">
+    <button type="button" class="chip is-on" data-cat="amour" aria-pressed="true">💞 Amour</button>
+    <button type="button" class="chip" data-cat="amitie" aria-pressed="false">👯‍♀️ Amitié</button>
+    <button type="button" class="chip" data-cat="famille" aria-pressed="false">🏡 Famille</button>
+    <button type="button" class="chip" data-cat="drole" aria-pressed="false">😂 Drôle</button>
+    <button type="button" class="chip" data-cat="courage" aria-pressed="false">🌈 Courage</button>
+  </div>
+  <div class="machine-fenetre"><p class="machine-phrase{% if sorte == 'mot' %} majuscules{% endif %}" aria-live="polite">{% if sorte == 'mot' %}TOUJOURS{% else %}Tu es ma personne{% endif %}</p></div>
+  <div class="machine-actions">
+    <button type="button" class="btn machine-tirer"><span class="brille"></span>🎰 Tirer des mots</button>
+    {%- if mode == 'remplir' -%}
+      <button type="button" class="btn ghost machine-graver">✍️ Je prends {% if sorte == 'mot' %}ce mot{% else %}cette phrase{% endif %}</button>
+    {%- else -%}
+      <a class="btn ghost machine-graver" href="{{ produit }}#personnaliser">Graver cette phrase</a>
+    {%- endif -%}
+  </div>
+  <button class="manette" type="button" aria-label="Tirer la manette"><span class="tige"></span><span class="boule"></span><span class="socle"></span></button>
+</div>

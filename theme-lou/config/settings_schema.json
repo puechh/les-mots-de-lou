@@ -7,8 +7,8 @@
       { "type": "checkbox", "id": "ecrin_inclus", "label": "Écrin cadeau inclus (confirmé par le fournisseur)", "default": false },
       { "type": "range", "id": "liv_min", "label": "Délai total, fabrication comprise : minimum (jours)", "min": 2, "max": 30, "step": 1, "default": 5 },
       { "type": "range", "id": "liv_max", "label": "Délai total, fabrication comprise : maximum (jours)", "min": 3, "max": 40, "step": 1, "default": 10 },
-      { "type": "text", "id": "noel_limite", "label": "Date limite pour Noël (texte)", "default": "1er décembre" },
-      { "type": "text", "id": "noel_iso", "label": "Date limite pour Noël (AAAA-MM-JJ, pour le compte à rebours)", "default": "2026-12-01" }
+      { "type": "text", "id": "noel_limite", "label": "Date limite pour Noël (texte)", "default": "10 décembre" },
+      { "type": "text", "id": "noel_iso", "label": "Date limite pour Noël (AAAA-MM-JJ, pour le compte à rebours)", "default": "2026-12-10" }
     ]
   },
   { "name": "Lou",
