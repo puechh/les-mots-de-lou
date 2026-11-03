@@ -7,6 +7,8 @@
 ## 🖼️ 03/11/2026 — SITE REMPLI AVEC LA NOUVELLE LOU (carte blanche utilisateur)
 - **Accueil** : `lou-hero*.webp` = `contenu/lou/bijoux-v3/01-accueil-sapin.jpg` (recadrages dans `scripts/assets_theme.py`),
   repères `.r-collier` / `.r-jonc` déplacés (lou.css) ; portrait et avatar des bulles = `reference-v3/01-face.jpg`. Envoyé.
+- **Accueil** : photo en pleine définition (demande utilisateur « vraiment en 4K ») ; zoom = fondu vers 2 gros plans nets de
+  la même scène (`gp-collier.webp`, `gp-jonc.webp`) ; si la photo d'accueil change, refaire ces gros plans et data-gx/gy.
 - **Fiches** (`scripts/photos_fiches.py`, carrés 2048 px `contenu/lou/fiches-v3/shopify/`) : produit seul → détails/finitions →
   porté. Jonc : nouvelle photo produit fine avec cœurs (sans coffret), détail cœurs, 3 finitions, poignet, Lou, café. Collier prénom :
   photo produit + finitions, cou « Lou », Lou, marché de Noël. Collier photo : produit, cou, Lou devant la cheminée. Morse : produit,

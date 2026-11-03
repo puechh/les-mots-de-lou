@@ -42,7 +42,8 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   contre OpenAI) via `scripts/fal_images.py … --param resolution=4K --param aspect_ratio=3:4 --param output_format=jpeg`
   (3584×4800, ≈ 0,30 $/image). **Toujours repartir de `00-source-lou.webp` + `01-face.jpg`** (2 références = meilleure
   ressemblance ; ne jamais retoucher une retouche). Prompts types dans les .txt de `reference-v3/`. Tenues sobres (pubs).
-  Vérifier un recadrage à 100 % avant d'envoyer. Ses photos d'exemple (selfies) = jamais envoyées au modèle.
+  Vérifier un recadrage à 100 % avant d'envoyer. **Images du site en pleine définition** (demande utilisateur « vraiment en 4K »,
+  03/11) ; les petits détails (gravure, prénom) sont flous sur un plan large → toujours prévoir un gros plan dédié. Ses photos d'exemple (selfies) = jamais envoyées au modèle.
 - **Jonc réel (photo fournisseur envoyée le 03/11)** : jonc ouvert **fin (≈ 4 mm)**, acier argenté poli, face plate gravée,
   **un petit cœur ajouré à chaque extrémité** (à l'arrière du poignet). C'est la seule différence avec les images IA actuelles
   (qui ont aussi un jonc plus large) → images du jonc (fiche + aperçu de gravure du thème) à refaire et à envoyer sur Shopify.

@@ -313,3 +313,8 @@
   repère qui suit) au lieu de zoomer sur place ; photos HD `lou-hero-hd.webp` (2458 px) et `lou-hero-mobile-hd.webp` (2600 px)
   chargées en arrière-plan après l'ouverture puis échangées ; zoom ×2,1 téléphone, ×2 ordinateur ; étiquette du jonc au-dessus.
   Testé au banc (iPhone 13 + ordinateur, 0 erreur JS) puis envoyé (5 fichiers).
+- 2e retour utilisateur (capture iPhone) : pendentif et gravure illisibles au zoom, jonc caché par la bulle. Cause : la photo large
+  n'a pas ces détails (vérifié à 100 %). Solution : 2 gros plans 4K de la MÊME scène (`contenu/lou/bijoux-v3/01b-gros-plan-collier.jpg`,
+  `01c-gros-plan-jonc.jpg`) fondus par-dessus la photo pendant le zoom (`gp-*.webp` 2600 px, data-gx/gy des repères) ; bulle de Lou
+  sous la photo. Puis « je demande vraiment une photo en 4K » : photo d'accueil servie en pleine définition (téléphone 3840×3072,
+  ordinateur 2458×3072, 273-343 Ko). Testé au banc puis envoyé.

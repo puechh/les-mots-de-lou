@@ -523,18 +523,10 @@
   }
   /* ---------- Accueil : zoom animé sur les bijoux que porte Lou (collier, puis jonc) ---------- */
   var heroPh = $(".hero-photo"), reps = heroPh ? $$(".repere", heroPh) : [];
-  // Photo HD chargée en arrière-plan après l'ouverture de la page, puis échangée (nette même zoomée x2)
-  if (heroPh) window.addEventListener("load", function () {
-    $$("[data-hd]", heroPh).forEach(function (el) {
-      var hd = el.getAttribute("data-hd"), test = new Image(), source = el.tagName === "SOURCE";
-      test.onload = function () { if (source) el.srcset = hd; else el.src = hd; };
-      if (source ? matchMedia(el.media).matches : !matchMedia("(max-width: 899px)").matches) test.src = hd;
-    });
-  });
   if (heroPh && reps.length && !reduit) {
     var zVu = true, zEtape = 0, zT = null;
     var zoomSur = function (r) {
-      if (!r) { heroPh.classList.remove("zoom"); reps.forEach(function (x) { x.classList.remove("cache", "actif"); x.style.left = x.style.top = ""; }); return; }
+      if (!r) { heroPh.classList.remove("zoom"); $$(".gros-plan", heroPh).forEach(function (g) { g.classList.remove("vu"); }); reps.forEach(function (x) { x.classList.remove("cache", "actif", "sur-gp"); x.style.left = x.style.top = ""; }); return; }
       reps.forEach(function (x) { x.style.left = x.style.top = ""; });
       var cs = getComputedStyle(r), W = heroPh.clientWidth || 1, H = heroPh.clientHeight || 1;
       var fx = parseFloat(cs.left) / W, fy = parseFloat(cs.top) / H, s = matchMedia("(min-width: 900px)").matches ? 2 : 2.1;
@@ -542,6 +534,14 @@
       var tx = Math.min(0, Math.max(1 - s, .5 - s * fx)), ty = Math.min(0, Math.max(1 - s, .42 - s * fy));
       heroPh.style.setProperty("--zs", s); heroPh.style.setProperty("--ztx", (tx * 100) + "%"); heroPh.style.setProperty("--zty", (ty * 100) + "%");
       r.style.left = ((tx + s * fx) * 100) + "%"; r.style.top = ((ty + s * fy) * 100) + "%";
+      // puis fondu vers le gros plan net de la même scène ; le repère rejoint le bijou sur le gros plan (image carrée en « cover »)
+      var gp = document.getElementById(r.getAttribute("data-gp") || "");
+      if (gp) {
+        var gx = parseFloat(r.getAttribute("data-gx")), gy = parseFloat(r.getAttribute("data-gy"));
+        if (W > H) { var v = H / W; gy = (gy - (1 - v) / 2) / v; } else { var u = W / H; gx = (gx - (1 - u) / 2) / u; }
+        gp.classList.add("vu");
+        setTimeout(function () { if (heroPh.classList.contains("zoom") && r.classList.contains("actif")) { r.style.left = (gx * 100) + "%"; r.style.top = (gy * 100) + "%"; r.classList.add("sur-gp"); } }, 900);
+      }
       reps.forEach(function (x) { x.classList.toggle("cache", x !== r); x.classList.toggle("actif", x === r); });
       heroPh.classList.add("zoom");
     };

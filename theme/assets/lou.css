@@ -174,6 +174,9 @@ h1 em > .t, h2 em > .t { position: relative; z-index: 1; }
 .hero-photo picture { display: block; width: 100%; height: 100%; transform-origin: 0 0; transition: transform 1.4s cubic-bezier(.6, 0, .2, 1); will-change: transform; }
 .hero-photo.zoom picture { transform: translate(var(--ztx, 0), var(--zty, 0)) scale(var(--zs, 2)); }
 .hero-photo .repere { transition: left 1.4s cubic-bezier(.6, 0, .2, 1), top 1.4s cubic-bezier(.6, 0, .2, 1); }
+.hero-photo .gros-plan { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; z-index: 1; pointer-events: none; transition: opacity .5s ease; }
+.hero-photo .r-jonc.sur-gp { --a: -145deg; --l: 62px; --ex: -52px; --ey: -37px; --tx: -88%; --r: -4deg; }
+.hero-photo .gros-plan.vu { opacity: 1; transition: opacity .9s ease .55s; }
 /* Flèche : part du bijou (point 0,0 du repère) vers l'étiquette, s'arrête 10 px avant le bijou */
 .repere .fleche { position: absolute; left: 0; top: -1px; width: var(--l); height: 2px; background: linear-gradient(90deg, transparent 0 var(--g, 10px), #fff var(--g, 10px)); transform-origin: 0 50%; transform: rotate(var(--a)); filter: drop-shadow(0 1px 1.5px rgba(59, 31, 43, .55)); transition: opacity .4s; }
 .repere.actif .fleche { --g: 26px; }
@@ -186,7 +189,7 @@ h1 em > .t, h2 em > .t { position: relative; z-index: 1; }
 @media (min-width: 900px) { .r-collier { --x: 54.1%; --y: 63.5%; --l: 80px; --ex: -66px; --ey: -46px; } .r-jonc { --x: 48%; --y: 87.1%; --l: 70px; --ex: 56px; --ey: -36px; } }
 @media (max-width: 899px) { .pas-mobile { display: none !important; } }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
-.hero .lou-dit { position: relative; margin: -30px 6px 0 6px; z-index: 3; }
+.hero .lou-dit { position: relative; margin: 10px 6px 0 6px; z-index: 3; }
 .hero .lou-dit .avatar { width: 54px; height: 54px; }
 .hero .lou-dit .bulle-lou { font-size: .92rem; min-height: 66px; padding: 9px 13px; }
 @media (max-width: 899px) { .hero .hero-cta { flex-wrap: nowrap; gap: 10px; width: 100%; } .hero .hero-cta .btn { flex: 1 1 0; min-width: 0; padding: 13px 8px; font-size: .9rem; white-space: nowrap; } }
@@ -200,7 +203,7 @@ h1 em > .t, h2 em > .t { position: relative; z-index: 1; }
   .hero-in { grid-template-columns: 1.05fr .95fr; padding-block: 48px 80px; gap: 56px; }
   .hero-visu { order: 2; }
   .hero-photo { aspect-ratio: 4 / 5; border-radius: 32px 32px 140px 32px; }
-  .hero .lou-dit { position: absolute; left: -40px; bottom: 42px; right: 40px; margin: 0; }
+  .hero .lou-dit { position: absolute; left: -40px; bottom: -34px; right: 40px; margin: 0; }
   .hero .lou-dit .avatar { display: none; }
   .hero .lou-dit .bulle-lou { border-radius: 22px 22px 6px 22px; }
   .sticker { font-size: .9rem; padding: 10px 14px; }

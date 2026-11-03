@@ -8,11 +8,13 @@
     <div class="hero-visu">
       <div class="hero-photo">
         <picture>
-          <source media="(max-width: 899px)" srcset="{{ 'lou-hero-mobile.webp' | asset_url }}" data-hd="{{ 'lou-hero-mobile-hd.webp' | asset_url }}" width="1400" height="1120">
-          <img src="{{ 'lou-hero.webp' | asset_url }}" data-hd="{{ 'lou-hero-hd.webp' | asset_url }}" alt="Lou, l'avatar de la boutique, porte un jonc gravé « Tu es ma personne » et un collier prénom « Lou », près du sapin de Noël" width="1400" height="1750" fetchpriority="high">
+          <source media="(max-width: 899px)" srcset="{{ 'lou-hero-mobile.webp' | asset_url }}" width="3840" height="3072">
+          <img src="{{ 'lou-hero.webp' | asset_url }}" alt="Lou, l'avatar de la boutique, porte un jonc gravé « Tu es ma personne » et un collier prénom « Lou », près du sapin de Noël" width="2458" height="3072" fetchpriority="high">
         </picture>
-        <a class="repere r-collier" href="/products/collier-prenom"><b class="fleche" aria-hidden="true"></b><span>mon collier prénom</span></a>
-        <a class="repere r-jonc" href="{{ url_jonc }}"><b class="fleche" aria-hidden="true"></b><span>mon jonc gravé</span></a>
+        <img class="gros-plan" id="gp-collier" src="{{ 'gp-collier.webp' | asset_url }}" alt="" aria-hidden="true" width="2600" height="2600" loading="lazy" decoding="async">
+        <img class="gros-plan" id="gp-jonc" src="{{ 'gp-jonc.webp' | asset_url }}" alt="" aria-hidden="true" width="2600" height="2600" loading="lazy" decoding="async">
+        <a class="repere r-collier" data-gp="gp-collier" data-gx="0.508" data-gy="0.567" href="/products/collier-prenom"><b class="fleche" aria-hidden="true"></b><span>mon collier prénom</span></a>
+        <a class="repere r-jonc" data-gp="gp-jonc" data-gx="0.47" data-gy="0.53" href="{{ url_jonc }}"><b class="fleche" aria-hidden="true"></b><span>mon jonc gravé</span></a>
       </div>
       <div class="sticker s2"><span aria-hidden="true">🎁</span> 2e bijou à -50 %</div>
       <div class="sticker s1"><span aria-hidden="true">💍</span><span class="hand">Bijoux gravés</span></div>

@@ -46,11 +46,13 @@ def recadrer(src, ratio, largeur, dest, haut=0.0, gauche=0.5, qualite=82):
 # Bijoux sur l'image d'origine : pendentif ≈ (2852, 1951), jonc ≈ (2702, 2677) → repères .r-collier / .r-jonc (lou.css).
 _hero = os.path.join(ROOT, "contenu/lou/bijoux-v3/01-accueil-sapin.jpg")
 _h = Image.open(_hero).convert("RGB")
-enregistrer(_h.crop((1523, 0, 3981, 3072)), "lou-hero.webp", 1400, 74)
-enregistrer(_h.crop((930, 0, 4770, 3072)), "lou-hero-mobile.webp", 1400, 72)
-# Versions HD chargées en arrière-plan par lou.js juste avant le zoom (zoom x2,1 sur iPhone : il faut ~2 500 px de large)
-enregistrer(_h.crop((1523, 0, 3981, 3072)), "lou-hero-hd.webp", 2458, 76)
-enregistrer(_h.crop((930, 0, 4770, 3072)), "lou-hero-mobile-hd.webp", 2600, 76)
+enregistrer(_h.crop((1523, 0, 3981, 3072)), "lou-hero.webp", 2458, 80)   # pleine définition (demande utilisateur : « vraiment en 4K »)
+enregistrer(_h.crop((930, 0, 4770, 3072)), "lou-hero-mobile.webp", 3840, 80)
+# Gros plans nets de la même scène, fondus par-dessus la photo pendant le zoom (lou.js) : le pendentif et la gravure
+# sont illisibles sur la photo large, même en pleine définition. Position du bijou (fraction de l'image carrée) :
+# collier (0.508, 0.567), jonc (0.47, 0.53) → data-gx / data-gy des repères (lou-accueil.liquid).
+for _n, _d in (("01b-gros-plan-collier", "gp-collier.webp"), ("01c-gros-plan-jonc", "gp-jonc.webp")):
+    enregistrer(Image.open(os.path.join(ROOT, "contenu/lou/bijoux-v3", _n + ".jpg")).convert("RGB"), _d, 2600, 82)
 _face = Image.open(os.path.join(ROOT, "contenu/lou/reference-v3/01-face.jpg")).convert("RGB")   # 3584×4800
 enregistrer(_face.crop((0, 240, 3584, 4720)), "lou-portrait.webp", 1000, 78)                     # 4:5
 enregistrer(_face.crop((650, 1100, 3050, 3500)), "lou-avatar.webp", 192, 80)                     # visage, carré
