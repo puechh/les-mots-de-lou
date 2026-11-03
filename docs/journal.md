@@ -257,3 +257,4 @@
 - 2e test (gratuit, clé non affichée) : ✅ `fal.run` (422), ✅ `queue.fal.run` (404 fausse requête), ✅ `rest.fal.ai` (200),
   ✅ `v3.fal.media` / `v3b.fal.media` ; fausse clé → 401 partout (aucun secret réseau ne remplace l'en-tête) ; `fal.media` seul
   n'a pas d'adresse DNS (sans importance). Détail dans `docs/avatar-lou.md`.
+- L'utilisateur indique qu'il ne pense pas garder Lou : **tout travail sur l'avatar est suspendu** jusqu'à discussion.

@@ -4,6 +4,9 @@
 > (régénérer : banc `scripts/banc_theme.py` puis `scripts/export_apercu.py <dossier>` et republier).
 > Shopify : la boutique est construite et le thème Lou est **publié** (derrière le mot de passe) → voir ci-dessous.
 
+## ⏸️ 03/11/2026 — AVATAR EN PAUSE : l'utilisateur ne pense plus garder Lou
+- **Ne rien lancer sur Lou (fal.ai, images, vidéos, thème) avant d'en avoir parlé avec l'utilisateur.** Décision en discussion.
+
 ## ✅ 03/11/2026 — clé fal.ai opérationnelle
 - Variable `FAL_KEY` (plus de Network secret fal). Test gratuit OK sur `fal.run`, `queue.fal.run`, `rest.fal.ai`,
   `v3.fal.media`, `v3b.fal.media` (`fal.media` seul n'existe pas, sans importance). Détail : `docs/avatar-lou.md`.
