@@ -239,3 +239,7 @@
   remonte à la machine et tire la manette.
 - Pastille « 👆 Touchez-moi » qui pulse sur chaque carte, flèche ↻ au dos, légère rotation au survol (ordinateur),
   consigne « Touchez une carte pour la retourner : je vous montre ma solution 👇 » ; guillemets insécables.
+
+## 2026-11-03 (suite 13) — Conseil : comment rendre Lou vraiment réaliste
+- Question utilisateur (quel logiciel pour un avatar qui paraît vraiment réel). Recherche web + options notées dans
+  `docs/avatar-lou.md` (Higgsfield Soul ID, OpenArt, ou fal.ai avec LoRA Flux fait par Claude). En attente du choix.

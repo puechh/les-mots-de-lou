@@ -97,3 +97,21 @@ AI Act : cpduk.co.uk/news/deadline-moved-and-duty-did-not-ai-act-transparency-ob
 Loi influenceurs : dalloz-actualite.fr/document/ord-n-2024-978-6-nov-2024-jo-7-nov —
 Plateformes : auditsocials.com/blog/pinterest-ai-modified-ad-label-2026-iptc-metadata-synthetic-content-disclosure-advertiser-appeals ·
 cinerads.com/blog/tiktok-ai-content-policy · commonthreadco.com/blogs/coachs-corner/meta-ai-ad-labels-mandatory-disclosure-ecommerce-2026
+
+
+## Mise à jour 03/11/2026 — l'utilisateur veut une Lou « vraiment réelle »
+Constat : les images actuelles (gpt-image-2.5-flare) restent reconnaissables comme IA : lumière trop parfaite, poses de pub,
+décors trop rangés, peau encore un peu lisse. Conseils donnés (recherche web 03/11, comparatifs surtout publiés par les éditeurs,
+aucun banc d'essai indépendant) :
+- **Option A, en cliquant soi-même : Higgsfield (Soul ID)** : on lui donne ~20 photos de Lou, il apprend le visage et sort des
+  photos façon smartphone très naturelles, + vidéos. Abonnement (≈ 9-49 $/mois, à vérifier), conditions commerciales à lire.
+- **Option B, une interface multi-modèles : OpenArt** (Nano Banana Pro, Flux, Seedream, personnage entraîné).
+- **Option C, fait par Claude ici : clé fal.ai** → LoRA Flux entraîné sur 20 images validées de Lou (≈ 2 $) + Nano Banana Pro
+  pour les retouches + Kling pour les vidéos. Le plus intégré à la boutique (images rangées, mêmes règles, bijoux réels).
+- Midjourney : très beau mais « trop beau » pour un rendu vraie photo, pas d'API.
+- Ce qui fait « vrai » quel que soit l'outil : photo de téléphone imparfaite (flash, grain, lumière mélangée), décor du
+  quotidien, mèches qui dépassent, peau avec pores et petites rougeurs, pose non posée, cadrage légèrement raté.
+- ⚖️ Plus Lou est réaliste, plus la mention « image virtuelle » / étiquettes IA est indispensable (AI Act art. 50, loi 2023-451) ;
+  ne jamais partir de la photo d'une vraie personne.
+Sources : aistudio.dropshot.io/en/blog/ai-influencer · openart.ai/fr/blog/best-ai-image-generators-for-realistic-photos ·
+higgsfield.ai/academy/how-to-use/how-to-create-ai-influencer · dreamina.capcut.com/fr-fr/ai-image/best-ai-image-generators-realistic-portraits-2026
