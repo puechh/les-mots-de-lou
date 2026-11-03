@@ -41,14 +41,16 @@ def recadrer(src, ratio, largeur, dest, haut=0.0, gauche=0.5, qualite=82):
     enregistrer(im, dest, largeur, qualite)
 
 
-# Lou (accueil) : Lou qui porte le jonc gravé et le collier prénom (image 3072×2048).
-# Ordinateur : 4:5 (x 975 → 2613) ; téléphone : 5:4 serré sur Lou et ses bijoux (x 1000 → 2601, y 230 → 1511).
-# Si on change ces recadrages, ajuster les repères .repere (lou.css) qui pointent sur les bijoux.
-_hero = trouver("lou-hero-bijoux-hd", "lou-hero-hd", "lou-hero")
-recadrer(_hero, 4 / 5, 1400, "lou-hero.webp", 0.5, 0.68, 74)   # pleine définition : zoom animé sur les bijoux
-enregistrer(Image.open(_hero).convert("RGB").crop((1000, 230, 2601, 1511)), "lou-hero-mobile.webp", 1400, 72)
-recadrer(trouver("lou-portrait-hd", "reference/04-sourire", "reference-visage"), 4 / 5, 760, "lou-portrait.webp", 0.1, 0.5, 76)
-recadrer(trouver("lou-portrait-hd", "reference/01-face", "lou-avatar", "reference-visage"), 1, 192, "lou-avatar.webp", 0.12, 0.5, 80)
+# Lou (accueil, 03/11 v3) : Lou près du sapin, jonc « Tu es ma personne » + collier « Lou » (contenu/lou/bijoux-v3, 5504×3072).
+# Ordinateur 4:5 : x 1523 → 3981 (toute la hauteur) ; téléphone 5:4 : x 930 → 4770 (toute la hauteur).
+# Bijoux sur l'image d'origine : pendentif ≈ (2852, 1951), jonc ≈ (2702, 2677) → repères .r-collier / .r-jonc (lou.css).
+_hero = os.path.join(ROOT, "contenu/lou/bijoux-v3/01-accueil-sapin.jpg")
+_h = Image.open(_hero).convert("RGB")
+enregistrer(_h.crop((1523, 0, 3981, 3072)), "lou-hero.webp", 1400, 74)
+enregistrer(_h.crop((930, 0, 4770, 3072)), "lou-hero-mobile.webp", 1400, 72)
+_face = Image.open(os.path.join(ROOT, "contenu/lou/reference-v3/01-face.jpg")).convert("RGB")   # 3584×4800
+enregistrer(_face.crop((0, 240, 3584, 4720)), "lou-portrait.webp", 1000, 78)                     # 4:5
+enregistrer(_face.crop((650, 1100, 3050, 3500)), "lou-avatar.webp", 192, 80)                     # visage, carré
 
 # Favicon : cœur blanc sur rond framboise
 fv = Image.new("RGBA", (128, 128), (0, 0, 0, 0)); d = ImageDraw.Draw(fv)

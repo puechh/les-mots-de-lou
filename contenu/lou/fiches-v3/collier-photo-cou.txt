@@ -1,0 +1,4 @@
+Modèle : fal fal-ai/nano-banana-pro/edit
+Paramètres : {"resolution": "4K", "aspect_ratio": "1:1", "output_format": "jpeg"}
+Prompt : Shot on iPhone 18 Pro by an amateur photographer. Close-up of the neck and collarbone of a young woman, cropped at the chin (no face), wearing a black V-neck fine-knit sweater, smooth sun-kissed skin, a few strands of dark chestnut-brown hair, soft warm light. She wears the projection necklace from the product reference photo: same polished silver-tone heart pendant with the same small round lens in its center, same chain. No projected image visible. Pendant perfectly sharp. Ultra-realistic, true-to-life 4K photo: extremely sharp, crisp metal reflections, fine detail, clean natural colors, no pixelation, no compression artifacts, no CGI look.
+Images de référence : contenu/images-ia/2026-11-02-produit-collier-photo-1-hd.jpg

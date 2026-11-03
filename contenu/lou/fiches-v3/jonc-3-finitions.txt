@@ -1,0 +1,4 @@
+Modèle : fal fal-ai/nano-banana-pro/edit
+Paramètres : {"resolution": "4K", "aspect_ratio": "1:1", "output_format": "jpeg"}
+Prompt : Shot on iPhone 18 Pro by an amateur photographer. Product photo in the same style as the reference: three identical bangles side by side on blush pink fabric, in silver-tone, gold-tone and rose-gold-tone stainless steel finishes; each one: the bangle is a thin open cuff bangle about 4 mm wide in polished silver-tone stainless steel, flat outer face engraved 'Tu es ma personne' in a thin elegant handwritten script (letter for letter, same script as the reference photo); each of its two open ends finishes in a small rounded tab with a tiny heart-shaped cut-out. Ultra-realistic, true-to-life 4K photo: extremely sharp, crisp metal reflections, fine detail, clean natural colors, no pixelation, no compression artifacts, no CGI look.
+Images de référence : contenu/images-ia/2026-11-02-produit-jonc-finitions-hd.jpg

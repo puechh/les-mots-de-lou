@@ -52,8 +52,20 @@
     ],
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-bracelet-morse-1-hd.jpg?v=1793637826",
-        "altText": "Le Bracelet Code Secret"
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-bracelet-morse-1-hd.jpg?v=1793730525",
+        "altText": "Bracelet Code Secret : perles et barrettes en code Morse sur cordon noir"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/morse-02-macro.jpg?v=1793730524",
+        "altText": "Gros plan des perles (points) et barrettes (traits) du code Morse"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/morse-03-carte.jpg?v=1793730524",
+        "altText": "Bracelet Code Secret porté en écrivant une carte de Noël (Image virtuelle)"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/morse-04-lou.jpg?v=1793730524",
+        "altText": "Lou porte le bracelet Code Secret (Image virtuelle)"
       }
     ]
   },
@@ -152,16 +164,24 @@
     ],
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-1-hd.jpg?v=1793637820",
-        "altText": "Le Collier Prénom"
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-1-hd.jpg?v=1793730515",
+        "altText": "Collier prénom argenté en écriture manuscrite"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-finitions-hd.jpg?v=1793637820",
-        "altText": "Le Collier Prénom"
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-finitions-hd.jpg?v=1793730515",
+        "altText": "Le collier prénom en trois finitions : argentée, dorée et rosée"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-lou-collier-prenom-hd.jpg?v=1793637820",
-        "altText": "Le Collier Prénom"
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/prenom-03-cou.jpg?v=1793730515",
+        "altText": "Collier prénom « Lou » porté, gros plan (Image virtuelle)"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/prenom-04-lou.jpg?v=1793730515",
+        "altText": "Lou, l'avatar de la boutique, porte son collier prénom (Image virtuelle)"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/prenom-05-marche-noel.jpg?v=1793730515",
+        "altText": "Lou au marché de Noël avec son collier prénom (Image virtuelle)"
       }
     ]
   },
@@ -260,8 +280,16 @@
     ],
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-photo-1-hd.jpg?v=1793637823",
-        "altText": "Le Collier Souvenir (photo cachée)"
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-photo-1-hd.jpg?v=1793730519",
+        "altText": "Collier Souvenir cœur argenté avec photo cachée dans la petite lentille"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/photo-02-cou.jpg?v=1793730519",
+        "altText": "Collier Souvenir porté, gros plan (Image virtuelle)"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/photo-03-lou-feu.jpg?v=1793730519",
+        "altText": "Lou regarde la photo cachée dans la lentille du collier (Image virtuelle)"
       }
     ]
   },
@@ -362,16 +390,28 @@
     ],
     "images": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-jonc-1-hd.jpg?v=1793637815",
-        "altText": "Le Jonc « Mes Mots »"
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-01-produit.jpg?v=1793730509",
+        "altText": "Jonc « Mes Mots » argenté gravé « Tu es ma personne », extrémités à petits cœurs ajourés"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-jonc-finitions-hd.jpg?v=1793637815",
-        "altText": "Le Jonc « Mes Mots »"
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-02-coeurs.jpg?v=1793730509",
+        "altText": "Détail des deux petits cœurs ajourés aux extrémités du jonc"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-lou-jonc-hd.jpg?v=1793637815",
-        "altText": "Le Jonc « Mes Mots »"
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-03-finitions.jpg?v=1793730509",
+        "altText": "Le jonc en trois finitions : argentée, dorée et rosée"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-04-poignet.jpg?v=1793730509",
+        "altText": "Jonc gravé porté au poignet, gravure et cœur visibles (Image virtuelle)"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-05-lou.jpg?v=1793730509",
+        "altText": "Lou, l'avatar de la boutique, porte le jonc gravé (Image virtuelle)"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-06-cafe.jpg?v=1793730509",
+        "altText": "Lou porte le jonc et le collier prénom en terrasse à Paris (Image virtuelle)"
       }
     ]
   }

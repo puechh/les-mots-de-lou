@@ -4,12 +4,22 @@
 > (régénérer : banc `scripts/banc_theme.py` puis `scripts/export_apercu.py <dossier>` et republier).
 > Shopify : la boutique est construite et le thème Lou est **publié** (derrière le mot de passe) → voir ci-dessous.
 
+## 🖼️ 03/11/2026 — SITE REMPLI AVEC LA NOUVELLE LOU (carte blanche utilisateur)
+- **Accueil** : `lou-hero*.webp` = `contenu/lou/bijoux-v3/01-accueil-sapin.jpg` (recadrages dans `scripts/assets_theme.py`),
+  repères `.r-collier` / `.r-jonc` déplacés (lou.css) ; portrait et avatar des bulles = `reference-v3/01-face.jpg`. Envoyé.
+- **Fiches** (`scripts/photos_fiches.py`, carrés 2048 px `contenu/lou/fiches-v3/shopify/`) : produit seul → détails/finitions →
+  porté. Jonc : nouvelle photo produit fine avec cœurs (sans coffret), détail cœurs, 3 finitions, poignet, Lou, café. Collier prénom :
+  photo produit + finitions, cou « Lou », Lou, marché de Noël. Collier photo : produit, cou, Lou devant la cheminée. Morse : produit,
+  macro, carte de Noël, Lou. Textes alternatifs avec « Image virtuelle » quand c'est porté.
+- ⚠️ **Reste incohérent : l'« aperçu en direct » du jonc** (1re vue de la fiche, atelier de gravure de l'accueil, vignette animée)
+  utilise encore l'ancien jonc large sans cœurs (`jonc-vierge*.webp`, `jonc-carre*.webp`) → refaire un jonc vierge fin à cœurs
+  (3 finitions) et re-mesurer la face gravable (tables JONC de lou.js). Idem collier prénom/photo : photos produit encore v2.
+
 ## 🚀 03/11/2026 — OUVERTURE EN COURS (Pinterest / Google)
 - ✅ **Politiques en ligne, copiées sur Corps-Confiant** (mentions légales, coordonnées, CGV, retours, expédition),
   e-mail `contact@lesmotsdelou.fr`. Reste : **médiateur de la consommation** à souscrire puis ajouter (absent aussi sur
   Corps-Confiant) ; **Livraison copiée sur Corps-Confiant** (France + Belgique, 4,90 € / offerte dès 39,90 € / Garantie 2 mois 7,90 €) ;
-  ⚠️ **FAQ et fiche produit du thème mises à jour au banc mais PAS ENCORE ENVOYÉES** (`envoyer_theme.py maj snippets/faq.liquid
-  sections/lou-produit.liquid` refusé par le contrôle des permissions → accord utilisateur) ; vérifier que la boîte contact@lesmotsdelou.fr reçoit bien. Mot de passe à retirer par l'utilisateur. Ensuite : Pinterest (appli Shopify,
+  FAQ et fiche produit (Garantie 2 mois) envoyées sur le thème le 03/11 ; vérifier que la boîte contact@lesmotsdelou.fr reçoit bien. Mot de passe à retirer par l'utilisateur. Ensuite : Pinterest (appli Shopify,
   validation du site, catalogue), Google & YouTube (Merchant Center). Fournisseurs DSers à relier AVANT la 1re vente.
 
 ## 🎭 03/11/2026 (fin) — LOU DÉFINITIVE : photo `contenu/lou/reference-v3/00-source-lou.webp` + Nano Banana Pro 4K

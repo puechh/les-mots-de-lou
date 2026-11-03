@@ -1,5 +1,5 @@
 {
-  "_note": "Source des fiches (MAJ 02/11/2026 soir, alignées sur les annonces AliExpress repérées : produits/sourcing-aliexpress.md). Créées sur Shopify par scripts/construire_boutique.py. Images = IA HD (à comparer aux photos fournisseur avant ouverture). Ne pas écrire 316L / sans nickel / écrin tant que le fournisseur ne l'a pas confirmé par écrit (l'écrin s'affiche via le réglage du thème « Écrin cadeau inclus »).",
+  "_note": "Source des fiches (MAJ 02/11/2026 soir, alignées sur les annonces AliExpress repérées : produits/sourcing-aliexpress.md). Créées sur Shopify par scripts/construire_boutique.py. Images = IA HD (à comparer aux photos fournisseur avant ouverture). Ne pas écrire 316L / sans nickel / écrin tant que le fournisseur ne l'a pas confirmé par écrit (l'écrin s'affiche via le réglage du thème « Écrin cadeau inclus »). | Photos des fiches remplacées le 03/11/2026 (scripts/photos_fiches.py : produit seul → détails → porté, Lou v3).",
   "produits": [
     {
       "handle": "jonc-mes-mots",
@@ -19,9 +19,12 @@
         "Rosée"
       ],
       "images": [
-        "produit-jonc-1-hd",
-        "produit-jonc-finitions-hd",
-        "lou-jonc-hd"
+        "jonc-01-produit",
+        "jonc-02-coeurs",
+        "jonc-03-finitions",
+        "jonc-04-poignet",
+        "jonc-05-lou",
+        "jonc-06-cafe"
       ],
       "accroche": "La phrase que vous n'osez pas dire, gravée sur un jonc qu'elle ne quittera plus.",
       "benefices": [
@@ -70,7 +73,9 @@
       "images": [
         "produit-collier-prenom-1-hd",
         "produit-collier-prenom-finitions-hd",
-        "lou-collier-prenom-hd"
+        "prenom-03-cou",
+        "prenom-04-lou",
+        "prenom-05-marche-noel"
       ],
       "accroche": "Son prénom (ou celui de quelqu'un qu'elle aime) écrit d'un trait, tout près du cœur.",
       "benefices": [
@@ -117,7 +122,9 @@
         "Rosée"
       ],
       "images": [
-        "produit-collier-photo-1-hd"
+        "produit-collier-photo-1-hd",
+        "photo-02-cou",
+        "photo-03-lou-feu"
       ],
       "accroche": "Un petit cœur… et quand on regarde dedans, votre plus belle photo apparaît.",
       "benefices": [
@@ -152,7 +159,10 @@
         "Noir"
       ],
       "images": [
-        "produit-bracelet-morse-1-hd"
+        "produit-bracelet-morse-1-hd",
+        "morse-02-macro",
+        "morse-03-carte",
+        "morse-04-lou"
       ],
       "accroche": "Un mot écrit en code Morse : personne ne sait ce qu'il dit… sauf vous deux.",
       "benefices": [

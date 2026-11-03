@@ -1,0 +1,4 @@
+Modèle : fal fal-ai/nano-banana-pro/edit
+Paramètres : {"resolution": "4K", "aspect_ratio": "1:1", "output_format": "jpeg"}
+Prompt : Shot on iPhone 18 Pro by an amateur photographer. Macro product photo in the same style as the reference: the Morse code bracelet lying on blush pink fabric, extremely close so the small polished silver-tone beads (dots) and short bars (dashes) on the thin black cord and the sliding knot are crisp; same arrangement and same cord as the reference. Ultra-realistic, true-to-life 4K photo: extremely sharp, crisp metal reflections, fine detail, clean natural colors, no pixelation, no compression artifacts, no CGI look.
+Images de référence : contenu/images-ia/2026-11-02-produit-bracelet-morse-1-hd.jpg

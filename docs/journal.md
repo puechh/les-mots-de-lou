@@ -301,3 +301,10 @@
   l'expédition par marché ; tarifs refaits avec `marketUpdate` sur les marchés France et Belgique (anciennes options Standard
   7,99 €/offerte dès 65 € et Express 10,99 € supprimées). L'ancien profil de livraison garde la zone créée plus tôt (sans effet
   attendu) : à vérifier à l'écran par l'utilisateur.
+
+## 2026-11-03 (suite 19) — Site rempli avec les nouvelles photos (carte blanche)
+- 8 nouvelles images 4K (fal Nano Banana Pro, ≈ 2,70 $ avec la reprise du jonc sans coffret) : `contenu/lou/fiches-v3/`.
+- Fiches Shopify : 18 photos carrées 2048 px (`scripts/photos_fiches.py`), anciennes retirées ; `produits/produits.json` aligné.
+- Thème : photo d'accueil (Lou au sapin), portrait, avatar, repères, alt « Lou », + FAQ et onglet retours (Garantie 2 mois) envoyés
+  (8 fichiers). Testé au banc avant (ordinateur + iPhone 13, 0 erreur JS, repères sur les bijoux).
+- Reste : aperçu de gravure du jonc avec l'ancien jonc large (à refaire + re-mesurer).
