@@ -297,3 +297,7 @@
   7,90 € ; marché « Belgique » créé. Garantie 2 mois adaptée : 2 mois pour renvoyer le bijou même personnalisé. Politiques
   (expédition, retours, CGV) et page Livraison mises à jour sur Shopify. FAQ + fiche produit du thème modifiées et testées au banc ;
   envoi sur le thème en ligne refusé par le contrôle des permissions (en attente d'accord).
+- Correction (capture utilisateur : l'admin montrait encore Standard + Express, Belgique sans expédition) : la boutique utilise
+  l'expédition par marché ; tarifs refaits avec `marketUpdate` sur les marchés France et Belgique (anciennes options Standard
+  7,99 €/offerte dès 65 € et Express 10,99 € supprimées). L'ancien profil de livraison garde la zone créée plus tôt (sans effet
+  attendu) : à vérifier à l'écran par l'utilisateur.

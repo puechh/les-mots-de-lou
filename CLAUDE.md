@@ -55,6 +55,10 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   « Livraison standard » 4,90 € (< 39,90 €), « Livraison standard offerte » dès 39,90 €, **« Livraison + Garantie 2 mois 🛡️ » 7,90 €**
   (même délai ; pour Lou = 2 mois pour renvoyer le bijou **même personnalisé**, remboursé, non porté, emballage d'origine, renvoi à
   la charge de la cliente). Pas d'international (pas demandé).
+  ⚠️ **La boutique est passée à « l'expédition par marché »** : les tarifs vus au paiement sont ceux de **chaque marché**
+  (`marketUpdate(input:{delivery:{shipping:{optionDefinitionsToCreate/ToDelete}}})`, lecture `markets{delivery{shipping{…}}}`),
+  PAS ceux de `deliveryProfileUpdate` (ancien système, modifié pour rien le 03/11). Réglé : France et Belgique = « Livraison
+  standard » 4,90 € gratuite dès 39,90 € (`freeDeliveryMinimumValue`) + « Livraison + Garantie 2 mois 🛡️ » 7,90 €.
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).
