@@ -115,3 +115,13 @@ aucun banc d'essai indépendant) :
   ne jamais partir de la photo d'une vraie personne.
 Sources : aistudio.dropshot.io/en/blog/ai-influencer · openart.ai/fr/blog/best-ai-image-generators-for-realistic-photos ·
 higgsfield.ai/academy/how-to-use/how-to-create-ai-influencer · dreamina.capcut.com/fr-fr/ai-image/best-ai-image-generators-realistic-portraits-2026
+
+### 03/11/2026 — l'utilisateur choisit l'option C (fal.ai) et crée sa clé
+- Clé fal.ai créée avec le préréglage **« API »** (exécution des modèles + stockage, suffisant pour entraîner et générer) ;
+  pas « Full access ». Onglet « Allowed models » laissé ouvert (on a besoin de plusieurs modèles : entraîneur Flux,
+  Nano Banana Pro, Kling). Crédit prépayé limité (10-20 €) = risque plafonné ; si la clé fuit : fal.ai → API Keys → la supprimer.
+- Où la mettre : environnement cloud « Les Mots de Lou » → Modifier → **Network secrets** : en-tête `Authorization`,
+  valeur `Key <clé>` (format fal, pas « Bearer »), sites `fal.run`, `queue.fal.run`, `rest.fal.ai` ; autoriser aussi
+  `fal.media` et `v3.fal.media` (téléchargement des images). Si le formulaire n'accepte que « Bearer » : variable
+  d'environnement **`FAL_KEY`** à la place (lue par le script). Jamais dans le chat ni le dépôt.
+- La clé n'est prise en compte que dans une **nouvelle session**.

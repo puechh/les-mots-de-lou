@@ -243,3 +243,7 @@
 ## 2026-11-03 (suite 13) — Conseil : comment rendre Lou vraiment réaliste
 - Question utilisateur (quel logiciel pour un avatar qui paraît vraiment réel). Recherche web + options notées dans
   `docs/avatar-lou.md` (Higgsfield Soul ID, OpenArt, ou fal.ai avec LoRA Flux fait par Claude). En attente du choix.
+
+## 2026-11-03 (suite 14) — Option fal.ai choisie : création de la clé
+- L'utilisateur crée sa clé fal.ai (préréglage « API » validé). Marche à suivre pour l'ajouter à l'environnement notée dans
+  `docs/avatar-lou.md`. Prochaine étape (nouvelle session) : vérifier la clé, entraîner le LoRA de Lou sur 20 images validées.
