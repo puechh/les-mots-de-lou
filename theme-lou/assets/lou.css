@@ -183,6 +183,7 @@ h1 em > .t, h2 em > .t { position: relative; z-index: 1; }
 .hero .lou-dit { position: relative; margin: -30px 6px 0 6px; z-index: 3; }
 .hero .lou-dit .avatar { width: 54px; height: 54px; }
 .hero .lou-dit .bulle-lou { font-size: .92rem; min-height: 66px; padding: 9px 13px; }
+@media (max-width: 899px) { .hero .hero-cta { flex-wrap: nowrap; gap: 10px; width: 100%; } .hero .hero-cta .btn { flex: 1 1 0; min-width: 0; padding: 13px 8px; font-size: .9rem; white-space: nowrap; } }
 @media (max-width: 899px) { .hero h1 { font-size: 2.15rem; } .hero-txt { gap: 10px; } .hero .eyebrow { font-size: .72rem; } }
 .sticker { position: absolute; background: #fff; border-radius: 16px; padding: 7px 11px; box-shadow: 0 10px 26px -10px rgba(59, 31, 43, .35); font-weight: 800; font-size: .8rem; display: flex; align-items: center; gap: 6px; animation: flotte 5s ease-in-out infinite; z-index: 2; }
 .sticker.s1 { left: 8px; top: 12px; rotate: -5deg; }

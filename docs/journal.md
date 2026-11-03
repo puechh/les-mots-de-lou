@@ -164,3 +164,9 @@
 - Demande utilisateur : quand on touche le champ de l'atelier, le message d'exemple (démo qui s'écrit toute seule) s'efface
   pour écrire son propre mot. Jonc vierge tant que le champ est vide ; si on quitte le champ vide, l'exemple revient sur le
   jonc ; un texte écrit par la cliente n'est jamais effacé en retouchant le champ. Indication du champ : « Vos mots ici… ».
+
+## 2026-11-03 (suite 3) — Accueil → écriture du jonc ; boutons côte à côte
+- « Graver ✨ » et « Je crée mon bijou » mènent tous les deux à la fiche du jonc, directement à l'écriture (`#personnaliser` :
+  défilement jusqu'au bloc de personnalisation + mini-aperçu affiché), avec la finition choisie dans l'atelier et la phrase
+  **seulement si la cliente l'a écrite** (jamais le texte de la démo). Lou dit « Voilà vos mots 💗 ».
+- Téléphone : « Je crée mon bijou » et « Lou, aide-moi ✨ » côte à côte (testé 360, 390, 430 px, sans débordement).

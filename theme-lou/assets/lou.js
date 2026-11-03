@@ -433,7 +433,9 @@
       if (toile && photo && toile.getContext) p = LOU.graverJonc(toile, photo, v || (dedans ? "" : "Tu es ma personne"), { vue: "bande", encre: finA === "Argentée" ? "#55494f" : "#5a3f2a" });
       if (feu && v && v !== dernier) etincelle(p);
       dernier = v;
-      if (lien) lien.href = lien.getAttribute("data-base") + "?" + (v ? "texte=" + encodeURIComponent(v) + "&" : "") + "finition=" + encodeURIComponent(finA);
+      // « Graver » et « Je crée mon bijou » : fiche du jonc, directement à l'écriture, avec la phrase (si la cliente l'a écrite) et la finition
+      var url = lien.getAttribute("data-base") + "?" + (aEcrit && v ? "texte=" + encodeURIComponent(v) + "&" : "") + "finition=" + encodeURIComponent(finA) + "#personnaliser";
+      [lien, $("#atelier-cta")].forEach(function (a) { if (a) a.href = url; });
     };
     if (photo && !photo.complete) photo.addEventListener("load", function () { maj(); });
     var attente; addEventListener("resize", function () { clearTimeout(attente); attente = setTimeout(maj, 120); });
