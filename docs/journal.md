@@ -248,3 +248,12 @@
 - L'utilisateur crée sa clé fal.ai (préréglage « API » validé). Marche à suivre pour l'ajouter à l'environnement notée dans
   `docs/avatar-lou.md`. Prochaine étape (nouvelle session) : vérifier la clé, entraîner le LoRA de Lou sur 20 images validées.
 - Clé ajoutée en 3 « Network secrets » (un par site). Test de la clé à faire dans une nouvelle session.
+
+## 2026-11-03 (suite 15) — Test de la clé fal.ai
+- 1er test (session précédente, non poussé : dépôt en lecture seule) : `fal.run` OK ; `queue.fal.run` bloqué (faute de frappe
+  « queve.fal.run » dans le secret) ; `rest.fal.ai` 401 ; `fal.media` / `v3.fal.media` non autorisés.
+- L'utilisateur a changé la config : variable `FAL_KEY` seule, 3 Network secrets fal supprimés, domaines `fal.run`, `*.fal.run`,
+  `rest.fal.ai`, `*.fal.ai`, `fal.media`, `*.fal.media` autorisés.
+- 2e test (gratuit, clé non affichée) : ✅ `fal.run` (422), ✅ `queue.fal.run` (404 fausse requête), ✅ `rest.fal.ai` (200),
+  ✅ `v3.fal.media` / `v3b.fal.media` ; fausse clé → 401 partout (aucun secret réseau ne remplace l'en-tête) ; `fal.media` seul
+  n'a pas d'adresse DNS (sans importance). Détail dans `docs/avatar-lou.md`.

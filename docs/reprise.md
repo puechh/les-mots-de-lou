@@ -4,6 +4,11 @@
 > (régénérer : banc `scripts/banc_theme.py` puis `scripts/export_apercu.py <dossier>` et republier).
 > Shopify : la boutique est construite et le thème Lou est **publié** (derrière le mot de passe) → voir ci-dessous.
 
+## ✅ 03/11/2026 — clé fal.ai opérationnelle
+- Variable `FAL_KEY` (plus de Network secret fal). Test gratuit OK sur `fal.run`, `queue.fal.run`, `rest.fal.ai`,
+  `v3.fal.media`, `v3b.fal.media` (`fal.media` seul n'existe pas, sans importance). Détail : `docs/avatar-lou.md`.
+- Prochaine étape avatar : LoRA Flux sur ~20 images validées de Lou, Nano Banana Pro, vidéos Kling → **accord avant toute dépense**.
+
 ## ✅ 02/11/2026 nuit — REFONTE « LOU, AVATAR DE LA BOUTIQUE » EN LIGNE (derrière le mot de passe)
 - **Thème « Les Mots de Lou (thème) » publié par l'utilisateur** ; refonte v0.2 envoyée sans erreur. Tester au banc
   (`python3 scripts/banc_theme.py`) AVANT tout `envoyer_theme.py maj` : c'est le thème en ligne.

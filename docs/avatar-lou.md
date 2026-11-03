@@ -128,3 +128,20 @@ higgsfield.ai/academy/how-to-use/how-to-create-ai-influencer · dreamina.capcut.
 - Fait par l'utilisateur (03/11) : le formulaire n'accepte qu'un site par secret → **3 secrets** avec la même clé
   (`fal.run`, `queue.fal.run`, `rest.fal.ai`) ; possible faute de frappe sur les 2 derniers → à tester en nouvelle session
   (sans rien dépenser, sans afficher la clé).
+- 1er test (03/11, session suivante, note non poussée à l'époque) : `fal.run` OK, mais `queue.fal.run` bloqué (secret saisi
+  « queve.fal.run »), `rest.fal.ai` refusé (401 Invalid token), `fal.media` / `v3.fal.media` non autorisés.
+- **Nouvelle configuration (03/11, en vigueur)** : les 3 Network secrets fal **supprimés** ; clé dans la variable
+  d'environnement **`FAL_KEY`** (la clé seule, sans « Key » devant : les scripts envoient `Authorization: Key $FAL_KEY`) ;
+  domaines autorisés : `fal.run`, `*.fal.run`, `rest.fal.ai`, `*.fal.ai`, `fal.media`, `*.fal.media`.
+
+### ✅ Test du 03/11/2026 (nouvelle configuration) — TOUT FONCTIONNE
+Requêtes gratuites uniquement, clé jamais affichée. Une fausse clé donne 401 partout → aucun secret réseau ne remplace l'en-tête.
+| Site | Test (gratuit) | Résultat |
+|---|---|---|
+| `fal.run` | POST `fal-ai/flux/schnell` sans prompt | ✅ 422 « prompt manquant » (clé acceptée) |
+| `queue.fal.run` | statut d'une fausse requête | ✅ 404 NOT_FOUND (clé acceptée) |
+| `rest.fal.ai` | `storage/upload/initiate` (adresse d'envoi, rien envoyé) | ✅ 200 |
+| `v3.fal.media`, `v3b.fal.media` | GET | ✅ joignables (404 normal sans fichier) |
+| `fal.media` (sans sous-domaine) | GET | ⚪ n'existe pas dans le DNS (502 « upstream », pas un refus du réseau) : sans importance, les fichiers fal sont servis par `v3.fal.media` / `v3b.fal.media` |
+→ Prêt pour l'entraînement du LoRA et les générations (qui, elles, coûtent : demander l'accord avant de lancer).
+
