@@ -329,3 +329,8 @@
   flottent et s'illuminent quand Lou les montre, bulle qui raconte le bijou, survol / toucher = Lou le montre ; pause hors écran ;
   immobile si « réduire les animations »). Code isolé (une variable `ordre` existait ailleurs dans lou.js). LOU.ecrire annule
   désormais un texte en cours. Images : poses 2400 px, pastilles 1000 px. Testé au banc (iPhone 13 + ordinateur, 0 erreur) puis envoyé.
+- Retour utilisateur (« parfait, incroyable ») + 2 corrections : (1) Lou ne refait plus coucou entre deux bijoux (coucou seulement
+  à l'ouverture, puis bijou après bijou toutes les 4,6 s) ; (2) elle pointe vraiment chaque bijou : 1 pose par pastille
+  (haut-gauche = ancienne « pointe-gauche », nouvelles bas-gauche, haut-droite, bas-droite ; la nouvelle haut-gauche, bras
+  au-dessus de la tête, rejetée), pastilles placées dans le prolongement du doigt (positions mesurées, lou.css), pastilles un peu
+  rentrées sur téléphone (étiquettes plus coupées), sticker -50 % en bas à gauche. Testé au banc (iPhone 13 + ordinateur) puis envoyé.

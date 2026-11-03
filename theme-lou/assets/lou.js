@@ -541,14 +541,14 @@
     var ordre = [$(".b-jonc", scene), $(".b-prenom", scene), $(".b-photo", scene), $(".b-morse", scene)];
     var tourS = function () {
       clearTimeout(sT); if (!sVu || main) return;
-      var bj = ordre[sI++ % ordre.length]; montrer(bj);
-      sT = setTimeout(function () { montrer(null); sT = setTimeout(tourS, 1600); }, 4200);
+      montrer(ordre[sI++ % ordre.length]);
+      sT = setTimeout(tourS, 4600);   // bijou suivant directement (pas de coucou entre deux bijoux)
     };
     bijoux.forEach(function (bj) {
       var go = function () { main = true; clearTimeout(sT); montrer(bj); };
       bj.addEventListener("mouseenter", go); bj.addEventListener("focus", go);
       bj.addEventListener("touchstart", go, { passive: true });
-      bj.addEventListener("mouseleave", function () { main = false; clearTimeout(sT); sT = setTimeout(function () { montrer(null); sT = setTimeout(tourS, 1600); }, 900); });
+      bj.addEventListener("mouseleave", function () { main = false; clearTimeout(sT); sI = ordre.indexOf(bj) + 1; sT = setTimeout(tourS, 2600); });
     });
     if (!reduit) {
       if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {

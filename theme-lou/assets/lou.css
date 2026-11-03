@@ -673,10 +673,12 @@ body.panier-ouvert .lou-assist, body.fav-ouvert .lou-assist { opacity: 0; pointe
 @keyframes hop { 0% { scale: .97; translate: -50% 6px; } 60% { scale: 1.015; translate: -50% -4px; } 100% { scale: 1; translate: -50% 0; } }
 .scene-lou .bijou { position: absolute; width: 25%; z-index: 2; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 6px;
   transition: transform .45s var(--ressort, cubic-bezier(.3, 1.6, .5, 1)); animation: flotte-b 5s ease-in-out infinite; }
-.scene-lou .b-jonc { left: -1%; top: 7%; --r: -6deg; }
-.scene-lou .b-photo { left: -3%; top: 56%; --r: 5deg; animation-delay: -1.6s; }
-.scene-lou .b-prenom { right: -1%; top: 5%; --r: 6deg; animation-delay: -.8s; }
-.scene-lou .b-morse { right: -3%; top: 54%; --r: -5deg; animation-delay: -2.4s; }
+/* Chaque pastille est dans le prolongement du doigt de « sa » pose (doigt mesuré : haut-gauche 18 %/45 %, bas-gauche 14 %/70 %,
+   haut-droite 83 %/38 %, bas-droite 82 %/76 % de la scène) */
+.scene-lou .b-jonc { left: -4%; top: 22%; --r: -6deg; }
+.scene-lou .b-photo { left: -5%; top: 55%; --r: 5deg; animation-delay: -1.6s; }
+.scene-lou .b-prenom { right: -3%; top: 14%; --r: 6deg; animation-delay: -.8s; }
+.scene-lou .b-morse { right: -5%; top: 67%; --r: -5deg; animation-delay: -2.4s; }
 @keyframes flotte-b { 50% { translate: 0 -7px; } }
 .scene-lou .pose.on:not(.hop) { animation: entre-lou .9s cubic-bezier(.2, .9, .3, 1) both, respire 4.5s ease-in-out .9s infinite; }
 @keyframes entre-lou { from { opacity: 0; translate: -50% 50px; } }
@@ -695,6 +697,12 @@ body.panier-ouvert .lou-assist, body.fav-ouvert .lou-assist { opacity: 0; pointe
 .scene-lou .eclat { position: absolute; z-index: 1; color: #fff; font-size: 1.4rem; text-shadow: 0 0 10px rgba(255, 255, 255, .9); animation: scintille 3s ease-in-out infinite; pointer-events: none; }
 .scene-lou .e1 { left: 30%; top: 6%; } .scene-lou .e2 { right: 28%; top: 16%; animation-delay: -1s; font-size: 1rem; } .scene-lou .e3 { left: 22%; top: 46%; animation-delay: -2s; font-size: .9rem; }
 @keyframes scintille { 50% { opacity: .2; scale: .6; } }
-.scene-lou .sticker.s2 { right: 4%; top: auto; bottom: 6%; z-index: 3; }
+.scene-lou .sticker.s2 { left: 2%; right: auto; top: auto; bottom: 1%; z-index: 3; }
+@media (max-width: 899px) {   /* téléphone : pastilles un peu plus petites et rentrées, pour que les étiquettes ne soient pas coupées */
+  .scene-lou .bijou { width: 22%; }
+  .scene-lou .b-jonc { left: 1%; } .scene-lou .b-photo { left: 0%; }
+  .scene-lou .b-prenom { right: 1%; } .scene-lou .b-morse { right: 0%; }
+  .scene-lou .tag { font-size: .74rem; padding: 4px 8px 5px; }
+}
 @media (min-width: 900px) { .scene-lou { max-width: 600px; } .scene-lou .bijou { width: 23%; } }
 @media (prefers-reduced-motion: reduce) { .scene-lou .rond, .scene-lou .pose.on, .scene-lou .bijou, .scene-lou .eclat { animation: none; } }
