@@ -4,6 +4,11 @@
 > (régénérer : banc `scripts/banc_theme.py` puis `scripts/export_apercu.py <dossier>` et republier).
 > Shopify : la boutique est construite et le thème Lou est **publié** (derrière le mot de passe) → voir ci-dessous.
 
+## 🚀 03/11/2026 — OUVERTURE EN COURS (Pinterest / Google)
+- Politiques et pages sans « À COMPLÉTER » sauf **mentions légales** (à remplir par l'utilisateur dans Shopify → Paramètres →
+  Politiques) et **médiateur** (à souscrire). Mot de passe à retirer par l'utilisateur. Ensuite : Pinterest (appli Shopify,
+  validation du site, catalogue), Google & YouTube (Merchant Center). Fournisseurs DSers à relier AVANT la 1re vente.
+
 ## 🎭 03/11/2026 (fin) — LOU DÉFINITIVE : photo `contenu/lou/reference-v3/00-source-lou.webp` + Nano Banana Pro 4K
 - L'utilisateur a rejeté les retouches OpenAI (peau « pixelisée », visage mal défini). Comparatif fal.ai sur le même plan
   (`contenu/lou/comparatif-ia/`) : **Nano Banana Pro 4K retenu** (3584×4800, très net, peau lisse naturelle) ; Flux 2 Pro et

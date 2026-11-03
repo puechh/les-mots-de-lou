@@ -278,3 +278,11 @@
 - Planche de 8 plans `contenu/lou/reference-v3/` (≈ 3 $ fal). Prochaine étape : plans avec les bijoux.
 - Images bijoux pour le site (`contenu/lou/bijoux-v3/`, 8 images 4K, ≈ 2,40 $) : univers Noël (sapin, marché de Noël,
   cheminée, chocolat chaud, carte de Noël) + café et rue de Paris pour l'après-Noël. Plage gardée pour le printemps/été.
+
+## 2026-11-03 (suite 18) — Préparation de l'ouverture (Pinterest / Google)
+- L'utilisateur veut ouvrir la boutique maintenant pour préparer les comptes Pinterest et Google.
+- Politiques déjà en ligne (remboursement, livraison 5-10 j, CGV, confidentialité Shopify). Complété : date des CGV (3 novembre
+  2026) ; page Contact (ligne e-mail « À COMPLÉTER » remplacée par le formulaire, réponse sous 48 h ouvrées) ; page Livraison
+  (marqueur « À VÉRIFIER » retiré ; la phrase « droits et taxes pris en charge » reste à confirmer avec DSers/AliExpress).
+- Reste à l'utilisateur, directement dans Shopify (dépôt public) : mentions légales (identité, adresse, SIREN, TVA, e-mail,
+  directeur de publication, médiateur). Retrait du mot de passe = l'utilisateur (Préférences de la boutique en ligne).
