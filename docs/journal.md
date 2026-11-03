@@ -125,3 +125,19 @@
   photo jusqu'à un anneau posé sur le premier et le dernier pixel du prénom ; plus de limite de largeur (garde-fou à
   560 px seulement), formule de taille des lettres inchangée. Testé : je, Lou, Emma, Chloé, Marguerite, Léa ; 3 finitions,
   2 polices ; aucune erreur. Envoyé sur le thème en ligne. Capture : `docs/captures/collier-chaine-adaptee.jpg`.
+
+## 2026-11-03 — Retours de l'utilisateur sur la fiche (téléphone)
+- Écriture « Manuscrite » : **Allura** remplace Great Vibes partout (jonc, collier, atelier, boutons) — le A majuscule de
+  Great Vibes ressemblait à un « a » bizarre (comparaison de 12 écritures manuscrites).
+- **Première lettre toujours en majuscule** (jonc, collier prénom, atelier de l'accueil ; le Morse reste tout en majuscules),
+  sans déplacer le curseur.
+- Liste à coches (bénéfices) retirée du haut de la fiche → rubrique **« Caractéristiques »** (ouverte) dans les accordéons du bas.
+- Case « J'ai vérifié l'orthographe » **cochée d'office** (décision utilisateur). ⚖️ Conseil donné : pré-cochée, elle prouve
+  moins que la cliente a relu en cas de litige ; le récapitulatif « Vous avez écrit » reste affiché.
+- Livraison : **5 à 10 jours ouvrés** (réglages du thème, page livraison-retours, CGV, politique de livraison) ; fabrication
+  3 à 7 j inchangée. Estimation le 03/11 : reçu entre le 13 et le 24/11. Noël : avec 7 j + 10 j ouvrés, commande au plus
+  tard le 3/12 pour le 24/12 sans marge → date affichée gardée au **1er décembre** (2 jours de marge pour les retards de fin
+  d'année ; modifiable dans les réglages du thème).
+- En-tête : icône **« Mon compte »** (profil) entre la loupe et le panier + lien dans le menu mobile.
+- `construire_boutique.py politiques` : ne touche plus une politique modifiée dans Shopify depuis la dernière sauvegarde.
+- Testé au banc (iPhone 13) : « anaïs » → « Anaïs », aucune erreur ; envoyé sur le thème en ligne.

@@ -47,7 +47,7 @@
     var s = toile.width / 1200, ctx = toile.getContext("2d"); ctx.clearRect(0, 0, toile.width, toile.height);
     if (!nom) return;
     var m = METAL[finition] || METAL["Argentée"];
-    var script = pol !== "Moderne", font = script ? '"Great Vibes", cursive' : '700 {t}px Montserrat, Arial, sans-serif';
+    var script = pol !== "Moderne", font = script ? '"Allura", cursive' : '700 {t}px Montserrat, Arial, sans-serif';
     var css = function (t) { return script ? t + "px " + font : font.replace("{t}", t); };
     ctx.font = css(100);
     var mt = ctx.measureText(nom), L = mt.actualBoundingBoxLeft || 0, Rr = mt.actualBoundingBoxRight || mt.width;
@@ -231,10 +231,21 @@
   });
 
   /* --- Texte + compteurs + idées de Lou --- */
+  /* Première lettre toujours en majuscule (sans déplacer le curseur) */
+  function majusculeDebut(inp) {
+    var v = inp.value, i = v.search(/\S/);
+    if (i < 0) return;
+    var up = v.charAt(i).toLocaleUpperCase("fr-FR");
+    if (up === v.charAt(i) || up.length !== 1) return;
+    var a = inp.selectionStart, b = inp.selectionEnd;
+    inp.value = v.slice(0, i) + up + v.slice(i + 1);
+    try { inp.setSelectionRange(a, b); } catch (e) {}
+  }
   $$(".perso-texte").forEach(function (inp) {
     var cpt = inp.closest(".champ").querySelector(".compteur");
     var maj = function () {
       if (inp.classList.contains("maj")) inp.value = inp.value.toUpperCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Z]/g, "");
+      else majusculeDebut(inp);
       if (cpt) { cpt.textContent = inp.value.length + " / " + cpt.getAttribute("data-max"); cpt.classList.toggle("trop", inp.value.length >= +cpt.getAttribute("data-max")); }
       inp.classList.remove("erreur");
       dessiner();
@@ -272,7 +283,7 @@
   /* --- Premier dessin (après chargement de la photo et des polices) --- */
   if (photo) photo.addEventListener("load", dessiner);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(dessiner);
-  ['40px "Great Vibes"', '600 40px "Cormorant Garamond"', '700 40px Montserrat'].forEach(function (f) { if (document.fonts && document.fonts.load) document.fonts.load(f).then(dessiner, function () {}); });
+  ['40px "Allura"', '600 40px "Cormorant Garamond"', '700 40px Montserrat'].forEach(function (f) { if (document.fonts && document.fonts.load) document.fonts.load(f).then(dessiner, function () {}); });
   var att; addEventListener("resize", function () { clearTimeout(att); att = setTimeout(dessiner, 150); });
   dessiner();
 

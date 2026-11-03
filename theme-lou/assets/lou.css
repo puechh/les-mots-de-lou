@@ -22,7 +22,7 @@
   --f-titre: "DM Serif Display", Georgia, serif;
   --f-texte: "Nunito", "Helvetica Neue", Arial, sans-serif;
   --f-main: "Caveat", "Bradley Hand", cursive;
-  --f-grave-manuscrite: "Great Vibes", cursive;
+  --f-grave-manuscrite: "Allura", cursive;
   --f-grave-classique: "Cormorant Garamond", Georgia, serif;
   --f-grave-moderne: "Montserrat", Arial, sans-serif;
   --entete: 64px;
@@ -119,7 +119,8 @@ h1 em > .t, h2 em > .t { position: relative; z-index: 1; }
 .logo-lou svg { position: absolute; width: .45em; height: .45em; right: -.42em; top: -.1em; fill: var(--framboise); animation: battement 2.4s ease-in-out infinite; }
 @keyframes battement { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.25); } 30% { transform: scale(1); } 45% { transform: scale(1.18); } }
 .nav { display: none; }
-.header-icons { display: flex; gap: 2px; }
+.header-icons { display: flex; gap: 0; }
+@media (max-width: 959px) { .header-icons .icon-btn { width: 40px; height: 44px; } .logo { font-size: 1.32rem; } }
 .icon-btn { position: relative; display: inline-grid; place-items: center; width: 44px; height: 44px; border: 0; background: none; border-radius: 50%; text-decoration: none; transition: background .2s, transform .2s var(--ressort); }
 .icon-btn:hover { background: var(--blush); }
 .icon-btn:active { transform: scale(.9); }

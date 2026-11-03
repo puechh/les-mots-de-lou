@@ -6,7 +6,7 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var LOU = window.LOU = window.LOU || {};
-  var R = LOU.reglages || { fabMin: 3, fabMax: 7, livMin: 7, livMax: 12, noel: "2026-12-01", noelTexte: "1er décembre", sons: true };
+  var R = LOU.reglages || { fabMin: 3, fabMax: 7, livMin: 5, livMax: 10, noel: "2026-12-01", noelTexte: "1er décembre", sons: true };
   var reduit = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
   var euros = function (c) { return (c / 100).toFixed(2).replace(".", ",") + " €"; };
@@ -266,7 +266,7 @@
     return c;
   };
   var POLICES = {
-    Manuscrite: { font: '"Great Vibes", cursive', maj: false, esp: 0, ref: "Tu es ma personne", taille: 1 },
+    Manuscrite: { font: '"Allura", cursive', maj: false, esp: 0, ref: "Tu es ma personne", taille: 1 },
     Classique: { font: '600 {t}px "Cormorant Garamond", Georgia, serif', maj: true, esp: .16, ref: "ÉMOTION", taille: .62 },
     Moderne: { font: '500 {t}px Montserrat, Arial, sans-serif', maj: true, esp: .22, ref: "ÉMOTION", taille: .52 }
   };
@@ -355,8 +355,16 @@
     };
     if (photo && !photo.complete) photo.addEventListener("load", function () { maj(); });
     var attente; addEventListener("resize", function () { clearTimeout(attente); attente = setTimeout(maj, 120); });
-    if (document.fonts && document.fonts.load) document.fonts.load('40px "Great Vibes"').then(function () { maj(); });
-    atelier.addEventListener("input", function () { maj(true); son("clic"); });
+    if (document.fonts && document.fonts.load) document.fonts.load('40px "Allura"').then(function () { maj(); });
+    atelier.addEventListener("input", function () {
+      var v = atelier.value, i = v.search(/\S/), up = i > -1 ? v.charAt(i).toLocaleUpperCase("fr-FR") : "";
+      if (i > -1 && up !== v.charAt(i) && up.length === 1) {   // première lettre toujours en majuscule
+        var a = atelier.selectionStart, b = atelier.selectionEnd;
+        atelier.value = v.slice(0, i) + up + v.slice(i + 1);
+        try { atelier.setSelectionRange(a, b); } catch (e) {}
+      }
+      maj(true); son("clic");
+    });
     maj();
     $$(".pastilles button", $("#atelier")).forEach(function (b) {
       b.addEventListener("click", function () {

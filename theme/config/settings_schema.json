@@ -7,8 +7,8 @@
       { "type": "checkbox", "id": "ecrin_inclus", "label": "Écrin cadeau inclus (confirmé par le fournisseur)", "default": false },
       { "type": "range", "id": "fab_min", "label": "Fabrication : minimum (jours)", "min": 1, "max": 15, "step": 1, "default": 3 },
       { "type": "range", "id": "fab_max", "label": "Fabrication : maximum (jours)", "min": 1, "max": 20, "step": 1, "default": 7 },
-      { "type": "range", "id": "liv_min", "label": "Livraison : minimum (jours ouvrés)", "min": 2, "max": 25, "step": 1, "default": 7 },
-      { "type": "range", "id": "liv_max", "label": "Livraison : maximum (jours ouvrés)", "min": 3, "max": 30, "step": 1, "default": 12 },
+      { "type": "range", "id": "liv_min", "label": "Livraison : minimum (jours ouvrés)", "min": 2, "max": 25, "step": 1, "default": 5 },
+      { "type": "range", "id": "liv_max", "label": "Livraison : maximum (jours ouvrés)", "min": 3, "max": 30, "step": 1, "default": 10 },
       { "type": "text", "id": "noel_limite", "label": "Date limite pour Noël (texte)", "default": "1er décembre" },
       { "type": "text", "id": "noel_iso", "label": "Date limite pour Noël (AAAA-MM-JJ, pour le compte à rebours)", "default": "2026-12-01" }
     ]

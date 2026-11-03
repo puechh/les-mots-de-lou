@@ -178,6 +178,15 @@ def politiques():
         if actuelles.get(t) and "[À COMPLÉTER" not in actuelles[t]:
             print("Politique déjà complétée dans Shopify, non écrasée :", nom)
             continue
+        # Prudence : si la politique a été modifiée dans Shopify depuis la dernière sauvegarde (même partiellement), on n'y touche pas
+        try:
+            sauv = {p["type"]: p["body"] for p in json.load(open(os.path.join(ROOT, "contenu/politiques.json")))}
+        except Exception:
+            sauv = {}
+        norm = lambda x: " ".join((x or "").split())
+        if actuelles.get(t) and t in sauv and norm(actuelles[t]) != norm(sauv[t]):
+            print("Politique modifiée dans Shopify depuis la dernière sauvegarde, non écrasée :", nom)
+            continue
         gql("mutation($p: ShopPolicyInput!) { shopPolicyUpdate(shopPolicy: $p) { shopPolicy { id } userErrors { message } } }",
             {"p": {"type": t, "body": corps}}, "shopPolicyUpdate")
         print("Politique :", nom)

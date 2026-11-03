@@ -21,7 +21,7 @@
   {%- if product and product.featured_image %}<meta property="og:image" content="https:{{ product.featured_image | image_url: width: 1200 }}">{% endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Caveat:wght@500;700&family=Great+Vibes&family=Cormorant+Garamond:wght@600&family=Montserrat:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Caveat:wght@500;700&family=Allura&family=Cormorant+Garamond:wght@600&family=Montserrat:wght@500;700&display=swap">
   {{ 'lou.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'gsap.min.js' | asset_url }}" defer></script>
   <script src="{{ 'ScrollTrigger.min.js' | asset_url }}" defer></script>
@@ -36,7 +36,7 @@
     window.LOU = {
       routes: { root: {{ routes.root_url | json }}, cart: {{ routes.cart_url | json }}, cartAdd: {{ routes.cart_add_url | json }}, cartChange: {{ routes.cart_change_url | json }} },
       cart: {{ cart | json }},
-      reglages: { ecrin: {{ settings.ecrin_inclus | json }}, fabMin: {{ settings.fab_min | default: 3 }}, fabMax: {{ settings.fab_max | default: 7 }}, livMin: {{ settings.liv_min | default: 7 }}, livMax: {{ settings.liv_max | default: 12 }}, noel: {{ settings.noel_iso | default: '2026-12-01' | json }}, noelTexte: {{ settings.noel_limite | default: '1er décembre' | json }}, sons: {{ settings.sons | json }} },
+      reglages: { ecrin: {{ settings.ecrin_inclus | json }}, fabMin: {{ settings.fab_min | default: 3 }}, fabMax: {{ settings.fab_max | default: 7 }}, livMin: {{ settings.liv_min | default: 5 }}, livMax: {{ settings.liv_max | default: 10 }}, noel: {{ settings.noel_iso | default: '2026-12-01' | json }}, noelTexte: {{ settings.noel_limite | default: '1er décembre' | json }}, sons: {{ settings.sons | json }} },
       page: {{ template.name | json }},
       avatar: {{ 'lou-avatar.webp' | asset_url | json }},
       produit: {% if product %}{{ product.title | json }}{% else %}null{% endif %}
