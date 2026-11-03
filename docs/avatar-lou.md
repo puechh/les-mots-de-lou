@@ -175,3 +175,13 @@ Requêtes gratuites uniquement, clé jamais affichée. Une fausse clé donne 401
   `generer_lou.py` accepte maintenant `--format portrait-hd`.
 - 03/11 — Jonc réel : fin, cœur ajouré à chaque extrémité. Prompt utilisé : « thin open cuff bangle, about 4 mm wide… at each of its
   two open ends a small rounded tab with a tiny heart-shaped cut-out hole ». Résultat fidèle sur `lou-v2-poignet-jonc.png`.
+
+## 03/11/2026 (fin) — Changement d'outil : fal.ai Nano Banana Pro
+- Rejet utilisateur des images OpenAI retouchées : visage mal défini, « pixels bizarres » sur la peau. Cause probable : retouches
+  en chaîne (le modèle redessine toute l'image à chaque passage) + suppression totale des taches → peau lissée puis fausse texture.
+- Nouvelle référence fournie par l'utilisateur : `reference-v3/00-source-lou.webp` (c'est le B d'origine). Souhaits : 20 ans, peau
+  lisse sans rides, peu de taches de rousseur, photos d'iPhone 18 Pro prises par un amateur, qualité « 4K » sans pixels.
+- Prix fal (API pricing, 03/11) : nano-banana-pro/edit 0,15 $/image (×2 en 4K) ; flux-2-pro/edit 0,03 $/mégapixel ;
+  seedream v5 pro edit 0,0675 $/unité. Comparatif : `contenu/lou/comparatif-ia/` → **Nano Banana Pro retenu**.
+- Outil : `scripts/fal_images.py` (envoi des références sur rest.fal.ai, appel fal.run, téléchargement, .txt du prompt).
+- Ressemblance : 2 références (source + 01-face) améliorent nettement le visage (04-rire et 07-rue refaits).

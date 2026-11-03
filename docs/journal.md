@@ -270,3 +270,9 @@
 - Peau parfaite : taches de rousseur retirées sur toutes les images de Lou (planche passée en 2048×3072). ≈ 5 $.
 - Photo fournisseur du jonc reçue (dans le chat, pas en fichier) : jonc fin avec un petit cœur ajouré à chaque extrémité. Images
   « poignet jonc » refaites avec les cœurs. Fiche Shopify du jonc à mettre à jour (photo fournisseur en fichier nécessaire).
+
+## 2026-11-03 (suite 17) — Lou refaite avec fal.ai (Nano Banana Pro 4K)
+- L'utilisateur trouve les images OpenAI fausses (pixels sur la peau). Il renvoie la photo B d'origine = la future Lou
+  (`contenu/lou/reference-v3/00-source-lou.webp`) ; peau lisse, peu de taches, iPhone 18 Pro par un amateur, 4K.
+- Nouvel outil `scripts/fal_images.py`. Comparatif Nano Banana Pro / Flux 2 Pro / Seedream 5 Pro → Nano Banana Pro 4K retenu.
+- Planche de 8 plans `contenu/lou/reference-v3/` (≈ 3 $ fal). Prochaine étape : plans avec les bijoux.

@@ -31,19 +31,18 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   fabrication comprise** (jours calendaires, décision 03/11) ; icône « Mon compte » dans l'en-tête ; accueil = Lou qui
   porte le jonc et le collier (repères animés) ; vignettes produits animées (la personnalisation se « remplit »).
   Machine à mots sous les bijoux (accueil) et sous « Caractéristiques » (jonc, bracelet) ; **Noël : avant le 10 décembre**.
-- **LOU = la femme de l'option B, AVEC SON CHIGNON** (décision utilisateur 03/11, « elle était parfaite ») : 21 ans, brune
-  (châtain foncé), chignon décoiffé avec mèches qui encadrent le visage, yeux noisette, peau hâlée **parfaite, SANS taches de
-  rousseur** (décision utilisateur 03/11 : toutes retirées ; garder seulement le grain/pores pour rester réaliste).
-  Image de départ : `contenu/lou/propositions-v2/B-chignon.png` ; planche : `contenu/lou/reference-v2/` (+ `planche-lou-v2.jpg`).
-  L'ancienne Lou (`contenu/lou/reference/`, visage C) est **abandonnée**. Versions bouclées (`B2-boucles-*`) **refusées**.
-- **RÈGLE OBLIGATOIRE pour toute image ou vidéo de Lou** : **toujours ultra-réaliste** (photo de téléphone non retouchée, pores,
-  mèches, lumière naturelle, pas de filtre ni studio) et **toujours « réalisée avec l'iPhone 18 Pro »** → chaque prompt commence
-  par **« Shot on iPhone 18 Pro. »**. Toujours repartir de `B-chignon.png` (ou d'un plan de `reference-v2/`) en retouche ;
-  `gpt-image-2.5-flare` + `--fidelite aucune` (il refuse `input_fidelity`), qualité high. Tenues sobres (pubs).
-  **Anti-pixelisation** : toujours `scripts/images_ia.py modifier … --format portrait-hd --qualite high` (2048×3072) +
-  « extremely sharp, high resolution, no pixelation, no compression artifacts » ; vérifier un recadrage à 100 % avant d'envoyer.
-  Le filtre OpenAI refuse « bikini » + selfie → maillot une pièce / chemise en lin.
-  Ses photos d'exemple (selfies) = inspiration en mots seulement, jamais envoyées au modèle (vraies personnes possibles).
+- **LOU = la photo `contenu/lou/reference-v3/00-source-lou.webp`** (envoyée par l'utilisateur le 03/11 : « c'est elle la future
+  Lou ») : 20 ans, brune (châtain foncé), chignon décoiffé avec mèches qui encadrent le visage, yeux noisette, peau hâlée.
+  **Peau lisse (20 ans, aucune ride), seulement quelques taches de rousseur très légères.** Planche : `contenu/lou/reference-v3/`
+  (8 plans + `planche-lou-v3.jpg`). Anciennes versions (`reference/`, `reference-v2/`, `propositions-v2/`) **abandonnées**
+  (retouches OpenAI en chaîne → peau « pixelisée », jugée fausse par l'utilisateur).
+- **RÈGLE OBLIGATOIRE pour toute image ou vidéo de Lou** : **ultra-réaliste, haute qualité sans pixels (comme une photo 4K
+  d'iPhone)**, **« Shot on iPhone 18 Pro by an amateur photographer. » en tête de chaque prompt**.
+  **Outil : fal.ai `fal-ai/nano-banana-pro/edit`** (choisi au comparatif du 03/11 contre Flux 2 Pro et Seedream 5 Pro, et
+  contre OpenAI) via `scripts/fal_images.py … --param resolution=4K --param aspect_ratio=3:4 --param output_format=jpeg`
+  (3584×4800, ≈ 0,30 $/image). **Toujours repartir de `00-source-lou.webp` + `01-face.jpg`** (2 références = meilleure
+  ressemblance ; ne jamais retoucher une retouche). Prompts types dans les .txt de `reference-v3/`. Tenues sobres (pubs).
+  Vérifier un recadrage à 100 % avant d'envoyer. Ses photos d'exemple (selfies) = jamais envoyées au modèle.
 - **Jonc réel (photo fournisseur envoyée le 03/11)** : jonc ouvert **fin (≈ 4 mm)**, acier argenté poli, face plate gravée,
   **un petit cœur ajouré à chaque extrémité** (à l'arrière du poignet). C'est la seule différence avec les images IA actuelles
   (qui ont aussi un jonc plus large) → images du jonc (fiche + aperçu de gravure du thème) à refaire et à envoyer sur Shopify.
@@ -98,11 +97,11 @@ python3 scripts/shopify.py gql '{ shop { name } }'   # requête GraphQL Admin
 ```
 Depuis Python : `from shopify import graphql` (avec `scripts/` dans le path). Préférer l'API GraphQL Admin.
 
-## Images et vidéos IA (API OpenAI)
+## Images et vidéos IA (fal.ai pour Lou, OpenAI en secours)
 `scripts/images_ia.py` crée ou retouche des images via l'API d'OpenAI. Clé = « Network secret » de l'environnement cloud (site
 `api.openai.com`, en-tête Authorization, injectée par le proxy) ou `OPENAI_API_KEY`. Jamais dans le chat ni le dépôt.
 Images rangées dans `contenu/images-ia/` avec leur prompt. **Lou doit rester la même d'une image à l'autre** (toujours repartir
-de `contenu/lou/reference-v2/`, ultra-réaliste, « Shot on iPhone 18 Pro. » en tête du prompt). **Ne jamais altérer l'apparence réelle des bijoux** (forme, couleur, taille,
+de `contenu/lou/reference-v3/` avec `scripts/fal_images.py` + Nano Banana Pro 4K, voir Contexte). **Ne jamais altérer l'apparence réelle des bijoux** (forme, couleur, taille,
 gravure) : partir des photos fournisseur pour les bijoux.
 
 ```bash

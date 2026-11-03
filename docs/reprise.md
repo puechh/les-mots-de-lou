@@ -4,23 +4,16 @@
 > (régénérer : banc `scripts/banc_theme.py` puis `scripts/export_apercu.py <dossier>` et republier).
 > Shopify : la boutique est construite et le thème Lou est **publié** (derrière le mot de passe) → voir ci-dessous.
 
-## 🎭 03/11/2026 — NOUVELLE LOU VALIDÉE : la femme B avec son chignon
-- **Lou = `contenu/lou/propositions-v2/B-chignon.png`** (21 ans, brune, chignon, yeux noisette, taches de rousseur).
-  Versions bouclées refusées ; ancienne Lou (`contenu/lou/reference/`) abandonnée.
-- **Toujours ultra-réaliste et toujours « Shot on iPhone 18 Pro. » en tête du prompt** (règle dans CLAUDE.md).
-- Planche de 6 plans faite : `contenu/lou/reference-v2/` (face, trois-quarts, profil, rire au café, mains avec tasse, selfie
-  miroir en pied) + `planche-lou-v2.jpg`. Prompts dans les .txt. À faire valider par l'utilisateur.
-- Images bijoux portés (03/11, demande utilisateur) : `contenu/images-ia/2026-11-03-lou-v2-*.png` (2048×3072) — plage en maillot
-  (jonc, collier « Lou », duo) + gros plans sans visage (cou collier prénom, cou collier photo, poignet jonc, poignet Morse).
-  ⚠️ Bijoux copiés des images IA des fiches : à refaire avec les vraies photos fournisseur si elles diffèrent.
-- **Taches de rousseur retirées partout** (B-chignon + 6 plans passés en 2048×3072 + 8 images bijoux). Peau parfaite = règle.
-- **Jonc réel = fin + petit cœur ajouré à chaque extrémité.** `lou-v2-poignet-jonc.png` ✅ fidèle ; `lou-v2-poignet-jonc-coeurs.png`
-  ❌ jonc trop large (à refaire ou ne pas utiliser) ; `plage-jonc` / `plage-duo` : extrémités peu visibles.
-- **À FAIRE (demande utilisateur) : mettre à jour la fiche Jonc sur Shopify avec les cœurs.** Il faut la vraie photo fournisseur en
-  fichier (celle du chat n'a pas été enregistrée comme fichier) → refaire `produit-jonc-*` (dont les images vierges de l'aperçu
-  de gravure, à re-mesurer : méthode dans `docs/journal.md`), tester au banc, puis envoyer (accord utilisateur avant l'envoi).
-- Ensuite (accord utilisateur) : remplacer les images de Lou du thème et des pages (banc avant envoi) ; Lou portant les bijoux
-  seulement à partir des vraies photos fournisseur ; LoRA fal.ai si besoin de beaucoup d'images.
+## 🎭 03/11/2026 (fin) — LOU DÉFINITIVE : photo `contenu/lou/reference-v3/00-source-lou.webp` + Nano Banana Pro 4K
+- L'utilisateur a rejeté les retouches OpenAI (peau « pixelisée », visage mal défini). Comparatif fal.ai sur le même plan
+  (`contenu/lou/comparatif-ia/`) : **Nano Banana Pro 4K retenu** (3584×4800, très net, peau lisse naturelle) ; Flux 2 Pro et
+  Seedream 5 Pro plus fidèles aux taches de rousseur mais moins définis.
+- Planche `contenu/lou/reference-v3/` : 01 face, 02 trois-quarts, 03 profil, 04 rire au café, 05 mains/tasse, 06 miroir en pied,
+  07 rue de Paris en automne, 08 canapé. 04 et 07 refaits avec 2 références (ressemblance). ≈ 3 $ fal au total.
+- **Étape suivante demandée par l'utilisateur : les plans avec les bijoux** (plage en maillot, gros plans cou / poignet), même
+  méthode, bijoux d'après les photos fournisseur. Jonc réel = fin + cœur ajouré à chaque extrémité.
+- Les images `contenu/images-ia/2026-11-03-lou-v2-*` (ancienne méthode) sont à remplacer.
+- Fiche Jonc Shopify à mettre à jour avec les cœurs : il faut la photo fournisseur **en fichier**.
 
 ## ✅ 03/11/2026 — clé fal.ai opérationnelle
 - Variable `FAL_KEY` (plus de Network secret fal). Test gratuit OK sur `fal.run`, `queue.fal.run`, `rest.fal.ai`,
