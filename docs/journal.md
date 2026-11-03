@@ -219,3 +219,10 @@
   avatar de Lou 31 → 6 Ko ; images des vignettes animées chargées seulement quand la vignette arrive à l'écran ;
   polices de gravure « Classique » / « Moderne » chargées seulement sur les fiches ; l'image de l'atelier n'est plus
   prioritaire sur la photo de Lou. Sur Shopify, JS/CSS/HTML sont en plus compressés (≈ -70 %).
+
+## 2026-11-03 (suite 10) — Bracelet code secret : aperçu Morse compréhensible
+- Idée utilisateur : le code au-dessus de chaque lettre plutôt que tout sur une ligne. Nouveau décodeur sous le bracelet :
+  une colonne par lettre, son code dessiné avec les mêmes perles (rond = point, long = trait) au-dessus, la lettre en
+  dessous ; « 1 groupe de perles = 1 lettre » ; légende point / trait en perles. Animation : chaque groupe de perles
+  s'allume en rose sur le bracelet en même temps que sa colonne (0,85 s par lettre, pause en fin de mot).
+  Capture : `docs/captures/morse-decodeur.jpg`.

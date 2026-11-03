@@ -502,6 +502,10 @@ h1 em > .t, h2 em > .t { position: relative; z-index: 1; }
 
 /* Aperçu bracelet Morse */
 .morse-svg { width: 100%; max-width: 520px; overflow: visible; }
+.morse-svg .mh { opacity: 0; transition: opacity .35s; }
+.morse-svg .mh.on { opacity: .45; }
+.morse-svg .mc .fond { fill: #fff; opacity: 0; stroke: #e2457a; stroke-width: 2; transition: opacity .35s; }
+.morse-svg .mc.on .fond { opacity: .9; }
 
 /* ---------- Collection / pages ---------- */
 .page-hero { background: var(--pale); padding-block: 30px 28px; border-bottom: 2px dashed rgba(226, 69, 122, .18); }
