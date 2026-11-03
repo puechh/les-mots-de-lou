@@ -267,3 +267,6 @@
   « Shot on iPhone 18 Pro. »**. Planche de 6 plans `contenu/lou/reference-v2/` (≈ 2 $ OpenAI).
 - Bijoux portés : 7 images HD (plage en maillot : jonc / collier « Lou » / duo ; gros plans cou et poignet, sans visage)
   → `contenu/images-ia/2026-11-03-lou-v2-*.png` (≈ 3 $). Bikini refusé par le filtre OpenAI → maillot une pièce.
+- Peau parfaite : taches de rousseur retirées sur toutes les images de Lou (planche passée en 2048×3072). ≈ 5 $.
+- Photo fournisseur du jonc reçue (dans le chat, pas en fichier) : jonc fin avec un petit cœur ajouré à chaque extrémité. Images
+  « poignet jonc » refaites avec les cœurs. Fiche Shopify du jonc à mettre à jour (photo fournisseur en fichier nécessaire).

@@ -21,7 +21,7 @@ import requests
 
 API = "https://api.openai.com/v1"
 ICI = Path(__file__).resolve().parent
-FORMATS = {"carre": "1024x1024", "portrait": "1024x1536", "paysage": "1536x1024"}
+FORMATS = {"carre": "1024x1024", "portrait": "1024x1536", "paysage": "1536x1024", "portrait-hd": "2048x3072"}
 
 
 def _entetes():

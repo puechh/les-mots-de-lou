@@ -170,3 +170,8 @@ Requêtes gratuites uniquement, clé jamais affichée. Une fausse clé donne 401
   7 images `contenu/images-ia/2026-11-03-lou-v2-*.png` en 2048×3072, qualité high (≈ 3 $). Références : `reference-v2/01-face.png`
   + photo de fiche du bijou (`2026-11-02-produit-*-hd.jpg`). Collier prénom = « Lou ». Recadrages à 100 % nets (gravure lisible).
   Le selfie « bikini » a été refusé par le filtre OpenAI (sexual) → refait en maillot une pièce + chemise en lin.
+- 03/11 — **Peau parfaite** demandée : taches de rousseur retirées sur toutes les images (≈ 5 $). Refus du filtre OpenAI sur les
+  retouches de photos décolletées (B-chignon, cou collier photo, plage jonc) → reformuler « face only » ou refaire à neuf avec col rond.
+  `generer_lou.py` accepte maintenant `--format portrait-hd`.
+- 03/11 — Jonc réel : fin, cœur ajouré à chaque extrémité. Prompt utilisé : « thin open cuff bangle, about 4 mm wide… at each of its
+  two open ends a small rounded tab with a tiny heart-shaped cut-out hole ». Résultat fidèle sur `lou-v2-poignet-jonc.png`.

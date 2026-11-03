@@ -13,6 +13,12 @@
 - Images bijoux portés (03/11, demande utilisateur) : `contenu/images-ia/2026-11-03-lou-v2-*.png` (2048×3072) — plage en maillot
   (jonc, collier « Lou », duo) + gros plans sans visage (cou collier prénom, cou collier photo, poignet jonc, poignet Morse).
   ⚠️ Bijoux copiés des images IA des fiches : à refaire avec les vraies photos fournisseur si elles diffèrent.
+- **Taches de rousseur retirées partout** (B-chignon + 6 plans passés en 2048×3072 + 8 images bijoux). Peau parfaite = règle.
+- **Jonc réel = fin + petit cœur ajouré à chaque extrémité.** `lou-v2-poignet-jonc.png` ✅ fidèle ; `lou-v2-poignet-jonc-coeurs.png`
+  ❌ jonc trop large (à refaire ou ne pas utiliser) ; `plage-jonc` / `plage-duo` : extrémités peu visibles.
+- **À FAIRE (demande utilisateur) : mettre à jour la fiche Jonc sur Shopify avec les cœurs.** Il faut la vraie photo fournisseur en
+  fichier (celle du chat n'a pas été enregistrée comme fichier) → refaire `produit-jonc-*` (dont les images vierges de l'aperçu
+  de gravure, à re-mesurer : méthode dans `docs/journal.md`), tester au banc, puis envoyer (accord utilisateur avant l'envoi).
 - Ensuite (accord utilisateur) : remplacer les images de Lou du thème et des pages (banc avant envoi) ; Lou portant les bijoux
   seulement à partir des vraies photos fournisseur ; LoRA fal.ai si besoin de beaucoup d'images.
 

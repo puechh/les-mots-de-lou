@@ -32,7 +32,8 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   porte le jonc et le collier (repères animés) ; vignettes produits animées (la personnalisation se « remplit »).
   Machine à mots sous les bijoux (accueil) et sous « Caractéristiques » (jonc, bracelet) ; **Noël : avant le 10 décembre**.
 - **LOU = la femme de l'option B, AVEC SON CHIGNON** (décision utilisateur 03/11, « elle était parfaite ») : 21 ans, brune
-  (châtain foncé), chignon décoiffé avec mèches qui encadrent le visage, yeux noisette, taches de rousseur, peau hâlée.
+  (châtain foncé), chignon décoiffé avec mèches qui encadrent le visage, yeux noisette, peau hâlée **parfaite, SANS taches de
+  rousseur** (décision utilisateur 03/11 : toutes retirées ; garder seulement le grain/pores pour rester réaliste).
   Image de départ : `contenu/lou/propositions-v2/B-chignon.png` ; planche : `contenu/lou/reference-v2/` (+ `planche-lou-v2.jpg`).
   L'ancienne Lou (`contenu/lou/reference/`, visage C) est **abandonnée**. Versions bouclées (`B2-boucles-*`) **refusées**.
 - **RÈGLE OBLIGATOIRE pour toute image ou vidéo de Lou** : **toujours ultra-réaliste** (photo de téléphone non retouchée, pores,
@@ -43,6 +44,9 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   « extremely sharp, high resolution, no pixelation, no compression artifacts » ; vérifier un recadrage à 100 % avant d'envoyer.
   Le filtre OpenAI refuse « bikini » + selfie → maillot une pièce / chemise en lin.
   Ses photos d'exemple (selfies) = inspiration en mots seulement, jamais envoyées au modèle (vraies personnes possibles).
+- **Jonc réel (photo fournisseur envoyée le 03/11)** : jonc ouvert **fin (≈ 4 mm)**, acier argenté poli, face plate gravée,
+  **un petit cœur ajouré à chaque extrémité** (à l'arrière du poignet). C'est la seule différence avec les images IA actuelles
+  (qui ont aussi un jonc plus large) → images du jonc (fiche + aperçu de gravure du thème) à refaire et à envoyer sur Shopify.
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).
