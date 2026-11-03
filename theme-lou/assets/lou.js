@@ -835,6 +835,6 @@
     teaser.addEventListener("click", function (e) { if (e.target.closest(".lou-teaser-x")) { teaser.hidden = true; return; } ouvrir(); });
     // Petit message selon la page, une fois par page et par visite
     var cle = "lou-teaser-" + page;
-    if (!stocke(cle)) setTimeout(function () { if (!ouvert && !document.body.classList.contains("panier-ouvert")) { dit(page === "index" && scrollY > 900 ? "Vous hésitez ? Touchez-moi : je vous aide à choisir… et à trouver les mots 💬" : page === "product" && !$(".perso-texte") ? "Une photo souvenir à cacher dans le cœur ? Ajoutez-la : je vous montre l'effet 📸" : (MSG_PAGE[page] || MSG_PAGE.page), 9000); stocke(cle, "1"); if (pastille && !stocke("lou-vu")) pastille.hidden = false; } }, page === "index" ? 9000 : 5000);
+    if (!stocke(cle)) setTimeout(function () { if (!ouvert && !document.body.classList.contains("panier-ouvert")) { dit(page === "index" && scrollY > 900 ? "Vous hésitez ? Touchez-moi : je vous aide à choisir… et à trouver les mots 💬" : page === "product" && !$(".perso-texte") ? "Une photo souvenir à cacher dans le cœur ? Ajoutez-la : je vous montre l'effet 📸" : page === "product" && $(".perso-texte.maj") ? "Besoin d'une idée de mot secret ? Touchez-moi, je vous en souffle un 🤫" : (MSG_PAGE[page] || MSG_PAGE.page), 9000); stocke(cle, "1"); if (pastille && !stocke("lou-vu")) pastille.hidden = false; } }, page === "index" ? 9000 : 5000);
   }
 })();

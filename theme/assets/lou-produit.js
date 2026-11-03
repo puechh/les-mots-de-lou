@@ -52,20 +52,45 @@
     var aLong = function (l) { var i = 0; while (i < N && tab[i + 1] < l) i++; var t = (i + (l - tab[i]) / ((tab[i + 1] - tab[i]) || 1)) / N; var a = pt(Math.max(0, t - .002)), b = pt(Math.min(1, t + .002)); var q = pt(t); return { x: q[0], y: q[1], ang: Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI }; };
     var elems = [], k = 1;
     mot.split("").forEach(function (l, li) {
-      (MORSE[l] || "").split("").forEach(function (sym, si) { elems.push({ t: sym === "." ? "p" : "t" }); if (si < MORSE[l].length - 1) elems.push({ t: "g" }); });
+      (MORSE[l] || "").split("").forEach(function (sym, si) { elems.push({ t: sym === "." ? "p" : "t", li: li }); if (si < MORSE[l].length - 1) elems.push({ t: "g", li: li }); });
       if (li < mot.length - 1) elems.push({ t: "s" });
     });
     var taille = function (e) { return e.t === "p" ? 28 : e.t === "t" ? 60 : e.t === "g" ? 7 : 26; };
     var total = elems.reduce(function (a, e) { return a + taille(e); }, 0);
     k = Math.min(1, Ltot * .8 / total);
-    var l = (Ltot - total * k) / 2, html = "";
+    var l = (Ltot - total * k) / 2, html = "", groupes = {};
     elems.forEach(function (e) {
       var w = taille(e) * k, c = aLong(l + w / 2);
-      if (e.t === "p") html += '<g transform="translate(' + c.x.toFixed(1) + " " + c.y.toFixed(1) + ') rotate(' + c.ang.toFixed(1) + ')"><circle r="' + (13 * k).toFixed(1) + '" fill="url(#perle)"/><ellipse cx="' + (-4 * k).toFixed(1) + '" cy="' + (-4.5 * k).toFixed(1) + '" rx="' + (4.5 * k).toFixed(1) + '" ry="' + (3 * k).toFixed(1) + '" fill="#fff" opacity=".8"/></g>';
-      if (e.t === "t") html += '<g transform="translate(' + c.x.toFixed(1) + " " + c.y.toFixed(1) + ') rotate(' + c.ang.toFixed(1) + ')"><rect x="' + (-w / 2 + 1).toFixed(1) + '" y="' + (-11 * k).toFixed(1) + '" width="' + (w - 2).toFixed(1) + '" height="' + (22 * k).toFixed(1) + '" rx="' + (11 * k).toFixed(1) + '" fill="url(#barre)"/><rect x="' + (-w / 2 + 4).toFixed(1) + '" y="' + (-7.5 * k).toFixed(1) + '" width="' + (w - 10).toFixed(1) + '" height="' + (3.5 * k).toFixed(1) + '" rx="1.7" fill="#fff" opacity=".75"/></g>';
+      if (e.li != null) { var gr = groupes[e.li] = groupes[e.li] || { de: l, a: l, html: "" }; gr.a = l + w; }
+      var bout = "";
+      if (e.t === "p") bout = '<g transform="translate(' + c.x.toFixed(1) + " " + c.y.toFixed(1) + ') rotate(' + c.ang.toFixed(1) + ')"><circle r="' + (13 * k).toFixed(1) + '" fill="url(#perle)"/><ellipse cx="' + (-4 * k).toFixed(1) + '" cy="' + (-4.5 * k).toFixed(1) + '" rx="' + (4.5 * k).toFixed(1) + '" ry="' + (3 * k).toFixed(1) + '" fill="#fff" opacity=".8"/></g>';
+      if (e.t === "t") bout = '<g transform="translate(' + c.x.toFixed(1) + " " + c.y.toFixed(1) + ') rotate(' + c.ang.toFixed(1) + ')"><rect x="' + (-w / 2 + 1).toFixed(1) + '" y="' + (-11 * k).toFixed(1) + '" width="' + (w - 2).toFixed(1) + '" height="' + (22 * k).toFixed(1) + '" rx="' + (11 * k).toFixed(1) + '" fill="url(#barre)"/><rect x="' + (-w / 2 + 5).toFixed(1) + '" y="' + (-7.5 * k).toFixed(1) + '" width="' + (w - 10).toFixed(1) + '" height="' + (3.5 * k).toFixed(1) + '" rx="1.7" fill="#fff" opacity=".75"/></g>';
+      if (bout) groupes[e.li].html += bout;
       l += w;
     });
-    var legende = mot.split("").map(function (x) { return '<tspan font-weight="800">' + x + '</tspan> ' + (MORSE[x] || "").replace(/\./g, "•").replace(/-/g, "—"); }).join("   ");
+    // Halo rose derrière chaque groupe de perles (= une lettre), allumé tour à tour avec sa lettre en dessous
+    var halos = "", perles = "";
+    Object.keys(groupes).forEach(function (li) {
+      var g = groupes[li], pts = [];
+      for (var q = 0; q <= 8; q++) { var cc = aLong(g.de + (g.a - g.de) * q / 8); pts.push(cc.x.toFixed(1) + "," + cc.y.toFixed(1)); }
+      halos += '<polyline class="mh" data-i="' + li + '" points="' + pts.join(" ") + '" fill="none" stroke="#e2457a" stroke-width="' + Math.max(26, 40 * k).toFixed(1) + '" stroke-linecap="round" stroke-linejoin="round"/>';
+      perles += g.html;
+    });
+    // Décodeur : une colonne par lettre, son code au-dessus (mêmes perles que le bracelet), la lettre en dessous
+    var n = mot.length, colw = Math.min(74, 548 / n), cols = "";
+    mot.split("").forEach(function (x, li) {
+      var cx = 300 + (li - (n - 1) / 2) * colw, code = (MORSE[x] || "").split(""), larg = 0;
+      code.forEach(function (sy, q) { larg += (sy === "." ? 12 : 26) + (q ? 4 : 0); });
+      var sc = Math.min(1, (colw - 12) / larg), xx = cx - larg * sc / 2, sym = "";
+      code.forEach(function (sy) {
+        var ww = (sy === "." ? 12 : 26) * sc;
+        sym += sy === "." ? '<circle cx="' + (xx + ww / 2).toFixed(1) + '" cy="448" r="' + (6 * sc).toFixed(1) + '" fill="url(#perle)"/>'
+          : '<rect x="' + xx.toFixed(1) + '" y="' + (448 - 5.5 * sc).toFixed(1) + '" width="' + ww.toFixed(1) + '" height="' + (11 * sc).toFixed(1) + '" rx="' + (5.5 * sc).toFixed(1) + '" fill="url(#barre)" stroke="#9da1ad" stroke-width=".6"/>';
+        xx += ww + 4 * sc;
+      });
+      cols += '<g class="mc" data-i="' + li + '"><rect class="fond" x="' + (cx - colw / 2 + 3).toFixed(1) + '" y="418" width="' + (colw - 6).toFixed(1) + '" height="102" rx="16"/>' + sym +
+        '<text x="' + cx.toFixed(1) + '" y="500" text-anchor="middle" font-family="Nunito, Arial" font-weight="800" font-size="' + Math.min(30, colw * .5).toFixed(0) + '" fill="#3b1f2b">' + x + "</text></g>";
+    });
     return '<svg class="morse-svg" viewBox="0 0 600 600" role="img" aria-label="Aperçu du bracelet : ' + esc(mot) + ' en code Morse"><defs>' +
       '<radialGradient id="fondm" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#fff7f9"/><stop offset="1" stop-color="#f6d3dd"/></radialGradient>' +
       '<radialGradient id="perle" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#cfd2da"/><stop offset="1" stop-color="#6f7380"/></radialGradient>' +
@@ -75,9 +100,23 @@
       '<g filter="url(#ombrem)"><path d="M' + P0 + " Q" + P1 + " " + P2 + '" fill="none" stroke="#1d1d22" stroke-width="8" stroke-linecap="round"/>' +
       '<path d="M' + P0 + " Q" + P1 + " " + P2 + '" fill="none" stroke="#4a4a55" stroke-width="2" stroke-dasharray="3 4"/>' +
       '<path d="M40,250 C 20,230 18,200 30,180 M560,250 C 580,230 582,200 570,180" fill="none" stroke="#1d1d22" stroke-width="6" stroke-linecap="round"/>' +
-      '<circle cx="30" cy="178" r="7" fill="url(#perle)"/><circle cx="570" cy="178" r="7" fill="url(#perle)"/>' + html + "</g>" +
-      '<text x="300" y="530" text-anchor="middle" font-family="Nunito, Arial" font-size="19" fill="#3b1f2b">' + legende + "</text>" +
-      '<text x="300" y="565" text-anchor="middle" font-family="Caveat, cursive" font-size="26" fill="#c62f63">• = point   — = trait</text></svg>';
+      '<circle cx="30" cy="178" r="7" fill="url(#perle)"/><circle cx="570" cy="178" r="7" fill="url(#perle)"/>' + halos + perles + "</g>" +
+      '<text x="300" y="398" text-anchor="middle" font-family="Caveat, cursive" font-size="25" fill="#c62f63">1 petit groupe de perles = 1 lettre</text>' + cols +
+      '<text x="300" y="566" text-anchor="middle" font-family="Caveat, cursive" font-size="26" fill="#c62f63">Chaque lettre a son code secret en perles 🤫</text></svg>';
+  }
+
+  var MH = { stop: false, reset: false };
+  /* --- Bracelet Morse : on allume tour à tour chaque groupe de perles et sa lettre (pour comprendre le code) --- */
+  if (type === "morse" && !reduit) {
+    var mi = -1;   // lettre allumée (MH.stop : pendant que la démo écrit le mot)
+    setInterval(function () {
+      var svg = $("svg.morse-svg", scene); if (!svg || !galerieVisible) return;
+      var n = $$(".mc", svg).length; if (!n) return;
+      if (MH.stop) { mi = -1; $$(".mh.on, .mc.on", svg).forEach(function (el) { el.classList.remove("on"); }); return; }
+      if (MH.reset) { MH.reset = false; mi = -1; }
+      mi = (mi + 1) % (n + 2);   // deux temps de pause en fin de mot
+      $$(".mh, .mc", svg).forEach(function (el) { el.classList.toggle("on", +el.getAttribute("data-i") === mi); });
+    }, 850);
   }
 
   /* --- Dessin de l'aperçu selon le produit --- */
@@ -128,10 +167,12 @@
     }
     var mot = Array.from(liste[demo.i % liste.length]); demo.k++;
     demo.txt = mot.slice(0, demo.k).join(""); dessiner(true);
+    if (type === "morse") MH.stop = demo.k < mot.length;
     if (demo.k < mot.length) { demo.t = setTimeout(demoTour, type === "jonc" ? 110 : type === "morse" ? 280 : 210); return; }
-    demo.k = 0; demo.i++; demo.t = setTimeout(demoTour, 2400);
+    if (type === "morse") MH.reset = true;   // le mot est écrit : on allume chaque lettre, de la première à la dernière
+    demo.k = 0; demo.i++; demo.t = setTimeout(demoTour, type === "morse" ? 850 * (mot.length + 1) + 1200 : 2400);
   }
-  function arreterDemo() { if (!demo.on) return; demo.on = false; clearTimeout(demo.t); dessiner(); }
+  function arreterDemo() { if (!demo.on) return; demo.on = false; MH.stop = false; MH.reset = true; clearTimeout(demo.t); dessiner(); }
   function reprendreDemo() {
     if (reduit || demo.on || (texte && texte.value) || photoURL) return;
     demo.on = true; demo.k = 0; demo.t = setTimeout(demoTour, 1500);

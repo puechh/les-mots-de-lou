@@ -101,17 +101,19 @@
       '<path d="M' + P0 + " Q" + P1 + " " + P2 + '" fill="none" stroke="#4a4a55" stroke-width="2" stroke-dasharray="3 4"/>' +
       '<path d="M40,250 C 20,230 18,200 30,180 M560,250 C 580,230 582,200 570,180" fill="none" stroke="#1d1d22" stroke-width="6" stroke-linecap="round"/>' +
       '<circle cx="30" cy="178" r="7" fill="url(#perle)"/><circle cx="570" cy="178" r="7" fill="url(#perle)"/>' + halos + perles + "</g>" +
-      '<text x="300" y="398" text-anchor="middle" font-family="Caveat, cursive" font-size="25" fill="#c62f63">1 groupe de perles = 1 lettre</text>' + cols +
-      '<g font-family="Caveat, cursive" font-size="25" fill="#c62f63"><circle cx="208" cy="560" r="7" fill="url(#perle)"/><text x="222" y="568">= point</text>' +
-      '<rect x="318" y="554" width="28" height="12" rx="6" fill="url(#barre)" stroke="#9da1ad" stroke-width=".6"/><text x="354" y="568">= trait</text></g></svg>';
+      '<text x="300" y="398" text-anchor="middle" font-family="Caveat, cursive" font-size="25" fill="#c62f63">1 petit groupe de perles = 1 lettre</text>' + cols +
+      '<text x="300" y="566" text-anchor="middle" font-family="Caveat, cursive" font-size="26" fill="#c62f63">Chaque lettre a son code secret en perles 🤫</text></svg>';
   }
 
+  var MH = { stop: false, reset: false };
   /* --- Bracelet Morse : on allume tour à tour chaque groupe de perles et sa lettre (pour comprendre le code) --- */
   if (type === "morse" && !reduit) {
-    var mi = -1;
+    var mi = -1;   // lettre allumée (MH.stop : pendant que la démo écrit le mot)
     setInterval(function () {
       var svg = $("svg.morse-svg", scene); if (!svg || !galerieVisible) return;
       var n = $$(".mc", svg).length; if (!n) return;
+      if (MH.stop) { mi = -1; $$(".mh.on, .mc.on", svg).forEach(function (el) { el.classList.remove("on"); }); return; }
+      if (MH.reset) { MH.reset = false; mi = -1; }
       mi = (mi + 1) % (n + 2);   // deux temps de pause en fin de mot
       $$(".mh, .mc", svg).forEach(function (el) { el.classList.toggle("on", +el.getAttribute("data-i") === mi); });
     }, 850);
@@ -165,10 +167,12 @@
     }
     var mot = Array.from(liste[demo.i % liste.length]); demo.k++;
     demo.txt = mot.slice(0, demo.k).join(""); dessiner(true);
+    if (type === "morse") MH.stop = demo.k < mot.length;
     if (demo.k < mot.length) { demo.t = setTimeout(demoTour, type === "jonc" ? 110 : type === "morse" ? 280 : 210); return; }
-    demo.k = 0; demo.i++; demo.t = setTimeout(demoTour, 2400);
+    if (type === "morse") MH.reset = true;   // le mot est écrit : on allume chaque lettre, de la première à la dernière
+    demo.k = 0; demo.i++; demo.t = setTimeout(demoTour, type === "morse" ? 850 * (mot.length + 1) + 1200 : 2400);
   }
-  function arreterDemo() { if (!demo.on) return; demo.on = false; clearTimeout(demo.t); dessiner(); }
+  function arreterDemo() { if (!demo.on) return; demo.on = false; MH.stop = false; MH.reset = true; clearTimeout(demo.t); dessiner(); }
   function reprendreDemo() {
     if (reduit || demo.on || (texte && texte.value) || photoURL) return;
     demo.on = true; demo.k = 0; demo.t = setTimeout(demoTour, 1500);

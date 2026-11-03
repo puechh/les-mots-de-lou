@@ -226,3 +226,10 @@
   dessous ; « 1 groupe de perles = 1 lettre » ; légende point / trait en perles. Animation : chaque groupe de perles
   s'allume en rose sur le bracelet en même temps que sa colonne (0,85 s par lettre, pause en fin de mot).
   Capture : `docs/captures/morse-decodeur.jpg`.
+
+## 2026-11-03 (suite 11) — Bracelet : animation lettre par lettre complète, plus de « point / trait » ; collier photo sans case orthographe
+- Démo de la fiche bracelet synchronisée : le mot s'écrit, puis chaque lettre s'allume de la première à la dernière (cadre +
+  groupe de perles), puis seulement le mot suivant (temps d'arrêt = 0,85 s × (lettres + 1) + 1,2 s).
+- « = point / = trait » jugé incompréhensible (utilisateur) → remplacé par « Chaque lettre a son code secret en perles 🤫 » ;
+  aide du champ et caractéristique reformulées (« perles rondes et longues », « mot secret traduit en perles »).
+- Collier photo : case « J'ai vérifié l'orthographe » retirée (aucun texte). Bulle de Lou du bracelet : « idée de mot secret ».

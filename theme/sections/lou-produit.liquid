@@ -85,7 +85,7 @@
                   <p class="tiny" style="margin:0">Majuscule au début, accents acceptés (é, è, ë…). 10 lettres maximum.</p>
                 {%- elsif type == 'morse' -%}
                   <div class="suggestions" aria-label="Idées de Lou"><button type="button">TOUJOURS</button><button type="button">NOUS</button><button type="button">AMIES</button><button type="button">MAMAN</button><button type="button">COURAGE</button></div>
-                  <p class="tiny" style="margin:0">Lettres A à Z uniquement (sans accent). Votre mot devient des points (•) et des traits (—).</p>
+                  <p class="tiny" style="margin:0">Lettres A à Z, sans accent. Chaque lettre devient un petit groupe de perles rondes et longues : votre code secret 🤫</p>
                 {%- endif -%}
               </div>
             {%- when 'choix' -%}
@@ -114,7 +114,9 @@
         {%- endfor -%}
 
         <div class="recap-gravure" id="recap" hidden>Vous avez écrit : <b id="recap-texte"></b></div>
+        {%- unless type == 'photo' -%}
         <label class="verif" id="verif-l"><input type="checkbox" id="verif" required checked> <span>J'ai vérifié l'orthographe : mon bijou sera fabriqué exactement comme je l'ai écrit.</span></label>
+        {%- endunless -%}
         <button class="btn btn-full" type="submit" id="ajouter"><span class="brille"></span>Ajouter au panier · <span id="prix-btn">{{ v0.price | money }}</span></button>
         <p class="tiny" id="form-erreur" role="alert" style="color:var(--framboise-f);margin:0"></p>
       </div>
