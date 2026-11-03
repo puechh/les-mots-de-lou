@@ -137,3 +137,17 @@ for nom in ("souvenir-mamie", "souvenir-chiot"):
     if nom in os.path.basename(f):
         im = Image.open(f).convert("RGB"); w, h = im.size; c = min(w, h)
         enregistrer(im.crop(((w - c) // 2, (h - c) // 2, (w + c) // 2, (h + c) // 2)), nom + ".webp", 320, 76)
+
+# Accueil v4 (03/11, façon Lily's Treasures) : Lou détourée en 3 poses alignées (contenu/lou/accueil-png/*-aligne.webp,
+# toile 3600×4400, tête au même endroit) + 4 pastilles rondes des bijoux (gros plans nets). Animation : lou.js (#scene-lou).
+for _p in ("coucou", "pointe-gauche", "pointe-droite"):
+    _im = Image.open(os.path.join(ROOT, f"contenu/lou/accueil-png/lou-{_p}-aligne.webp")).convert("RGBA")
+    _im.resize((2400, round(2400 * _im.height / _im.width)), Image.LANCZOS).save(os.path.join(A, f"lou-pose-{_p}.webp"), "WEBP", quality=88, method=6)
+    print(f"lou-pose-{_p}.webp")
+for _n, (_f, _cx, _cy, _t) in {"pastille-jonc": ("contenu/lou/fiches-v3/jonc-1-produit.jpg", .50, .60, .78),
+                               "pastille-collier-prenom": ("contenu/lou/bijoux-v3/01b-gros-plan-collier.jpg", .50, .56, .42),
+                               "pastille-collier-photo": ("contenu/lou/fiches-v3/collier-photo-cou.jpg", .535, .64, .36),
+                               "pastille-morse": ("contenu/lou/fiches-v3/morse-macro.jpg", .50, .55, .85)}.items():
+    _im = Image.open(os.path.join(ROOT, _f)).convert("RGB"); _W, _H = _im.size; _s = _t * _W
+    _x = max(0, min(_W - _s, _cx * _W - _s / 2)); _y = max(0, min(_H - _s, _cy * _H - _s / 2))
+    enregistrer(_im.crop((round(_x), round(_y), round(_x + _s), round(_y + _s))).resize((1000, 1000), Image.LANCZOS), _n + ".webp", 1000, 86)

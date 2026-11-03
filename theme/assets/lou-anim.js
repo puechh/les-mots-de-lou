@@ -13,12 +13,13 @@
   var lignes = $$(".hero h1 .ligne > span");
   if (lignes.length) {
     g.from(lignes, { yPercent: 115, duration: 1.1, stagger: .14, ease: "power4.out", delay: .1, onComplete: function () { $$(".hero .trait").forEach(function (t) { t.classList.add("vu"); }); } });
-    g.from(".hero-photo", { scale: .92, rotate: -2, opacity: 0, duration: 1.1, ease: "power3.out" });
+    g.from(".scene-lou .rond", { scale: .6, opacity: 0, duration: 1, ease: "back.out(1.6)" });
+
     g.from(".hero .lou-dit", { y: 30, scale: .9, opacity: 0, duration: .8, ease: "back.out(1.8)", delay: .35 });
     g.from(".hero .sticker", { scale: 0, rotate: function (i) { return i ? 40 : -40; }, duration: .8, stagger: .15, ease: "back.out(2)", delay: .7 });
     g.from(".atelier", { y: 40, opacity: 0, duration: .9, ease: "power3.out", delay: .45 });
     g.from(".hero-cta .btn", { y: 20, opacity: 0, duration: .6, stagger: .1, ease: "back.out(1.6)", delay: .8 });
-    if (ST) g.to(".hero-photo img", { yPercent: 8, scale: 1.08, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+    if (ST) g.to(".scene-lou .rond", { yPercent: 10, scale: 1.06, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
   }
 
   if (!ST) return;

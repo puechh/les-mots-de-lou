@@ -658,3 +658,43 @@ body.panier-ouvert .lou-assist, body.fav-ouvert .lou-assist { opacity: 0; pointe
 .bientot .bulle-lou { background: #fff; border-radius: 22px; padding: 14px 18px; box-shadow: var(--ombre-douce); font-weight: 600; }
 .bientot form { display: flex; gap: 8px; width: 100%; }
 .bientot input { flex: 1; min-width: 0; border: 2px solid var(--rose); border-radius: 999px; padding: 12px 16px; }
+
+/* ---------- Accueil : scène de Lou détourée (03/11/2026, façon Lily's Treasures) ---------- */
+.scene-lou { position: relative; width: 100%; max-width: 560px; margin: 0 auto; aspect-ratio: 1 / 1.08; isolation: isolate; }
+.scene-lou .rond { position: absolute; left: 7%; right: 7%; top: 9%; bottom: 0; z-index: -1; border-radius: 52% 48% 46% 54% / 56% 52% 48% 44%;
+  background: radial-gradient(circle at 34% 28%, #ffe6ee 0, #ffc6d6 42%, #f49bb8 100%); box-shadow: 0 30px 60px -30px rgba(198, 47, 99, .55);
+  animation: rond-vit 10s ease-in-out infinite; }
+@keyframes rond-vit { 50% { border-radius: 46% 54% 54% 46% / 48% 56% 44% 52%; } }
+.scene-lou .pose { position: absolute; left: 50%; bottom: 0; height: 96%; width: auto; max-width: none; translate: -50% 0; opacity: 0;
+  transition: opacity .28s ease; pointer-events: none; filter: drop-shadow(0 18px 24px rgba(59, 31, 43, .18)); }
+.scene-lou .pose.on { opacity: 1; animation: respire 4.5s ease-in-out infinite; }
+.scene-lou .pose.hop { animation: hop .5s cubic-bezier(.3, 1.6, .5, 1), respire 4.5s ease-in-out .5s infinite; }
+@keyframes respire { 50% { scale: 1.012; } }
+@keyframes hop { 0% { scale: .97; translate: -50% 6px; } 60% { scale: 1.015; translate: -50% -4px; } 100% { scale: 1; translate: -50% 0; } }
+.scene-lou .bijou { position: absolute; width: 25%; z-index: 2; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 6px;
+  transition: transform .45s var(--ressort, cubic-bezier(.3, 1.6, .5, 1)); animation: flotte-b 5s ease-in-out infinite; }
+.scene-lou .b-jonc { left: -1%; top: 7%; --r: -6deg; }
+.scene-lou .b-photo { left: -3%; top: 56%; --r: 5deg; animation-delay: -1.6s; }
+.scene-lou .b-prenom { right: -1%; top: 5%; --r: 6deg; animation-delay: -.8s; }
+.scene-lou .b-morse { right: -3%; top: 54%; --r: -5deg; animation-delay: -2.4s; }
+@keyframes flotte-b { 50% { translate: 0 -7px; } }
+.scene-lou .pose.on:not(.hop) { animation: entre-lou .9s cubic-bezier(.2, .9, .3, 1) both, respire 4.5s ease-in-out .9s infinite; }
+@keyframes entre-lou { from { opacity: 0; translate: -50% 50px; } }
+.scene-lou .bijou > * { animation: entre-bijou .7s cubic-bezier(.3, 1.7, .5, 1) both; animation-delay: var(--d, .5s); }
+.scene-lou .b-jonc { --d: .55s; } .scene-lou .b-prenom { --d: .7s; } .scene-lou .b-photo { --d: .85s; } .scene-lou .b-morse { --d: 1s; }
+@keyframes entre-bijou { from { opacity: 0; scale: .2; } }
+.scene-lou .rondelle { display: block; width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #fff; border: 4px solid #fff; rotate: var(--r);
+  box-shadow: 0 14px 26px -12px rgba(59, 31, 43, .45); transition: box-shadow .4s, rotate .4s; }
+.scene-lou .rondelle img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.scene-lou .tag { font-family: var(--f-main); font-size: clamp(.82rem, 2.6vw, 1.05rem); line-height: 1; white-space: nowrap; color: var(--framboise-f, #a3214f);
+  background: #fff; padding: 5px 10px 6px; border-radius: 999px; box-shadow: 0 8px 16px -10px rgba(59, 31, 43, .5); rotate: calc(var(--r) * -.6); }
+.scene-lou .bijou.vise { transform: scale(1.16); z-index: 3; }
+.scene-lou .bijou.vise .rondelle { rotate: 0deg; box-shadow: 0 0 0 4px var(--framboise, #e2457a), 0 18px 32px -12px rgba(198, 47, 99, .7); }
+.scene-lou .bijou.vise::after { content: "✨"; position: absolute; top: -6%; right: -4%; font-size: 1.3rem; animation: pique .9s ease-out infinite alternate; }
+@keyframes pique { from { scale: .7; opacity: .5; } to { scale: 1.15; opacity: 1; } }
+.scene-lou .eclat { position: absolute; z-index: 1; color: #fff; font-size: 1.4rem; text-shadow: 0 0 10px rgba(255, 255, 255, .9); animation: scintille 3s ease-in-out infinite; pointer-events: none; }
+.scene-lou .e1 { left: 30%; top: 6%; } .scene-lou .e2 { right: 28%; top: 16%; animation-delay: -1s; font-size: 1rem; } .scene-lou .e3 { left: 22%; top: 46%; animation-delay: -2s; font-size: .9rem; }
+@keyframes scintille { 50% { opacity: .2; scale: .6; } }
+.scene-lou .sticker.s2 { right: 4%; top: auto; bottom: 6%; z-index: 3; }
+@media (min-width: 900px) { .scene-lou { max-width: 600px; } .scene-lou .bijou { width: 23%; } }
+@media (prefers-reduced-motion: reduce) { .scene-lou .rond, .scene-lou .pose.on, .scene-lou .bijou, .scene-lou .eclat { animation: none; } }

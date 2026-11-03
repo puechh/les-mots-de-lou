@@ -6,18 +6,18 @@
 <section class="hero">
   <div class="wrap hero-in">
     <div class="hero-visu">
-      <div class="hero-photo">
-        <picture>
-          <source media="(max-width: 899px)" srcset="{{ 'lou-hero-mobile.webp' | asset_url }}" width="3840" height="3072">
-          <img src="{{ 'lou-hero.webp' | asset_url }}" alt="Lou, l'avatar de la boutique, porte un jonc gravé « Tu es ma personne » et un collier prénom « Lou », près du sapin de Noël" width="2458" height="3072" fetchpriority="high">
-        </picture>
-        <img class="gros-plan" id="gp-collier" src="{{ 'gp-collier.webp' | asset_url }}" alt="" aria-hidden="true" width="2600" height="2600" loading="lazy" decoding="async">
-        <img class="gros-plan" id="gp-jonc" src="{{ 'gp-jonc.webp' | asset_url }}" alt="" aria-hidden="true" width="2600" height="2600" loading="lazy" decoding="async">
-        <a class="repere r-collier" data-gp="gp-collier" data-gx="0.508" data-gy="0.567" href="/products/collier-prenom"><b class="fleche" aria-hidden="true"></b><span>mon collier prénom</span></a>
-        <a class="repere r-jonc" data-gp="gp-jonc" data-gx="0.47" data-gy="0.53" href="{{ url_jonc }}"><b class="fleche" aria-hidden="true"></b><span>mon jonc gravé</span></a>
+      <div class="scene-lou" id="scene-lou">
+        <span class="rond" aria-hidden="true"></span>
+        <span class="eclat e1" aria-hidden="true">✦</span><span class="eclat e2" aria-hidden="true">✧</span><span class="eclat e3" aria-hidden="true">✦</span>
+        <img class="pose on" data-pose="coucou" src="{{ 'lou-pose-coucou.webp' | asset_url }}" alt="Lou, l'avatar virtuel de la boutique, fait coucou ; elle porte son collier prénom « Lou » et son jonc gravé" width="2400" height="2933" fetchpriority="high" decoding="async">
+        <img class="pose" data-pose="gauche" src="{{ 'lou-pose-pointe-gauche.webp' | asset_url }}" alt="" aria-hidden="true" width="2400" height="2933" decoding="async">
+        <img class="pose" data-pose="droite" src="{{ 'lou-pose-pointe-droite.webp' | asset_url }}" alt="" aria-hidden="true" width="2400" height="2933" decoding="async">
+        <a class="bijou b-jonc" data-cote="gauche" data-dit="Mon jonc gravé « Tu es ma personne » 💗 Écrivez vos mots, il est gravé rien que pour vous." href="{{ url_jonc }}"><span class="rondelle"><img src="{{ 'pastille-jonc.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le jonc gravé</span></a>
+        <a class="bijou b-photo" data-cote="gauche" data-dit="Mon collier Souvenir 📸 : une photo cachée dans le cœur, visible quand on regarde dans la lentille." href="/products/collier-souvenir-photo"><span class="rondelle"><img src="{{ 'pastille-collier-photo.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le collier photo</span></a>
+        <a class="bijou b-prenom" data-cote="droite" data-dit="Mon collier prénom ✨ Le vôtre s'écrit en direct, en manuscrite, en argenté, doré ou rosé." href="/products/collier-prenom"><span class="rondelle"><img src="{{ 'pastille-collier-prenom.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le collier prénom</span></a>
+        <a class="bijou b-morse" data-cote="droite" data-dit="Mon bracelet Code Secret 🤫 Un mot caché en Morse, que vous seul(e)s savez lire." href="/products/bracelet-code-secret"><span class="rondelle"><img src="{{ 'pastille-morse.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le code secret</span></a>
+        <div class="sticker s2"><span aria-hidden="true">🎁</span> 2e bijou à -50 %</div>
       </div>
-      <div class="sticker s2"><span aria-hidden="true">🎁</span> 2e bijou à -50 %</div>
-      <div class="sticker s1"><span aria-hidden="true">💍</span><span class="hand">Bijoux gravés</span></div>
       <div class="lou-dit">
         <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="58" height="58"></span>
         <div class="bulle-lou"><b class="nom">Lou <small>· l'avatar de la boutique</small></b><p id="lou-intro" data-texte="Coucou, moi c'est Lou ! 👋 Vous voyez mon jonc et mon collier ? Gravés avec mes mots. Écrivez les vôtres : je vous montre le rendu en direct ✨">Coucou, moi c'est Lou ! 👋 Vous voyez mon jonc et mon collier ? Gravés avec mes mots. Écrivez les vôtres : je vous montre le rendu en direct ✨</p></div>

@@ -28,8 +28,8 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
 - Inspirations (Lily's Treasures, Ciao Kombucha, Dentica) : `docs/inspirations.md`.
 - Fiches (décisions utilisateur 03/11) : écriture manuscrite **Allura** ; **première lettre toujours en majuscule** ; bénéfices
   dans « Caractéristiques » en bas de fiche ; case « orthographe vérifiée » **cochée d'office** ; délai **5 à 10 jours au total,
-  fabrication comprise** (jours calendaires, décision 03/11) ; icône « Mon compte » dans l'en-tête ; accueil = Lou qui
-  porte le jonc et le collier (repères animés) ; vignettes produits animées (la personnalisation se « remplit »).
+  fabrication comprise** (jours calendaires, décision 03/11) ; icône « Mon compte » dans l'en-tête ; accueil = Lou détourée qui
+  montre ses bijoux (3 poses + 4 pastilles animées, façon Lily's Treasures, 03/11 soir) ; vignettes produits animées (la personnalisation se « remplit »).
   Machine à mots sous les bijoux (accueil) et sous « Caractéristiques » (jonc, bracelet) ; **Noël : avant le 10 décembre**.
 - **LOU = la photo `contenu/lou/reference-v3/00-source-lou.webp`** (envoyée par l'utilisateur le 03/11 : « c'est elle la future
   Lou ») : 20 ans, brune (châtain foncé), chignon décoiffé avec mèches qui encadrent le visage, yeux noisette, peau hâlée.

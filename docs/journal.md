@@ -318,3 +318,14 @@
   `01c-gros-plan-jonc.jpg`) fondus par-dessus la photo pendant le zoom (`gp-*.webp` 2600 px, data-gx/gy des repères) ; bulle de Lou
   sous la photo. Puis « je demande vraiment une photo en 4K » : photo d'accueil servie en pleine définition (téléphone 3840×3072,
   ordinateur 2458×3072, 273-343 Ko). Testé au banc puis envoyé.
+
+## 2026-11-03 (suite 20) — Nouvel accueil : Lou détourée qui montre ses bijoux (façon Lily's Treasures)
+- Demande : plus de photo en 1re position ; « un PNG de Lou, juste elle », animation ludique mais pro avec les bijoux ; 4K.
+- 3 poses générées (fal Nano Banana Pro 4K, fond gris uni) : coucou, désigne à gauche, désigne à droite (la 1re « droite » était
+  identique à la gauche → refaite) ; détourage `scripts/fal_detourer.py` (BiRefNet v2, cheveux nets) ; alignement sur la tête
+  (`contenu/lou/accueil-png/*-aligne.webp`). Essais de bijoux détourés ratés (fond rose gardé, prénom illisible) → remplacés par
+  4 pastilles rondes recadrées dans les gros plans nets (jonc, collier prénom « Lou », collier photo, Morse).
+- Thème : `#scene-lou` (rond rose qui ondule, étincelles, Lou qui respire, poses qui changent avec un petit rebond, pastilles qui
+  flottent et s'illuminent quand Lou les montre, bulle qui raconte le bijou, survol / toucher = Lou le montre ; pause hors écran ;
+  immobile si « réduire les animations »). Code isolé (une variable `ordre` existait ailleurs dans lou.js). LOU.ecrire annule
+  désormais un texte en cours. Images : poses 2400 px, pastilles 1000 px. Testé au banc (iPhone 13 + ordinateur, 0 erreur) puis envoyé.

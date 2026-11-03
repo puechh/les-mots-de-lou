@@ -141,8 +141,9 @@
   LOU.ecrire = function (el, texte, vitesse, fin) {
     if (!el) return;
     if (reduit) { el.textContent = texte; if (fin) fin(); return; }
-    var i = 0; el.classList.add("curseur"); el.textContent = "";
+    var i = 0, jeton = el._jeton = (el._jeton || 0) + 1; el.classList.add("curseur"); el.textContent = "";
     (function pas() {
+      if (el._jeton !== jeton) return;   // un nouveau texte a pris la place
       el.textContent = texte.slice(0, ++i);
       if (i < texte.length) setTimeout(pas, (vitesse || 24) + (/[.,!?…]/.test(texte[i - 1]) ? 160 : 0));
       else { el.classList.remove("curseur"); if (fin) fin(); }
@@ -521,42 +522,43 @@
       })();
     }
   }
-  /* ---------- Accueil : zoom animé sur les bijoux que porte Lou (collier, puis jonc) ---------- */
-  var heroPh = $(".hero-photo"), reps = heroPh ? $$(".repere", heroPh) : [];
-  if (heroPh && reps.length && !reduit) {
-    var zVu = true, zEtape = 0, zT = null;
-    var zoomSur = function (r) {
-      if (!r) { heroPh.classList.remove("zoom"); $$(".gros-plan", heroPh).forEach(function (g) { g.classList.remove("vu"); }); reps.forEach(function (x) { x.classList.remove("cache", "actif", "sur-gp"); x.style.left = x.style.top = ""; }); return; }
-      reps.forEach(function (x) { x.style.left = x.style.top = ""; });
-      var cs = getComputedStyle(r), W = heroPh.clientWidth || 1, H = heroPh.clientHeight || 1;
-      var fx = parseFloat(cs.left) / W, fy = parseFloat(cs.top) / H, s = matchMedia("(min-width: 900px)").matches ? 2 : 2.1;
-      // le bijou glisse vers le centre (un peu au-dessus, loin de la bulle de Lou), sans faire apparaître les bords de la photo
-      var tx = Math.min(0, Math.max(1 - s, .5 - s * fx)), ty = Math.min(0, Math.max(1 - s, .42 - s * fy));
-      heroPh.style.setProperty("--zs", s); heroPh.style.setProperty("--ztx", (tx * 100) + "%"); heroPh.style.setProperty("--zty", (ty * 100) + "%");
-      r.style.left = ((tx + s * fx) * 100) + "%"; r.style.top = ((ty + s * fy) * 100) + "%";
-      // puis fondu vers le gros plan net de la même scène ; le repère rejoint le bijou sur le gros plan (image carrée en « cover »)
-      var gp = document.getElementById(r.getAttribute("data-gp") || "");
-      if (gp) {
-        var gx = parseFloat(r.getAttribute("data-gx")), gy = parseFloat(r.getAttribute("data-gy"));
-        if (W > H) { var v = H / W; gy = (gy - (1 - v) / 2) / v; } else { var u = W / H; gx = (gx - (1 - u) / 2) / u; }
-        gp.classList.add("vu");
-        setTimeout(function () { if (heroPh.classList.contains("zoom") && r.classList.contains("actif")) { r.style.left = (gx * 100) + "%"; r.style.top = (gy * 100) + "%"; r.classList.add("sur-gp"); } }, 900);
-      }
-      reps.forEach(function (x) { x.classList.toggle("cache", x !== r); x.classList.toggle("actif", x === r); });
-      heroPh.classList.add("zoom");
+  /* ---------- Accueil : Lou détourée montre ses bijoux (3 poses, pastilles qui s'allument, bulle qui parle) ----------
+     Boucle : coucou → elle montre un bijou à gauche → à droite → … ; au survol / toucher d'un bijou, elle le montre aussitôt.
+     Pause quand la scène n'est plus à l'écran ; immobile (coucou) si « réduire les animations ». */
+  (function () {   // bloc isolé : les noms (ordre, montrer…) ne se mélangent pas avec le reste du fichier
+  var scene = $("#scene-lou");
+  if (scene) {
+    var poses = $$(".pose", scene), bijoux = $$(".bijou", scene), bulle = $("#lou-intro"), sT = null, sI = 0, sVu = true, main = false;
+    var pose = function (p) {
+      poses.forEach(function (x) { var on = x.getAttribute("data-pose") === p; if (on && !x.classList.contains("on")) { x.classList.remove("hop"); void x.offsetWidth; x.classList.add("hop"); } x.classList.toggle("on", on); });
     };
-    var zTour = function () {
-      clearTimeout(zT);
-      if (!zVu) { zoomSur(null); return; }
-      var pas = [[reps[0], 3200], [null, 1800], [reps[1], 3200], [null, 4200]][zEtape++ % 4];
-      zoomSur(pas[0]); zT = setTimeout(zTour, pas[1]);
+    var dire = function (t) { if (bulle && t && LOU.ecrire) { bulle.textContent = ""; LOU.ecrire(bulle, t, 16); } };
+    var montrer = function (bj) {
+      bijoux.forEach(function (x) { x.classList.toggle("vise", x === bj); });
+      if (!bj) { pose("coucou"); return; }
+      pose(bj.getAttribute("data-cote")); dire(bj.getAttribute("data-dit"));
     };
-    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
-      var v = es[0].isIntersecting;
-      if (v && !zVu) { zVu = true; zT = setTimeout(zTour, 1500); } else if (!v) { zVu = false; zoomSur(null); clearTimeout(zT); }
-    }, { threshold: .4 }).observe(heroPh);
-    zT = setTimeout(zTour, 3500);
+    var ordre = [$(".b-jonc", scene), $(".b-prenom", scene), $(".b-photo", scene), $(".b-morse", scene)];
+    var tourS = function () {
+      clearTimeout(sT); if (!sVu || main) return;
+      var bj = ordre[sI++ % ordre.length]; montrer(bj);
+      sT = setTimeout(function () { montrer(null); sT = setTimeout(tourS, 1600); }, 4200);
+    };
+    bijoux.forEach(function (bj) {
+      var go = function () { main = true; clearTimeout(sT); montrer(bj); };
+      bj.addEventListener("mouseenter", go); bj.addEventListener("focus", go);
+      bj.addEventListener("touchstart", go, { passive: true });
+      bj.addEventListener("mouseleave", function () { main = false; clearTimeout(sT); sT = setTimeout(function () { montrer(null); sT = setTimeout(tourS, 1600); }, 900); });
+    });
+    if (!reduit) {
+      if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
+        var v = es[0].isIntersecting;
+        if (v && !sVu) { sVu = true; sT = setTimeout(tourS, 1200); } else if (!v) { sVu = false; clearTimeout(sT); }
+      }, { threshold: .35 }).observe(scene);
+      sT = setTimeout(tourS, 6500);   // après la présentation de Lou dans la bulle
+    }
   }
+  })();
 
   // Lou se présente dans la bulle du haut
   var intro = $("#lou-intro");
