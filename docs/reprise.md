@@ -8,6 +8,7 @@
 - L'utilisateur garde le principe de Lou mais pas son physique : femme **20-22 ans, brune, très mignonne**, images
   **extrêmement réalistes**, « Shot on iPhone 18 Pro. » dans **chaque** prompt (voir CLAUDE.md).
 - 3 propositions (gpt-image-2.5-flare, qualité high, ≈ 1 $) : `contenu/lou/propositions-v2/` A ondulée, B chignon, C sourire.
+- **Choix utilisateur : visage B, cheveux longs bouclés détachés** → `B2-boucles-1.png` / `B2-boucles-2.png` (variante finale à choisir).
 - Ensuite : nouvelle planche de référence → remplacer les images de Lou du thème (banc avant envoi) → LoRA fal.ai si accord.
 
 ## ✅ 03/11/2026 — clé fal.ai opérationnelle

@@ -157,3 +157,6 @@ Requêtes gratuites uniquement, clé jamais affichée. Une fausse clé donne 401
   pores… no beauty filter, no studio lighting… girl-next-door, very cute and approachable. » + description propre à chaque version.
 - Résultat : très réaliste (pores, mèches, décor vécu). A paraît un peu plus âgée ; B la plus proche des exemples ; C la plus
   souriante (main à vérifier de près).
+- **Choix utilisateur : exactement la femme de B, mais cheveux longs bouclés.** Retouche de B (2 essais, ≈ 0,60 $) :
+  `B2-boucles-1.png` (boucles souples, raie au milieu) et `B2-boucles-2.png` (boucles serrées, volumineuses). Visage bien conservé.
+  ⚠️ `gpt-image-2.5-flare` refuse le paramètre `input_fidelity` (erreur 400) → utiliser `--fidelite aucune`.

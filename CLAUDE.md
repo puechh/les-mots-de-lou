@@ -34,7 +34,9 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
 - **Nouveau physique de Lou (décision utilisateur 03/11)** : l'ancien visage C ne plaît plus → femme de **20-22 ans, brune,
   vraiment mignonne**, style selfie naturel ; images **extrêmement réalistes**. **Chaque prompt commence par « Shot on iPhone 18 Pro. »**
   Ses photos d'exemple (selfies) = inspiration en mots seulement, jamais envoyées au modèle (vraies personnes possibles).
-  Propositions : `contenu/lou/propositions-v2/` (choix en attente).
+  **Visage retenu : B** (`contenu/lou/propositions-v2/B-chignon.png`) **avec cheveux longs bouclés, détachés** →
+  `B2-boucles-1.png` (boucles souples) ou `B2-boucles-2.png` (boucles serrées), choix final en attente.
+  `gpt-image-2.5-flare` refuse `input_fidelity` → `--fidelite aucune` en retouche (le visage reste bien conservé).
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).
