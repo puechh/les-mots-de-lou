@@ -160,3 +160,10 @@ Requêtes gratuites uniquement, clé jamais affichée. Une fausse clé donne 401
 - **Choix utilisateur : exactement la femme de B, mais cheveux longs bouclés.** Retouche de B (2 essais, ≈ 0,60 $) :
   `B2-boucles-1.png` (boucles souples, raie au milieu) et `B2-boucles-2.png` (boucles serrées, volumineuses). Visage bien conservé.
   ⚠️ `gpt-image-2.5-flare` refuse le paramètre `input_fidelity` (erreur 400) → utiliser `--fidelite aucune`.
+- **Revirement utilisateur : finalement B avec son chignon (« elle était parfaite »)** → c'est la Lou définitive.
+- **Règle permanente : toujours ultra-réaliste, toujours « réalisé avec l'iPhone 18 Pro »** (« Shot on iPhone 18 Pro. » en tête).
+- Planche `contenu/lou/reference-v2/` : 6 retouches de `B-chignon.png` (gpt-image-2.5-flare, high, ≈ 2 $), base commune :
+  « Shot on iPhone 18 Pro. Ultra-realistic, unretouched candid smartphone photo. Keep exactly the same woman as in the reference
+  photo: identical face… same dark chestnut-brown hair in a loose messy bun… » + plan. Tenues couvertes (pulls, cardigan).
+  Résultat : visage très constant sur les 6. Le « profil » est plutôt un trois-quarts arrière (à refaire si un vrai profil est utile).
+

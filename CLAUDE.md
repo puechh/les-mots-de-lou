@@ -31,12 +31,15 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   fabrication comprise** (jours calendaires, décision 03/11) ; icône « Mon compte » dans l'en-tête ; accueil = Lou qui
   porte le jonc et le collier (repères animés) ; vignettes produits animées (la personnalisation se « remplit »).
   Machine à mots sous les bijoux (accueil) et sous « Caractéristiques » (jonc, bracelet) ; **Noël : avant le 10 décembre**.
-- **Nouveau physique de Lou (décision utilisateur 03/11)** : l'ancien visage C ne plaît plus → femme de **20-22 ans, brune,
-  vraiment mignonne**, style selfie naturel ; images **extrêmement réalistes**. **Chaque prompt commence par « Shot on iPhone 18 Pro. »**
+- **LOU = la femme de l'option B, AVEC SON CHIGNON** (décision utilisateur 03/11, « elle était parfaite ») : 21 ans, brune
+  (châtain foncé), chignon décoiffé avec mèches qui encadrent le visage, yeux noisette, taches de rousseur, peau hâlée.
+  Image de départ : `contenu/lou/propositions-v2/B-chignon.png` ; planche : `contenu/lou/reference-v2/` (+ `planche-lou-v2.jpg`).
+  L'ancienne Lou (`contenu/lou/reference/`, visage C) est **abandonnée**. Versions bouclées (`B2-boucles-*`) **refusées**.
+- **RÈGLE OBLIGATOIRE pour toute image ou vidéo de Lou** : **toujours ultra-réaliste** (photo de téléphone non retouchée, pores,
+  mèches, lumière naturelle, pas de filtre ni studio) et **toujours « réalisée avec l'iPhone 18 Pro »** → chaque prompt commence
+  par **« Shot on iPhone 18 Pro. »**. Toujours repartir de `B-chignon.png` (ou d'un plan de `reference-v2/`) en retouche ;
+  `gpt-image-2.5-flare` + `--fidelite aucune` (il refuse `input_fidelity`), qualité high. Tenues sobres (pubs).
   Ses photos d'exemple (selfies) = inspiration en mots seulement, jamais envoyées au modèle (vraies personnes possibles).
-  **Visage retenu : B** (`contenu/lou/propositions-v2/B-chignon.png`) **avec cheveux longs bouclés, détachés** →
-  `B2-boucles-1.png` (boucles souples) ou `B2-boucles-2.png` (boucles serrées), choix final en attente.
-  `gpt-image-2.5-flare` refuse `input_fidelity` → `--fidelite aucune` en retouche (le visage reste bien conservé).
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).
@@ -92,7 +95,7 @@ Depuis Python : `from shopify import graphql` (avec `scripts/` dans le path). Pr
 `scripts/images_ia.py` crée ou retouche des images via l'API d'OpenAI. Clé = « Network secret » de l'environnement cloud (site
 `api.openai.com`, en-tête Authorization, injectée par le proxy) ou `OPENAI_API_KEY`. Jamais dans le chat ni le dépôt.
 Images rangées dans `contenu/images-ia/` avec leur prompt. **Lou doit rester la même d'une image à l'autre** (toujours repartir
-des images de référence validées, `contenu/lou/`). **Ne jamais altérer l'apparence réelle des bijoux** (forme, couleur, taille,
+de `contenu/lou/reference-v2/`, ultra-réaliste, « Shot on iPhone 18 Pro. » en tête du prompt). **Ne jamais altérer l'apparence réelle des bijoux** (forme, couleur, taille,
 gravure) : partir des photos fournisseur pour les bijoux.
 
 ```bash

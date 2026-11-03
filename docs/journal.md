@@ -263,3 +263,5 @@
 - L'utilisateur ne veut plus de l'ancien physique : brune 20-22 ans, très mignonne, ultra-réaliste, « Shot on iPhone 18 Pro. »
   dans chaque prompt. 3 propositions générées (≈ 1 $ OpenAI) → `contenu/lou/propositions-v2/`. Choix en attente.
 - Choix : visage **B** avec **cheveux longs bouclés** → 2 retouches `B2-boucles-1/2.png` (≈ 0,60 $). Variante finale en attente.
+- Revirement : l'utilisateur préfère **B avec le chignon** (définitive). Règle notée : **toujours ultra-réaliste, toujours
+  « Shot on iPhone 18 Pro. »**. Planche de 6 plans `contenu/lou/reference-v2/` (≈ 2 $ OpenAI).
