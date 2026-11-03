@@ -582,14 +582,21 @@
   if (cartesR.length) {
     cartesR.forEach(function (c) { c.addEventListener("click", function () { c.classList.toggle("flip"); c.dataset.touche = "1"; son("pop"); }); });
     if (!reduit) {
-      var ir = 0, visible = false;
-      if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe($("#retourne"));
-      setInterval(function () {
-        if (!visible) return;
-        var c = cartesR[ir % cartesR.length]; ir++;
-        if (c.dataset.touche) return;
-        c.classList.add("flip"); setTimeout(function () { if (!c.dataset.touche) c.classList.remove("flip"); }, 2600);
-      }, 1500);
+      // Une carte à la fois, lentement : on commence par la 2e (le temps de lire la 1re), puis 3e, 4e, 1re…
+      var ordre = [1, 2, 3, 0], ir = 0, visible = false, lance = false;
+      var suivant = function () {
+        if (!visible) { lance = false; return; }
+        if (cartesR.every(function (x) { return x.dataset.touche; })) return;
+        var c = cartesR[ordre[ir % ordre.length] % cartesR.length]; ir++;
+        if (c.dataset.touche) return setTimeout(suivant, 200);
+        c.classList.add("flip");
+        setTimeout(function () { if (!c.dataset.touche) c.classList.remove("flip"); }, 4000);
+        setTimeout(suivant, 4000 + 1800);
+      };
+      if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
+        visible = es[0].isIntersecting;
+        if (visible && !lance) { lance = true; setTimeout(suivant, ir ? 1800 : 3500); }
+      }, { threshold: .5 }).observe($("#retourne"));
     }
   }
 

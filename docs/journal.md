@@ -170,3 +170,9 @@
   défilement jusqu'au bloc de personnalisation + mini-aperçu affiché), avec la finition choisie dans l'atelier et la phrase
   **seulement si la cliente l'a écrite** (jamais le texte de la démo). Lou dit « Voilà vos mots 💗 ».
 - Téléphone : « Je crée mon bijou » et « Lou, aide-moi ✨ » côte à côte (testé 360, 390, 430 px, sans débordement).
+
+## 2026-11-03 (suite 4) — Cartes « Fini les cadeaux sans âme » : plus lentes, soulignées
+- Retournement automatique ralenti : rien pendant 3,5 s (le temps de lire), puis une seule carte à la fois dans l'ordre
+  2e → 3e → 4e → 1re, côté solution affiché 4 s, 1,8 s entre deux cartes ; retournement plus doux (1,1 s). Une carte
+  touchée par la cliente n'est plus retournée toute seule.
+- Le problème n'est plus barré mais **souligné en rose framboise** (lisible).
