@@ -19,6 +19,7 @@
     </nav>
     <div class="header-icons">
       <a class="icon-btn" href="{{ routes.search_url }}" aria-label="Rechercher"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20 20"/></svg></a>
+      <button class="icon-btn" id="fav-btn" type="button" aria-label="Mes coups de cœur"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.6 0 6 3.7 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg><span class="count" id="fav-count" hidden>0</span></button>
       <a class="icon-btn" href="{{ routes.account_url }}" aria-label="Mon compte"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c1.2-4 4.2-6 7.5-6s6.3 2 7.5 6"/></svg></a>
       <button class="icon-btn" id="cart-btn" aria-label="Ouvrir le panier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="count" id="cart-count">{{ cart.item_count }}</span></button>
     </div>
@@ -29,6 +30,7 @@
       <div class="bulle-lou"><b class="nom">Lou <small>· avatar de la boutique</small></b><p>On va où ? Je vous suis 👇</p></div>
     </div>
     {%- for link in menu.links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
+    <a href="#coups-de-coeur" id="fav-menu">💗 Mes coups de cœur</a>
     <a href="{{ routes.account_url }}">👤 Mon compte</a>
   </nav>
 </header>

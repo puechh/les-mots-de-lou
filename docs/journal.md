@@ -208,3 +208,14 @@
   l'assistante Lou, cœur aussi sur la galerie des fiches produits, petit cœur qui s'envole vers l'en-tête.
   Catalogue pour le panneau : `snippets/coups-de-coeur.liquid` (JSON des produits). En-tête : 4 icônes, testé 360-430 px.
 - Les coups de cœur restent propres à chaque navigateur (pas liés au compte client). Capture : `docs/captures/coups-de-coeur.jpg`.
+
+## 2026-11-03 (suite 9) — Accueil : zoom animé sur les bijoux ; site allégé
+- Repères : plus de point posé sur les bijoux (ils les cachaient) → fine flèche blanche qui part de l'étiquette et s'arrête
+  juste avant le bijou. Zoom animé (×2,1 téléphone, ×1,8 ordinateur) : collier « Emma » (3,2 s), retour, jonc gravé
+  (3,2 s), retour… ; l'autre étiquette se cache pendant le zoom ; uniquement quand la photo est à l'écran ; rien si
+  « animations réduites ». Le zoom s'applique au <picture> (la parallaxe GSAP reste sur l'<img>).
+- Allègement (mesure banc, iPhone, premier écran, sans compression) : accueil 1 180 → 669 Ko, fiche jonc 966 → 676 Ko.
+  Images du thème redimensionnées au juste besoin (×3 d'un écran de téléphone) et recompressées (`assets_theme.py`) ;
+  avatar de Lou 31 → 6 Ko ; images des vignettes animées chargées seulement quand la vignette arrive à l'écran ;
+  polices de gravure « Classique » / « Moderne » chargées seulement sur les fiches ; l'image de l'atelier n'est plus
+  prioritaire sur la photo de Lou. Sur Shopify, JS/CSS/HTML sont en plus compressés (≈ -70 %).

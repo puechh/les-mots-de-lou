@@ -1,0 +1,15 @@
+<aside class="drawer drawer-fav" id="fav-drawer" aria-label="Mes coups de cœur" aria-hidden="true">
+  <div class="drawer-head">
+    <h2>Mes coups de cœur <span class="hand">💗</span></h2>
+    <button class="icon-btn" id="fav-close" aria-label="Fermer mes coups de cœur">✕</button>
+  </div>
+  <div class="drawer-lou lou-dit">
+    <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="46" height="46" loading="lazy"></span>
+    <div class="bulle-lou"><b class="nom">Lou</b><p id="fav-lou">Touchez le ♡ sur un bijou : je vous le garde ici.</p></div>
+  </div>
+  <ul class="drawer-items" id="fav-items"></ul>
+  <div class="drawer-foot"><a class="btn btn-full" href="/collections/all">Voir tous les bijoux</a></div>
+</aside>
+<script type="application/json" id="lou-catalogue">
+[{%- for p in collections.all.products limit: 50 -%}{ "handle": {{ p.handle | json }}, "title": {{ p.title | json }}, "url": {{ p.url | json }}, "price": {{ p.price | json }}, "image": {% if p.featured_image %}{{ p.featured_image | image_url: width: 300 | json }}{% else %}""{% endif %} }{% unless forloop.last %},{% endunless %}{%- endfor -%}]
+</script>

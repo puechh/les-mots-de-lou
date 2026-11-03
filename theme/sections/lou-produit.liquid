@@ -4,13 +4,13 @@
 {%- liquid
   case type
     when 'jonc'
-      assign conseil = "Mon conseil : une phrase courte se lit mieux sur un jonc fin. Entre 10 et 20 caractères, c'est parfait 💗 Écrivez : je grave en direct sur la photo."
+      assign conseil = "10 à 20 caractères, c'est parfait 💗"
     when 'prenom'
-      assign conseil = "Mon conseil : les prénoms de 3 à 8 lettres sont les plus jolis. Tapez-le : je l'accroche tout de suite à la chaîne ✨"
+      assign conseil = "Joli ! 3 à 8 lettres, c'est idéal ✨"
     when 'photo'
-      assign conseil = "Mon conseil : une photo nette, lumineuse et bien contrastée, visages au centre. Ajoutez-la : je vous montre l'effet 📸"
+      assign conseil = "Belle photo ! C'est parfait 📸"
     when 'morse'
-      assign conseil = "Mon conseil : un mot court (4 à 6 lettres) donne un bracelet plus harmonieux. Et ça reste votre secret 🤫"
+      assign conseil = "Chut… 4 à 6 lettres, c'est idéal 🤫"
   endcase
 -%}
 <div class="wrap fiche" id="fiche" data-apercu="{{ type }}"
@@ -18,6 +18,7 @@
   data-img-doree="{% if type == 'jonc' %}{{ 'jonc-carre-doree.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-doree.webp' | asset_url }}{% endif %}"
   data-img-rosee="{% if type == 'jonc' %}{{ 'jonc-carre-rosee.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-rosee.webp' | asset_url }}{% endif %}">
   <div class="fiche-galerie">
+    <button class="coeur coeur-fiche" type="button" data-handle="{{ product.handle }}" aria-label="Ajouter {{ product.title | escape }} à mes coups de cœur"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.6 0 6 3.7 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg></button>
     <div class="galerie" id="galerie" tabindex="0" aria-label="Images du bijou (glissez pour voir les photos)">
       <div class="slide vue-apercu" id="vue-apercu" data-i="-1"><span class="etiquette-apercu">✍️ Aperçu en direct · simulation</span><div class="scene" id="scene" aria-live="polite"></div></div>
       {%- for img in product.images -%}
@@ -38,10 +39,6 @@
     <h1>{{ product.title }}</h1>
     {%- if c.accroche %}<p class="hand" style="margin:0">{{ c.accroche }}</p>{% endif -%}
     <div class="fiche-prix"><span class="prix" id="prix">{{ v0.price | money }}</span><span class="etiquette">Prix de lancement</span><span class="duo-prix">🎁 le 2e bijou à -50 %</span></div>
-    <div class="lou-dit">
-      <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="46" height="46" loading="lazy"></span>
-      <div class="bulle-lou"><b class="nom">Lou</b><p>{{ conseil }}</p></div>
-    </div>
 
     <form id="form-produit" action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" novalidate>
       <input type="hidden" name="id" id="variante" value="{{ v0.id }}">
@@ -81,6 +78,7 @@
               <div class="champ">
                 <label for="p-{{ forloop.index }}"><span>{{ num }}. {{ f.cle }}{% if f.requis %} *{% endif %}</span><small class="compteur" data-max="{{ f.max }}">0 / {{ f.max }}</small></label>
                 <input type="text" id="p-{{ forloop.index }}" class="perso-texte{% if f.majuscules %} maj{% endif %}" name="properties[{{ f.cle }}]" maxlength="{{ f.max }}" placeholder="Ex. : {{ f.exemple }}" {% if f.requis %}required{% endif %} autocomplete="off" autocapitalize="{% if f.majuscules %}characters{% else %}sentences{% endif %}" enterkeyhint="done" data-principal="{% if forloop.first %}1{% endif %}">
+                {%- if forloop.first %}<p class="lou-mini" hidden><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="26" height="26" loading="lazy"><span><b>Lou :</b> {{ conseil }}</span></p>{% endif -%}
                 {%- if type == 'jonc' -%}
                   <div class="suggestions" aria-label="Idées de Lou"><button type="button" class="idee" data-idee="1">🎲 Lou, une idée !</button><button type="button">Tu es ma personne</button><button type="button">Sœurs pour toujours</button><button type="button">Merci maman</button><button type="button">Toi, toujours</button><button type="button">Crois en toi</button></div>
                 {%- elsif type == 'prenom' -%}
@@ -109,6 +107,7 @@
                   <span class="tiny" style="margin:0">Nette, lumineuse, visages au centre (JPG, PNG, HEIC)</span>
                   <input type="file" id="p-photo" name="properties[{{ f.cle }}]" accept="image/jpeg,image/png,image/heic,image/webp" required>
                 </label>
+                <p class="lou-mini" hidden><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="26" height="26" loading="lazy"><span><b>Lou :</b> {{ conseil }}</span></p>
               </div>
           {%- endcase -%}
           {%- assign num = num | plus: 1 -%}

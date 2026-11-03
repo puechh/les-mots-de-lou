@@ -81,22 +81,60 @@
   }
 
   /* --- Dessin de l'aperçu selon le produit --- */
-  function dessiner() {
-    var t = texte ? texte.value : "";
+  var etinc = null;
+  function etincelle(p) {
+    if (!p || reduit) return;
+    if (!etinc) { etinc = document.createElement("span"); etinc.className = "etincelle"; etinc.setAttribute("aria-hidden", "true"); scene.appendChild(etinc); }
+    etinc.style.left = p.x + "px"; etinc.style.top = p.y + "px";
+    for (var i = 0; i < 5; i++) {
+      var e = document.createElement("i"); e.style.setProperty("--dx", (Math.random() * 30 - 8) + "px"); e.style.setProperty("--dy", (Math.random() * -26 + 6) + "px");
+      etinc.appendChild(e); setTimeout((function (z) { return function () { z.remove(); }; })(e), 600);
+    }
+  }
+  function dessiner(feu) {
+    feu = feu === true;
+    var reel = texte ? texte.value : "", t = reel || (demo.on ? demo.txt : "");
     var pol = police ? police.value : "Manuscrite";
     if (type === "jonc" && toile) {
-      LOU.graverJonc(toile, photo, t || "Tu es ma personne", { vue: "carre", police: pol, encre: finition === "Argentée" ? "#55494f" : "#5a3f2a", fond: false });
+      var p = LOU.graverJonc(toile, photo, t || "Tu es ma personne", { vue: "carre", police: pol, encre: finition === "Argentée" ? "#55494f" : "#5a3f2a", fond: false });
+      if (feu) etincelle(p);
     } else if (type === "prenom") dessinerPrenom(t || "Emma", pol);
     else if (type === "photo") {
-      if (photoURL) { bullePhoto.style.backgroundImage = 'url("' + photoURL + '")'; bullePhoto.hidden = false; }
+      var src = photoURL || (demo.on ? demo.photo : "");
+      if (src) { bullePhoto.style.backgroundImage = 'url("' + src + '")'; bullePhoto.hidden = false; }
       else bullePhoto.hidden = true;
     } else if (type === "morse") scene.innerHTML = '<div class="svg-centre" style="padding:0">' + dessinerMorse(t) + "</div>";
-    recap(t);
+    recap(reel);
     miniMaj();
   }
   function recap(t) {
     var r = $("#recap"); if (!r || !texte) return;
     r.hidden = !t; $("#recap-texte").textContent = t ? "« " + t + " »" : "";
+  }
+
+  /* --- Démonstration : tant que la cliente n'a rien écrit, l'aperçu se personnalise tout seul (comme les vignettes) --- */
+  var demo = { on: !reduit && !qs.get("texte"), txt: "", photo: "", i: 0, k: 0, t: null };
+  var DEMO = { jonc: ["Tu es ma personne", "Merci maman", "Sœurs pour toujours", "Toi, toujours"], prenom: ["Emma", "Léa", "Chloé", "Inès", "Jade"],
+    morse: ["NOUS", "TOUJOURS", "AMIES", "JETAIME"], photo: (LOU.anim || {}).souvenirs || [] };
+  function demoTour() {
+    clearTimeout(demo.t);
+    if (!demo.on) return;
+    if (!galerieVisible || galerie.scrollLeft > 10) { demo.t = setTimeout(demoTour, 700); return; }
+    var liste = DEMO[type]; if (!liste || !liste.length) return;
+    if (type === "photo") {
+      demo.photo = liste[demo.i++ % liste.length]; dessiner();
+      bullePhoto.classList.remove("pop"); void bullePhoto.offsetWidth; bullePhoto.classList.add("pop");
+      demo.t = setTimeout(demoTour, 2800); return;
+    }
+    var mot = Array.from(liste[demo.i % liste.length]); demo.k++;
+    demo.txt = mot.slice(0, demo.k).join(""); dessiner(true);
+    if (demo.k < mot.length) { demo.t = setTimeout(demoTour, type === "jonc" ? 110 : type === "morse" ? 280 : 210); return; }
+    demo.k = 0; demo.i++; demo.t = setTimeout(demoTour, 2400);
+  }
+  function arreterDemo() { if (!demo.on) return; demo.on = false; clearTimeout(demo.t); dessiner(); }
+  function reprendreDemo() {
+    if (reduit || demo.on || (texte && texte.value) || photoURL) return;
+    demo.on = true; demo.k = 0; demo.t = setTimeout(demoTour, 1500);
   }
 
   /* --- Mini-aperçu flottant (téléphone) : visible pendant qu'on écrit, quand la grande image n'est plus à l'écran --- */
@@ -172,10 +210,13 @@
       else majusculeDebut(inp);
       if (cpt) { cpt.textContent = inp.value.length + " / " + cpt.getAttribute("data-max"); cpt.classList.toggle("trop", inp.value.length >= +cpt.getAttribute("data-max")); }
       inp.classList.remove("erreur");
-      dessiner();
+      if (inp.value) arreterDemo();
+      var lm = inp.parentNode.querySelector(".lou-mini"); if (lm) lm.hidden = !inp.value;   // petit mot de Lou dès qu'on écrit
+      dessiner(true);
     };
     inp.addEventListener("input", maj);
-    inp.addEventListener("focus", function () { if (galerie.scrollLeft > 10) montrer(-1, false); });
+    inp.addEventListener("focus", function () { arreterDemo(); if (galerie.scrollLeft > 10) montrer(-1, false); });
+    inp.addEventListener("blur", function () { setTimeout(reprendreDemo, 200); });
   });
   $$(".suggestions button").forEach(function (b) {
     b.addEventListener("click", function () {
@@ -192,8 +233,10 @@
   if (fichier) fichier.addEventListener("change", function () {
     var f = fichier.files[0]; if (!f) return;
     if (f.size > 20 * 1024 * 1024) { LOU.toast && LOU.toast("Photo trop lourde (20 Mo maximum)"); fichier.value = ""; return; }
+    arreterDemo();
     if (photoURL) URL.revokeObjectURL(photoURL);
     photoURL = URL.createObjectURL(f);
+    var lmp = $(".champ .depot ~ .lou-mini"); if (lmp) lmp.hidden = false;
     var d = $("#depot"); d.classList.add("ok"); d.querySelector("b").textContent = "Photo choisie ✔ (changer)";
     dessiner(); montrer(-1);
     if (bullePhoto) { bullePhoto.classList.remove("pop"); void bullePhoto.offsetWidth; bullePhoto.classList.add("pop"); }
@@ -220,6 +263,7 @@
   ['40px "Allura"', '600 40px "Cormorant Garamond"', '700 40px Montserrat'].forEach(function (f) { if (document.fonts && document.fonts.load) document.fonts.load(f).then(dessiner, function () {}); });
   var att; addEventListener("resize", function () { clearTimeout(att); att = setTimeout(dessiner, 150); });
   dessiner();
+  if (demo.on) demo.t = setTimeout(demoTour, 900);
 
   /* --- Livraison estimée --- */
   var es = $("#estim"); if (es && LOU.estimation) es.textContent = "🚚 Commandé aujourd'hui, reçu " + LOU.estimation() + " (estimation)";

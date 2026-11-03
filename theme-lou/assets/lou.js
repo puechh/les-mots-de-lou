@@ -521,6 +521,31 @@
       })();
     }
   }
+  /* ---------- Accueil : zoom animé sur les bijoux que porte Lou (collier, puis jonc) ---------- */
+  var heroPh = $(".hero-photo"), reps = heroPh ? $$(".repere", heroPh) : [];
+  if (heroPh && reps.length && !reduit) {
+    var zVu = true, zEtape = 0, zT = null;
+    var zoomSur = function (r) {
+      if (!r) { heroPh.classList.remove("zoom"); reps.forEach(function (x) { x.classList.remove("cache", "actif"); }); return; }
+      var cs = getComputedStyle(r);
+      heroPh.style.setProperty("--zo", cs.left + " " + cs.top);
+      heroPh.style.setProperty("--zs", matchMedia("(min-width: 900px)").matches ? 1.8 : 2.1);
+      reps.forEach(function (x) { x.classList.toggle("cache", x !== r); x.classList.toggle("actif", x === r); });
+      heroPh.classList.add("zoom");
+    };
+    var zTour = function () {
+      clearTimeout(zT);
+      if (!zVu) { zoomSur(null); return; }
+      var pas = [[reps[0], 3200], [null, 1800], [reps[1], 3200], [null, 4200]][zEtape++ % 4];
+      zoomSur(pas[0]); zT = setTimeout(zTour, pas[1]);
+    };
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
+      var v = es[0].isIntersecting;
+      if (v && !zVu) { zVu = true; zT = setTimeout(zTour, 1500); } else if (!v) { zVu = false; zoomSur(null); clearTimeout(zT); }
+    }, { threshold: .4 }).observe(heroPh);
+    zT = setTimeout(zTour, 3500);
+  }
+
   // Lou se présente dans la bulle du haut
   var intro = $("#lou-intro");
   if (intro && !reduit) { var txt = intro.getAttribute("data-texte"); intro.textContent = ""; setTimeout(function () { LOU.ecrire(intro, txt, 22); }, 450); }
@@ -538,7 +563,7 @@
     var pause = function (f, d) { clearTimeout(t); t = setTimeout(function () { if (vu) f(); else enCours = false; }, d); };
     var pret = function () { calqueA.classList.add("on"); };
     if (type === "jonc" || type === "prenom") {
-      img = new Image(); img.alt = ""; img.decoding = "async"; img.src = type === "jonc" ? ANIM.jonc : ANIM.collier;
+      img = new Image(); img.alt = ""; img.decoding = "async"; img.dataset.src = type === "jonc" ? ANIM.jonc : ANIM.collier;   // chargée à l'arrivée à l'écran
       cv = document.createElement("canvas"); calqueA.appendChild(img); calqueA.appendChild(cv);
       lignes = type === "jonc" ? ["Tu es ma personne", "Merci maman", "Sœurs pour toujours", "Toi, toujours", "Crois en toi"] : ["Emma", "Léa", "Chloé", "Inès", "Jade", "Louise"];
     } else if (type === "photo") {
@@ -582,6 +607,7 @@
     };
     if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
       vu = es[0].isIntersecting;
+      if (vu && img && !img.getAttribute("src")) img.src = img.dataset.src;
       if (vu && !enCours) pause(tour, 350);
     }, { threshold: .35 }).observe(box);
     addEventListener("resize", function () { if (cv && cv.width) { var l = Array.from(lignes[(i ? i - 1 : 0) % lignes.length]); if (type !== "photo" && type !== "morse") dessine(l.join("")); } });

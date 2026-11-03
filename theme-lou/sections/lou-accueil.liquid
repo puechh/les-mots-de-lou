@@ -8,11 +8,11 @@
     <div class="hero-visu">
       <div class="hero-photo">
         <picture>
-          <source media="(max-width: 899px)" srcset="{{ 'lou-hero-mobile.webp' | asset_url }}" width="1200" height="825">
-          <img src="{{ 'lou-hero.webp' | asset_url }}" alt="Lou, l'avatar de la boutique, porte un jonc gravé « Tu es ma personne » et un collier prénom « Emma »" width="1200" height="1500" fetchpriority="high">
+          <source media="(max-width: 899px)" srcset="{{ 'lou-hero-mobile.webp' | asset_url }}" width="1400" height="1120">
+          <img src="{{ 'lou-hero.webp' | asset_url }}" alt="Lou, l'avatar de la boutique, porte un jonc gravé « Tu es ma personne » et un collier prénom « Emma »" width="1400" height="1750" fetchpriority="high">
         </picture>
-        <a class="repere r-collier" href="/products/collier-prenom"><i aria-hidden="true"></i><span>mon collier prénom</span></a>
-        <a class="repere r-jonc" href="{{ url_jonc }}"><i aria-hidden="true"></i><span>mon jonc gravé</span></a>
+        <a class="repere r-collier" href="/products/collier-prenom"><b class="fleche" aria-hidden="true"></b><span>mon collier prénom</span></a>
+        <a class="repere r-jonc" href="{{ url_jonc }}"><b class="fleche" aria-hidden="true"></b><span>mon jonc gravé</span></a>
       </div>
       <div class="sticker s2"><span aria-hidden="true">🎁</span> 2e bijou à -50 %</div>
       <div class="sticker s1"><span aria-hidden="true">💍</span><span class="hand">Bijoux gravés</span></div>
@@ -38,7 +38,7 @@
           <a class="btn btn-small" id="atelier-lien" data-base="{{ url_jonc }}" href="{{ url_jonc }}#personnaliser">Graver ✨</a>
         </div>
         <div class="atelier-photo" id="atelier-apercu" data-base="{{ 'jonc-vierge.webp' | asset_url }}" data-doree="{{ 'jonc-vierge-doree.webp' | asset_url }}" data-rosee="{{ 'jonc-vierge-rosee.webp' | asset_url }}">
-          <img src="{{ 'jonc-vierge.webp' | asset_url }}" alt="Le Jonc « Mes Mots » avec votre texte gravé" width="1380" height="690" fetchpriority="high">
+          <img src="{{ 'jonc-vierge.webp' | asset_url }}" alt="Le Jonc « Mes Mots » avec votre texte gravé" width="1080" height="540" decoding="async">
           <canvas id="atelier-gravure" aria-hidden="true"></canvas>
           <span class="etincelle" id="etincelle" aria-hidden="true"></span>
         </div>
