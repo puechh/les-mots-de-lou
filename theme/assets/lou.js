@@ -528,7 +528,7 @@
   (function () {   // bloc isolé : les noms (ordre, montrer…) ne se mélangent pas avec le reste du fichier
   var scene = $("#scene-lou");
   if (scene) {
-    var poses = $$(".pose", scene), bijoux = $$(".bijou", scene), bulle = $("#lou-intro"), sT = null, sI = 0, sVu = true, main = false;
+    var poses = $$(".pose", scene), bijoux = $$(".bijou", scene), bulle = $("#lou-intro"), sT = null, sI = 0, sVu = true;
     var pose = function (p) {
       poses.forEach(function (x) { var on = x.getAttribute("data-pose") === p; if (on && !x.classList.contains("on")) { x.classList.remove("hop"); void x.offsetWidth; x.classList.add("hop"); } x.classList.toggle("on", on); });
     };
@@ -540,15 +540,16 @@
     };
     var ordre = [$(".b-jonc", scene), $(".b-prenom", scene), $(".b-photo", scene), $(".b-morse", scene)];
     var tourS = function () {
-      clearTimeout(sT); if (!sVu || main) return;
+      clearTimeout(sT); if (!sVu) return;
       montrer(ordre[sI++ % ordre.length]);
       sT = setTimeout(tourS, 4600);   // bijou suivant directement (pas de coucou entre deux bijoux)
     };
     bijoux.forEach(function (bj) {
-      var go = function () { main = true; clearTimeout(sT); montrer(bj); };
+      // survol ou toucher : Lou montre ce bijou, puis la tournée reprend toute seule au suivant (sur téléphone, le doigt
+      // ne « quitte » jamais la pastille : on ne doit jamais attendre ce signal, sinon l'animation reste figée)
+      var go = function () { clearTimeout(sT); montrer(bj); sI = ordre.indexOf(bj) + 1; if (sVu) sT = setTimeout(tourS, 5000); };
       bj.addEventListener("mouseenter", go); bj.addEventListener("focus", go);
       bj.addEventListener("touchstart", go, { passive: true });
-      bj.addEventListener("mouseleave", function () { main = false; clearTimeout(sT); sI = ordre.indexOf(bj) + 1; sT = setTimeout(tourS, 2600); });
     });
     if (!reduit) {
       if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
@@ -757,17 +758,23 @@
       zone.innerHTML = '<div class="test-q"><h3>' + esc(q.q) + '</h3><div class="test-choix">' + q.c.map(function (c, i) {
         return '<button class="choix" data-i="' + i + '"><span class="emo" aria-hidden="true">' + c[1] + "</span>" + esc(c[2]) + (c[3] ? "<small>" + esc(c[3]) + "</small>" : "") + "</button>";
       }).join("") + "</div>" + (etape ? '<button class="test-retour" type="button">← Question précédente</button>' : "") + "</div>";
+      var repondu = false;   // un double toucher (fréquent sur iPhone) ne compte qu'une fois, sinon une question est sautée
       $$(".choix", zone).forEach(function (b) {
         b.addEventListener("click", function () {
+          if (repondu) return; repondu = true;
           var c = q.c[+b.getAttribute("data-i")]; rep[q.k] = c[0]; b.classList.add("is-on"); son("pop");
           if (bulle && REACT[c[0]]) LOU.ecrire(bulle, REACT[c[0]], 14);
           setTimeout(function () { etape++; poser(); }, 520);
         });
       });
-      var r = $(".test-retour", zone); if (r) r.addEventListener("click", function () { etape--; poser(); });
+      var r = $(".test-retour", zone); if (r) r.addEventListener("click", function () { if (repondu) return; repondu = true; etape--; poser(); });
     };
     var resultat = function () {
-      var h = rep.quoi, p = PRODUITS[h] || {}, fin = rep.style || "Argentée";
+      // Sécurité : s'il manque une réponse ou les données d'un produit, on propose quand même un vrai bijou (jamais une case vide)
+      var h = rep.quoi || (rep.qui === "amour" || rep.qui === "mamie" ? "collier-souvenir-photo" : "jonc-mes-mots"), fin = rep.style || "Argentée";
+      var SECOURS = { "jonc-mes-mots": { title: "Le Jonc « Mes Mots »", price: "29,90 €" }, "collier-prenom": { title: "Le Collier Prénom", price: "29,90 €" },
+        "collier-souvenir-photo": { title: "Le Collier Souvenir (photo cachée)", price: "34,90 €" }, "bracelet-code-secret": { title: "Le Bracelet Code Secret", price: "24,90 €" } };
+      var p = PRODUITS[h] && PRODUITS[h].title ? PRODUITS[h] : (SECOURS[h] || SECOURS["jonc-mes-mots"]);
       var liste = (PAR_QUAND[rep.quand] || []).concat(PAR_QUI[rep.qui] || PHRASES.amitie).filter(function (x, i, a) { return a.indexOf(x) === i && x.length <= 20; }).slice(0, 3);
       if (h === "bracelet-code-secret") liste = [MORSE[rep.qui] || "TOUJOURS", "TOUJOURS", "NOUS"].filter(function (x, i, a) { return a.indexOf(x) === i; });
       var url = (p.url || root + "products/" + h) + "?finition=" + encodeURIComponent(fin);

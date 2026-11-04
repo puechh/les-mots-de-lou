@@ -14,23 +14,23 @@
         <img class="pose" data-pose="bas-gauche" src="{{ 'lou-pose-bas-gauche.webp' | asset_url }}" alt="" aria-hidden="true" width="2400" height="2933" decoding="async">
         <img class="pose" data-pose="haut-droite" src="{{ 'lou-pose-haut-droite.webp' | asset_url }}" alt="" aria-hidden="true" width="2400" height="2933" decoding="async">
         <img class="pose" data-pose="bas-droite" src="{{ 'lou-pose-bas-droite.webp' | asset_url }}" alt="" aria-hidden="true" width="2400" height="2933" decoding="async">
-        <a class="bijou b-jonc" data-cote="gauche" data-dit="Mon jonc gravé « Tu es ma personne » 💗 Écrivez vos mots, il est gravé rien que pour vous." href="{{ url_jonc }}"><span class="rondelle"><img src="{{ 'pastille-jonc.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le jonc gravé</span></a>
-        <a class="bijou b-photo" data-cote="bas-gauche" data-dit="Mon collier Souvenir 📸 : une photo cachée dans le cœur, visible quand on regarde dans la lentille." href="/products/collier-souvenir-photo"><span class="rondelle"><img src="{{ 'pastille-collier-photo.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le collier photo</span></a>
-        <a class="bijou b-prenom" data-cote="haut-droite" data-dit="Mon collier prénom ✨ Le vôtre s'écrit en direct, en manuscrite, en argenté, doré ou rosé." href="/products/collier-prenom"><span class="rondelle"><img src="{{ 'pastille-collier-prenom.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le collier prénom</span></a>
-        <a class="bijou b-morse" data-cote="bas-droite" data-dit="Mon bracelet Code Secret 🤫 Un mot caché en Morse, que vous seul(e)s savez lire." href="/products/bracelet-code-secret"><span class="rondelle"><img src="{{ 'pastille-morse.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le code secret</span></a>
+        <a class="bijou b-jonc" data-cote="gauche" data-dit="Le jonc, gravé avec vos mots 💗" href="{{ url_jonc }}"><span class="rondelle"><img src="{{ 'pastille-jonc.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le jonc gravé</span></a>
+        <a class="bijou b-photo" data-cote="bas-gauche" data-dit="Le collier photo : votre photo cachée dans le cœur 📸" href="/products/collier-souvenir-photo"><span class="rondelle"><img src="{{ 'pastille-collier-photo.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le collier photo</span></a>
+        <a class="bijou b-prenom" data-cote="haut-droite" data-dit="Le collier prénom, en écriture manuscrite ✨" href="/products/collier-prenom"><span class="rondelle"><img src="{{ 'pastille-collier-prenom.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le collier prénom</span></a>
+        <a class="bijou b-morse" data-cote="bas-droite" data-dit="Le bracelet Code Secret : un mot caché en Morse 🤫" href="/products/bracelet-code-secret"><span class="rondelle"><img src="{{ 'pastille-morse.webp' | asset_url }}" alt="" width="1000" height="1000" decoding="async"></span><span class="tag">le code secret</span></a>
         <div class="sticker s2"><span aria-hidden="true">🎁</span> 2e bijou à -50 %</div>
       </div>
       <div class="lou-dit">
         <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="58" height="58"></span>
-        <div class="bulle-lou"><b class="nom">Lou <small>· l'avatar de la boutique</small></b><p id="lou-intro" data-texte="Coucou, moi c'est Lou ! 👋 Vous voyez mon jonc et mon collier ? Gravés avec mes mots. Écrivez les vôtres : je vous montre le rendu en direct ✨">Coucou, moi c'est Lou ! 👋 Vous voyez mon jonc et mon collier ? Gravés avec mes mots. Écrivez les vôtres : je vous montre le rendu en direct ✨</p></div>
+        <div class="bulle-lou"><b class="nom">Lou <small>· l'avatar de la boutique</small></b><p id="lou-intro" data-texte="Coucou, moi c'est Lou ! 👋 Voici mes bijoux préférés.">Coucou, moi c'est Lou ! 👋 Voici mes bijoux préférés.</p></div>
       </div>
     </div>
     <div class="hero-txt">
-      <span class="eyebrow">💍 Bijoux personnalisés<span class="pas-mobile"> · gravés avec vos mots</span></span>
+      <span class="eyebrow">💍 Bijoux personnalisés</span>
       <h1><span class="ligne"><span>Vos mots,</span></span><span class="ligne"><span><em><span class="t">gravés pour toujours.</span>{{ trait }}</em></span></span></h1>
       <div class="atelier" id="atelier">
         <div class="atelier-haut">
-          <label for="atelier-texte">✍️ Écrivez, je grave en direct :</label>
+          <label for="atelier-texte">✍️ Essayez vos mots :</label>
           <div class="pastilles" role="radiogroup" aria-label="Finition du jonc">
             <button type="button" class="p-argentee is-on" data-fin="" role="radio" aria-checked="true" aria-label="Argentée"></button>
             <button type="button" class="p-doree" data-fin="-doree" role="radio" aria-checked="false" aria-label="Dorée"></button>
@@ -46,7 +46,7 @@
           <canvas id="atelier-gravure" aria-hidden="true"></canvas>
           <span class="etincelle" id="etincelle" aria-hidden="true"></span>
         </div>
-        <p class="atelier-note">Simulation de gravure sur le Jonc « Mes Mots » (20 caractères max.).</p>
+        <p class="atelier-note">Aperçu indicatif · 20 caractères max.</p>
       </div>
       <div class="hero-cta">
         <a class="btn" id="atelier-cta" href="{{ url_jonc }}#personnaliser"><span class="brille"></span>Je crée mon bijou</a>
@@ -64,12 +64,9 @@
 <section class="section" id="bijoux">
   <div class="wrap">
     <div class="head rv">
-      <span class="hand">Mes coups de cœur</span>
-      <h2>Choisissez le bijou, <em><span class="t">écrivez vos mots</span>{{ trait }}</em></h2>
-      <p>Mes 4 bijoux préférés (je les porterais tous… si j'avais de vrais poignets 😄). Acier inoxydable qui ne noircit pas, finitions argentée, dorée ou rosée.</p>
+      <h2>Choisissez <em><span class="t">votre bijou</span>{{ trait }}</em></h2>
     </div>
     <div class="grille" id="grille-accueil" style="position:relative">
-      <span class="note-lou" style="left:2%;top:-38px" aria-hidden="true">mon préféré !<svg viewBox="0 0 40 30"><path d="M4 2 C 10 18, 20 24, 34 26 M28 20 L34 26 L26 29"/></svg></span>
       {%- for p in collections.all.products limit: 8 -%}
         {% render 'carte-produit', p: p %}
       {%- endfor -%}
@@ -81,28 +78,11 @@
 <section class="section band" id="machine-a-mots">
   <div class="wrap machine">
     <div class="rv">
-      <span class="hand">En panne d'inspiration ?</span>
+      <span class="hand">Pas d'idée ?</span>
       <h2>Ma machine <em><span class="t">à mots</span>{{ trait }}</em></h2>
-      <p class="small" style="margin-top:12px">Choisissez un thème, tirez la manette… et gravez la phrase qui vous fait sourire. (Promis, je les ai toutes testées sur mes copines virtuelles.)</p>
+      <p class="small" style="margin-top:12px">Tirez la manette, gravez la phrase qui vous plaît.</p>
     </div>
     {% render 'machine-mots', produit: url_jonc, mode: 'lien' %}
-  </div>
-</section>
-
-{%- comment -%} 3. Problème → solution (cartes qui se retournent toutes seules) {%- endcomment -%}
-<section class="section">
-  <div class="wrap">
-    <div class="head rv">
-      <span class="hand">On se reconnaît un peu, non ?</span>
-      <h2>Fini les cadeaux <em><span class="t">sans âme</span>{{ trait }}</em></h2>
-      <p>Touchez une carte pour la retourner : je vous montre ma solution 👇</p>
-    </div>
-    <div class="retourne" id="retourne">
-      <button class="carte-r rv" type="button"><span class="carte-r-in"><span class="face avant"><span class="emo">🕯️</span><b>Encore une bougie parfumée…</b><small>le cadeau qu'on oublie le lendemain</small><span class="tap" aria-hidden="true">👆 Touchez-moi</span></span><span class="face arriere"><span class="retour" aria-hidden="true">↻</span><span class="emo">💬</span><b>Un bijou avec SES mots</b><span class="hand">qu'elle gardera toujours</span></span></span></button>
-      <button class="carte-r rv" type="button" data-cible="#machine-a-mots"><span class="carte-r-in"><span class="face avant"><span class="emo">🤯</span><b>«&nbsp;Je ne sais pas quoi écrire&nbsp;»</b><small>la page blanche, le classique</small><span class="tap" aria-hidden="true">👆 Touchez-moi</span></span><span class="face arriere"><span class="retour" aria-hidden="true">↻</span><span class="emo">🎰</span><b>Ma machine à mots</b><span class="hand">une phrase en 1 clic</span><span class="aller">Je l'essaie ↑</span></span></span></button>
-      <button class="carte-r rv" type="button"><span class="carte-r-in"><span class="face avant"><span class="emo">😬</span><b>Peur que ça fasse «&nbsp;bijou cheap&nbsp;»</b><small>qui noircit au bout d'un mois</small><span class="tap" aria-hidden="true">👆 Touchez-moi</span></span><span class="face arriere"><span class="retour" aria-hidden="true">↻</span><span class="emo">✨</span><b>Acier inoxydable</b><span class="hand">ne noircit pas</span></span></span></button>
-      <button class="carte-r rv" type="button"><span class="carte-r-in"><span class="face avant"><span class="emo">🙈</span><b>Commander sans savoir le rendu</b><small>et croiser les doigts</small><span class="tap" aria-hidden="true">👆 Touchez-moi</span></span><span class="face arriere"><span class="retour" aria-hidden="true">↻</span><span class="emo">👀</span><b>Aperçu en direct</b><span class="hand">avant de commander</span></span></span></button>
-    </div>
   </div>
 </section>
 
@@ -110,9 +90,8 @@
 <section class="section band" id="le-test">
   <div class="wrap">
     <div class="head rv">
-      <span class="hand">30 secondes, 4 questions</span>
-      <h2>Mon test <em><span class="t">des mots</span>{{ trait }}</em></h2>
-      <p>Vous ne savez pas quoi offrir, ni quoi écrire ? Répondez-moi : je trouve le bijou… et les mots.</p>
+      <h2>Je vous aide <em><span class="t">à choisir</span>{{ trait }}</em></h2>
+      <p>4 questions, 30 secondes.</p>
     </div>
     {% render 'test-mots' %}
   </div>
@@ -121,13 +100,13 @@
 {%- comment -%} 6. Comment ça marche {%- endcomment -%}
 <section class="section">
   <div class="wrap">
-    <div class="head rv"><span class="hand">Je vous explique</span><h2>Comment ça <em><span class="t">marche</span>{{ trait }}</em> ?</h2></div>
+    <div class="head rv"><h2>Comment ça <em><span class="t">marche</span>{{ trait }}</em> ?</h2></div>
     <div class="etapes">
-      <div class="etape rv" data-n="1"><span class="emo" aria-hidden="true">✍️</span><h3>Vous écrivez</h3><p>Une phrase, un prénom, une photo ou un mot secret. Je vous montre le rendu en direct.</p><span class="hand">facile !</span></div>
-      <div class="etape rv" data-n="2"><span class="emo" aria-hidden="true">✨</span><h3>L'atelier grave</h3><p>Votre bijou est fabriqué rien que pour vous, avec vos mots.</p><span class="hand">avec soin</span></div>
-      <div class="etape rv" data-n="3"><span class="emo" aria-hidden="true">🥹</span><h3>Elle craque</h3><p>Reçu chez vous en {{ settings.liv_min | default: 5 }} à {{ settings.liv_max | default: 10 }} jours (fabrication comprise), avec suivi{% if settings.ecrin_inclus %}, dans son écrin cadeau{% endif %}. Les larmes de joie ne sont pas incluses, mais fréquentes.</p><span class="hand">mission réussie</span></div>
+      <div class="etape rv" data-n="1"><span class="emo" aria-hidden="true">✍️</span><h3>Vous écrivez</h3><p>Phrase, prénom, photo ou mot secret.</p></div>
+      <div class="etape rv" data-n="2"><span class="emo" aria-hidden="true">✨</span><h3>L'atelier grave</h3><p>Fabriqué rien que pour vous.</p></div>
+      <div class="etape rv" data-n="3"><span class="emo" aria-hidden="true">🎁</span><h3>Vous recevez</h3><p>En {{ settings.liv_min | default: 5 }} à {{ settings.liv_max | default: 10 }} jours, avec suivi.</p></div>
     </div>
-    <p class="glisser">← glissez pour voir les étapes →</p>
+    <p class="glisser">← glissez →</p>
   </div>
 </section>
 
@@ -140,14 +119,11 @@
     </figure>
     <div class="rv">
       <span class="hand">Enchantée !</span>
-      <h2>Celle qui collectionne <em><span class="t">les mots</span>{{ trait }}</em> qu'on n'ose pas dire</h2>
+      <h2>Les mots qu'on n'ose pas dire, <em><span class="t">on les grave</span>{{ trait }}</em></h2>
       <div class="lou-note" style="margin-top:18px">
-        <p>Je crois qu'un « je t'aime », un « merci » ou un « je suis fière de toi » valent plus que tous les cadeaux du monde.</p>
-        <p>Alors on les grave. Pour qu'ils restent, même quand on oublie de les dire.</p>
-        <p>— Lou 💗</p>
+        <p>Un « merci », un « je t'aime », un prénom… pour qu'ils restent. — Lou 💗</p>
       </div>
-      <div class="lou-infos"><span>🤖 Avatar virtuel</span><span>💌 Spécialiste des mots doux</span><span>🎁 Je vous aide à choisir</span></div>
-      <p class="mention-virtuelle">🤖 <b>Transparence :</b> Lou est l'avatar de la boutique, un personnage virtuel dont l'image est créée avec l'intelligence artificielle. Elle ne fabrique pas les bijoux ; derrière elle, une vraie équipe vous répond. <a href="/pages/qui-est-lou">En savoir plus</a></p>
+      <p class="mention-virtuelle">🤖 Lou est un personnage virtuel créé avec l'IA. Une vraie équipe vous répond. <a href="/pages/qui-est-lou">En savoir plus</a></p>
     </div>
   </div>
 </section>
@@ -157,9 +133,8 @@
   <div class="wrap">
     <div class="noel rv" id="noel" data-limite="{{ settings.noel_iso | default: '2026-12-10' }}">
       <div class="neige" aria-hidden="true"></div>
-      <span class="hand" style="color:var(--rose)">Psst… je vous préviens</span>
       <h2>Pour l'avoir sous <em>le sapin</em></h2>
-      <p>Commandez avant le <b>{{ settings.noel_limite | default: '10 décembre' }}</b> : votre bijou a le temps d'être gravé et livré.</p>
+      <p>Commandez avant le <b>{{ settings.noel_limite | default: '10 décembre' }}</b>.</p>
       <div class="compte" aria-live="off"><div><b data-u="j">–</b><small>jours</small></div><div><b data-u="h">–</b><small>heures</small></div><div><b data-u="m">–</b><small>min</small></div><div><b data-u="s">–</b><small>sec</small></div></div>
       <a class="btn" href="/collections/all"><span class="brille"></span>Je choisis maintenant 🎄</a>
     </div>
@@ -181,8 +156,9 @@
 {%- comment -%} 10. FAQ en conversation {%- endcomment -%}
 <section class="section">
   <div class="wrap">
-    <div class="head rv"><span class="hand">Vous me demandez souvent…</span><h2>Vos questions, <em><span class="t">mes réponses</span>{{ trait }}</em></h2><p>Touchez une question, je vous réponds.</p></div>
-    {% render 'faq' %}
+    <div class="head rv"><h2>Vos <em><span class="t">questions</span>{{ trait }}</em></h2></div>
+    {% render 'faq', court: true %}
+    <p style="text-align:center;margin-top:18px"><a class="btn ghost btn-small" href="/pages/faq">Toutes les questions</a></p>
   </div>
 </section>
 

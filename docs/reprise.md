@@ -7,6 +7,8 @@
 ## 🖼️ 03/11/2026 — SITE REMPLI AVEC LA NOUVELLE LOU (carte blanche utilisateur)
 - **Accueil** : `lou-hero*.webp` = `contenu/lou/bijoux-v3/01-accueil-sapin.jpg` (recadrages dans `scripts/assets_theme.py`),
   repères `.r-collier` / `.r-jonc` déplacés (lou.css) ; portrait et avatar des bulles = `reference-v3/01-face.jpg`. Envoyé.
+- **04/11 nuit** : site allégé (« l'essentiel, pas de pavés », décision utilisateur) et bug du quiz corrigé (double toucher).
+  Règle : textes courts partout, 1 ligne sous un titre, pas de sections décoratives en plus. Détail : journal du 04/11.
 - **Accueil v4 (03/11 soir)** : Lou détourée (3 poses) qui montre 4 pastilles de bijoux (`#scene-lou`, lou.js/lou.css,
   sources `contenu/lou/accueil-png/`). La photo au sapin + zoom (gp-*.webp) n'est plus affichée (fichiers gardés).
 - **Accueil** : photo en pleine définition (demande utilisateur « vraiment en 4K ») ; zoom = fondu vers 2 gros plans nets de

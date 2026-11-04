@@ -338,3 +338,19 @@
   à faire défiler dessus) mettait l'animation en pause en attendant un « mouseleave » qui n'arrive jamais au doigt. Corrigé : après
   un survol / toucher, Lou montre ce bijou puis reprend seule au suivant 5 s après. Vérifié au banc : boucle infinie, avec et sans
   toucher (50 s). Envoyé (lou.js).
+
+## 2026-11-04 (nuit, utilisateur absent, consigne : « l'essentiel, pas de pavés » + bug du quiz, pas de questions)
+- **Quiz (test des mots)** : le résultat affichait « Votre bijou » sans nom/prix/photo. Cause reproduite au banc : un double
+  toucher (fréquent sur iPhone) faisait avancer de 2 questions → la dernière (« Et vous avez envie de lui dire… ») était sautée.
+  Corrigé (lou.js) : un seul clic compté par question ; et par sécurité, s'il manque une réponse ou les données produit, un vrai
+  bijou est proposé (nom et prix de secours). Testé au banc (normal + double toucher).
+- **Accueil allégé** : bulle de Lou et phrases des bijoux raccourcies ; titres courts, 1 ligne max sous chaque titre ; section
+  « Fini les cadeaux sans âme » (4 cartes) **retirée** ; note « mon préféré » retirée ; « Comment ça marche » en 3 étapes de
+  quelques mots ; section Lou = 1 phrase + mention virtuelle courte (obligatoire, gardée) ; Noël = 1 ligne ; FAQ de l'accueil =
+  5 questions + bouton « Toutes les questions ».
+- **Cartes produits** (accueil + collection) : plus de description, seulement photo, nom, prix, « Personnaliser ».
+- **FAQ** (`snippets/faq.liquid`) réécrite en réponses courtes ; paramètre `court: true` pour l'accueil.
+- **Fiche produit** : encadré livraison = date estimée + Noël ; « 2e bijou à -50 %, automatiquement » ; note légale courte
+  (« Aperçu indicatif · photos non contractuelles ») ; « Le bijou » fermé par défaut ; caractéristiques courtes
+  (`scripts/benefices_courts.py` → produits.json + champ méta lou.contenu sur Shopify).
+- Pied de page : 1 phrase. Testé au banc (iPhone 13, 0 erreur JS) puis envoyé (7 fichiers du thème).
