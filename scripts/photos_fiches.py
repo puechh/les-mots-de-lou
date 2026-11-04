@@ -15,33 +15,33 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from shopify import graphql, upload_file  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-V = "Image virtuelle"
+V = ""   # décision utilisateur 04/11 : pas de mention IA hors de « Qui est Lou »
 FICHES = {
     "jonc-mes-mots": [
         ("jonc-01-produit", "Jonc « Mes Mots » argenté gravé « Tu es ma personne », extrémités à petits cœurs ajourés"),
         ("jonc-02-coeurs", "Détail des deux petits cœurs ajourés aux extrémités du jonc"),
         ("jonc-03-finitions", "Le jonc en trois finitions : argentée, dorée et rosée"),
-        ("jonc-04-poignet", f"Jonc gravé porté au poignet, gravure et cœur visibles ({V})"),
-        ("jonc-05-lou", f"Lou, l'avatar de la boutique, porte le jonc gravé ({V})"),
-        ("jonc-06-cafe", f"Lou porte le jonc et le collier prénom en terrasse à Paris ({V})"),
+        ("jonc-04-poignet", f"Jonc gravé porté au poignet, gravure et cœur visibles"),
+        ("jonc-05-lou", f"Lou, l'avatar de la boutique, porte le jonc gravé"),
+        ("jonc-06-cafe", f"Lou porte le jonc et le collier prénom en terrasse à Paris"),
     ],
     "collier-prenom": [
         ("produit-collier-prenom-1-hd", "Collier prénom argenté en écriture manuscrite"),
         ("produit-collier-prenom-finitions-hd", "Le collier prénom en trois finitions : argentée, dorée et rosée"),
-        ("prenom-03-cou", f"Collier prénom « Lou » porté, gros plan ({V})"),
-        ("prenom-04-lou", f"Lou, l'avatar de la boutique, porte son collier prénom ({V})"),
-        ("prenom-05-marche-noel", f"Lou au marché de Noël avec son collier prénom ({V})"),
+        ("prenom-03-cou", f"Collier prénom « Lou » porté, gros plan"),
+        ("prenom-04-lou", f"Lou, l'avatar de la boutique, porte son collier prénom"),
+        ("prenom-05-marche-noel", f"Lou au marché de Noël avec son collier prénom"),
     ],
     "collier-souvenir-photo": [
         ("produit-collier-photo-1-hd", "Collier Souvenir cœur argenté avec photo cachée dans la petite lentille"),
-        ("photo-02-cou", f"Collier Souvenir porté, gros plan ({V})"),
-        ("photo-03-lou-feu", f"Lou regarde la photo cachée dans la lentille du collier ({V})"),
+        ("photo-02-cou", f"Collier Souvenir porté, gros plan"),
+        ("photo-03-lou-feu", f"Lou regarde la photo cachée dans la lentille du collier"),
     ],
     "bracelet-code-secret": [
         ("produit-bracelet-morse-1-hd", "Bracelet Code Secret : perles et barrettes en code Morse sur cordon noir"),
         ("morse-02-macro", "Gros plan des perles (points) et barrettes (traits) du code Morse"),
-        ("morse-03-carte", f"Bracelet Code Secret porté en écrivant une carte de Noël ({V})"),
-        ("morse-04-lou", f"Lou porte le bracelet Code Secret ({V})"),
+        ("morse-03-carte", f"Bracelet Code Secret porté en écrivant une carte de Noël"),
+        ("morse-04-lou", f"Lou porte le bracelet Code Secret"),
     ],
 }
 

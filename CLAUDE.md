@@ -62,6 +62,8 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   (`marketUpdate(input:{delivery:{shipping:{optionDefinitionsToCreate/ToDelete}}})`, lecture `markets{delivery{shipping{…}}}`),
   PAS ceux de `deliveryProfileUpdate` (ancien système, modifié pour rien le 03/11). Réglé : France et Belgique = « Livraison
   standard » 4,90 € gratuite dès 39,90 € (`freeDeliveryMinimumValue`) + « Livraison + Garantie 2 mois 🛡️ » 7,90 €.
+- **Référencement (04/11)** : titre et méta-description de l'accueil et de la page d'attente dans `theme-lou/layout/*.liquid` ;
+  fiches et collections : `scripts/seo.py` (mot-clé d'abord, titre ≤ 60, description ≈ 150, rien de non vérifié, aucune mention IA).
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).
@@ -84,8 +86,9 @@ tant qu'il reste des modifications non commitées ou non poussées.
   Meta/Pinterest/Google/TikTok, douane) et **prévenir l'utilisateur dès qu'une nouveauté impose de modifier les textes**.
   Méthode et journal : `docs/veille-legale.md` (le consulter en début de session).
 - **La décision finale revient toujours à l'utilisateur.** Une fois le conseil donné, appliquer son choix sans insister.
-- Points déjà identifiés pour cette boutique : caractère virtuel de Lou écrit **dans les politiques, pas dans le slogan**
-  (décision utilisateur 02/11) ; mention « image virtuelle » / étiquettes IA ajoutées par l'utilisateur en publiant (loi n° 2023-451, AI Act) ;
+- Points déjà identifiés pour cette boutique : caractère virtuel de Lou / IA écrit **UNIQUEMENT sur la page « Qui est Lou »**
+  (décision utilisateur 04/11, après l'avoir vu dans Google : plus dans l'accueil, la page d'attente, la FAQ, l'assistante, les
+  textes alternatifs des photos, les mentions légales ni les CGV ; conseil légal donné) ; mention « image virtuelle » / étiquettes IA ajoutées par l'utilisateur en publiant (loi n° 2023-451, AI Act) ;
   ne jamais faire croire que Lou existe ou fabrique les bijoux ; acier 316L sans nickel (REACH) ; jamais « or » si c'est du plaqué ;
   **pas de droit de rétractation pour un bijou personnalisé** (à écrire dans les CGV, garantie légale due) ; boutique neuve =
   **pas de prix barrés inventés** (règle du prix le plus bas des 30 jours, L112-1-1) → « prix de lancement » ; délai de livraison

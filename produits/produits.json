@@ -51,7 +51,8 @@
         }
       ],
       "apercu": "jonc",
-      "seo": "Jonc gravé personnalisé avec votre message, en acier inoxydable, finition argentée, dorée ou rosée. L'idée cadeau qui fait pleurer (de joie)."
+      "seo": "Jonc gravé avec votre phrase, en acier inoxydable argenté, doré ou rosé. Aperçu de la gravure en direct. L'idée cadeau pour Noël, livraison suivie.",
+      "seo_titre": "Jonc gravé personnalisé, votre message | Les Mots de Lou"
     },
     {
       "handle": "collier-prenom",
@@ -102,7 +103,8 @@
         }
       ],
       "apercu": "prenom",
-      "seo": "Collier prénom personnalisé en acier inoxydable, finition argentée, dorée ou rosée, prénom découpé d'un seul trait."
+      "seo": "Collier prénom personnalisé en écriture manuscrite, acier inoxydable argenté, doré ou rosé. Aperçu en direct, l'idée cadeau pour Noël. Livraison suivie.",
+      "seo_titre": "Collier prénom personnalisé | Les Mots de Lou"
     },
     {
       "handle": "collier-souvenir-photo",
@@ -141,7 +143,8 @@
         }
       ],
       "apercu": "photo",
-      "seo": "Collier photo à projection personnalisé : votre photo cachée dans la lentille d'un pendentif cœur. Le cadeau souvenir qui émeut."
+      "seo": "Collier photo personnalisé : votre photo cachée dans la lentille d'un pendentif cœur. Un cadeau souvenir pour maman, mamie ou votre amour. Livraison suivie.",
+      "seo_titre": "Collier photo personnalisé, cœur à projection | Les Mots de Lou"
     },
     {
       "handle": "bracelet-code-secret",
@@ -182,7 +185,8 @@
         }
       ],
       "apercu": "morse",
-      "seo": "Bracelet code Morse personnalisé : votre mot secret en perles d'acier inoxydable. Idée cadeau duo, meilleure amie, couple."
+      "seo": "Bracelet code Morse personnalisé : votre mot secret en perles argentées sur cordon noir réglable. Cadeau meilleure amie, sœur ou couple. Livraison suivie.",
+      "seo_titre": "Bracelet code Morse personnalisé | Les Mots de Lou"
     }
   ],
   "offre": {

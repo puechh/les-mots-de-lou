@@ -357,3 +357,13 @@
 - 04/11 : l'utilisateur ne peut pas « Lancer la boutique » (bouton grisé : « Ajouter les informations sur l'entreprise »).
   Vérifié par l'API : adresse de l'entreprise vide (nom légal, rue, ville, code postal, téléphone) ; seul le pays est rempli.
   Marche à suivre donnée (Paramètres → Général / Informations sur l'entreprise). Rien d'écrit dans le dépôt (données personnelles).
+
+## 2026-11-04 — Plus de mention IA hors de « Qui est Lou » + référencement
+- L'utilisateur a vu dans Google « Lou est un personnage virtuel créé avec l'IA » (texte de la page d'attente) et ne veut cette
+  information **que sur la page « Qui est Lou »**. Retiré de : page d'attente, accueil (textes alternatifs, mention sous la section
+  Lou → bouton « Qui est Lou ? »), FAQ (« Lou, tu existes vraiment ? » → « Qui est Lou ? »), assistante (réponse « Tu es qui ? »,
+  message d'accueil, ligne légale, emoji 🤖), textes alternatifs des photos produits (`scripts/alt_photos.py`), mentions légales
+  (§3 → « Photos de présentation » retouchées numériquement) et CGV. Conseil légal donné (voir réponse du jour).
+- Référencement : accueil « Bijoux personnalisés gravés | Les Mots de Lou » + méta-description (157 car.) dans theme.liquid
+  (template.name == 'index', plus de description vide) ; page d'attente : même titre / description + og ; fiches et collections :
+  `scripts/seo.py` (perles du Morse « argentées » et non « acier », non vérifié). `construire_boutique.py` garde `seo_titre`.

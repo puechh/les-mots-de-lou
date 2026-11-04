@@ -68,7 +68,7 @@ def produits():
             "handle": p["handle"], "title": p["title"], "productType": p["type"], "vendor": "Les Mots de Lou",
             "status": "ACTIVE", "tags": p["tags"],
             "descriptionHtml": f"<p>{p['accroche']}</p><p>{p['seo']}</p>",
-            "seo": {"title": f"{p['title']} personnalisé | Les Mots de Lou", "description": p["seo"][:320]},
+            "seo": {"title": p.get("seo_titre") or f"{p['title']} personnalisé | Les Mots de Lou", "description": p["seo"][:320]},
             "productOptions": [{"name": p["option"], "values": [{"name": v} for v in p["variantes"]]}],
             "variants": [{"optionValues": [{"optionName": p["option"], "name": v}], "price": p["prix"],
                           "inventoryPolicy": "CONTINUE", "taxable": True} for v in p["variantes"]],
