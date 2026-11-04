@@ -354,3 +354,6 @@
   (« Aperçu indicatif · photos non contractuelles ») ; « Le bijou » fermé par défaut ; caractéristiques courtes
   (`scripts/benefices_courts.py` → produits.json + champ méta lou.contenu sur Shopify).
 - Pied de page : 1 phrase. Testé au banc (iPhone 13, 0 erreur JS) puis envoyé (7 fichiers du thème).
+- 04/11 : l'utilisateur ne peut pas « Lancer la boutique » (bouton grisé : « Ajouter les informations sur l'entreprise »).
+  Vérifié par l'API : adresse de l'entreprise vide (nom légal, rue, ville, code postal, téléphone) ; seul le pays est rempli.
+  Marche à suivre donnée (Paramètres → Général / Informations sur l'entreprise). Rien d'écrit dans le dépôt (données personnelles).
