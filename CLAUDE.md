@@ -64,6 +64,9 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   standard » 4,90 € gratuite dès 39,90 € (`freeDeliveryMinimumValue`) + « Livraison + Garantie 2 mois 🛡️ » 7,90 €.
 - **Référencement (04/11)** : titre et méta-description de l'accueil et de la page d'attente dans `theme-lou/layout/*.liquid` ;
   fiches et collections : `scripts/seo.py` (mot-clé d'abord, titre ≤ 60, description ≈ 150, rien de non vérifié, aucune mention IA).
+- **Pinterest (04/11)** : règles `docs/pinterest-regles.md`, textes `docs/pinterest-compte.md`, plan `docs/pinterest-connexion.md` ;
+  épingles par CSV (`scripts/pinterest_csv.py`), appli développeur propre à Lou (pas celle de Corps-Confiant), clés en variables
+  d'environnement `PINTEREST_*` (jamais dans le chat). « Image virtuelle » dans les épingles où l'on voit Lou.
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).

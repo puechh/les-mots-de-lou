@@ -367,3 +367,12 @@
 - Référencement : accueil « Bijoux personnalisés gravés | Les Mots de Lou » + méta-description (157 car.) dans theme.liquid
   (template.name == 'index', plus de description vide) ; page d'attente : même titre / description + og ; fiches et collections :
   `scripts/seo.py` (perles du Morse « argentées » et non « acier », non vérifié). `construire_boutique.py` garde `seo_titre`.
+
+## 2026-11-04 — Pinterest : règles, textes du compte, 1er mois d'épingles, plan de connexion
+- Environnement vérifié : SHOPIFY_STORE = xs4brq-7y.myshopify.com ✅. ❌ api.pinterest.com, www.pinterest.com, cdn.shopify.com
+  bloqués par le réseau (403) → à ajouter aux domaines autorisés (docs/pinterest-connexion.md, étape 0).
+- `docs/pinterest-regles.md` (adapté de Corps-Confiant + règles du 12/11/2026 sur les images de synthèse trompeuses), `docs/pinterest-compte.md`
+  (profil, 5 tableaux), `docs/pinterest-connexion.md` (plan écran par écran, appli séparée de Corps-Confiant conseillée).
+- 4 images verticales 2:3 (`scripts/pinterest_images.py`, hébergées dans Shopify → Fichiers) ; CSV de 29 épingles du 06/11 au 04/12
+  (`scripts/pinterest_csv.py` → `contenu/pinterest/epingles-2026-11.csv`), liens UTM vers les fiches, « Image virtuelle » sur les
+  épingles avec le visage de Lou, offre -50 % avec sa condition, aucun avis ni prix barré.
