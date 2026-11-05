@@ -71,6 +71,8 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   d'environnement `PINTEREST_*` (jamais dans le chat). « Image virtuelle » dans les épingles où l'on voit Lou.
 - **Stock (05/11)** : dropshipping → stock suivi à **999 par variante** + vente autorisée à 0 (CONTINUE), sinon les produits
   apparaissent « épuisés » (catalogues Pinterest/Google). À remettre à 999 si une variante est ajoutée.
+- **Cookies (05/11)** : bandeau du thème (`snippets/cookie-banner.liquid`, `assets/lou-cookies.js`, API de consentement Shopify),
+  comme Corps-Confiant ; bannière Shopify à laisser désactivée ; page « Cookies et partenaires » à mettre à jour à chaque appli/balise.
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).

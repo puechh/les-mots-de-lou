@@ -1,0 +1,25 @@
+{%- comment -%}
+  Bandeau cookies (RGPD) du thème, repris de Corps-Confiant (05/11/2026), relié à l'API de consentement de Shopify
+  (Customer Privacy API) : c'est lui qui autorise ou bloque Pinterest, Google Analytics… (voir assets/lou-cookies.js).
+  Il s'affiche tant que la visiteuse n'a pas choisi ; « Gérer mes cookies » (pied de page) le rouvre.
+  Si la bannière de cookies de Shopify est activée dans l'admin, c'est elle qui s'affiche (jamais 2 bandeaux).
+{%- endcomment -%}
+<div class="cookie" id="cookie" role="dialog" aria-modal="false" aria-labelledby="cookie-title" hidden>
+  <div class="cookie-in">
+    <span class="cookie-ico" aria-hidden="true">🍪</span>
+    <div class="cookie-txt">
+      <b id="cookie-title">Un petit cookie ?</b>
+      <p>Pour faire marcher la boutique (panier, coups de cœur), mesurer les visites et vous montrer nos bijoux ailleurs. Vous changez d'avis quand vous voulez. <a href="/pages/cookies-et-partenaires">En savoir plus</a></p>
+      <div class="cookie-prefs" id="cookie-prefs" hidden>
+        <label><input type="checkbox" checked disabled> Nécessaires (toujours actifs)</label>
+        <label><input type="checkbox" id="ck-analytics"> Mesure d'audience</label>
+        <label><input type="checkbox" id="ck-marketing"> Publicité personnalisée</label>
+      </div>
+    </div>
+    <div class="cookie-btns">
+      <button class="btn btn-small" type="button" id="cookie-accept">Tout accepter</button>
+      <button class="btn ghost btn-small" type="button" id="cookie-refuse">Tout refuser</button>
+      <button class="cookie-lien" type="button" id="cookie-custom">Personnaliser</button>
+    </div>
+  </div>
+</div>

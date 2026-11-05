@@ -35,7 +35,7 @@
     <p>© {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
     <nav aria-label="Informations légales">
       {%- assign menu_legal = section.settings.menu3 | default: 'legal' -%}
-      {%- for link in linklists[menu_legal].links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
+      {%- for link in linklists[menu_legal].links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}<a href="/pages/cookies-et-partenaires" data-cookie-settings>Gérer mes cookies</a>
     </nav>
     <p class="pay">{% render 'icones-paiement' %}</p>
   </div>

@@ -110,6 +110,12 @@
         "type": "HTTP",
         "url": "/policies/privacy-policy",
         "items": []
+      },
+      {
+        "title": "Cookies",
+        "type": "PAGE",
+        "url": "/pages/cookies-et-partenaires",
+        "items": []
       }
     ]
   }

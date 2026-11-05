@@ -392,3 +392,9 @@
   événements » + cookies acceptés + petit montant remboursé ; API de conversion à activer via l'appli Pinterest de Shopify.
 - 05/11 : point « avant les annonces » → `docs/avant-annonces.md` (bloquants : DSers + vraie commande test, médiateur, SIREN,
   bannière cookies, politique de confidentialité à compléter, aperçu du jonc à refaire, catalogue et compte pub Pinterest).
+- 05/11 : **bandeau cookies du thème** (demande utilisateur : « comme Corps-Confiant, supprime celle de Google et mets la tienne »),
+  repris de `theme-cc` : `snippets/cookie-banner.liquid` + `assets/lou-cookies.js` (Customer Privacy API : setTrackingConsent ;
+  ne s'affiche pas si la bannière Shopify est active → jamais 2 bandeaux) + CSS aux couleurs Lou ; lien « Gérer mes cookies » dans
+  le pied de page ; page **« Cookies et partenaires »** (`/pages/cookies-et-partenaires` : Shopify, Google, Pinterest) ajoutée au
+  menu `legal`. Testé au banc (iPhone 13 + ordinateur). Reste à l'utilisateur : désactiver la bannière Shopify (Paramètres →
+  Confidentialité des clients → Bannière de cookies), sinon c'est elle qui s'affiche.

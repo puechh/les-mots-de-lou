@@ -706,3 +706,26 @@ body.panier-ouvert .lou-assist, body.fav-ouvert .lou-assist { opacity: 0; pointe
 }
 @media (min-width: 900px) { .scene-lou { max-width: 600px; } .scene-lou .bijou { width: 23%; } }
 @media (prefers-reduced-motion: reduce) { .scene-lou .rond, .scene-lou .pose.on, .scene-lou .bijou, .scene-lou .eclat { animation: none; } }
+
+/* ---------- Bandeau cookies (repris de Corps-Confiant, couleurs Lou, 05/11/2026) ---------- */
+.cookie { position: fixed; left: max(12px, env(safe-area-inset-left, 0px)); right: max(12px, env(safe-area-inset-right, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 96; display: flex; justify-content: center; pointer-events: none; }
+.cookie-in { pointer-events: auto; width: min(900px, 100%); background: var(--blanc); border-radius: 22px; box-shadow: var(--ombre), 0 0 0 1px var(--ligne); padding: 16px 18px; display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; translate: 0 130%; opacity: 0; transition: translate .5s var(--ressort), opacity .3s; }
+.cookie.show .cookie-in { translate: 0 0; opacity: 1; }
+.cookie-ico { font-size: 2rem; animation: cookie-balance 2.4s ease-in-out infinite; }
+@keyframes cookie-balance { 0%, 100% { rotate: -8deg; } 50% { rotate: 8deg; } }
+.cookie-txt b { font-family: var(--f-titre); font-size: 1.15rem; font-weight: 400; color: var(--prune); }
+.cookie-txt p { margin: 4px 0 0; font-size: .86rem; color: var(--doux); line-height: 1.45; }
+.cookie-txt a { color: var(--framboise-f); }
+.cookie-prefs { display: grid; gap: 6px; margin-top: 10px; font-size: .88rem; color: var(--prune); }
+.cookie-prefs label { display: flex; gap: 8px; align-items: center; }
+.cookie-prefs input { accent-color: var(--framboise); width: 17px; height: 17px; }
+.cookie-btns { display: grid; gap: 8px; justify-items: center; }
+.cookie-btns .btn { width: 100%; justify-content: center; }
+.cookie-lien { background: none; border: 0; padding: 4px; font: inherit; font-size: .82rem; color: var(--doux); text-decoration: underline; cursor: pointer; }
+@media (max-width: 700px) {
+  .cookie-in { grid-template-columns: 1fr; gap: 10px; padding: 14px; }
+  .cookie-ico { display: none; }
+  .cookie-btns { grid-template-columns: 1fr 1fr; }
+  .cookie-btns .cookie-lien { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: reduce) { .cookie-ico { animation: none; } }
