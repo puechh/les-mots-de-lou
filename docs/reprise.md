@@ -7,6 +7,7 @@
 ## 🖼️ 03/11/2026 — SITE REMPLI AVEC LA NOUVELLE LOU (carte blanche utilisateur)
 - **Accueil** : `lou-hero*.webp` = `contenu/lou/bijoux-v3/01-accueil-sapin.jpg` (recadrages dans `scripts/assets_theme.py`),
   repères `.r-collier` / `.r-jonc` déplacés (lou.css) ; portrait et avatar des bulles = `reference-v3/01-face.jpg`. Envoyé.
+- **05/11 : liste de ce qu'il reste avant les annonces → `docs/avant-annonces.md`** (à tenir à jour).
 - **Pinterest (04/11)** : règles, textes et CSV prêts (`docs/pinterest-*.md`, `contenu/pinterest/`). Bloquants : réseau
   (api.pinterest.com, cdn.shopify.com), boutique encore privée, compte pro + appli développeur à créer par l'utilisateur.
 - **04/11 nuit** : site allégé (« l'essentiel, pas de pavés », décision utilisateur) et bug du quiz corrigé (double toucher).

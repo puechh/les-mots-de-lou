@@ -390,3 +390,5 @@
   payées (2 à 0 € le 05/11 sur le site, 1 commande brouillon créée dans l'admin le 04/11). Explication donnée : balise bloquée sans
   accord cookies, délai de l'aperçu (jusqu'à 24 h), 0 € et commande brouillon non comptées. Test conseillé avec « Tester les
   événements » + cookies acceptés + petit montant remboursé ; API de conversion à activer via l'appli Pinterest de Shopify.
+- 05/11 : point « avant les annonces » → `docs/avant-annonces.md` (bloquants : DSers + vraie commande test, médiateur, SIREN,
+  bannière cookies, politique de confidentialité à compléter, aperçu du jonc à refaire, catalogue et compte pub Pinterest).
