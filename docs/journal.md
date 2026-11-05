@@ -412,3 +412,9 @@
   l'appli « Claude api LOU » n'a pas la portée `write_privacy_settings` (refus testé). → à faire à la main, ou ajouter les portées
   `read_privacy_settings` / `write_privacy_settings` à l'appli (Dev Dashboard → nouvelle version → réinstaller).
 - 05/11 : l'utilisateur a désactivé la bannière cookies de Shopify (à la main) → c'est le bandeau rose du thème qui s'affiche.
+- 05/11 : le bandeau cookies du thème **ne s'affichait pas** (même en navigation privée). Cause : `shouldShowBanner()` renvoie vrai
+  dès que le pays exige le consentement (FR/BE), pas « la bannière Shopify va s'afficher » → le script se cachait alors que la
+  bannière Shopify était désactivée. Corrigé (`lou-cookies.js`) : on ne se cache que si `window.privacyBanner` existe (bannière
+  Shopify réellement active) ou si la visiteuse a vraiment répondu oui/non (`currentVisitorConsent`) ; affichage de secours après
+  2,5 s si Shopify ne répond pas. Testé au banc sur 4 cas simulés. ⚠️ Corps-Confiant a le même code (`cc-base.js`) : même bug
+  probable si sa bannière Shopify est désactivée → à corriger dans une session Corps-Confiant.

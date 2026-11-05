@@ -38,9 +38,27 @@
     if (window.privacyBanner && api && api.shouldShowBanner && api.shouldShowBanner()) { window.privacyBanner.showPreferences(); return; }
     ouvrir(true);
   });
-  if (!dejaChoisi()) avecConsentement(function (a) {
-    if (a && a.getTrackingConsent && a.getTrackingConsent() !== "no_interaction") return;   // choix déjà fait ailleurs
-    if (a && a.shouldShowBanner && a.shouldShowBanner()) return;                           // la bannière Shopify s'en charge
-    setTimeout(function () { ouvrir(false); }, 900);
-  });
+  // Choix déjà fait (chez Shopify) ? Seulement si la visiteuse a vraiment dit oui ou non : toute autre réponse
+  // (vide, « no_interaction », fonction absente selon la version de l'API) = pas de choix → on demande. (correctif 05/11)
+  function choixFait(a) {
+    try {
+      if (a && a.currentVisitorConsent) {
+        var c = a.currentVisitorConsent() || {};
+        return ["analytics", "marketing"].some(function (k) { return c[k] === "yes" || c[k] === "no"; });
+      }
+      if (a && a.getTrackingConsent) { var t = a.getTrackingConsent(); return t === "yes" || t === "no"; }
+    } catch (e) {}
+    return false;
+  }
+  if (!dejaChoisi()) {
+    var fait = false;
+    var decider = function (a) {
+      if (fait) return; fait = true;
+      if (choixFait(a)) return;                                                  // choix déjà fait ailleurs
+      if (a && a.shouldShowBanner && a.shouldShowBanner() && window.privacyBanner) return;   // bannière Shopify active
+      setTimeout(function () { ouvrir(false); }, 900);
+    };
+    avecConsentement(decider);
+    setTimeout(function () { decider(api); }, 2500);   // Shopify ne répond pas : on demande quand même
+  }
 })();
