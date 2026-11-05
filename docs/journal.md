@@ -445,3 +445,16 @@
   sur les 3 visuels avec Lou. Pas de prix barré, pas d'avis.
 - Plan : `docs/pinterest-campagne.md` (catalogue 180 € + épingles Noël 210 € + réserve 30 € Black Friday, ciblage, règles de
   décision, rentabilité ≈ 15 €/bijou, rappels légaux). À valider par l'utilisateur.
+
+## 2026-11-05 (nuit) — Banque de photos SANS TEXTE + pubs « design » (demande utilisateur)
+- Demande : surtout des images **sans aucun texte**, beaucoup d'idées à tester (bijoux sur la table, sous le sapin, au poignet,
+  poignet avec plein de bijoux perso…) ; et des pubs très « design » façon magazine (exemples envoyés : « black friday » en
+  énorme typo derrière le visage, « ep jewels » serif élégant, « Banana Republic » éditorial + bouton rectangulaire).
+- `scripts/pinterest_idees.py` → 12 scènes 2:3 4K dans `contenu/pinterest/idees-2026-11/` : table du petit-déjeuner (4 bijoux),
+  sous le sapin, poignet avec 3 joncs + Morse, chocolat chaud 2 joncs, mains qui offrent, coupelle de chevet, neige sur la
+  fenêtre, chaussette de Noël, marbre de salle de bain, paume + collier photo, Lou à la fenêtre (2 joncs), Lou sur le canapé.
+  Refaites : 03 (cœurs dessinés sur l'avant des joncs → faux) et 11 (selfie miroir : gravures illisibles, collier « Lara »).
+  Règle apprise : préciser « pas de cœurs sur l'avant, ils sont aux extrémités sous le poignet » ; éviter les miroirs (texte inversé).
+- `scripts/pinterest_design.py` → 6 pubs « design » (`idees-2026-11/pubs/`) : sujet détouré (fal BiRefNet, `detoure/`) pour
+  passer le titre derrière le poignet ; polices Playfair Display, Montserrat Black, Allura (OFL, `scripts/polices/`). Offre
+  toujours avec « sur le moins cher des deux » ; « Image virtuelle » sur les 2 avec Lou. ≈ 4,50 $ fal.
