@@ -386,3 +386,7 @@
   le 03/11 par marché (`marketUpdate`) n'avaient **aucun emplacement d'expédition** (`includedLocations` vide) → aucun entrepôt ne
   livrait la France ni la Belgique → Shopify refusait l'ajout au panier. Corrigé : « Shop location » ajouté aux 4 tarifs
   (`rateGroupsToUpdate … conditions: { originLocationsToAdd }`). Le stock à 999 est gardé (catalogues « en stock »).
+- 05/11 : balise Pinterest connectée (événements PageVisit / ViewCategory reçus), mais pas les achats de test. Constat : 3 commandes
+  payées (2 à 0 € le 05/11 sur le site, 1 commande brouillon créée dans l'admin le 04/11). Explication donnée : balise bloquée sans
+  accord cookies, délai de l'aperçu (jusqu'à 24 h), 0 € et commande brouillon non comptées. Test conseillé avec « Tester les
+  événements » + cookies acceptés + petit montant remboursé ; API de conversion à activer via l'appli Pinterest de Shopify.
