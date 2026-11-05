@@ -411,3 +411,4 @@
 - 05/11 : désactiver la bannière cookies Shopify par l'API = `privacyFeaturesDisable(featuresToDisable: [COOKIE_BANNER])`, mais
   l'appli « Claude api LOU » n'a pas la portée `write_privacy_settings` (refus testé). → à faire à la main, ou ajouter les portées
   `read_privacy_settings` / `write_privacy_settings` à l'appli (Dev Dashboard → nouvelle version → réinstaller).
+- 05/11 : l'utilisateur a désactivé la bannière cookies de Shopify (à la main) → c'est le bandeau rose du thème qui s'affiche.

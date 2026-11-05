@@ -18,7 +18,7 @@ Légende : 🔴 bloquant pour les annonces · 🟠 important · 🟢 confort. «
 |---|---|---|---|
 | 🔴 | **Médiateur de la consommation** (obligatoire, amende possible) : s'inscrire, donner son nom/site à Claude | Vous → Claude | absent |
 | 🔴 | **SIREN** (et TVA ou « TVA non applicable, art. 293 B ») dans les mentions légales — directement dans Shopify (dépôt public) | Vous / Claude via API | absent |
-| 🔴 | Bandeau cookies du thème ✅ (05/11) ; **désactiver la bannière Shopify** (Paramètres → Confidentialité des clients) | Vous | à faire |
+| ✅ | Bandeau cookies du thème (05/11) ; bannière Shopify désactivée par l'utilisateur (05/11) | Vous | fait (à vérifier en navigation privée) |
 | ✅ | Page « Cookies et partenaires » (Shopify, Google, Pinterest) en ligne | Claude | fait 05/11 |
 | 🟠 | Phrase « droits et taxes de douane pris en charge » (page Livraison) à confirmer avec DSers/AliExpress | Vous → Claude | à confirmer |
 
