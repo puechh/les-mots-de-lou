@@ -99,8 +99,9 @@ tant qu'il reste des modifications non commitées ou non poussées.
   (décision utilisateur 04/11, après l'avoir vu dans Google : plus dans l'accueil, la page d'attente, la FAQ, l'assistante, les
   textes alternatifs des photos, les mentions légales ni les CGV ; conseil légal donné) ; mention « image virtuelle » / étiquettes IA ajoutées par l'utilisateur en publiant (loi n° 2023-451, AI Act) ;
   ne jamais faire croire que Lou existe ou fabrique les bijoux ; acier 316L sans nickel (REACH) ; jamais « or » si c'est du plaqué ;
-  **pas de droit de rétractation pour un bijou personnalisé** (à écrire dans les CGV, garantie légale due) ; boutique neuve =
-  **pas de prix barrés inventés** (règle du prix le plus bas des 30 jours, L112-1-1) → « prix de lancement » ; délai de livraison
+  **pas de droit de rétractation pour un bijou personnalisé** (à écrire dans les CGV, garantie légale due) ; prix barrés :
+  **décision utilisateur 05/11 = comme Corps-Confiant, prix × 1,25 arrondi aux 10 centimes (-20 %)**, plus de « prix de lancement »
+  (conseil légal donné : L112-1-1, prix barré = prix le plus bas des 30 jours ; à recalculer si le prix change) ; délai de livraison
   annoncé ; médiateur de la consommation obligatoire ; douane 3 €/catégorie depuis le 01/07/2026.
 
 ## Règles de sécurité (prioritaires)

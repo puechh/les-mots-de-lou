@@ -398,3 +398,13 @@
   le pied de page ; page **« Cookies et partenaires »** (`/pages/cookies-et-partenaires` : Shopify, Google, Pinterest) ajoutée au
   menu `legal`. Testé au banc (iPhone 13 + ordinateur). Reste à l'utilisateur : désactiver la bannière Shopify (Paramètres →
   Confidentialité des clients → Bannière de cookies), sinon c'est elle qui s'affiche.
+
+## 2026-11-05 — Prix barrés (comme Corps-Confiant) et fin du « prix de lancement »
+- Demande utilisateur : prix barrés avec le même pourcentage que Corps-Confiant → compare-at = prix × 1,25 arrondi aux 10 centimes
+  (-20 %) : jonc et collier prénom 29,90 € (barré 37,40 €), collier photo 34,90 € (43,60 €), bracelet 24,90 € (31,10 €).
+  `produits/produits.json` → champ `prix_barre`. Conseil légal donné (art. L112-1-1 : prix barré = prix le plus bas des 30 jours).
+- « Prix de lancement » supprimé (demande utilisateur). Thème : prix barré + « -20 % » sur la fiche, prix barré sur les cartes
+  produits et la barre d'achat collante ; banc d'essai mis à jour pour lire `prix_barre`. Envoyé (3 fichiers).
+- Google affichait encore « Les Mots De Lou : bientôt » + « Lou est un personnage virtuel créé avec l'IA » : ancienne copie de
+  Google ; la page en ligne a déjà titre / description optimisés et aucune mention IA depuis le 04/11 (vérifié dans la sauvegarde
+  du thème). Plus aucun « bientôt » visible. Conseillé : Search Console → demander une nouvelle indexation + sitemap.

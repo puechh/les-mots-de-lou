@@ -40,11 +40,11 @@ def load_products():
         for val in p["variantes"]:
             vid += 1
             variants.append({"id": vid, "title": val, "options": [val], "option1": val, "available": True, "price": round(float(p["prix"]) * 100),
-                             "compare_at_price": None, "featured_image": None})
+                             "compare_at_price": round(float(p["prix_barre"]) * 100) if p.get("prix_barre") else None, "featured_image": None})
         contenu = {k: p[k] for k in ("accroche", "benefices", "perso", "apercu", "seo")}
         prods.append({
             "id": len(prods) + 1, "handle": h, "title": p["title"], "url": f"/products/{h}", "type": p["type"],
-            "price": variants[0]["price"], "compare_at_price": None, "available": True, "description": "<p>" + p["seo"] + "</p>",
+            "price": variants[0]["price"], "compare_at_price": variants[0]["compare_at_price"], "available": True, "description": "<p>" + p["seo"] + "</p>",
             "images": images, "featured_image": images[0] if images else None, "media": images,
             "variants": variants, "selected_or_first_available_variant": variants[0],
             "options": [p["option"]], "options_with_values": [{"name": p["option"], "values": p["variantes"]}], "has_only_default_variant": False,

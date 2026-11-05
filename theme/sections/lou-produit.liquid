@@ -38,7 +38,7 @@
     <span class="eyebrow">💗 Personnalisé pour vous</span>
     <h1>{{ product.title }}</h1>
     {%- if c.accroche %}<p class="hand" style="margin:0">{{ c.accroche }}</p>{% endif -%}
-    <div class="fiche-prix"><span class="prix" id="prix">{{ v0.price | money }}</span><span class="etiquette">Prix de lancement</span><span class="duo-prix">🎁 le 2e bijou à -50 %</span></div>
+    <div class="fiche-prix">{%- if v0.compare_at_price > v0.price -%}<s class="prix-avant">{{ v0.compare_at_price | money }}</s>{%- endif -%}<span class="prix" id="prix">{{ v0.price | money }}</span>{%- if v0.compare_at_price > v0.price -%}<span class="etiquette">-{{ v0.compare_at_price | minus: v0.price | times: 100.0 | divided_by: v0.compare_at_price | round }} %</span>{%- endif -%}<span class="duo-prix">🎁 le 2e bijou à -50 %</span></div>
 
     <form id="form-produit" action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" novalidate>
       <input type="hidden" name="id" id="variante" value="{{ v0.id }}">
@@ -150,7 +150,7 @@
     </div>
   </div>
 </div>
-<div class="barre-achat" id="barre-achat"><span class="prix" id="prix-barre">{{ v0.price | money }}</span><button class="btn" type="button" id="barre-ajouter"><span class="brille"></span>Ajouter au panier</button></div>
+<div class="barre-achat" id="barre-achat">{%- if v0.compare_at_price > v0.price -%}<s class="prix-avant">{{ v0.compare_at_price | money }}</s>{%- endif -%}<span class="prix" id="prix-barre">{{ v0.price | money }}</span><button class="btn" type="button" id="barre-ajouter"><span class="brille"></span>Ajouter au panier</button></div>
 <div class="mini-apercu" id="mini-apercu" aria-hidden="true"><div class="mini-vue" id="mini-vue"></div><span>✍️ votre aperçu</span></div>
 
 <section class="section band">

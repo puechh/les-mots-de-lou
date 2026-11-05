@@ -729,3 +729,7 @@ body.panier-ouvert .lou-assist, body.fav-ouvert .lou-assist { opacity: 0; pointe
   .cookie-btns .cookie-lien { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: reduce) { .cookie-ico { animation: none; } }
+
+/* Prix barré (décision utilisateur 05/11 : prix × 1,25, comme Corps-Confiant) */
+.prix-avant { color: var(--doux); font-weight: 600; text-decoration-thickness: 1.5px; margin-right: 6px; font-size: .85em; }
+.fiche-prix .prix-avant { font-size: 1.1rem; }
