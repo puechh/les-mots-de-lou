@@ -458,3 +458,5 @@
 - `scripts/pinterest_design.py` → 6 pubs « design » (`idees-2026-11/pubs/`) : sujet détouré (fal BiRefNet, `detoure/`) pour
   passer le titre derrière le poignet ; polices Playfair Display, Montserrat Black, Allura (OFL, `scripts/polices/`). Offre
   toujours avec « sur le moins cher des deux » ; « Image virtuelle » sur les 2 avec Lou. ≈ 4,50 $ fal.
+- 05/11 : l'utilisateur ne veut plus de demandes d'autorisation → plus d'outil Claude Docs ; aperçu de toutes les images
+  dans `contenu/pinterest/epingles-apercu.html` (page autonome, images intégrées).

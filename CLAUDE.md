@@ -77,6 +77,10 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).
 
+- **Outils (décision utilisateur 05/11)** : ne PAS utiliser l'outil Claude Docs (demande une autorisation à chaque appel).
+  Pour montrer des images ou un document : page HTML autonome dans le dépôt envoyée par SendUserFile (ex.
+  `contenu/pinterest/epingles-apercu.html`). L'utilisateur ne veut pas avoir à accepter d'actions.
+
 ## Mémoire du projet sur GitHub (règle obligatoire)
 Ce dépôt est la **mémoire** du projet : une nouvelle session ne sait que ce qui y est écrit. **À chaque nouvelle information ou
 modification, mettre à jour la mémoire et la pousser sur GitHub, sans attendre qu'on le demande** :
