@@ -44,7 +44,7 @@
         ],
         "image": null,
         "inventoryItem": {
-          "tracked": false,
+          "tracked": true,
           "requiresShipping": true,
           "unitCost": null
         }
@@ -116,7 +116,7 @@
         ],
         "image": null,
         "inventoryItem": {
-          "tracked": false,
+          "tracked": true,
           "requiresShipping": true,
           "unitCost": null
         }
@@ -136,7 +136,7 @@
         ],
         "image": null,
         "inventoryItem": {
-          "tracked": false,
+          "tracked": true,
           "requiresShipping": true,
           "unitCost": null
         }
@@ -156,7 +156,7 @@
         ],
         "image": null,
         "inventoryItem": {
-          "tracked": false,
+          "tracked": true,
           "requiresShipping": true,
           "unitCost": null
         }
@@ -232,7 +232,7 @@
         ],
         "image": null,
         "inventoryItem": {
-          "tracked": false,
+          "tracked": true,
           "requiresShipping": true,
           "unitCost": null
         }
@@ -252,7 +252,7 @@
         ],
         "image": null,
         "inventoryItem": {
-          "tracked": false,
+          "tracked": true,
           "requiresShipping": true,
           "unitCost": null
         }
@@ -272,7 +272,7 @@
         ],
         "image": null,
         "inventoryItem": {
-          "tracked": false,
+          "tracked": true,
           "requiresShipping": true,
           "unitCost": null
         }
@@ -342,7 +342,7 @@
         ],
         "image": null,
         "inventoryItem": {
-          "tracked": false,
+          "tracked": true,
           "requiresShipping": true,
           "unitCost": null
         }
@@ -362,7 +362,7 @@
         ],
         "image": null,
         "inventoryItem": {
-          "tracked": false,
+          "tracked": true,
           "requiresShipping": true,
           "unitCost": null
         }
@@ -382,7 +382,7 @@
         ],
         "image": null,
         "inventoryItem": {
-          "tracked": false,
+          "tracked": true,
           "requiresShipping": true,
           "unitCost": null
         }

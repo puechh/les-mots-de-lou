@@ -376,3 +376,9 @@
 - 4 images verticales 2:3 (`scripts/pinterest_images.py`, hébergées dans Shopify → Fichiers) ; CSV de 29 épingles du 06/11 au 04/12
   (`scripts/pinterest_csv.py` → `contenu/pinterest/epingles-2026-11.csv`), liens UTM vers les fiches, « Image virtuelle » sur les
   épingles avec le visage de Lou, offre -50 % avec sa condition, aucun avis ni prix barré.
+
+## 2026-11-05 — Produits affichés « épuisés »
+- Signalé par l'utilisateur. Constat : les 10 variantes étaient « en vente » (stock non suivi, vente autorisée à 0) mais avec une
+  quantité de 0 (-1 pour le bracelet) → affichées épuisées par certains affichages / catalogues (Pinterest, Google).
+- Corrigé : suivi du stock activé + **999 par variante** (emplacement « Shop location »), vente toujours autorisée au-delà
+  (CONTINUE). API 2026-10 : `inventorySetQuantities` exige `changeFromQuantity` et la directive `@idempotent(key: …)`.
