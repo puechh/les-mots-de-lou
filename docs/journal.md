@@ -422,3 +422,15 @@
 ## 2026-11-05 (soir) — Passage à un nouveau compte Claude
 - L'utilisateur change de compte (plus de crédit). `docs/reprise.md` : bloc « État au 05/11 soir » en tête (environnement à
   recréer, fait, prochaines étapes). Prompt de reprise donné à l'utilisateur.
+
+## 2026-11-05 (soir) — Nouveau compte : environnement vérifié + aperçu de gravure du jonc refait
+- Environnement : SHOPIFY_STORE = xs4brq-7y.myshopify.com, `shopify.py check` = « Les Mots De Lou » ✅ ; FAL_KEY présente ✅ ;
+  fal.run / rest.fal.ai ✅. ❌ **api.pinterest.com, cdn.shopify.com, lesmotsdelou.fr refusés par le réseau (403)** → à ajouter
+  aux domaines autorisés de l'environnement (utilisateur).
+- **Aperçu de gravure du jonc** (atelier de l'accueil, 1re vue de la fiche, vignette animée) : refait avec le **jonc réel fin à
+  cœurs**. Photo vierge = la photo produit de la fiche (`fiches-v3/jonc-1-produit.jpg`) sans la gravure, Nano Banana Pro 4K,
+  3 finitions (`contenu/lou/jonc-vierge-v3/`, ≈ 0,90 $). Bords de la face mesurés (`scripts/mesure_jonc.py`, identiques sur les
+  3 finitions, écart < 2 px) ; tables JONC de lou.js désormais dans le repère 1024 de l'image entière (cx 535, a 422, face 62 px),
+  VUES bande 72/380/920×460, carré 62/124/900. `assets_theme.py` mis à jour (recadrages). Testé au banc (iPhone 13 + ordinateur,
+  textes court/long, 3 finitions, fiche avec ?texte=&finition=, vignette ; 0 erreur JS) puis envoyé (8 fichiers).
+  Captures : `docs/captures/2026-11-05-jonc-fin-*.jpg`.

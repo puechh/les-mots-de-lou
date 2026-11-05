@@ -291,17 +291,19 @@
   if (LOU.cart && LOU.cart.items) { dejaDuo = LOU.cart.item_count >= 2; dessinerPanier(LOU.cart); }
 
   /* ---------- Gravure réaliste sur la photo du jonc ----------
-     Bords de la face avant mesurés sur la photo du jonc vierge (repère : recadrage 920×460 placé en x=90, y=360 de l'image
-     1024×1024 ; un point tous les 10 px à partir de x=100). Le texte est écrit à plat sur une bande « déroulée », puis replié
-     colonne par colonne entre le bord haut et le bord bas de la face (les verticales restent verticales, comme sur un cylindre) ;
-     il se resserre vers les côtés (x = cx + a·sin θ). « vue » = zone de l'image 1024 affichée (accueil : bande ; fiche : carré).
-     Si on change la photo : re-mesurer haut/bas/cx/a (méthode dans docs/journal.md, 02/11/2026). */
+     Jonc réel (05/11/2026) : jonc ouvert fin (≈ 4 mm), petit cœur ajouré à chaque extrémité. Photo vierge 3 finitions
+     contenu/lou/jonc-vierge-v3/ (même cadrage que la photo produit de la fiche). Bords de la face avant mesurés sur cette photo
+     dans le repère 1024×1024 de l'image entière (un point tous les 10 px à partir de x=100 ; dégradé de luminosité colonne par
+     colonne, moyenne des 3 finitions, lissage polynôme degré 4, écart < 2 px). Le texte est écrit à plat sur une bande
+     « déroulée », puis replié colonne par colonne entre le bord haut et le bord bas de la face (les verticales restent
+     verticales, comme sur un cylindre) ; il se resserre vers les côtés (x = cx + a·sin θ). « vue » = zone de l'image 1024
+     affichée (accueil : bande ; fiche : carré ; vignette : plein). Si on change la photo : re-mesurer (scripts/mesure_jonc.py). */
   var JONC = {
-    x0: 100, pas: 10, cx: 450, a: 410, xg: 125, xd: 800, zone: 0.78, ecrase: 0.85,
-    haut: [281.6,286.6,291.3,295.7,299.7,303.5,307.0,310.3,313.3,316.1,318.6,321.0,323.1,325.1,326.8,328.4,329.9,331.2,332.3,333.4,334.2,335.0,335.7,336.2,336.6,337.0,337.2,337.4,337.5,337.5,337.4,337.3,337.1,336.8,336.4,336.0,335.5,335.0,334.4,333.7,333.0,332.1,331.3,330.3,329.3,328.2,327.0,325.8,324.4,323.0,321.5,319.8,318.1,316.2,314.3,312.2,309.9,307.5,305.0,302.3,299.4,296.4,293.2,289.7,286.1,282.2,278.1,273.8,269.1,264.3,259.1,253.6,247.9,241.8],
-    bas: [327.1,332.4,337.5,342.2,346.6,350.7,354.5,358.1,361.4,364.4,367.2,369.8,372.2,374.4,376.4,378.3,379.9,381.4,382.7,383.9,385.0,385.9,386.7,387.4,387.9,388.4,388.7,389.0,389.1,389.2,389.2,389.1,388.9,388.6,388.3,387.8,387.3,386.8,386.1,385.4,384.6,383.7,382.8,381.8,380.6,379.4,378.1,376.8,375.3,373.7,372.0,370.2,368.3,366.3,364.1,361.8,359.4,356.8,354.1,351.1,348.1,344.8,341.3,337.6,333.8,329.6,325.3,320.7,315.8,310.7,305.2,299.5,293.5,287.1]
+    x0: 100, pas: 10, cx: 535, a: 422, xg: 215, xd: 855, zone: 0.74, ecrase: 0.85, hFace: 62,
+    haut: [579.9,586.4,592.6,598.5,604.0,609.2,614.2,618.8,623.2,627.3,631.2,634.8,638.2,641.4,644.4,647.2,649.8,652.3,654.5,656.6,658.6,660.4,662.1,663.6,665.1,666.4,667.6,668.7,669.7,670.6,671.4,672.2,672.8,673.4,673.9,674.4,674.7,675.1,675.3,675.5,675.7,675.7,675.8,675.8,675.7,675.5,675.4,675.1,674.8,674.5,674.1,673.6,673.0,672.4,671.8,671.0,670.2,669.3,668.3,667.2,666.0,664.8,663.4,661.9,660.3,658.5,656.7,654.7,652.5,650.2,647.7,645.1,642.2,639.2,636.0,632.6,628.9,625.1,620.9,616.6,611.9,607.0,601.8,596.3,590.5,584.4,577.9,571.0],
+    bas: [633.6,640.7,647.3,653.7,659.6,665.2,670.6,675.6,680.3,684.8,688.9,692.9,696.6,700.0,703.3,706.3,709.1,711.8,714.2,716.5,718.7,720.6,722.5,724.2,725.7,727.2,728.5,729.7,730.8,731.8,732.7,733.6,734.3,735.0,735.6,736.1,736.5,736.9,737.2,737.4,737.6,737.7,737.8,737.8,737.7,737.6,737.5,737.2,736.9,736.6,736.1,735.7,735.1,734.5,733.7,733.0,732.1,731.1,730.1,728.9,727.7,726.3,724.8,723.2,721.5,719.6,717.6,715.5,713.1,710.6,708.0,705.1,702.1,698.8,695.4,691.7,687.7,683.6,679.1,674.4,669.4,664.1,658.5,652.5,646.2,639.6,632.6,625.2]
   };
-  var VUES = { bande: { x0: 90, y0: 360, w: 920, h: 460 }, carre: { x0: 90, y0: 104, w: 920, h: 920 }, plein: { x0: 0, y0: 0, w: 1024, h: 1024 } };
+  var VUES = { bande: { x0: 72, y0: 380, w: 920, h: 460 }, carre: { x0: 62, y0: 124, w: 900, h: 900 }, plein: { x0: 0, y0: 0, w: 1024, h: 1024 } };
   var bordJonc = function (t, x) {
     var k = (x - JONC.x0) / JONC.pas, i = Math.max(0, Math.min(t.length - 2, Math.floor(k))), f = k - i;
     return t[i] + (t[i + 1] - t[i]) * f;
@@ -331,7 +333,7 @@
     if (!W || !H || !img.complete || !img.naturalWidth) return null;
     var dpr = Math.min(window.devicePixelRatio || 1, 2.5), vue = VUES[opts.vue || "bande"];
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
-    var s = canvas.width / vue.w, ox = 90 - vue.x0, oy = 360 - vue.y0, ctx = canvas.getContext("2d");
+    var s = canvas.width / vue.w, ox = -vue.x0, oy = -vue.y0, ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (opts.fond !== false) ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     if (!texte) return null;
@@ -339,7 +341,7 @@
     if (P.maj) texte = texte.toUpperCase();
     var J = JONC, thG = Math.asin((J.xg - J.cx) / J.a), thD = Math.asin((J.xd - J.cx) / J.a), dTh = thD - thG;
     // 1. Bande déroulée (sur-échantillonnée ×2)
-    var hFace = 52, SH = Math.ceil(hFace * J.zone / J.ecrase * s * 2), SW = Math.ceil(J.a * dTh * s * 2);
+    var hFace = J.hFace, SH = Math.ceil(hFace * J.zone / J.ecrase * s * 2), SW = Math.ceil(J.a * dTh * s * 2);
     var bande = calque(SW, SH), b = bande.getContext("2d");
     b.font = policeCss(P, 100); b.textBaseline = "alphabetic";
     var m = b.measureText(texte), ref = b.measureText(P.ref);

@@ -29,8 +29,9 @@ L'utilisateur passe sur un **nouveau compte Claude** (plus de crédit sur l'anci
 - Balise Pinterest connectée (événements reçus) ; règles, textes du compte, CSV d'un mois d'épingles prêts (`docs/pinterest-*.md`).
 
 ### Prochaines étapes (liste complète : `docs/avant-annonces.md`)
-1. **Claude** : refaire l'aperçu de gravure du jonc (encore l'ancien jonc large sans cœurs : `jonc-vierge*.webp`, `jonc-carre*.webp`,
-   tables JONC de lou.js) ; puis visuels de pub Pinterest 2:3 + plan de campagne (crédit 420 €).
+1. ✅ (05/11, nouveau compte) aperçu de gravure du jonc refait avec le jonc fin à cœurs (`contenu/lou/jonc-vierge-v3/`, tables JONC
+   de lou.js en repère 1024, `scripts/mesure_jonc.py`). **Claude** : visuels de pub Pinterest 2:3 + plan de campagne (crédit 420 €).
+   ⚠️ Réseau du nouvel environnement : api.pinterest.com, cdn.shopify.com, lesmotsdelou.fr encore bloqués (403) au 05/11.
 2. **Utilisateur** : boutique ouverte au public ? DSers relié + 1 vraie commande test payée ; compte pub Pinterest + crédit 420 € +
    catalogue « actif » ; **médiateur de la consommation + SIREN** (obligatoires, à donner à Claude) ; GA4 (ID G-…) ; Search Console.
 3. Corps-Confiant : même bug de bandeau cookies probable (`cc-base.js`) → à corriger dans une session Corps-Confiant.
@@ -51,7 +52,7 @@ L'utilisateur passe sur un **nouveau compte Claude** (plus de crédit sur l'anci
   porté. Jonc : nouvelle photo produit fine avec cœurs (sans coffret), détail cœurs, 3 finitions, poignet, Lou, café. Collier prénom :
   photo produit + finitions, cou « Lou », Lou, marché de Noël. Collier photo : produit, cou, Lou devant la cheminée. Morse : produit,
   macro, carte de Noël, Lou. Textes alternatifs avec « Image virtuelle » quand c'est porté.
-- ⚠️ **Reste incohérent : l'« aperçu en direct » du jonc** (1re vue de la fiche, atelier de gravure de l'accueil, vignette animée)
+- ✅ (05/11) ~~Reste incohérent : l'« aperçu en direct » du jonc~~ (1re vue de la fiche, atelier de gravure de l'accueil, vignette animée)
   utilise encore l'ancien jonc large sans cœurs (`jonc-vierge*.webp`, `jonc-carre*.webp`) → refaire un jonc vierge fin à cœurs
   (3 finitions) et re-mesurer la face gravable (tables JONC de lou.js). Idem collier prénom/photo : photos produit encore v2.
 

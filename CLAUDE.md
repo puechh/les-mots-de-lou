@@ -47,8 +47,8 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   Vérifier un recadrage à 100 % avant d'envoyer. **Images du site en pleine définition** (demande utilisateur « vraiment en 4K »,
   03/11) ; les petits détails (gravure, prénom) sont flous sur un plan large → toujours prévoir un gros plan dédié. Ses photos d'exemple (selfies) = jamais envoyées au modèle.
 - **Jonc réel (photo fournisseur envoyée le 03/11)** : jonc ouvert **fin (≈ 4 mm)**, acier argenté poli, face plate gravée,
-  **un petit cœur ajouré à chaque extrémité** (à l'arrière du poignet). C'est la seule différence avec les images IA actuelles
-  (qui ont aussi un jonc plus large) → images du jonc (fiche + aperçu de gravure du thème) à refaire et à envoyer sur Shopify.
+  **un petit cœur ajouré à chaque extrémité** (à l'arrière du poignet). Fiches et aperçu de gravure (atelier, fiche, vignette) refaits avec ce jonc (05/11 :
+  `contenu/lou/jonc-vierge-v3/` 3 finitions vierges, tables JONC de lou.js en repère 1024, `scripts/mesure_jonc.py`).
 - **Politiques (décision utilisateur 03/11) = exactement celles de Corps-Confiant**, même éditeur, sauf l'e-mail
   **`contact@lesmotsdelou.fr`** et les retours (bijoux personnalisés : pas de rétractation, L221-28 3° ; correction/annulation
   tant que la fabrication n'a pas commencé ; garantie légale 2 ans, frais à notre charge). Modèles : `contenu/politiques/*.html`

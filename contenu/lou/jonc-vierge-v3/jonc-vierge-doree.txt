@@ -1,0 +1,4 @@
+Modèle : fal fal-ai/nano-banana-pro/edit
+Paramètres : {"resolution": "4K", "aspect_ratio": "1:1", "output_format": "jpeg"}
+Prompt : Shot on iPhone 18 Pro by an amateur photographer. Edit this exact photo: keep everything identical (same bangle shape, same thin 4 mm width, same angle, same position and size in the frame, same small heart-shaped cut-outs at both open ends, same pink fabric, same dried flowers, same light and reflections) but completely REMOVE the engraved text: the flat outer face of the bangle is now blank, smooth, plain polished metal, with no letters, no marks, no scratches. Change only the metal colour: gold-tone finish (yellow gold colour PVD on stainless steel), same polish and reflections. Ultra-realistic, true-to-life 4K photo, extremely sharp, no pixelation, no CGI look.
+Images de référence : contenu/lou/fiches-v3/jonc-1-produit.jpg

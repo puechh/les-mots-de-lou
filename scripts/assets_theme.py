@@ -68,20 +68,15 @@ d.text((64, 62), "L", font=f, fill="white", anchor="mm")
 fv.save(os.path.join(A, "favicon.png"))
 print("favicon.png")
 
-# Atelier de gravure (accueil + fiche du jonc) : photo du jonc vierge dans les 3 finitions, recadrée autour du jonc.
-# Recadrage x 90→1010, y 360→820 du repère 1024×1024 (×2 sur les images HD 2048). Les bords de la face avant
-# (tables JONC de lou.js, repère 920×460) restent valables tant que ce recadrage et la photo ne changent pas.
-for nom, dest in [("produit-jonc-vierge-hd", "jonc-vierge.webp"), ("produit-jonc-vierge-doree-hd", "jonc-vierge-doree.webp"),
-                  ("produit-jonc-vierge-rosee-hd", "jonc-vierge-rosee.webp")]:
-    src = trouver(nom)
-    im = Image.open(src).convert("RGB"); k = im.width / 1024
-    enregistrer(im.crop((round(90 * k), round(360 * k), round(1010 * k), round(820 * k))), dest, 1080, 76)
-
-# Fiche du jonc : même photo en carré (x 90→1010, y 104→1024 du repère 1024)
-for nom, dest in [("produit-jonc-vierge-hd", "jonc-carre.webp"), ("produit-jonc-vierge-doree-hd", "jonc-carre-doree.webp"),
-                  ("produit-jonc-vierge-rosee-hd", "jonc-carre-rosee.webp")]:
-    im = Image.open(trouver(nom)).convert("RGB"); k = im.width / 1024
-    enregistrer(im.crop((round(90 * k), round(104 * k), round(1010 * k), round(1024 * k))), dest, 1080, 74)
+# Atelier de gravure (accueil + fiche du jonc) : jonc réel fin à cœurs, vierge, 3 finitions (contenu/lou/jonc-vierge-v3, 05/11).
+# Bande (accueil) : x 72→992, y 380→840 du repère 1024 ; carré (fiche) : x 62→962, y 124→1024. Ces zones = VUES de lou.js ;
+# les bords de la face (tables JONC, repère 1024 de l'image entière) restent valables tant que la photo ne change pas.
+JV = os.path.join(ROOT, "contenu/lou/jonc-vierge-v3/jonc-vierge-{}.jpg")
+for fin, bande, carre in [("argentee", "jonc-vierge.webp", "jonc-carre.webp"), ("doree", "jonc-vierge-doree.webp", "jonc-carre-doree.webp"),
+                          ("rosee", "jonc-vierge-rosee.webp", "jonc-carre-rosee.webp")]:
+    im = Image.open(JV.format(fin)).convert("RGB"); k = im.width / 1024
+    enregistrer(im.crop((round(72 * k), round(380 * k), round(992 * k), round(840 * k))), bande, 1080, 76)
+    enregistrer(im.crop((round(62 * k), round(124 * k), round(962 * k), round(1024 * k))), carre, 1080, 74)
 
 # Collier prénom (aperçu en direct) : chaîne sans pendentif, 3 finitions. Le bas des deux brins (sous y = 640, anneaux
 # compris) est effacé : le thème redessine les brins jusqu'aux bords du prénom, qui s'écartent ou se resserrent selon
@@ -128,7 +123,7 @@ enregistrer(Image.open(trouver("produit-collier-photo-1-hd", "produit-collier-ph
 
 # Vignettes produits animées (lou.js) : jonc vierge plein cadre (même cadrage que la photo produit), collier sans prénom,
 # photos d'exemple pour la bulle du collier photo
-enregistrer(Image.open(trouver("produit-jonc-vierge-hd")).convert("RGB"), "jonc-vierge-plein.webp", 560, 74)
+enregistrer(Image.open(JV.format("argentee")).convert("RGB"), "jonc-vierge-plein.webp", 560, 74)   # même cadrage que la photo produit (fiches-v3/jonc-1-produit)
 enregistrer(Image.open(os.path.join(A, "collier-vierge.webp")).convert("RGB"), "collier-vierge-carte.webp", 560, 74)
 _cp = Image.open(trouver("produit-collier-photo-1-hd")).convert("RGB").resize((1200, 1200), Image.LANCZOS)
 enregistrer(_cp.crop((724, 274, 1053, 603)), "souvenir-couple.webp", 320, 76)

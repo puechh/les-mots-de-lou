@@ -25,7 +25,7 @@ Légende : 🔴 bloquant pour les annonces · 🟠 important · 🟢 confort. «
 ## 3. Cohérence du site (règle Pinterest du 12/11 : pas de produit déformé par l'IA)
 | | Quoi | Qui | État |
 |---|---|---|---|
-| 🔴 | Aperçu de gravure **en direct** du jonc (fiche + atelier de l'accueil + vignette) : encore l'**ancien jonc large sans cœurs** → refaire avec le jonc fin à cœurs (3 finitions) | Claude | à faire |
+| ✅ | Aperçu de gravure **en direct** du jonc (fiche + atelier de l'accueil + vignette) refait avec le **jonc fin à cœurs** (3 finitions), testé au banc, envoyé | Claude | fait 05/11 |
 | 🟠 | Comparer toutes les photos produits aux vraies photos fournisseur, refaire si écart (forme, largeur, couleur) | Claude (après les photos DSers) | à faire |
 | 🟢 | Supprimer / archiver les commandes test à 0 € (statistiques propres) | Vous | optionnel |
 
