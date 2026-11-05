@@ -434,3 +434,14 @@
   VUES bande 72/380/920×460, carré 62/124/900. `assets_theme.py` mis à jour (recadrages). Testé au banc (iPhone 13 + ordinateur,
   textes court/long, 3 finitions, fiche avec ?texte=&finition=, vignette ; 0 erreur JS) puis envoyé (8 fichiers).
   Captures : `docs/captures/2026-11-05-jonc-fin-*.jpg`.
+
+## 2026-11-05 (soir) — Visuels de pub Pinterest + plan de campagne (crédit 420 €)
+- 5 photos 2:3 Nano Banana Pro 4K (`contenu/pinterest/pubs-2026-11/`, prompts dans les .txt, « Shot on iPhone 18 Pro… ») :
+  Lou + jonc au sapin, Lou + collier prénom « Lou » au marché de Noël, Lou + collier photo devant la cheminée, duo cadeau jonc +
+  collier « Emma » (sans personne), jonc en gros plan (sans personne). Vérifiées à 100 % ; pub-3 refaite 2 fois (bande floue, puis
+  2 pendentifs), pub-4 refaite 2 fois (jonc trop large, puis bijoux trop petits). ≈ 2,70 $ fal.
+- Textes ajoutés par `scripts/pinterest_pubs.py` (2000×3000, polices Allura / Montserrat en OFL dans `scripts/polices/`) :
+  titre, « 2e bijou à -50 % » + « sur le moins cher des deux », « Commandez avant le 10 décembre pour Noël », « Image virtuelle »
+  sur les 3 visuels avec Lou. Pas de prix barré, pas d'avis.
+- Plan : `docs/pinterest-campagne.md` (catalogue 180 € + épingles Noël 210 € + réserve 30 € Black Friday, ciblage, règles de
+  décision, rentabilité ≈ 15 €/bijou, rappels légaux). À valider par l'utilisateur.

@@ -41,6 +41,7 @@ Légende : 🔴 bloquant pour les annonces · 🟠 important · 🟢 confort. «
 | 🟢 | Google Merchant Center (fiches gratuites + Shopping) | Vous | plus tard |
 
 ## 5. Les annonces elles-mêmes (Claude prépare, vous validez)
+- ✅ 05/11 : **5 visuels prêts** (`contenu/pinterest/pubs-2026-11/final/`) + **plan de campagne** (`docs/pinterest-campagne.md`) → à valider.
 - Créatives verticales 2:3 : bijou porté + gros plan lisible + offre avec sa condition (« 2e bijou à -50 % sur le moins cher »),
   « Image virtuelle » quand Lou apparaît, aucune fausse cliente ni faux avis, pas de prix barré.
 - Plan de campagne avec le crédit 420 € : 1) catalogue / Shopping (4 produits), 2) 3-4 épingles sponsorisées « idée cadeau Noël »,

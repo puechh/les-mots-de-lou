@@ -30,7 +30,8 @@ L'utilisateur passe sur un **nouveau compte Claude** (plus de crédit sur l'anci
 
 ### Prochaines étapes (liste complète : `docs/avant-annonces.md`)
 1. ✅ (05/11, nouveau compte) aperçu de gravure du jonc refait avec le jonc fin à cœurs (`contenu/lou/jonc-vierge-v3/`, tables JONC
-   de lou.js en repère 1024, `scripts/mesure_jonc.py`). **Claude** : visuels de pub Pinterest 2:3 + plan de campagne (crédit 420 €).
+   de lou.js en repère 1024, `scripts/mesure_jonc.py`). ✅ visuels de pub Pinterest 2:3 (`contenu/pinterest/pubs-2026-11/final/`, `scripts/pinterest_pubs.py`) + plan de campagne
+   (`docs/pinterest-campagne.md`) : **à valider par l'utilisateur**, puis à lancer quand les bloquants seront levés.
    ⚠️ Réseau du nouvel environnement : api.pinterest.com, cdn.shopify.com, lesmotsdelou.fr encore bloqués (403) au 05/11.
 2. **Utilisateur** : boutique ouverte au public ? DSers relié + 1 vraie commande test payée ; compte pub Pinterest + crédit 420 € +
    catalogue « actif » ; **médiateur de la consommation + SIREN** (obligatoires, à donner à Claude) ; GA4 (ID G-…) ; Search Console.
