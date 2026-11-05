@@ -1,4 +1,6 @@
-# Avant de lancer les annonces (Pinterest, puis Google / Meta) — état au 05/11/2026
+# Avant de lancer les annonces (Pinterest, puis Google / Meta) — état au 05/11/2026 (mis à jour le soir)
+
+> Prix barrés -20 % en place (décision utilisateur 05/11). « Prix de lancement » supprimé.
 
 Légende : 🔴 bloquant pour les annonces · 🟠 important · 🟢 confort. « Vous » = l'utilisateur, « Claude » = la session.
 
@@ -16,8 +18,8 @@ Légende : 🔴 bloquant pour les annonces · 🟠 important · 🟢 confort. «
 |---|---|---|---|
 | 🔴 | **Médiateur de la consommation** (obligatoire, amende possible) : s'inscrire, donner son nom/site à Claude | Vous → Claude | absent |
 | 🔴 | **SIREN** (et TVA ou « TVA non applicable, art. 293 B ») dans les mentions légales — directement dans Shopify (dépôt public) | Vous / Claude via API | absent |
-| 🔴 | **Bannière cookies** active (Shopify → Paramètres → Confidentialité des clients) : bloque Pinterest/GA4 sans accord | Vous | à vérifier |
-| 🔴 | Politique de confidentialité : citer **Pinterest (balise + API de conversion), Google Analytics, Google & YouTube** | Claude | à faire |
+| 🔴 | Bandeau cookies du thème ✅ (05/11) ; **désactiver la bannière Shopify** (Paramètres → Confidentialité des clients) | Vous | à faire |
+| ✅ | Page « Cookies et partenaires » (Shopify, Google, Pinterest) en ligne | Claude | fait 05/11 |
 | 🟠 | Phrase « droits et taxes de douane pris en charge » (page Livraison) à confirmer avec DSers/AliExpress | Vous → Claude | à confirmer |
 
 ## 3. Cohérence du site (règle Pinterest du 12/11 : pas de produit déformé par l'IA)
