@@ -382,3 +382,7 @@
   quantité de 0 (-1 pour le bracelet) → affichées épuisées par certains affichages / catalogues (Pinterest, Google).
 - Corrigé : suivi du stock activé + **999 par variante** (emplacement « Shop location »), vente toujours autorisée au-delà
   (CONTINUE). API 2026-10 : `inventorySetQuantities` exige `changeFromQuantity` et la directive `@idempotent(key: …)`.
+- Suite : le panier affichait toujours « Le produit … n'est déjà plus en stock ». Vraie cause : les tarifs de livraison créés
+  le 03/11 par marché (`marketUpdate`) n'avaient **aucun emplacement d'expédition** (`includedLocations` vide) → aucun entrepôt ne
+  livrait la France ni la Belgique → Shopify refusait l'ajout au panier. Corrigé : « Shop location » ajouté aux 4 tarifs
+  (`rateGroupsToUpdate … conditions: { originLocationsToAdd }`). Le stock à 999 est gardé (catalogues « en stock »).

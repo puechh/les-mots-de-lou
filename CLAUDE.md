@@ -62,6 +62,8 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   (`marketUpdate(input:{delivery:{shipping:{optionDefinitionsToCreate/ToDelete}}})`, lecture `markets{delivery{shipping{…}}}`),
   PAS ceux de `deliveryProfileUpdate` (ancien système, modifié pour rien le 03/11). Réglé : France et Belgique = « Livraison
   standard » 4,90 € gratuite dès 39,90 € (`freeDeliveryMinimumValue`) + « Livraison + Garantie 2 mois 🛡️ » 7,90 €.
+  ⚠️ **Chaque tarif doit avoir l'emplacement « Shop location »** (`rateGroups … conditions: { originLocationsToAdd }`) : sans lui,
+  le panier répond « plus en stock » (incident du 05/11).
 - **Référencement (04/11)** : titre et méta-description de l'accueil et de la page d'attente dans `theme-lou/layout/*.liquid` ;
   fiches et collections : `scripts/seo.py` (mot-clé d'abord, titre ≤ 60, description ≈ 150, rien de non vérifié, aucune mention IA).
 - **Pinterest (04/11)** : règles `docs/pinterest-regles.md`, textes `docs/pinterest-compte.md`, plan `docs/pinterest-connexion.md` ;
