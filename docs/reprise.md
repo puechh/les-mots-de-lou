@@ -4,6 +4,37 @@
 > (régénérer : banc `scripts/banc_theme.py` puis `scripts/export_apercu.py <dossier>` et republier).
 > Shopify : la boutique est construite et le thème Lou est **publié** (derrière le mot de passe) → voir ci-dessous.
 
+
+## ⭐ ÉTAT AU 05/11/2026 SOIR — À LIRE EN PREMIER (changement de compte Claude)
+L'utilisateur passe sur un **nouveau compte Claude** (plus de crédit sur l'ancien). Tout est dans ce dépôt.
+
+### Environnement cloud à recréer sur le nouveau compte (par l'utilisateur, jamais de clé dans le chat)
+- Nom : **« Les Mots de Lou »**. Dépôt : `puechh/les-mots-de-lou` (+ `puechh/boutique-corps-confiant` en lecture, pour l'identité
+  des politiques via `scripts/publier_politiques.py`).
+- Variables d'environnement : `SHOPIFY_STORE` = `xs4brq-7y.myshopify.com`, `SHOPIFY_CLIENT_ID`, `SHOPIFY_CLIENT_SECRET`
+  (appli « Claude api LOU »), `FAL_KEY` (fal.ai). Plus tard : `PINTEREST_ACCESS_TOKEN`, `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`.
+- Network secret OpenAI (site `api.openai.com`, en-tête Authorization, « Bearer <clé> ») — secours seulement.
+- Domaines autorisés : `xs4brq-7y.myshopify.com` (ou `*.myshopify.com`), `fal.run`, `*.fal.run`, `rest.fal.ai`, `*.fal.ai`,
+  `*.fal.media`, `api.pinterest.com`, `api-sandbox.pinterest.com`, `www.pinterest.com`, `cdn.shopify.com`, `lesmotsdelou.fr`.
+- 1re action de la nouvelle session : `python3 scripts/shopify.py check` → doit afficher « Les Mots De Lou » (xs4brq-7y).
+
+### Fait (03-05/11)
+- Lou définitive (Nano Banana Pro 4K, `contenu/lou/reference-v3/`), accueil = Lou détourée qui montre 4 bijoux (5 poses, boucle infinie).
+- Site allégé (pas de pavés), quiz réparé, SEO (titres/descriptions), mention IA seulement sur « Qui est Lou ».
+- Photos des fiches (produit → détails → porté), prix barrés -20 % (décision utilisateur), plus de « prix de lancement ».
+- Politiques = Corps-Confiant ; livraison France + Belgique (4,90 € / offerte dès 39,90 € / Garantie 2 mois 7,90 €) **avec
+  emplacement « Shop location » sur chaque tarif** ; stock 999 par variante.
+- Bandeau cookies du thème (bannière Shopify désactivée par l'utilisateur ; correctif d'affichage du 05/11 → **à faire confirmer
+  par l'utilisateur en navigation privée**) ; page « Cookies et partenaires ».
+- Balise Pinterest connectée (événements reçus) ; règles, textes du compte, CSV d'un mois d'épingles prêts (`docs/pinterest-*.md`).
+
+### Prochaines étapes (liste complète : `docs/avant-annonces.md`)
+1. **Claude** : refaire l'aperçu de gravure du jonc (encore l'ancien jonc large sans cœurs : `jonc-vierge*.webp`, `jonc-carre*.webp`,
+   tables JONC de lou.js) ; puis visuels de pub Pinterest 2:3 + plan de campagne (crédit 420 €).
+2. **Utilisateur** : boutique ouverte au public ? DSers relié + 1 vraie commande test payée ; compte pub Pinterest + crédit 420 € +
+   catalogue « actif » ; **médiateur de la consommation + SIREN** (obligatoires, à donner à Claude) ; GA4 (ID G-…) ; Search Console.
+3. Corps-Confiant : même bug de bandeau cookies probable (`cc-base.js`) → à corriger dans une session Corps-Confiant.
+
 ## 🖼️ 03/11/2026 — SITE REMPLI AVEC LA NOUVELLE LOU (carte blanche utilisateur)
 - **Accueil** : `lou-hero*.webp` = `contenu/lou/bijoux-v3/01-accueil-sapin.jpg` (recadrages dans `scripts/assets_theme.py`),
   repères `.r-collier` / `.r-jonc` déplacés (lou.css) ; portrait et avatar des bulles = `reference-v3/01-face.jpg`. Envoyé.

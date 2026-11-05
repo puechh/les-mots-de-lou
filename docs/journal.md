@@ -418,3 +418,7 @@
   Shopify réellement active) ou si la visiteuse a vraiment répondu oui/non (`currentVisitorConsent`) ; affichage de secours après
   2,5 s si Shopify ne répond pas. Testé au banc sur 4 cas simulés. ⚠️ Corps-Confiant a le même code (`cc-base.js`) : même bug
   probable si sa bannière Shopify est désactivée → à corriger dans une session Corps-Confiant.
+
+## 2026-11-05 (soir) — Passage à un nouveau compte Claude
+- L'utilisateur change de compte (plus de crédit). `docs/reprise.md` : bloc « État au 05/11 soir » en tête (environnement à
+  recréer, fait, prochaines étapes). Prompt de reprise donné à l'utilisateur.
