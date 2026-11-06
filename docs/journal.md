@@ -500,3 +500,4 @@
 - 06/11 : en fait aucune épingle n'avait été créée (fichier entier refusé) → `epingles-collier-5.csv` (les 5 autres, titres uniques) + `epingles-collier-1b.csv`.
 - 06/11 : bannière v3 sans texte (exemple Cleor envoyé) : 2 versions, `profil/banniere-v3-framboise-1920x1080.jpg` (conseillée, gravures lisibles) et `banniere-v3-creme-1920x1080.jpg`.
 - 06/11 : campagnes créées par l'utilisateur : 1) collier prénom (intérêts cadeaux + bijoux femme), 2) bracelet/jonc (mêmes intérêts), 3) Performance+ prévue, 4) mots-clés → conseil : **collier prénom** (recherche la plus fréquente, intention d'achat claire), liste de mots-clés donnée.
+- 06/11 : Performance+ : pas de maximum d'annonces documenté ; Pinterest recommande **au moins 10 annonces par groupe** ; ne pas ajouter/couper pendant l'apprentissage. Mots-clés de la campagne collier : ≈ 130 en « expression », audience ≈ 55-96 k.
