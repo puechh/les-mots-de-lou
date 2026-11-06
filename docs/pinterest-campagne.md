@@ -28,17 +28,20 @@ le site, fabriqué pour vous en 5 à 10 jours. 2e bijou à -50 % sur le moins ch
 + « Image virtuelle » à la fin pour pub-1/2/3. Liens avec `?utm_source=pinterest&utm_medium=paid&utm_campaign=noel2026&utm_content=pub-1`.
 En publiant : cocher la déclaration « contenu modifié/généré par l'IA » si Pinterest la propose.
 
-## 2. Répartition des 420 € (≈ 10/11 → 10/12, 30 jours)
-| Campagne | Objectif Pinterest | Budget | Contenu |
-|---|---|---|---|
-| A. **Catalogue / Shopping** | Ventes (conversions catalogue) | **6 €/jour ≈ 180 €** | les 4 produits du catalogue, ciblage automatique |
-| B. **Épingles « Noël »** | Conversions (achat) ; si < 5 achats en 7 jours → « ajout au panier » | **7 €/jour ≈ 210 €** | pub-1 à pub-5 dans un seul groupe |
-| Réserve | — | **30 €** | renforcer la meilleure pub fin novembre (Black Friday 27/11 → Cyber Monday 30/11) |
+## 2. Les 3 campagnes (décision utilisateur 06/11 : au moins 3 campagnes, lancement le soir même)
+Budget : 420 € du 06/11 au 10/12 (≈ 34 jours) → ≈ 11 €/jour + réserve Black Friday. Épingles : CSV `epingles-idees-2026-11.csv`
+(23 épingles publiées d'un coup). Objectif des campagnes A et B : **Conversions → « Ajout au panier »** (pas « Achat » tant
+qu'il n'y a pas de ventes) ; passer à « Achat » après ≈ 10 ventes.
 
-Ciblage campagne B : **femmes 25-55 ans, France + Belgique, français** ; centres d'intérêt : bijoux, idées cadeaux, Noël, mode
-femme ; mots-clés : « bracelet gravé », « jonc personnalisé », « collier prénom », « collier photo », « bijou personnalisé »,
-« cadeau maman noël », « cadeau meilleure amie », « cadeau sœur », « cadeau couple ». Ciblage élargi (« expansion ») : activé.
-Dès ≈ 100 visiteurs : ajouter une audience **« visiteurs du site sans achat »** (reciblage, petite part du budget).
+| Campagne | Épingles | Ciblage | Budget |
+|---|---|---|---|
+| **A · Design – Idées cadeaux** | les 6 pubs design D1 à D6 | femmes 25-55, FR + BE, français ; **centres d'intérêt** : bijoux, idées cadeaux, Noël, mode femme | **5 €/jour** (≈ 170 €) |
+| **B · Photos – Recherches Noël** | 6 photos sans texte : 03 poignet 3 joncs, 02 sous le sapin, 01 table, 04 chocolat, 08 chaussette, 10 collier photo | femmes 25-55, FR + BE ; **mots-clés** : bracelet gravé, jonc personnalisé, collier prénom, collier photo, bijou personnalisé, cadeau maman noël, cadeau meilleure amie, cadeau sœur, idée cadeau noël femme | **4 €/jour** (≈ 135 €) |
+| **C · Catalogue (Shopping)** | les 4 produits du catalogue | ciblage automatique ; ajouter le **reciblage** (visiteuses sans achat) dès ≈ 100 visiteuses | **2 €/jour** (≈ 70 €) ; objectif « Ventes du catalogue » |
+| Réserve | — | — | ≈ 45 € sur la meilleure campagne du 27/11 au 30/11 |
+
+A vs B = test « pub avec texte design » contre « photo sans texte » : garder celle qui a le meilleur coût par ajout au panier.
+Expansion du ciblage : activée. Enchère : automatique. Un seul groupe d'annonces par campagne au début (budget trop petit pour plus).
 
 ## 3. Calendrier et règles de décision
 - **Semaine 1** (test) : tout tourne, on ne touche à rien pendant 4-5 jours (l'algorithme apprend).

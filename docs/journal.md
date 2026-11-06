@@ -481,3 +481,6 @@
 - 06/11 : l'utilisateur veut **toutes les épingles d'un coup** pour lancer les annonces le soir même → CSV des 23 nouvelles
   épingles sans date (publication immédiate à l'import). L'ancien CSV (29 épingles, 1/jour à 17 h 30) reste programmé.
   Rappel donné avant les annonces : commande test réelle, DSers, médiateur + SIREN (décision à l'utilisateur).
+- 06/11 : conseil donné : catalogue seul avec 4 produits = peu efficace (peu de choix pour l'algorithme, photos carrées sans
+  la personnalisation, compte sans historique). Décision utilisateur : **au moins 3 campagnes** → plan mis à jour dans
+  `docs/pinterest-campagne.md` §2 : A design (intérêts, 5 €/j), B photos sans texte (mots-clés, 4 €/j), C catalogue (2 €/j).
