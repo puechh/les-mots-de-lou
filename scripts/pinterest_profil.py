@@ -52,3 +52,12 @@ d.text((470, 760), "Bijoux personnalisés · aperçu en direct", font=mont(34, "
 d.text((470, 815), "lesmotsdelou.fr", font=mont(32, "Medium"), fill=(125, 90, 105), anchor="mm")
 b.save(os.path.join(OUT, "banniere-1920x1080.jpg"), quality=92)
 print("OK", os.listdir(OUT))
+
+
+# Bannière v2 (demande utilisateur 06/11) : Lou qui écrit ses mots, pas « pub » : juste une ligne manuscrite à gauche
+src = Image.open(os.path.join(OUT, "banniere-lou-source.jpg")).convert("RGB")
+b2 = couvrir(src, W, H); d = ImageDraw.Draw(b2)
+for xy, t, fo, col in [((300, 420), "Vos mots,", allura(150), PRUNE), ((330, 560), "gravés pour toujours", allura(96), FRAMB),
+                       ((330, 660), "lesmotsdelou.fr", mont(30, "Medium"), (125, 90, 105))]:
+    d.text((xy[0] + 2, xy[1] + 2), t, font=fo, fill=(255, 255, 255, 200), anchor="mm"); d.text(xy, t, font=fo, fill=col, anchor="mm")
+b2.save(os.path.join(OUT, "banniere-lou-1920x1080.jpg"), quality=92); print("bannière Lou OK")

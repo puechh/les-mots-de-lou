@@ -489,3 +489,7 @@
 - 06/11 : recommandation : campagne C = « Lou + duo » (épingles normales) au lieu du catalogue ; catalogue plus tard en reciblage.
 - 06/11 : question Performance+ → conseil : campagne A en Performance+ (ciblage auto), B et C en manuel (comparaison) ; vérifier d'abord que la balise reçoit « Ajout au panier » (seuls PageVisit/ViewCategory vus le 05/11).
 - 06/11 : profil Pinterest : bannière 1920×1080, photo de profil, favicons 512/180/32 (`contenu/pinterest/profil/`, `scripts/pinterest_profil.py`).
+- 06/11 : **5 pubs collier prénom** dans le style validé (`idees-2026-11/pubs/collier-*.jpg`, photos `c1`-`c5`) : « son prénom »
+  derrière le cou aux 3 colliers superposés (préféré), trio sur tissu, « Maman » dans la neige, écrin sous le sapin, « Louise » en
+  main. 10 épingles ajoutées au CSV (33 au total, sans date). **Bannière Pinterest v2 avec Lou** (écrit ses mots sur un plaid,
+  slogan manuscrit) : `profil/banniere-lou-1920x1080.jpg`. Aperçu HTML mis à jour. ≈ 2,10 $ fal.

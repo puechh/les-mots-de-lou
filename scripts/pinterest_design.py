@@ -169,3 +169,63 @@ def pub_fenetre():
 
 
 for f in (pub_stack, pub_sapin, pub_lou, pub_neige, pub_table, pub_fenetre): f()
+
+
+# ---------- Collier prénom (06/11) : 5 pubs dans le même style ----------
+def pub_c1():   # façon « vos mots » : « son prénom » en énorme derrière le cou aux 3 colliers
+    n = "c1-cou-3-colliers"; c = photo(n); degrade(c, True, 1300, 110)
+    t = calque(); texte(t, (W / 2, 520), "son", mont(560, "Black"), BLANC); texte(t, (W / 2, 1020), "prénom", mont(430, "Black"), BLANC)
+    c.alpha_composite(ombre_douce(t, 30, 70)); c.alpha_composite(t); c.alpha_composite(sujet(n))
+    texte(c, (W / 2, 120), "LES MOTS DE LOU", mont(46, "SemiBold"), BLANC, esp=14)
+    d = ImageDraw.Draw(c); d.rectangle((0, 2330, W, H), fill=CREME + (255,))
+    texte(c, (W / 2, 2480), "Tout près du cœur.", play(110, "SemiBold"), PRUNE)
+    bouton(c, W / 2, 2680, "Je crée le sien", mont(64, "SemiBold"), FRAMB, BLANC)
+    texte(c, (W / 2, 2860), f"{OFFRE} {COND}", mont(42, "SemiBold"), PRUNE)
+    sauver(c, "collier-1-son-prenom")
+
+
+def pub_c2():   # trio sur tissu rose : bandeau crème en bas
+    c = photo("c2-trio-tissu"); d = ImageDraw.Draw(c); d.rectangle((0, 2280, W, H), fill=CREME + (255,))
+    texte(c, (W / 2, 130), "LES MOTS DE LOU", mont(46, "SemiBold"), BLANC, esp=14, ombre=(30, 15, 20, 140))
+    texte(c, (W / 2, 2440), "Un prénom.", play(170, "SemiBold"), PRUNE)
+    texte(c, (W / 2, 2620), "Trois finitions.", playi(150), FRAMB)
+    texte(c, (W / 2, 2790), f"{OFFRE.upper()}  ·  {COND.upper()}", mont(42, "SemiBold"), PRUNE, esp=3)
+    texte(c, (W / 2, 2900), "lesmotsdelou.fr", mont(38, "Medium"), (125, 90, 105, 255))
+    sauver(c, "collier-2-trois-finitions")
+
+
+def pub_c3():   # neige : minimal serif
+    c = photo("c3-neige-maman"); degrade(c, True, 1400, 120)
+    texte(c, (W / 2, 140), "LES MOTS DE LOU", mont(46, "SemiBold"), BLANC, esp=14)
+    texte(c, (W / 2, 560), "Maman.", play(260, "Regular"), BLANC, ombre=(20, 25, 45, 120))
+    texte(c, (W / 2, 830), "Le plus beau des prénoms.", playi(150), BLANC, ombre=(20, 25, 45, 120))
+    texte(c, (W / 2, 1040), "Collier prénom · argenté, doré ou rosé", mont(56, "Medium"), BLANC, ombre=(20, 25, 45, 150))
+    bouton(c, W / 2, 2780, "Je l'offre", mont(58, "SemiBold"), BLANC, PRUNE)
+    texte(c, (W / 2, 2920), f"{OFFRE} {COND}", mont(38, "Medium"), BLANC, ombre=(20, 25, 45, 160))
+    sauver(c, "collier-3-maman-neige")
+
+
+def pub_c4():   # écrin sous le sapin : façon « ep jewels »
+    c = photo("c4-ecrin-sapin"); degrade(c, True, 1500, 150)
+    texte(c, (W / 2, 190), "les mots de lou", playi(78), CREME)
+    texte(c, (W / 2, 520), "Le cadeau", play(250, "Regular"), CREME, ombre=(30, 15, 20, 120))
+    texte(c, (W / 2, 790), "À SON NOM", mont(210, "Medium"), CREME, esp=20, ombre=(30, 15, 20, 120))
+    texte(c, (W / 2, 1010), "pour toujours", allura(230), CREME, ombre=(30, 15, 20, 140))
+    pl = calque(); bouton(pl, W / 2, 2760, f"{OFFRE} · {COND}", mont(46, "SemiBold"), (255, 250, 248, 235), PRUNE); c.alpha_composite(pl)
+    texte(c, (W / 2, 2900), "Commandez avant le 10 décembre pour Noël", mont(40, "Medium"), CREME, ombre=(30, 15, 20, 160))
+    sauver(c, "collier-4-cadeau-a-son-nom")
+
+
+def pub_c5():   # main + pendentif : script géant derrière la main
+    n = "c5-main-pendentif"; c = photo(n); degrade(c, True, 900, 120); degrade(c, False, 900, 150)
+    t = calque(); texte(t, (W / 2, 330), "Louise", allura(520), BLANC)
+    c.alpha_composite(ombre_douce(t, 22, 70)); c.alpha_composite(t)
+    texte(c, (W / 2, 140), "LES MOTS DE LOU", mont(46, "SemiBold"), BLANC, esp=14)
+    texte(c, (W / 2, 2560), "Son prénom, en écriture manuscrite", play(96, "Regular"), BLANC, ombre=(30, 15, 20, 150))
+    bouton(c, W / 2, 2740, "J'écris le sien", mont(58, "SemiBold"), (226, 245, 236, 255), PRUNE)
+    texte(c, (W / 2, 2880), f"{OFFRE} {COND}", mont(38, "Medium"), BLANC, ombre=(30, 15, 20, 160))
+    sauver(c, "collier-5-louise")
+
+
+if __name__ == "__main__":
+    for f in (pub_c1, pub_c2, pub_c3, pub_c4, pub_c5): f()
