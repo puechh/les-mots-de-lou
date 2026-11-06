@@ -484,3 +484,5 @@
 - 06/11 : conseil donné : catalogue seul avec 4 produits = peu efficace (peu de choix pour l'algorithme, photos carrées sans
   la personnalisation, compte sans historique). Décision utilisateur : **au moins 3 campagnes** → plan mis à jour dans
   `docs/pinterest-campagne.md` §2 : A design (intérêts, 5 €/j), B photos sans texte (mots-clés, 4 €/j), C catalogue (2 €/j).
+- 06/11 : **budget pub décidé par l'utilisateur : 30 €/jour** (A 13 €, B 11 €, C 6 €) → crédit 420 € épuisé vers le 20/11,
+  ensuite budget propre. Conseil : couper les visuels faibles dès le jour 3-4, garder de quoi couvrir le Black Friday.
