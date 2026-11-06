@@ -460,3 +460,9 @@
   toujours avec « sur le moins cher des deux » ; « Image virtuelle » sur les 2 avec Lou. ≈ 4,50 $ fal.
 - 05/11 : l'utilisateur ne veut plus de demandes d'autorisation → plus d'outil Claude Docs ; aperçu de toutes les images
   dans `contenu/pinterest/epingles-apercu.html` (page autonome, images intégrées).
+
+## 2026-11-06 — Épingles importables (CSV) pour les nouvelles images
+- `scripts/pinterest_csv_idees.py` : 23 images (12 photos sans texte, 6 pubs design, 5 pubs 1re série) redimensionnées en
+  1600×2400 et envoyées dans Shopify → Fichiers (adresses dans `contenu/pinterest/idees-2026-11/images.json`) ;
+  CSV `contenu/pinterest/epingles-idees-2026-11.csv` : 1 épingle par jour à 12 h 30 du 07/11 au 29/11 (l'autre CSV : 17 h 30),
+  liens UTM `utm_campaign=idees-2026-11`, « Image virtuelle » sur les 6 épingles avec Lou, offre avec sa condition.
