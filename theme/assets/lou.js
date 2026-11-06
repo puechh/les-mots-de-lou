@@ -829,7 +829,7 @@
       matiere: function () { louRepond("Le jonc et le collier prénom sont en <b>acier inoxydable</b> : ils ne noircissent pas. Le collier photo : chaîne en acier inoxydable, pendentif en métal plaqué. Doré et rosé sont des finitions colorées, pas de l'or (je préfère être honnête 😇).", proposer); },
       offre: function () { louRepond("Mettez <b>2 bijoux</b> dans le panier : le moins cher est automatiquement à <b>-50 %</b>. Un pour elle, un pour vous ? 🎁", proposer); },
       livraison: function () { louRepond("Livraison suivie en France et en Belgique. Commandé aujourd'hui, reçu " + esc(LOU.estimation()) + " (estimation) 🚚<br><a class=\"btn\" href=\"" + root + "pages/livraison-retours\">Livraison &amp; retours</a>", proposer); },
-      qui: function () { louRepond("Je suis <b>Lou, l'avatar de la boutique</b> 💗 Je vous guide ; derrière moi, une vraie équipe vous répond.<br><a class=\"btn\" href=\"" + root + "pages/qui-est-lou\">Mon histoire</a>", proposer); },
+      qui: function () { louRepond("Je suis <b>Lou</b> 💗 Je vous guide ; derrière moi, une vraie équipe vous répond.<br><a class=\"btn\" href=\"" + root + "pages/qui-est-lou\">Mon histoire</a>", proposer); },
       favoris: function () { louRepond(favs.length ? "Vous avez " + favs.length + " coup" + (favs.length > 1 ? "s" : "") + " de cœur 💗 Je vous les ouvre !" : "Pas encore de coup de cœur… Touchez le ♡ sur un bijou, je vous le garde 💗", function () { if (favs.length) setTimeout(function () { fermer(); ouvrirFavs(); }, 900); proposer(); }); },
       equipe: function () { louRepond("Une question précise ? L'équipe vous répond par e-mail, en vrai 💌<br><a class=\"btn\" href=\"" + root + "pages/contact\">Écrire à l'équipe</a>", proposer); }
     };
@@ -846,7 +846,7 @@
       ouvert = true; teaser.hidden = true; if (pastille) pastille.hidden = true; stocke("lou-vu", "1");
       panel.setAttribute("aria-hidden", "false"); panel.classList.remove("ouvre"); void panel.offsetWidth; panel.classList.add("ouvre"); btn.setAttribute("aria-expanded", "true"); son("pop");
       if (!fil.children.length) {
-        var bonjour = page === "product" && LOU.produit ? "Coucou ! Moi c'est Lou 👋 l'avatar de la boutique. Vous regardez « " + esc(LOU.produit) + " » : bon choix ! Je vous aide ?" : "Coucou ! Moi c'est Lou 👋 l'avatar de la boutique. Je suis là pour vous aider à choisir… et à trouver les mots. On commence par quoi ?";
+        var bonjour = page === "product" && LOU.produit ? "Coucou ! Moi c'est Lou 👋 Vous regardez « " + esc(LOU.produit) + " » : bon choix ! Je vous aide ?" : "Coucou ! Moi c'est Lou 👋 Je suis là pour vous aider à choisir… et à trouver les mots. On commence par quoi ?";
         louRepond(bonjour, function () { proposer(); });
       }
     };

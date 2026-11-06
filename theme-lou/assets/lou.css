@@ -699,7 +699,7 @@ body.panier-ouvert .lou-assist, body.fav-ouvert .lou-assist { opacity: 0; pointe
 .scene-lou .eclat { position: absolute; z-index: 1; color: #fff; font-size: 1.4rem; text-shadow: 0 0 10px rgba(255, 255, 255, .9); animation: scintille 3s ease-in-out infinite; pointer-events: none; }
 .scene-lou .e1 { left: 30%; top: 6%; } .scene-lou .e2 { right: 28%; top: 16%; animation-delay: -1s; font-size: 1rem; } .scene-lou .e3 { left: 22%; top: 46%; animation-delay: -2s; font-size: .9rem; }
 @keyframes scintille { 50% { opacity: .2; scale: .6; } }
-.scene-lou .sticker.s2 { left: 2%; right: auto; top: auto; bottom: 1%; z-index: 3; }
+.scene-lou .sticker.s2 { left: 2%; right: auto; top: 2%; bottom: auto; z-index: 3; }   /* en haut : la bulle de Lou ne la cache plus (06/11) */
 @media (max-width: 899px) {   /* téléphone : pastilles un peu plus petites et rentrées, pour que les étiquettes ne soient pas coupées */
   .scene-lou .bijou { width: 22%; }
   .scene-lou .b-jonc { left: 1%; } .scene-lou .b-photo { left: 0%; }

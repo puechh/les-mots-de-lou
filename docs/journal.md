@@ -514,3 +514,4 @@
   « Qui est Lou » (réécrite façon Lily's Treasures : « La voix des Mots de Lou », mots préférés, vraie équipe/atelier derrière les
   bijoux). Conseil légal donné (AI Act art. 50, pratiques trompeuses). Page Shopify mise à jour (pageUpdate), 8 fichiers du thème
   envoyés après test au banc (iPhone + PC, aucune mention, 0 erreur JS).
+- 06/11 : accueil : pastille « 2e bijou à -50 % » cachée par la bulle de Lou → déplacée en haut à gauche de la scène (`.scene-lou .sticker.s2` top 2 %). Vérifié au banc (iPhone, iPad, PC : aucun chevauchement avec la bulle ni les pastilles bijoux), envoyé.
