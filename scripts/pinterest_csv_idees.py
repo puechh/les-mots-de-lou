@@ -3,7 +3,8 @@
 
 1. Redimensionne en 1600×2400 (2:3), envoie dans Shopify → Contenu → Fichiers (adresse publique cdn.shopify.com),
    mémorise les adresses dans contenu/pinterest/idees-2026-11/images.json (pas de nouvel envoi si déjà fait).
-2. Écrit contenu/pinterest/epingles-idees-2026-11.csv : 1 épingle par jour à 12 h 30 à partir du 07/11 (l'autre CSV publie à 17 h 30).
+2. Écrit contenu/pinterest/epingles-idees-2026-11.csv : toutes publiées tout de suite à l'import (date vide), pour les pubs
+   du soir même (décision utilisateur 06/11).
 Règles : offre avec sa condition (« Image virtuelle » retirée, décision utilisateur 06/11), pas de prix barré ni d'avis, messages « Noël » avant le 10/12.
     python3 scripts/pinterest_csv_idees.py
 """
@@ -109,5 +110,5 @@ with open(sortie, "w", newline="", encoding="utf-8") as fh:
         nom = "lou-pin-" + os.path.basename(f)[:-4]
         url = f"{SITE}{lien}?utm_source=pinterest&utm_medium=organic&utm_campaign=idees-2026-11&utm_content={os.path.basename(f)[:-4]}"
         assert len(titre) <= 100 and len(desc) <= 500
-        w.writerow([titre, urls[nom], tab, "", desc, url, (debut + dt.timedelta(days=k)).strftime("%Y-%m-%dT%H:%M:%S"), mots])
+        w.writerow([titre, urls[nom], tab, "", desc, url, "", mots])
 print(sortie, len(EPINGLES), "épingles")

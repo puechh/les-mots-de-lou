@@ -478,3 +478,6 @@
 - ❌ Aucune politique ne mentionne de **médiateur de la consommation** ni de **SIREN/RCS** (mentions légales, CGV).
 - ❌ Aucune vraie commande test payée par carte : #1002-#1004 à 0 €, #1001 = commande brouillon (24,90 €, admin).
 - ❓ Non vérifiable par l'API : Shopify Payments (portée manquante), DSers relié aux 10 variantes, bandeau cookies en navigation privée.
+- 06/11 : l'utilisateur veut **toutes les épingles d'un coup** pour lancer les annonces le soir même → CSV des 23 nouvelles
+  épingles sans date (publication immédiate à l'import). L'ancien CSV (29 épingles, 1/jour à 17 h 30) reste programmé.
+  Rappel donné avant les annonces : commande test réelle, DSers, médiateur + SIREN (décision à l'utilisateur).
