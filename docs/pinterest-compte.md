@@ -7,7 +7,10 @@
   `Bijoux personnalisés gravés avec vos mots ✍️ Jonc, collier prénom, collier photo, bracelet code Morse. Aperçu en direct · Livraison France & Belgique · Idées cadeaux et phrases à graver 💗`
 - **Site Web** : `https://lesmotsdelou.fr` (à « revendiquer », voir docs/pinterest-connexion.md)
 - **Photo de profil** (06/11) : `contenu/pinterest/profil/photo-profil-1000.png` (« Les mots de Lou » blanc sur framboise).
-- **Bannière** (06/11, choix utilisateur : avec Lou, pas « pub ») : `contenu/pinterest/profil/banniere-lou-1920x1080.jpg` (Lou qui écrit
+- **Bannière v3** (06/11 soir, demande : SANS texte, façon Cleor, on voit Lou et la personnalisation) : `profil/banniere-v3-framboise-1920x1080.jpg`
+  (Lou en soie framboise, main sur le cœur, joncs « Tu es ma personne » / « Toujours » + collier « Lou » lisibles) ou
+  `banniere-v3-creme-1920x1080.jpg` (visage entier, gravures moins lisibles).
+- Bannière v2 (06/11, avec Lou, pas « pub ») : `contenu/pinterest/profil/banniere-lou-1920x1080.jpg` (Lou qui écrit
   ses mots, slogan manuscrit à gauche ; photo source `banniere-lou-source.jpg`). Variante sans Lou : `banniere-1920x1080.jpg`. Favicons : `profil/favicon-512/180/32.png`.
   Produits par `python3 scripts/pinterest_profil.py`.
 - **Catégorie du compte** : Boutique / Mode et accessoires.
