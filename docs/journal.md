@@ -494,3 +494,4 @@
   main. 10 épingles ajoutées au CSV (33 au total, sans date). **Bannière Pinterest v2 avec Lou** (écrit ses mots sur un plaid,
   slogan manuscrit) : `profil/banniere-lou-1920x1080.jpg`. Aperçu HTML mis à jour. ≈ 2,10 $ fal.
 - 06/11 : variante « son prénom » sans bandeau du bas (`collier-1b-son-prenom-sans-bandeau.jpg`), ajoutée au CSV (34 épingles).
+- 06/11 : import CSV refusé par Pinterest (« fichier mal formaté ») ; format vérifié OK → causes probables : tableaux non créés, ou « ?v= » dans les adresses d'images → `epingles-idees-2026-11-v2.csv` sans paramètre d'URL. Rapport d'erreurs à demander à l'utilisateur.
