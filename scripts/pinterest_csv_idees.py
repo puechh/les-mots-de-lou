@@ -64,7 +64,7 @@ EPINGLES = [
      "La phrase qui dit tout, gravée sur un jonc fin. " + NOEL, "tu es ma personne, jonc gravé, cadeau meilleure amie, cadeau couple", True),
     (f"{I}/pubs/collier-1-son-prenom.jpg", PRENOM, B_COLLIERS, "Son prénom, tout près du cœur",
      "Trois colliers prénom superposés, argenté, doré, rosé. Son prénom en écriture manuscrite, jusqu'à 10 lettres. " + OFFRE, "collier prénom, colliers superposés, bijou prénom, cadeau personnalisé", False),
-    (f"{I}/pubs/collier-1b-son-prenom-sans-bandeau.jpg", PRENOM, B_COLLIERS, "Son prénom, tout près du cœur",
+    (f"{I}/pubs/collier-1b-son-prenom-sans-bandeau.jpg", PRENOM, B_COLLIERS, "Son prénom en collier : Emma, Léa, Jade",
      "Trois colliers prénom superposés, argenté, doré, rosé. Son prénom en écriture manuscrite, jusqu'à 10 lettres. " + OFFRE, "collier prénom, colliers superposés, bijou prénom, cadeau personnalisé", False),
     (f"{I}/pubs/collier-2-trois-finitions.jpg", PRENOM, B_COLLIERS, "Un prénom. Trois finitions.",
      "Collier prénom en acier inoxydable, argenté, doré ou rosé. Aperçu du prénom en direct. " + OFFRE, "collier prénom doré, collier prénom argent, collier rose gold, bijou personnalisé", False),
@@ -132,5 +132,6 @@ with open(sortie, "w", newline="", encoding="utf-8") as fh:
         nom = "lou-pin-" + os.path.basename(f)[:-4]
         url = f"{SITE}{lien}?utm_source=pinterest&utm_medium=organic&utm_campaign=idees-2026-11&utm_content={os.path.basename(f)[:-4]}"
         assert len(titre) <= 100 and len(desc) <= 500
+        assert [e[3] for e in EPINGLES].count(titre) == 1, f"titre en double (refusé par Pinterest) : {titre}"
         w.writerow([titre, urls[nom], tab, "", desc, url, "", mots])
 print(sortie, len(EPINGLES), "épingles")
