@@ -488,3 +488,4 @@
   ensuite budget propre. Conseil : couper les visuels faibles dès le jour 3-4, garder de quoi couvrir le Black Friday.
 - 06/11 : recommandation : campagne C = « Lou + duo » (épingles normales) au lieu du catalogue ; catalogue plus tard en reciblage.
 - 06/11 : question Performance+ → conseil : campagne A en Performance+ (ciblage auto), B et C en manuel (comparaison) ; vérifier d'abord que la balise reçoit « Ajout au panier » (seuls PageVisit/ViewCategory vus le 05/11).
+- 06/11 : profil Pinterest : bannière 1920×1080, photo de profil, favicons 512/180/32 (`contenu/pinterest/profil/`, `scripts/pinterest_profil.py`).

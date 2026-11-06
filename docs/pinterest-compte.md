@@ -6,8 +6,9 @@
 - **À propos** :
   `Bijoux personnalisés gravés avec vos mots ✍️ Jonc, collier prénom, collier photo, bracelet code Morse. Aperçu en direct · Livraison France & Belgique · Idées cadeaux et phrases à graver 💗`
 - **Site Web** : `https://lesmotsdelou.fr` (à « revendiquer », voir docs/pinterest-connexion.md)
-- **Photo de profil** : le logo (cœur « L » rose framboise, `theme-lou/assets/favicon.png`) ou un portrait de Lou
-  (`contenu/lou/reference-v3/01-face.jpg`). 💭 Le logo évite la question « image virtuelle » sur le profil.
+- **Photo de profil** (06/11) : `contenu/pinterest/profil/photo-profil-1000.png` (« Les mots de Lou » blanc sur framboise).
+- **Bannière** (06/11) : `contenu/pinterest/profil/banniere-1920x1080.jpg` (slogan + 3 photos). Favicons : `profil/favicon-512/180/32.png`.
+  Produits par `python3 scripts/pinterest_profil.py`.
 - **Catégorie du compte** : Boutique / Mode et accessoires.
 
 ## Tableaux (Créer → Tableau) — noms EXACTS (le fichier CSV les utilise)
@@ -23,4 +24,4 @@
 - Fichier : `contenu/pinterest/epingles-2026-11.csv` (29 épingles, 1 par jour à 18 h 30, du 06/11 au 04/12), produit par
   `python3 scripts/pinterest_csv.py`. Images : photos des fiches + 4 verticales (`contenu/pinterest/`, hébergées dans Shopify → Fichiers).
 - Liens : fiches produits avec `utm_source=pinterest` (visible dans GA4).
-- « Image virtuelle » à la fin de la description des épingles où l'on voit le visage de Lou (conseil légal, voir pinterest-regles.md).
+- « Image virtuelle » retirée (décision utilisateur 06/11).
