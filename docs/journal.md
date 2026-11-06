@@ -501,3 +501,9 @@
 - 06/11 : bannière v3 sans texte (exemple Cleor envoyé) : 2 versions, `profil/banniere-v3-framboise-1920x1080.jpg` (conseillée, gravures lisibles) et `banniere-v3-creme-1920x1080.jpg`.
 - 06/11 : campagnes créées par l'utilisateur : 1) collier prénom (intérêts cadeaux + bijoux femme), 2) bracelet/jonc (mêmes intérêts), 3) Performance+ prévue, 4) mots-clés → conseil : **collier prénom** (recherche la plus fréquente, intention d'achat claire), liste de mots-clés donnée.
 - 06/11 : Performance+ : pas de maximum d'annonces documenté ; Pinterest recommande **au moins 10 annonces par groupe** ; ne pas ajouter/couper pendant l'apprentissage. Mots-clés de la campagne collier : ≈ 130 en « expression », audience ≈ 55-96 k.
+- 06/11 (soir) : **4 campagnes Pinterest créées par l'utilisateur** : 1) collier prénom, intérêts (cadeaux + bijoux femme) ;
+  2) bracelet/jonc, mêmes intérêts ; 3) Performance+ (20 annonces jonc + collier, suggestions : bijoux, collier, collier
+  personnalisé, accessoires et bijoux femme + conseillé : bracelet personnalisé/gravé, cadeau personnalisé, idée cadeau noël,
+  cadeaux, noël) ; 4) collier prénom, ≈ 130 mots-clés « expression » (audience ≈ 55-96 k). Budget ≈ 30 €/jour.
+  Décision : **ne plus rien toucher pendant ~1 semaine** (apprentissage), puis analyse des chiffres. Prochaine étape possible :
+  scaling horizontal par **angles** (maman, naissance, couple, meilleure amie, sœurs, se faire plaisir) + reciblage visiteuses.

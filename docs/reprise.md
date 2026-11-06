@@ -28,6 +28,10 @@ L'utilisateur passe sur un **nouveau compte Claude** (plus de crédit sur l'anci
   par l'utilisateur en navigation privée**) ; page « Cookies et partenaires ».
 - Balise Pinterest connectée (événements reçus) ; règles, textes du compte, CSV d'un mois d'épingles prêts (`docs/pinterest-*.md`).
 
+### 06/11 soir : pubs Pinterest LANCÉES (4 campagnes, ≈ 30 €/jour) — attendre ~1 semaine, puis analyser
+(détail : journal du 06/11 ; visuels `contenu/pinterest/idees-2026-11/`, plan `docs/pinterest-campagne.md`). Encore à faire côté
+utilisateur : vraie commande test, DSers, médiateur + SIREN.
+
 ### Prochaines étapes (liste complète : `docs/avant-annonces.md`)
 1. ✅ (05/11, nouveau compte) aperçu de gravure du jonc refait avec le jonc fin à cœurs (`contenu/lou/jonc-vierge-v3/`, tables JONC
    de lou.js en repère 1024, `scripts/mesure_jonc.py`). ✅ visuels de pub Pinterest 2:3 (`contenu/pinterest/pubs-2026-11/final/`, `scripts/pinterest_pubs.py`) + plan de campagne
