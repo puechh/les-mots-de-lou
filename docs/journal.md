@@ -515,3 +515,10 @@
   bijoux). Conseil légal donné (AI Act art. 50, pratiques trompeuses). Page Shopify mise à jour (pageUpdate), 8 fichiers du thème
   envoyés après test au banc (iPhone + PC, aucune mention, 0 erreur JS).
 - 06/11 : accueil : pastille « 2e bijou à -50 % » cachée par la bulle de Lou → déplacée en haut à gauche de la scène (`.scene-lou .sticker.s2` top 2 %). Vérifié au banc (iPhone, iPad, PC : aucun chevauchement avec la bulle ni les pastilles bijoux), envoyé.
+- 06/11 : signalé par l'utilisateur : photo « détail des cœurs » du jonc = gravure visible sur la face INTÉRIEURE (impossible : la
+  gravure est sur la face extérieure). Refaite sans écriture (`fiches-v3/jonc-2-coeurs-v2.jpg` → `shopify/jonc-02-coeurs.jpg`) et
+  remplacée sur la fiche. ⚠️ Incident pendant le remplacement : la recherche par texte alternatif (« cœurs ajourés ») a aussi
+  visé la photo principale (son alt contient ces mots) → photo principale supprimée puis **remise aussitôt** (ordre vérifié :
+  produit, cœurs, finitions, poignet, Lou, café). Leçon : toujours viser une photo par son id ou son nom de fichier, jamais par
+  un bout de texte alternatif. Alts « Lou, l'avatar de la boutique, porte… » → « Lou porte… » (jonc, collier prénom). Les 5 autres
+  photos du jonc vérifiées : gravure bien sur la face extérieure.

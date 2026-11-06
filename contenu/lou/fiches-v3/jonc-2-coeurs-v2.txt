@@ -1,0 +1,4 @@
+Modèle : fal fal-ai/nano-banana-pro/edit
+Paramètres : {"resolution": "4K", "aspect_ratio": "1:1", "output_format": "jpeg"}
+Prompt : Edit this exact photo: keep everything identical (same bangle, same shape, same thin width, same position and size in the frame, same two heart cut-outs at the open ends, same pink fabric, same light and reflections) but completely REMOVE the engraved text from the inner surface of the far side of the bangle: we are looking at the INSIDE of the band, which is plain smooth polished metal with no letters, no marks. (The engraving exists only on the outer face, which is not visible from this angle.) Ultra-realistic, true-to-life 4K photo, extremely sharp, no pixelation, no CGI look.
+Images de référence : contenu/lou/fiches-v3/jonc-2-coeurs.jpg

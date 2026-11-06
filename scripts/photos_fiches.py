@@ -22,14 +22,14 @@ FICHES = {
         ("jonc-02-coeurs", "Détail des deux petits cœurs ajourés aux extrémités du jonc"),
         ("jonc-03-finitions", "Le jonc en trois finitions : argentée, dorée et rosée"),
         ("jonc-04-poignet", f"Jonc gravé porté au poignet, gravure et cœur visibles"),
-        ("jonc-05-lou", f"Lou, l'avatar de la boutique, porte le jonc gravé"),
+        ("jonc-05-lou", f"Lou porte le jonc gravé"),
         ("jonc-06-cafe", f"Lou porte le jonc et le collier prénom en terrasse à Paris"),
     ],
     "collier-prenom": [
         ("produit-collier-prenom-1-hd", "Collier prénom argenté en écriture manuscrite"),
         ("produit-collier-prenom-finitions-hd", "Le collier prénom en trois finitions : argentée, dorée et rosée"),
         ("prenom-03-cou", f"Collier prénom « Lou » porté, gros plan"),
-        ("prenom-04-lou", f"Lou, l'avatar de la boutique, porte son collier prénom"),
+        ("prenom-04-lou", f"Lou porte son collier prénom"),
         ("prenom-05-marche-noel", f"Lou au marché de Noël avec son collier prénom"),
     ],
     "collier-souvenir-photo": [
