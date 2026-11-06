@@ -493,3 +493,4 @@
   derrière le cou aux 3 colliers superposés (préféré), trio sur tissu, « Maman » dans la neige, écrin sous le sapin, « Louise » en
   main. 10 épingles ajoutées au CSV (33 au total, sans date). **Bannière Pinterest v2 avec Lou** (écrit ses mots sur un plaid,
   slogan manuscrit) : `profil/banniere-lou-1920x1080.jpg`. Aperçu HTML mis à jour. ≈ 2,10 $ fal.
+- 06/11 : variante « son prénom » sans bandeau du bas (`collier-1b-son-prenom-sans-bandeau.jpg`), ajoutée au CSV (34 épingles).

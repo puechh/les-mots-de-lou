@@ -64,6 +64,8 @@ EPINGLES = [
      "La phrase qui dit tout, gravée sur un jonc fin. " + NOEL, "tu es ma personne, jonc gravé, cadeau meilleure amie, cadeau couple", True),
     (f"{I}/pubs/collier-1-son-prenom.jpg", PRENOM, B_COLLIERS, "Son prénom, tout près du cœur",
      "Trois colliers prénom superposés, argenté, doré, rosé. Son prénom en écriture manuscrite, jusqu'à 10 lettres. " + OFFRE, "collier prénom, colliers superposés, bijou prénom, cadeau personnalisé", False),
+    (f"{I}/pubs/collier-1b-son-prenom-sans-bandeau.jpg", PRENOM, B_COLLIERS, "Son prénom, tout près du cœur",
+     "Trois colliers prénom superposés, argenté, doré, rosé. Son prénom en écriture manuscrite, jusqu'à 10 lettres. " + OFFRE, "collier prénom, colliers superposés, bijou prénom, cadeau personnalisé", False),
     (f"{I}/pubs/collier-2-trois-finitions.jpg", PRENOM, B_COLLIERS, "Un prénom. Trois finitions.",
      "Collier prénom en acier inoxydable, argenté, doré ou rosé. Aperçu du prénom en direct. " + OFFRE, "collier prénom doré, collier prénom argent, collier rose gold, bijou personnalisé", False),
     (f"{I}/pubs/collier-3-maman-neige.jpg", PRENOM, B_NOEL, "Maman. Le plus beau des prénoms.",

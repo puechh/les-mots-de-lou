@@ -227,5 +227,13 @@ def pub_c5():   # main + pendentif : script géant derrière la main
     sauver(c, "collier-5-louise")
 
 
+def pub_c1b():  # même visuel que c1, sans le bandeau du bas (demande utilisateur 06/11) : juste l'image et le titre
+    n = "c1-cou-3-colliers"; c = photo(n); degrade(c, True, 1300, 110)
+    t = calque(); texte(t, (W / 2, 520), "son", mont(560, "Black"), BLANC); texte(t, (W / 2, 1020), "prénom", mont(430, "Black"), BLANC)
+    c.alpha_composite(ombre_douce(t, 30, 70)); c.alpha_composite(t); c.alpha_composite(sujet(n))
+    texte(c, (W / 2, 120), "LES MOTS DE LOU", mont(46, "SemiBold"), BLANC, esp=14)
+    sauver(c, "collier-1b-son-prenom-sans-bandeau")
+
+
 if __name__ == "__main__":
-    for f in (pub_c1, pub_c2, pub_c3, pub_c4, pub_c5): f()
+    for f in (pub_c1, pub_c1b, pub_c2, pub_c3, pub_c4, pub_c5): f()
