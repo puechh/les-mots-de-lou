@@ -27,7 +27,7 @@
   <nav class="mnav" id="mnav" aria-label="Menu mobile">
     <div class="lou-dit">
       <span class="avatar"><img src="{{ 'lou-avatar.webp' | asset_url }}" alt="" width="46" height="46" loading="lazy"></span>
-      <div class="bulle-lou"><b class="nom">Lou <small>· avatar de la boutique</small></b><p>On va où ? Je vous suis 👇</p></div>
+      <div class="bulle-lou"><b class="nom">Lou</b><p>On va où ? Je vous suis 👇</p></div>
     </div>
     {%- for link in menu.links -%}<a href="{{ link.url }}">{{ link.title | escape }}</a>{%- endfor -%}
     <a href="#coups-de-coeur" id="fav-menu">💗 Mes coups de cœur</a>

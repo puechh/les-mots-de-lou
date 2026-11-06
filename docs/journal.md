@@ -509,3 +509,8 @@
   scaling horizontal par **angles** (maman, naissance, couple, meilleure amie, sœurs, se faire plaisir) + reciblage visiteuses.
 - 06/11 : piège Pinterest Ads (vu aussi sur Corps-Confiant) : tant que les annonces sont « en attente de validation », l'éditeur affiche 0 annonce et refuse d'enregistrer → NE PAS les rajouter (doublons). Attendre l'approbation (≈ 24 h) pour modifier (ici : langue « toutes » → Français). Doublons créés sur la 1re campagne → archiver les copies.
 - 06/11 : bandeau d'annonce (prune) reste en haut au défilement : `.announce` sticky top 0, `.header` sticky top 36px, `#shopify-section-lou-header { display: contents }` ; décalages ajustés (+36 px : galerie fiche, mini-aperçu, scroll-padding). Testé au banc (iPhone + PC, accueil + fiche, conteneur Shopify simulé), envoyé.
+- 06/11 : mot « avatar » retiré de l'assistante (sous-titre « Je vous guide ✨ », message d'accueil), du menu, de l'accueil, des
+  en-têtes de page, de la FAQ, de la page d'attente. Puis **décision utilisateur : retirer toute mention IA**, y compris sur
+  « Qui est Lou » (réécrite façon Lily's Treasures : « La voix des Mots de Lou », mots préférés, vraie équipe/atelier derrière les
+  bijoux). Conseil légal donné (AI Act art. 50, pratiques trompeuses). Page Shopify mise à jour (pageUpdate), 8 fichiers du thème
+  envoyés après test au banc (iPhone + PC, aucune mention, 0 erreur JS).

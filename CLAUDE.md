@@ -20,8 +20,7 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   politiques `contenu/politiques/`, tout envoyé sur Shopify par `scripts/construire_boutique.py`. Banc d'essai local :
   `python3 scripts/banc_theme.py` (http://localhost:8765). Images du thème : `python3 scripts/assets_theme.py`.
 - **Lou = l'avatar de la boutique** (demande utilisateur 02/11 soir, exemple Lily's Treasures) : elle parle à la 1re personne
-  (bulles, assistante en bas de l'écran à réponses préparées, FAQ en conversation, panier commenté) et se présente comme
-  **personnage virtuel créé avec l'IA** ; elle ne fabrique pas les bijoux (« l'atelier grave », « l'équipe vous répond »).
+  (bulles, assistante en bas de l'écran à réponses préparées, FAQ en conversation, panier commenté) sans mention IA (décision 06/11) ; elle ne fabrique pas les bijoux (« l'atelier grave », « l'équipe vous répond »).
 - **Thème publié par l'utilisateur** (02/11 soir) : `theme-lou/` est en ligne derrière le mot de passe → tester au banc AVANT
   `envoyer_theme.py maj`. Réglages du thème (Shopify → Thèmes → Personnaliser → Paramètres) : écrin inclus (non par défaut),
   délais fab/livraison, date limite Noël, Lou, sons. Images IA en **HD 2048 px** (JPEG, `scripts/images_hd*.sh`).
@@ -99,7 +98,10 @@ tant qu'il reste des modifications non commitées ou non poussées.
   Meta/Pinterest/Google/TikTok, douane) et **prévenir l'utilisateur dès qu'une nouveauté impose de modifier les textes**.
   Méthode et journal : `docs/veille-legale.md` (le consulter en début de session).
 - **La décision finale revient toujours à l'utilisateur.** Une fois le conseil donné, appliquer son choix sans insister.
-- Points déjà identifiés pour cette boutique : caractère virtuel de Lou / IA écrit **UNIQUEMENT sur la page « Qui est Lou »**
+- **06/11 : décision utilisateur = plus AUCUNE mention « IA » / « avatar » / « virtuel » nulle part, même sur « Qui est Lou »** (réécrite façon
+  Lily's Treasures : Lou = « la voix des Mots de Lou », l'atelier grave, l'équipe répond ; conseil légal donné). Ne jamais écrire que Lou est
+  une vraie personne, qu'elle porte/teste les bijoux depuis longtemps ou qu'elle donne un avis de cliente.
+- Points déjà identifiés pour cette boutique : (avant le 06/11) caractère virtuel de Lou / IA écrit **UNIQUEMENT sur la page « Qui est Lou »**
   (décision utilisateur 04/11, après l'avoir vu dans Google : plus dans l'accueil, la page d'attente, la FAQ, l'assistante, les
   textes alternatifs des photos, les mentions légales ni les CGV ; conseil légal donné) ; mention « image virtuelle » / étiquettes IA ajoutées par l'utilisateur en publiant (loi n° 2023-451, AI Act) ;
   ne jamais faire croire que Lou existe ou fabrique les bijoux ; acier 316L sans nickel (REACH) ; jamais « or » si c'est du plaqué ;
