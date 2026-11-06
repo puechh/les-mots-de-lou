@@ -4,7 +4,7 @@
 1. Redimensionne en 1600×2400 (2:3), envoie dans Shopify → Contenu → Fichiers (adresse publique cdn.shopify.com),
    mémorise les adresses dans contenu/pinterest/idees-2026-11/images.json (pas de nouvel envoi si déjà fait).
 2. Écrit contenu/pinterest/epingles-idees-2026-11.csv : 1 épingle par jour à 12 h 30 à partir du 07/11 (l'autre CSV publie à 17 h 30).
-Règles : offre avec sa condition, « Image virtuelle » quand Lou apparaît, pas de prix barré ni d'avis, messages « Noël » avant le 10/12.
+Règles : offre avec sa condition (« Image virtuelle » retirée, décision utilisateur 06/11), pas de prix barré ni d'avis, messages « Noël » avant le 10/12.
     python3 scripts/pinterest_csv_idees.py
 """
 import csv, datetime as dt, json, os, sys, time
@@ -30,7 +30,7 @@ EPINGLES = [
     (f"{I}/02-sous-le-sapin.jpg", JONC, B_NOEL, "Sous le sapin : un jonc gravé avec vos mots",
      "Le cadeau qui se garde : un jonc fin gravé de la phrase qui compte, dans son écrin. " + NOEL, "cadeau noel femme, jonc gravé, idée cadeau noel, bijou personnalisé", False),
     (f"{I}/pubs/design-3-edition-noel-lou.jpg", JONC, B_NOEL, "L'édition Noël : le bijou gravé qui fait sourire",
-     "Un jonc gravé avec vos mots, à offrir ou à s'offrir. " + OFFRE + " " + NOEL + " · Image virtuelle.", "cadeau noel personnalisé, jonc gravé, bijou message, idée cadeau femme", True),
+     "Un jonc gravé avec vos mots, à offrir ou à s'offrir. " + OFFRE + " " + NOEL, "cadeau noel personnalisé, jonc gravé, bijou message, idée cadeau femme", True),
     (f"{I}/03-poignet-stack-3-joncs.jpg", JONC, B_JONCS, "3 joncs gravés + 1 bracelet Morse : le stack qui parle",
      "« Maman », « Toujours », « Léa » : un mot par jonc, une finition par mot. Acier inoxydable qui ne noircit pas.", "bracelet stack, jonc personnalisé, bracelet prénom, bracelet morse", False),
     (f"{I}/pubs/design-2-cadeau-qui-reste.jpg", JONC, B_CADEAUX, "Le cadeau qui reste pour toujours",
@@ -52,21 +52,21 @@ EPINGLES = [
     (f"{I}/08-chaussette-noel.jpg", PRENOM, B_NOEL, "Un prénom dans la chaussette de Noël",
      "Le collier prénom en écriture manuscrite, la petite surprise qui fait plaisir. " + NOEL, "cadeau noel fille, collier prénom, chaussette de noel, petit cadeau noel", False),
     (f"{I}/pubs/design-6-toujours-lou.jpg", JONC, B_JONCS, "Les joncs qui disent tout",
-     "« Ma sœur », « Toujours » : deux joncs gravés, deux finitions. " + OFFRE + " · Image virtuelle.", "jonc gravé, bracelet sœur, stack bracelets, bijou message", True),
+     "« Ma sœur », « Toujours » : deux joncs gravés, deux finitions. " + OFFRE, "jonc gravé, bracelet sœur, stack bracelets, bijou message", True),
     (f"{I}/09-marbre-salle-de-bain.jpg", PRENOM, B_COLLIERS, "Collier prénom doré « Lou » et jonc gravé",
      "Finition dorée sur acier inoxydable, qui ne noircit pas. Le prénom de votre choix, jusqu'à 10 lettres.", "collier prénom doré, bijou prénom, jonc doré, collier personnalisé", False),
     (f"{I}/10-paume-collier-photo.jpg", PHOTO, B_CADEAUX, "Collier photo : un souvenir caché dans un cœur",
      "Votre photo cachée dans la lentille du pendentif : on la voit en regardant à travers, vers la lumière. Idée cadeau pour maman ou mamie.", "collier photo, cadeau maman, cadeau mamie, collier projection", False),
     (f"{I}/11-lou-fenetre-stack.jpg", JONC, B_CADEAUX, "Deux joncs gravés : « Ma sœur » et « Toujours »",
-     "Argenté et doré, à porter ensemble. Aperçu de la gravure en direct sur le site. · Image virtuelle.", "bracelet sœur, jonc gravé, cadeau sœur, bracelets empilés", True),
+     "Argenté et doré, à porter ensemble. Aperçu de la gravure en direct sur le site.", "bracelet sœur, jonc gravé, cadeau sœur, bracelets empilés", True),
     (f"{I}/12-lou-plaid-canape.jpg", JONC, B_NOEL, "« Tu es ma personne » : le jonc gravé",
-     "La phrase qui dit tout, gravée sur un jonc fin. " + NOEL + " · Image virtuelle.", "tu es ma personne, jonc gravé, cadeau meilleure amie, cadeau couple", True),
+     "La phrase qui dit tout, gravée sur un jonc fin. " + NOEL, "tu es ma personne, jonc gravé, cadeau meilleure amie, cadeau couple", True),
     ("contenu/pinterest/pubs-2026-11/final/pub-1-jonc-lou.jpg", JONC, B_NOEL, "Jonc gravé avec vos mots – idée cadeau Noël",
-     "Gravez une phrase sur un jonc en acier inoxydable. " + OFFRE + " " + NOEL + " · Image virtuelle.", "jonc gravé, cadeau noel, bracelet personnalisé, idée cadeau femme", True),
+     "Gravez une phrase sur un jonc en acier inoxydable. " + OFFRE + " " + NOEL, "jonc gravé, cadeau noel, bracelet personnalisé, idée cadeau femme", True),
     ("contenu/pinterest/pubs-2026-11/final/pub-2-prenom-lou.jpg", PRENOM, B_NOEL, "Collier prénom personnalisé – cadeau de Noël",
-     "Son prénom en écriture manuscrite. " + OFFRE + " " + NOEL + " · Image virtuelle.", "collier prénom, cadeau noel, bijou prénom, collier personnalisé", True),
+     "Son prénom en écriture manuscrite. " + OFFRE + " " + NOEL, "collier prénom, cadeau noel, bijou prénom, collier personnalisé", True),
     ("contenu/pinterest/pubs-2026-11/final/pub-3-photo-lou.jpg", PHOTO, B_CADEAUX, "Collier photo personnalisé : un souvenir dans un cœur",
-     "Votre photo cachée dans le pendentif. " + OFFRE + " · Image virtuelle.", "collier photo, collier projection, cadeau souvenir, cadeau maman", True),
+     "Votre photo cachée dans le pendentif. " + OFFRE, "collier photo, collier projection, cadeau souvenir, cadeau maman", True),
     ("contenu/pinterest/pubs-2026-11/final/pub-4-duo-cadeau.jpg", ACCUEIL, B_CADEAUX, "2e bijou à -50 % sur le moins cher des deux",
      "Un jonc gravé et un collier prénom à offrir ensemble. " + NOEL, "duo bijoux, cadeau personnalisé, jonc gravé, collier prénom", False),
     ("contenu/pinterest/pubs-2026-11/final/pub-5-jonc-macro.jpg", JONC, B_JONCS, "Bracelet jonc gravé : voyez votre gravure en direct",

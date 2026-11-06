@@ -77,7 +77,7 @@ def faire(nom, titre, sous, lou, haut, bas):
         centre(d, H - 485, "Idée cadeau de Noël", mont(96, "Bold"), FRAMBOISE)
         centre(d, H - 360, "Commandez avant le 10 décembre", mont(58, "Medium"), PRUNE)
         centre(d, H - 280, f"{OFFRE} {CONDITION}", mont(46, "Regular"), PRUNE)
-    if lou:   # mention obligatoire (personne créée par IA) : lisible, en bas à gauche
+    if False and lou:   # mention retirée (décision utilisateur 06/11) (personne créée par IA) : lisible, en bas à gauche
         f = mont(40, "SemiBold"); t = "Image virtuelle"; tw = d.textlength(t, font=f)
         pastille(im, (60, H - 120, 60 + tw + 60, H - 50), 35, (40, 20, 30, 150))
         ImageDraw.Draw(im).text((90, H - 113), t, font=f, fill=CREME)

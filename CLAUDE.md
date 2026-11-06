@@ -68,7 +68,7 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   fiches et collections : `scripts/seo.py` (mot-clé d'abord, titre ≤ 60, description ≈ 150, rien de non vérifié, aucune mention IA).
 - **Pinterest (04/11)** : règles `docs/pinterest-regles.md`, textes `docs/pinterest-compte.md`, plan `docs/pinterest-connexion.md` ;
   épingles par CSV (`scripts/pinterest_csv.py`), appli développeur propre à Lou (pas celle de Corps-Confiant), clés en variables
-  d'environnement `PINTEREST_*` (jamais dans le chat). « Image virtuelle » dans les épingles où l'on voit Lou.
+  d'environnement `PINTEREST_*` (jamais dans le chat). **« Image virtuelle » retirée des épingles et des pubs (décision utilisateur 06/11, conseil légal donné : AI Act art. 50 / loi 2023-451 ; garder la case « contenu IA » de Pinterest si proposée).**
 - **Stock (05/11)** : dropshipping → stock suivi à **999 par variante** + vente autorisée à 0 (CONTINUE), sinon les produits
   apparaissent « épuisés » (catalogues Pinterest/Google). À remettre à 999 si une variante est ajoutée.
 - **Cookies (05/11)** : bandeau du thème (`snippets/cookie-banner.liquid`, `assets/lou-cookies.js`, API de consentement Shopify),

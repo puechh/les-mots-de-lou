@@ -3,7 +3,7 @@
 condition en petit, bouton, logo. Photos sans texte : contenu/pinterest/idees-2026-11/ ; détourages : …/detoure/ (fal BiRefNet).
 
     python3 scripts/pinterest_design.py        → contenu/pinterest/idees-2026-11/pubs/*.jpg
-Règles : offre toujours avec « sur le moins cher des deux », « Image virtuelle » quand Lou apparaît, pas de prix barré,
+Règles : offre toujours avec « sur le moins cher des deux », pas de prix barré,
 pas de faux avis, pas d'« or ». Polices OFL : scripts/polices/.
 """
 import os
@@ -130,7 +130,7 @@ def pub_lou():
     texte(c, (W / 2, 2560), "-50 % SUR LE 2e BIJOU", play(118, "Regular"), BLANC, ombre=(30, 15, 20, 150))
     bouton(c, W / 2, 2750, "JE PERSONNALISE", mont(52, "Bold"), BLANC, PRUNE, pad=(110, 40), rond=False)
     texte(c, (W / 2, 2895), "Sur le moins cher des deux", mont(34, "Medium"), (255, 255, 255, 220))
-    virtuelle(c); sauver(c, "design-3-edition-noel-lou")
+    sauver(c, "design-3-edition-noel-lou")
 
 
 # 4. Minimal neige : script géant + petite ligne
@@ -165,7 +165,7 @@ def pub_fenetre():
     texte(c, (W / 2, 2600), "Les joncs qui disent tout", play(104, "Regular"), PRUNE)
     bouton(c, W / 2, 2770, "Je crée le mien", mont(58, "SemiBold"), PRUNE, CREME)
     texte(c, (W / 2, 2915), f"{OFFRE} {COND}", mont(40, "SemiBold"), PRUNE)
-    texte(c, (60, 140), "Image virtuelle", mont(36, "SemiBold"), (255, 255, 255, 230), "ls"); sauver(c, "design-6-toujours-lou")
+    sauver(c, "design-6-toujours-lou")
 
 
 for f in (pub_stack, pub_sapin, pub_lou, pub_neige, pub_table, pub_fenetre): f()

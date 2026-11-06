@@ -466,3 +466,9 @@
   1600×2400 et envoyées dans Shopify → Fichiers (adresses dans `contenu/pinterest/idees-2026-11/images.json`) ;
   CSV `contenu/pinterest/epingles-idees-2026-11.csv` : 1 épingle par jour à 12 h 30 du 07/11 au 29/11 (l'autre CSV : 17 h 30),
   liens UTM `utm_campaign=idees-2026-11`, « Image virtuelle » sur les 6 épingles avec Lou, offre avec sa condition.
+
+## 2026-11-06 — « Image virtuelle » retirée (décision utilisateur)
+- Demande : « supprime image virtuelle ». Retirée des 2 CSV (descriptions), des pubs D3/D6 et pub-1/2/3 (images refaites et
+  renvoyées sur Shopify, nouvelles adresses dans images.json). Conseil légal donné : AI Act art. 50(4) (depuis le 02/08/2026,
+  signaler une image réaliste d'une personne générée par IA), loi n° 2023-451 (influence commerciale, images retouchées/générées),
+  et règles Pinterest (étiquette « AI modified » automatique) → risque de refus de pub ou d'amende ; décision finale à l'utilisateur.

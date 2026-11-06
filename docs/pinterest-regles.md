@@ -1,4 +1,5 @@
 # Pinterest : règles qui s'appliquent aux bijoux Les Mots de Lou
+> ⚠️ 06/11 : « Image virtuelle » retirée des épingles et des pubs à la demande de l'utilisateur (conseil légal donné, voir journal).
 
 *Synthèse du 04/11/2026, reprise de l'analyse Corps-Confiant du 28/10 (`puechh/boutique-corps-confiant`, docs/pinterest-regles.md)
 et adaptée aux bijoux. Ce n'est pas un avis d'avocat. ✅ = écrit dans un texte officiel ; 💭 = interprétation.*

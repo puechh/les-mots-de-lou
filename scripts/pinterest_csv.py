@@ -20,7 +20,7 @@ SITE = "https://lesmotsdelou.fr/products/"
 B_CADEAUX, B_NOEL, B_JONCS, B_COLLIERS, B_PHRASES = ("Idées cadeaux personnalisés", "Cadeaux de Noël personnalisés",
                                                      "Joncs et bracelets gravés", "Colliers prénom et photo", "Idées de phrases à graver")
 OFFRE = "2e bijou à -50 % sur le moins cher des deux."
-VIRT = " · Image virtuelle."
+VIRT = ""   # « Image virtuelle » retirée (décision utilisateur 06/11)
 
 # (image, produit, tableau, titre, description, mots-clés, visage de Lou ?)
 EPINGLES = [

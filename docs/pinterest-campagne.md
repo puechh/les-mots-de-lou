@@ -1,4 +1,5 @@
 # Campagne Pinterest de Noël : plan pour le crédit de 420 € (préparé le 05/11/2026)
+> ⚠️ 06/11 : « Image virtuelle » retirée des épingles et des pubs à la demande de l'utilisateur (conseil légal donné, voir journal).
 
 *À valider par l'utilisateur. Chiffres à ajuster après la 1re semaine. Ce n'est pas un avis d'avocat (voir `pinterest-regles.md`).*
 
