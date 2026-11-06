@@ -499,3 +499,4 @@
 - 06/11 : rapport Pinterest : seule erreur = 2 épingles avec le même titre (refusé) → 5 épingles collier créées ; la 1b réimportée seule (`epingles-collier-1b.csv`, titre changé). Règle : **titres uniques** dans un CSV Pinterest (contrôle ajouté au script).
 - 06/11 : en fait aucune épingle n'avait été créée (fichier entier refusé) → `epingles-collier-5.csv` (les 5 autres, titres uniques) + `epingles-collier-1b.csv`.
 - 06/11 : bannière v3 sans texte (exemple Cleor envoyé) : 2 versions, `profil/banniere-v3-framboise-1920x1080.jpg` (conseillée, gravures lisibles) et `banniere-v3-creme-1920x1080.jpg`.
+- 06/11 : campagnes créées par l'utilisateur : 1) collier prénom (intérêts cadeaux + bijoux femme), 2) bracelet/jonc (mêmes intérêts), 3) Performance+ prévue, 4) mots-clés → conseil : **collier prénom** (recherche la plus fréquente, intention d'achat claire), liste de mots-clés donnée.
