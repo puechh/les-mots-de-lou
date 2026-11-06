@@ -487,3 +487,4 @@
 - 06/11 : **budget pub décidé par l'utilisateur : 30 €/jour** (A 13 €, B 11 €, C 6 €) → crédit 420 € épuisé vers le 20/11,
   ensuite budget propre. Conseil : couper les visuels faibles dès le jour 3-4, garder de quoi couvrir le Black Friday.
 - 06/11 : recommandation : campagne C = « Lou + duo » (épingles normales) au lieu du catalogue ; catalogue plus tard en reciblage.
+- 06/11 : question Performance+ → conseil : campagne A en Performance+ (ciblage auto), B et C en manuel (comparaison) ; vérifier d'abord que la balise reçoit « Ajout au panier » (seuls PageVisit/ViewCategory vus le 05/11).
