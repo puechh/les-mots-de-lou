@@ -472,3 +472,9 @@
   renvoyées sur Shopify, nouvelles adresses dans images.json). Conseil légal donné : AI Act art. 50(4) (depuis le 02/08/2026,
   signaler une image réaliste d'une personne générée par IA), loi n° 2023-451 (influence commerciale, images retouchées/générées),
   et règles Pinterest (étiquette « AI modified » automatique) → risque de refus de pub ou d'amende ; décision finale à l'utilisateur.
+
+## 2026-11-06 — « Le site est-il prêt pour les clientes ? » (vérification API avant les annonces)
+- Boutique **ouverte** (mot de passe désactivé), 4 produits actifs et en vente (stock suivi, vente continue), e-mail de contact OK.
+- ❌ Aucune politique ne mentionne de **médiateur de la consommation** ni de **SIREN/RCS** (mentions légales, CGV).
+- ❌ Aucune vraie commande test payée par carte : #1002-#1004 à 0 €, #1001 = commande brouillon (24,90 €, admin).
+- ❓ Non vérifiable par l'API : Shopify Payments (portée manquante), DSers relié aux 10 variantes, bandeau cookies en navigation privée.
