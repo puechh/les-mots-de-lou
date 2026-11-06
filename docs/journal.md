@@ -507,3 +507,4 @@
   cadeaux, noël) ; 4) collier prénom, ≈ 130 mots-clés « expression » (audience ≈ 55-96 k). Budget ≈ 30 €/jour.
   Décision : **ne plus rien toucher pendant ~1 semaine** (apprentissage), puis analyse des chiffres. Prochaine étape possible :
   scaling horizontal par **angles** (maman, naissance, couple, meilleure amie, sœurs, se faire plaisir) + reciblage visiteuses.
+- 06/11 : piège Pinterest Ads (vu aussi sur Corps-Confiant) : tant que les annonces sont « en attente de validation », l'éditeur affiche 0 annonce et refuse d'enregistrer → NE PAS les rajouter (doublons). Attendre l'approbation (≈ 24 h) pour modifier (ici : langue « toutes » → Français). Doublons créés sur la 1re campagne → archiver les copies.
