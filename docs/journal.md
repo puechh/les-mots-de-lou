@@ -497,3 +497,4 @@
 - 06/11 : import CSV refusé par Pinterest (« fichier mal formaté ») ; format vérifié OK → causes probables : tableaux non créés, ou « ?v= » dans les adresses d'images → `epingles-idees-2026-11-v2.csv` sans paramètre d'URL. Rapport d'erreurs à demander à l'utilisateur.
 - 06/11 : l'utilisateur ne veut importer que les 6 pubs collier → `contenu/pinterest/epingles-collier-6.csv`.
 - 06/11 : rapport Pinterest : seule erreur = 2 épingles avec le même titre (refusé) → 5 épingles collier créées ; la 1b réimportée seule (`epingles-collier-1b.csv`, titre changé). Règle : **titres uniques** dans un CSV Pinterest (contrôle ajouté au script).
+- 06/11 : en fait aucune épingle n'avait été créée (fichier entier refusé) → `epingles-collier-5.csv` (les 5 autres, titres uniques) + `epingles-collier-1b.csv`.
