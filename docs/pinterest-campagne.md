@@ -29,7 +29,9 @@ le site, fabriqué pour vous en 5 à 10 jours. 2e bijou à -50 % sur le moins ch
 En publiant : cocher la déclaration « contenu modifié/généré par l'IA » si Pinterest la propose.
 
 ## 2. Les 3 campagnes (décision utilisateur 06/11 : au moins 3 campagnes, lancement le soir même, **30 €/jour**)
-**Budget retenu par l'utilisateur : 30 €/jour → A 13 €, B 11 €, C 6 €.** Le crédit de 420 € dure ≈ 14 jours (jusqu'au ≈ 20/11) ;
+**Budget retenu par l'utilisateur : 30 €/jour → A 13 €, B 11 €, C 6 €.** ⚠️ Recommandation 06/11 (soir) : **C = « Lou + duo » au lieu
+du catalogue** (épingles pub-1/2/3, 11, 12, pub-4 duo ; mêmes réglages que A, intérêts cadeaux) ; catalogue seulement plus tard
+en reciblage (≈ 100 visiteuses), pris sur le budget de C. Le crédit de 420 € dure ≈ 14 jours (jusqu'au ≈ 20/11) ;
 au-delà (Black Friday 27-30/11, Noël jusqu'au 10/12) = budget propre (≈ 300 € prévus). Décision sur les visuels dès le jour 3-4.
 Les montants ci-dessous (11 €/jour) = version initiale, remplacée.
 Budget : 420 € du 06/11 au 10/12 (≈ 34 jours) → ≈ 11 €/jour + réserve Black Friday. Épingles : CSV `epingles-idees-2026-11.csv`
