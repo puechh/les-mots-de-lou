@@ -522,3 +522,4 @@
   produit, cœurs, finitions, poignet, Lou, café). Leçon : toujours viser une photo par son id ou son nom de fichier, jamais par
   un bout de texte alternatif. Alts « Lou, l'avatar de la boutique, porte… » → « Lou porte… » (jonc, collier prénom). Les 5 autres
   photos du jonc vérifiées : gravure bien sur la face extérieure.
+- 06/11 : avis prix demandé : marges estimées (coûts AliExpress non vérifiés) jonc ≈ 19 €, collier prénom ≈ 17 €, collier photo ≈ 20 €, **bracelet Morse ≈ 9 € (trop bas à 24,90 €)** ; conseil : ne rien changer pendant la semaine de test pub, puis tester 34,90 € (jonc/collier) et passer le Morse à 29,90 € ; prix barré à retirer/recalculer en cas de hausse (L112-1-1). Décision à l'utilisateur.
