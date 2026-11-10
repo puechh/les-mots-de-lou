@@ -533,3 +533,10 @@
 - Poids de l'accueil : 5 poses de Lou ≈ 2,7 Mo chargées d'un coup (piste d'optimisation si les pubs pointent vers l'accueil ;
   les fiches produits utilisent déjà des images redimensionnées par Shopify).
 - Conseil : ne rien changer avant 4-5 jours ; campagne mots-clés à surveiller (audience trop petite / annonces pas validées).
+- 10/11 : enquête « 77 clics → 12 visites ». Sessions Shopify venues de Pinterest (ShopifyQL `FROM sessions … GROUP BY utm_source`) :
+  07/11 = 30, 08/11 = 11, 09/11 = 12. Vitesse mesurée sur le vrai site (iPhone émulé) : fiches produits 1,6-1,8 Mo, image principale
+  en 1,8-3,2 s en 4G (7-9 s en 3G) = correct ; accueil ≈ 4 Mo (5 poses de Lou ≈ 540 Ko chacune en WebP ; 5 Mo chacune en PNG si le
+  navigateur ne gère pas WebP). Cause principale probable : en France, Shopify (et la balise Pinterest) ne comptent la visite qu'après
+  « Tout accepter » sur le bandeau cookies → les visiteuses qui ne répondent pas sont invisibles. (Test depuis le cloud = région US,
+  donc mesure sans consentement : non représentatif de la France.) Piste d'amélioration proposée : alléger les images (poses 1200 px,
+  chargement différé des poses cachées).
