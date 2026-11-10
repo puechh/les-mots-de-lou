@@ -22,7 +22,7 @@
   /* --- Scène : photo + calque de dessin --- */
   var photo = null, toile = null;
   if (type === "jonc" || type === "prenom" || type === "photo") {
-    photo = new Image(); photo.alt = ""; photo.decoding = "async"; photo.src = IMG[finition] || IMG["Argentée"];
+    photo = new Image(); photo.alt = ""; photo.decoding = "async"; photo.fetchPriority = "high"; photo.src = IMG[finition] || IMG["Argentée"];
     scene.appendChild(photo);
     if (type !== "photo") { toile = document.createElement("canvas"); toile.setAttribute("aria-hidden", "true"); scene.appendChild(toile); }
   }

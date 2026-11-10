@@ -13,6 +13,8 @@
       assign conseil = "Chut… 4 à 6 lettres, c'est idéal 🤫"
   endcase
 -%}
+{%- comment -%} 10/11 : l'aperçu est la 1re image vue → préchargé tout de suite (sinon il attend le JavaScript) {%- endcomment -%}
+{%- if type == 'jonc' -%}<link rel="preload" as="image" href="{{ 'jonc-carre.webp' | asset_url }}" fetchpriority="high">{%- elsif type == 'prenom' -%}<link rel="preload" as="image" href="{{ 'collier-vierge.webp' | asset_url }}" fetchpriority="high">{%- elsif type == 'photo' -%}<link rel="preload" as="image" href="{{ 'collier-photo.webp' | asset_url }}" fetchpriority="high">{%- endif -%}
 <div class="wrap fiche" id="fiche" data-apercu="{{ type }}"
   data-img-base="{% if type == 'jonc' %}{{ 'jonc-carre.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge.webp' | asset_url }}{% elsif type == 'photo' %}{{ 'collier-photo.webp' | asset_url }}{% endif %}"
   data-img-doree="{% if type == 'jonc' %}{{ 'jonc-carre-doree.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-doree.webp' | asset_url }}{% endif %}"

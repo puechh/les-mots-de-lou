@@ -540,3 +540,9 @@
   « Tout accepter » sur le bandeau cookies → les visiteuses qui ne répondent pas sont invisibles. (Test depuis le cloud = région US,
   donc mesure sans consentement : non représentatif de la France.) Piste d'amélioration proposée : alléger les images (poses 1200 px,
   chargement différé des poses cachées).
+- 10/11 : **site allégé** (choix laissé à Claude) : 6 poses de Lou 2400 → 1200 px (≈ 550 → 180 Ko chacune, netteté vérifiée) ;
+  poses cachées de l'accueil chargées après la page (`data-src`, lou.js) ; aperçu de gravure des fiches préchargé (`<link rel=preload>`
+  dans lou-produit.liquid + `fetchPriority` dans lou-produit.js). Testé au banc (iPhone + PC, 0 erreur), envoyé (10 fichiers).
+  Mesuré sur le vrai site en 4G : fiche collier prénom LCP 3,2 → 2,5 s, fiche jonc 1,8 → 1,6 s ; accueil : 1 seule pose au départ.
+  ⚠️ Shopify CDN sert du PNG (×7 plus lourd) aux navigateurs sans « image/webp » dans Accept (ex. Chromium headless) : les vrais
+  navigateurs reçoivent du WebP — ne pas se fier au poids mesuré par Playwright sans vérifier le format.

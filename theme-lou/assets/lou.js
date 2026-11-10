@@ -531,8 +531,12 @@
   var scene = $("#scene-lou");
   if (scene) {
     var poses = $$(".pose", scene), bijoux = $$(".bijou", scene), bulle = $("#lou-intro"), sT = null, sI = 0, sVu = true;
+    // Poses cachées : chargées après la page (accueil plus léger, 10/11) ; tout de suite si on en a besoin avant
+    var charger = function (x) { var d = x.getAttribute("data-src"); if (d && !x.getAttribute("src")) x.src = d; };
+    var chargerTout = function () { poses.forEach(charger); };
+    if (document.readyState === "complete") setTimeout(chargerTout, 800); else addEventListener("load", function () { setTimeout(chargerTout, 800); });
     var pose = function (p) {
-      poses.forEach(function (x) { var on = x.getAttribute("data-pose") === p; if (on && !x.classList.contains("on")) { x.classList.remove("hop"); void x.offsetWidth; x.classList.add("hop"); } x.classList.toggle("on", on); });
+      poses.forEach(function (x) { var on = x.getAttribute("data-pose") === p; if (on) charger(x); if (on && !x.classList.contains("on")) { x.classList.remove("hop"); void x.offsetWidth; x.classList.add("hop"); } x.classList.toggle("on", on); });
     };
     var dire = function (t) { if (bulle && t && LOU.ecrire) { bulle.textContent = ""; LOU.ecrire(bulle, t, 16); } };
     var montrer = function (bj) {

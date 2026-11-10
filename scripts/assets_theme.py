@@ -137,7 +137,7 @@ for nom in ("souvenir-mamie", "souvenir-chiot"):
 # toile 3600×4400, tête au même endroit) + 4 pastilles rondes des bijoux (gros plans nets). Animation : lou.js (#scene-lou).
 for _p in ("coucou", "pointe-gauche", "bas-gauche", "haut-droite", "bas-droite"):   # 1 pose par bijou (le doigt vise la pastille)
     _im = Image.open(os.path.join(ROOT, f"contenu/lou/accueil-png/lou-{_p}-aligne.webp")).convert("RGBA")
-    _im.resize((2400, round(2400 * _im.height / _im.width)), Image.LANCZOS).save(os.path.join(A, f"lou-pose-{_p}.webp"), "WEBP", quality=88, method=6)
+    _im.resize((1200, round(1200 * _im.height / _im.width)), Image.LANCZOS).save(os.path.join(A, f"lou-pose-{_p}.webp"), "WEBP", quality=84, method=6)   # 1200 px suffit (scène ≤ 600 px, ×2 écrans Retina) — 10/11 : 2400 px = accueil trop lourd
     print(f"lou-pose-{_p}.webp")
 for _n, (_f, _cx, _cy, _t) in {"pastille-jonc": ("contenu/lou/fiches-v3/jonc-1-produit.jpg", .50, .60, .78),
                                "pastille-collier-prenom": ("contenu/lou/bijoux-v3/01b-gros-plan-collier.jpg", .50, .56, .42),
