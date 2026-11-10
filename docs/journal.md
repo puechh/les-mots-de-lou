@@ -523,3 +523,13 @@
   un bout de texte alternatif. Alts « Lou, l'avatar de la boutique, porte… » → « Lou porte… » (jonc, collier prénom). Les 5 autres
   photos du jonc vérifiées : gravure bien sur la face extérieure.
 - 06/11 : avis prix demandé : marges estimées (coûts AliExpress non vérifiés) jonc ≈ 19 €, collier prénom ≈ 17 €, collier photo ≈ 20 €, **bracelet Morse ≈ 9 € (trop bas à 24,90 €)** ; conseil : ne rien changer pendant la semaine de test pub, puis tester 34,90 € (jonc/collier) et passer le Morse à 29,90 € ; prix barré à retirer/recalculer en cas de hausse (L112-1-1). Décision à l'utilisateur.
+
+## 2026-11-10 — 1er bilan pub Pinterest (journée du 09/11, données utilisateur)
+- 4 campagnes actives : Perf+ (CTR 0,8 %, CPC 0,16 €, 56 clics, 1 conversion = l'ajout au panier) ; Collier intérêts (0,24 %,
+  0,97 €, 9 clics) ; Mode femme (0,4 %, 0,71 €, 12 clics) ; Mots-clés collier (0 diffusion). Total 77 clics sortants, CPC moyen 0,47 €.
+- Shopify : 12 visites, 1 ajout au panier, 0 vente. Écart 77 clics → 12 visites expliqué à l'utilisateur : clics abandonnés avant
+  chargement (fréquent sur Pinterest mobile), visiteuses sans accord cookies peu/pas comptées dans les statistiques Shopify,
+  fuseaux horaires (Pinterest = UTC). À vérifier : Shopify → Statistiques → sessions par source ; balise Pinterest OK (ajout au panier reçu).
+- Poids de l'accueil : 5 poses de Lou ≈ 2,7 Mo chargées d'un coup (piste d'optimisation si les pubs pointent vers l'accueil ;
+  les fiches produits utilisent déjà des images redimensionnées par Shopify).
+- Conseil : ne rien changer avant 4-5 jours ; campagne mots-clés à surveiller (audience trop petite / annonces pas validées).
