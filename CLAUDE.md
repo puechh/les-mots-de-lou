@@ -73,6 +73,9 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   apparaissent « épuisés » (catalogues Pinterest/Google). À remettre à 999 si une variante est ajoutée.
 - **Cookies (05/11)** : bandeau du thème (`snippets/cookie-banner.liquid`, `assets/lou-cookies.js`, API de consentement Shopify),
   comme Corps-Confiant ; bannière Shopify à laisser désactivée ; page « Cookies et partenaires » à mettre à jour à chaque appli/balise.
+  **14/11 (décision utilisateur, TEMPORAIRE) : bandeau masqué à l'arrivée** (réglage du thème Personnaliser → Paramètres → Cookies →
+  « Afficher le bandeau cookies automatiquement », décoché par défaut) ; sans choix = aucune mesure/pub (accord requis en France) ;
+  « Gérer mes cookies » (pied de page) rouvre le bandeau. Pour le remettre : cocher la case. Conseil légal donné.
 - ⚠️ **Le dépôt GitHub est PUBLIC** : jamais d'adresse, de téléphone, de SIRET ni de donnée personnelle dedans (les mentions
   légales gardent des `[À COMPLÉTER]`, à remplir directement dans Shopify).
 - **Nouvelle session : lire `docs/reprise.md`** (état d'avancement, prochaines étapes).

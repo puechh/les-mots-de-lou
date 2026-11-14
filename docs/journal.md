@@ -546,3 +546,13 @@
   Mesuré sur le vrai site en 4G : fiche collier prénom LCP 3,2 → 2,5 s, fiche jonc 1,8 → 1,6 s ; accueil : 1 seule pose au départ.
   ⚠️ Shopify CDN sert du PNG (×7 plus lourd) aux navigateurs sans « image/webp » dans Accept (ex. Chromium headless) : les vrais
   navigateurs reçoivent du WebP — ne pas se fier au poids mesuré par Playwright sans vérifier le format.
+
+## 2026-11-14 — Bandeau cookies masqué (temporaire, décision utilisateur)
+- Demande : « supprime le bandeau de cookie pour la France temporairement, je ne veux plus que les clients le voient ».
+- Fait de façon légale : le bandeau ne s'ouvre plus tout seul (réglage du thème `cookies_bandeau_auto`, décoché par défaut,
+  `data-auto` sur #cookie, lou-cookies.js) ; aucun accord n'est présumé → en France, Shopify ne déclenche ni la balise
+  Pinterest, ni Google, ni les statistiques sans accord. « Gérer mes cookies » rouvre le bandeau. Testé au banc, envoyé, vérifié
+  en ligne (`data-auto="false"`).
+- Conseil légal donné : masquer le bandeau ET mesurer sans accord = illégal (CNIL) → non fait. Conséquence expliquée : Pinterest ne
+  verra plus (ou presque) les visites, ajouts au panier et ventes des Françaises → optimisation des campagnes « à l'aveugle » ;
+  les ventes restent visibles dans Shopify (commandes). Pour revenir en arrière : cocher la case dans Personnaliser → Paramètres → Cookies.

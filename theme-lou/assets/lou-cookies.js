@@ -50,7 +50,9 @@
     } catch (e) {}
     return false;
   }
-  if (!dejaChoisi()) {
+  // 14/11 (décision utilisateur, temporaire) : réglage du thème « Afficher le bandeau automatiquement » décoché → pas d'ouverture
+  // automatique ; sans choix, Shopify ne mesure rien (France = accord requis). « Gérer mes cookies » rouvre toujours le bandeau.
+  if (!dejaChoisi() && box.getAttribute("data-auto") !== "false") {
     var fait = false;
     var decider = function (a) {
       if (fait) return; fait = true;

@@ -4,7 +4,7 @@
   Il s'affiche tant que la visiteuse n'a pas choisi ; « Gérer mes cookies » (pied de page) le rouvre.
   Si la bannière de cookies de Shopify est activée dans l'admin, c'est elle qui s'affiche (jamais 2 bandeaux).
 {%- endcomment -%}
-<div class="cookie" id="cookie" role="dialog" aria-modal="false" aria-labelledby="cookie-title" hidden>
+<div class="cookie" id="cookie" role="dialog" aria-modal="false" aria-labelledby="cookie-title" data-auto="{% if settings.cookies_bandeau_auto %}true{% else %}false{% endif %}" hidden>
   <div class="cookie-in">
     <span class="cookie-ico" aria-hidden="true">🍪</span>
     <div class="cookie-txt">
