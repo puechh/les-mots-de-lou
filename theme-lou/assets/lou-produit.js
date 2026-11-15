@@ -288,15 +288,7 @@
   if (qs.get("finition")) { var fq = $$(".finition:not(.police-btn)").filter(function (b) { return b.getAttribute("data-nom") === qs.get("finition"); })[0]; if (fq) choisirFinition(fq); }
   if (qs.get("texte") && texte) { texte.value = qs.get("texte").slice(0, +texte.maxLength || 20); texte.dispatchEvent(new Event("input")); }
 
-  /* --- Arrivée depuis l'atelier de l'accueil (#personnaliser) : directement à l'écriture, mini-aperçu affiché --- */
-  if (location.hash === "#personnaliser" && form) {
-    setTimeout(function () {
-      var cible = $(".bloc", form) || form;
-      scrollTo({ top: cible.getBoundingClientRect().top + scrollY - 76, behavior: reduit ? "auto" : "smooth" });
-      setTimeout(function () { enSaisie = true; miniEtat(); }, 1100);   // après le défilement (qui remet enSaisie à faux)
-      if (LOU.dit) setTimeout(function () { LOU.dit(texte && texte.value ? "Voilà vos mots 💗 Vérifiez l'aperçu en haut à droite !" : "À vous d'écrire ✍️ Je grave en direct !", 3500); }, 1300);
-    }, 450);
-  }
+  /* (15/11, demande utilisateur) : plus de saut vers le formulaire à l'arrivée, la page s'ouvre toujours en haut. */
 
   /* --- Premier dessin (après chargement de la photo et des polices) --- */
   if (photo) photo.addEventListener("load", dessiner);

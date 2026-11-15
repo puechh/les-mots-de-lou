@@ -3,6 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    /* Toujours en haut de la page à chaque chargement, changement de page, rafraîchissement ou retour (demande utilisateur 15/11/2026) */
+    (function () {
+      try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+      if (location.hash) { window.LOU_ANCRE = location.hash; try { history.replaceState(history.state, "", location.pathname + location.search); } catch (e) {} }
+      var bouge = false;   /* si la visiteuse a déjà commencé à défiler, on ne la ramène pas en haut */
+      ["touchstart", "wheel", "keydown", "mousedown"].forEach(function (t) { window.addEventListener(t, function () { bouge = true; }, { passive: true, once: true }); });
+      var haut = function () { if (!bouge) window.scrollTo(0, 0); };
+      haut();
+      document.addEventListener("DOMContentLoaded", haut);
+      window.addEventListener("load", function () { haut(); setTimeout(haut, 0); });
+      window.addEventListener("pageshow", function (e) { if (e.persisted) { bouge = false; window.scrollTo(0, 0); } });
+    })();
+  </script>
   <meta name="theme-color" content="#fff5f8">
   <link rel="preload" as="image" href="{{ 'lou-avatar.webp' | asset_url }}">
   <link rel="canonical" href="{{ canonical_url }}">

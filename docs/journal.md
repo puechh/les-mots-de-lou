@@ -556,3 +556,11 @@
 - Conseil légal donné : masquer le bandeau ET mesurer sans accord = illégal (CNIL) → non fait. Conséquence expliquée : Pinterest ne
   verra plus (ou presque) les visites, ajouts au panier et ventes des Françaises → optimisation des campagnes « à l'aveugle » ;
   les ventes restent visibles dans Shopify (commandes). Pour revenir en arrière : cocher la case dans Personnaliser → Paramètres → Cookies.
+
+## 15/11/2026 — Toujours en haut de la page
+- Demande utilisateur : en cliquant sur un produit, la fiche s'ouvrait au niveau du formulaire (« Finition / Texte gravé »).
+  Cause : liens `#personnaliser` (accueil : atelier, « Je crée mon bijou », machine à mots) + défilement automatique dans `lou-produit.js`.
+- Corrigé : ancre `#personnaliser` retirée partout, défilement automatique supprimé ; script global dans `layout/theme.liquid`
+  (`scrollRestoration = manual`, ancre retirée de l'adresse, retour en haut au chargement, au rafraîchissement et au retour arrière).
+  Règle : **toute page s'ouvre en haut, sans exception** (sauf si la visiteuse a déjà commencé à défiler pendant le chargement).
+- Testé au banc (iPhone 13) : lien d'accueil, rafraîchissement, ancien lien avec #, retour arrière → tout en haut. Thème envoyé.

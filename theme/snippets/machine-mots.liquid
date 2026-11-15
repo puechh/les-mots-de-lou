@@ -19,7 +19,7 @@
     {%- if mode == 'remplir' -%}
       <button type="button" class="btn ghost machine-graver">✍️ Je prends {% if sorte == 'mot' %}ce mot{% else %}cette phrase{% endif %}</button>
     {%- else -%}
-      <a class="btn ghost machine-graver" href="{{ produit }}#personnaliser">Graver cette phrase</a>
+      <a class="btn ghost machine-graver" href="{{ produit }}">Graver cette phrase</a>
     {%- endif -%}
   </div>
   <button class="manette" type="button" aria-label="Tirer la manette"><span class="tige"></span><span class="boule"></span><span class="socle"></span></button>

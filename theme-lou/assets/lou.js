@@ -201,7 +201,7 @@
   var favMenu = $("#fav-menu");
   if (favMenu) favMenu.addEventListener("click", function (e) { e.preventDefault(); var bg = $("#burger"); if (bg && bg.getAttribute("aria-expanded") === "true") bg.click(); ouvrirFavs(); });
   var fc = $("#fav-close"); if (fc) fc.addEventListener("click", fermerFavs);
-  if (location.hash === "#coups-de-coeur") setTimeout(ouvrirFavs, 300);
+  if ((window.LOU_ANCRE || location.hash) === "#coups-de-coeur") setTimeout(ouvrirFavs, 300);
   majFavs();
 
   /* ---------- Panier ---------- */
@@ -483,7 +483,7 @@
       if (feu && v && v !== dernier) etincelle(p);
       dernier = v;
       // « Graver » et « Je crée mon bijou » : fiche du jonc, directement à l'écriture, avec la phrase (si la cliente l'a écrite) et la finition
-      var url = lien.getAttribute("data-base") + "?" + (aEcrit && v ? "texte=" + encodeURIComponent(v) + "&" : "") + "finition=" + encodeURIComponent(finA) + "#personnaliser";
+      var url = lien.getAttribute("data-base") + "?" + (aEcrit && v ? "texte=" + encodeURIComponent(v) + "&" : "") + "finition=" + encodeURIComponent(finA);
       [lien, $("#atelier-cta")].forEach(function (a) { if (a) a.href = url; });
     };
     if (photo && !photo.complete) photo.addEventListener("load", function () { maj(); });
@@ -649,7 +649,7 @@
         c.classList.add("is-on"); c.setAttribute("aria-pressed", "true"); cat = c.getAttribute("data-cat"); tirer();
       });
     });
-    var fin = function (p) { if (graver && mode === "lien") graver.href = base + "?texte=" + encodeURIComponent(p) + "#personnaliser"; };
+    var fin = function (p) { if (graver && mode === "lien") graver.href = base + "?texte=" + encodeURIComponent(p); };
     var tirer = function () {
       if (roule) return;
       var liste = banque[cat], finale = liste[Math.floor(Math.random() * liste.length)];
