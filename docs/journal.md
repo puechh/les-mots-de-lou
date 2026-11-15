@@ -564,3 +564,9 @@
   (`scrollRestoration = manual`, ancre retirée de l'adresse, retour en haut au chargement, au rafraîchissement et au retour arrière).
   Règle : **toute page s'ouvre en haut, sans exception** (sauf si la visiteuse a déjà commencé à défiler pendant le chargement).
 - Testé au banc (iPhone 13) : lien d'accueil, rafraîchissement, ancien lien avec #, retour arrière → tout en haut. Thème envoyé.
+
+## 15/11/2026 — Barre du bas de la fiche produit (téléphone)
+- Demande utilisateur : la barre collante « Ajouter au panier » s'affichait dès l'arrivée sur la fiche.
+- Maintenant : elle n'apparaît que quand on est descendu **plus bas** que le bouton « Ajouter au panier » principal ;
+  son bouton devient **« Graver mon bijou ✨ »** et **ramène en haut de la fiche** (il n'ajoute plus au panier).
+- Testé au banc (iPhone 13) puis envoyé (`lou-produit.liquid`, `lou-produit.js`).
