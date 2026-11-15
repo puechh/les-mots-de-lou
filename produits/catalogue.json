@@ -56,16 +56,16 @@
         "altText": "Bracelet Code Secret : perles et barrettes en code Morse sur cordon noir"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/morse-02-macro.jpg?v=1793730524",
-        "altText": "Gros plan des perles (points) et barrettes (traits) du code Morse"
-      },
-      {
         "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/morse-03-carte.jpg?v=1793730524",
         "altText": "Bracelet Code Secret porté en écrivant une carte de Noël"
       },
       {
         "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/morse-04-lou.jpg?v=1793730524",
         "altText": "Lou porte le bracelet Code Secret"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/morse-02-macro.jpg?v=1793730524",
+        "altText": "Gros plan des perles (points) et barrettes (traits) du code Morse"
       }
     ]
   },
@@ -168,10 +168,6 @@
         "altText": "Collier prénom argenté en écriture manuscrite"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-finitions-hd.jpg?v=1793730515",
-        "altText": "Le collier prénom en trois finitions : argentée, dorée et rosée"
-      },
-      {
         "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/prenom-03-cou.jpg?v=1793730515",
         "altText": "Collier prénom « Lou » porté, gros plan"
       },
@@ -182,6 +178,10 @@
       {
         "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/prenom-05-marche-noel.jpg?v=1793730515",
         "altText": "Lou au marché de Noël avec son collier prénom"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/2026-11-02-produit-collier-prenom-finitions-hd.jpg?v=1793730515",
+        "altText": "Le collier prénom en trois finitions : argentée, dorée et rosée"
       }
     ]
   },
@@ -394,14 +394,6 @@
         "altText": "Jonc « Mes Mots » argenté gravé « Tu es ma personne », extrémités à petits cœurs ajourés"
       },
       {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-02-coeurs_8ee83be7-02e7-43aa-a474-95fdf553dbc4.jpg?v=1794009145",
-        "altText": "Détail des deux petits cœurs ajourés aux extrémités du jonc"
-      },
-      {
-        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-03-finitions.jpg?v=1793730509",
-        "altText": "Le jonc en trois finitions : argentée, dorée et rosée"
-      },
-      {
         "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-04-poignet.jpg?v=1793730509",
         "altText": "Jonc gravé porté au poignet, gravure et cœur visibles"
       },
@@ -412,6 +404,14 @@
       {
         "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-06-cafe.jpg?v=1793730509",
         "altText": "Lou porte le jonc et le collier prénom en terrasse à Paris"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-02-coeurs_8ee83be7-02e7-43aa-a474-95fdf553dbc4.jpg?v=1794009145",
+        "altText": "Détail des deux petits cœurs ajourés aux extrémités du jonc"
+      },
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1096/9979/3233/files/jonc-03-finitions.jpg?v=1793730509",
+        "altText": "Le jonc en trois finitions : argentée, dorée et rosée"
       }
     ]
   }

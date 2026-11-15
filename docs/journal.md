@@ -579,3 +579,8 @@
   est risqué si la boutique était déjà ouverte au public ; l'option sûre est de barrer 29,90 €.
 - Haut de fiche réduit à l'essentiel : sur-titre « Personnalisé pour vous » et phrase d'accroche manuscrite retirés (titre + prix + offre).
 - Décision utilisateur (15/11, après le conseil légal) : **garder le prix barré à 31,10 €** (règle ×1,25), ne pas barrer 29,90 €.
+
+## 15/11/2026 — Ordre des photos des fiches
+- Demande utilisateur : les photos portées juste après la 1re image. Nouvel ordre (`productReorderMedia`) :
+  1re photo produit → photos portées (poignet / cou / Lou) → détails et finitions. Jonc, Collier Prénom, Bracelet Code Secret
+  (Collier Souvenir déjà dans cet ordre). Règle à garder pour toute nouvelle fiche.
