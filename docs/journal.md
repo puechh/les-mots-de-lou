@@ -584,3 +584,5 @@
 - Demande utilisateur : les photos portées juste après la 1re image. Nouvel ordre (`productReorderMedia`) :
   1re photo produit → photos portées (poignet / cou / Lou) → détails et finitions. Jonc, Collier Prénom, Bracelet Code Secret
   (Collier Souvenir déjà dans cet ordre). Règle à garder pour toute nouvelle fiche.
+- Jonc : **2e photo = l'image Pinterest des 3 joncs portés au poignet** (argenté « Maman », doré « Toujours », rosé « Léa » + bracelet
+  Code Secret), source `contenu/pinterest/idees-2026-11/03-poignet-stack-3-joncs.jpg` (4K, sans texte), ajoutée en position 2 (demande utilisateur).
