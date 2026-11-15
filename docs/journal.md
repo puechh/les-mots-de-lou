@@ -578,3 +578,4 @@
 - Conseil légal donné : prix barré = plus bas prix des 30 derniers jours (L112-1-1) → afficher 31,10 € alors que le produit était à 29,90 €
   est risqué si la boutique était déjà ouverte au public ; l'option sûre est de barrer 29,90 €.
 - Haut de fiche réduit à l'essentiel : sur-titre « Personnalisé pour vous » et phrase d'accroche manuscrite retirés (titre + prix + offre).
+- Décision utilisateur (15/11, après le conseil légal) : **garder le prix barré à 31,10 €** (règle ×1,25), ne pas barrer 29,90 €.
