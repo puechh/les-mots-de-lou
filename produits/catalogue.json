@@ -104,8 +104,8 @@
       {
         "title": "Argentée",
         "sku": null,
-        "price": "29.90",
-        "compareAtPrice": "37.40",
+        "price": "24.90",
+        "compareAtPrice": "31.10",
         "taxable": true,
         "inventoryPolicy": "CONTINUE",
         "selectedOptions": [
@@ -124,8 +124,8 @@
       {
         "title": "Dorée",
         "sku": null,
-        "price": "29.90",
-        "compareAtPrice": "37.40",
+        "price": "24.90",
+        "compareAtPrice": "31.10",
         "taxable": true,
         "inventoryPolicy": "CONTINUE",
         "selectedOptions": [
@@ -144,8 +144,8 @@
       {
         "title": "Rosée",
         "sku": null,
-        "price": "29.90",
-        "compareAtPrice": "37.40",
+        "price": "24.90",
+        "compareAtPrice": "31.10",
         "taxable": true,
         "inventoryPolicy": "CONTINUE",
         "selectedOptions": [
@@ -330,8 +330,8 @@
       {
         "title": "Argentée",
         "sku": null,
-        "price": "29.90",
-        "compareAtPrice": "37.40",
+        "price": "24.90",
+        "compareAtPrice": "31.10",
         "taxable": true,
         "inventoryPolicy": "CONTINUE",
         "selectedOptions": [
@@ -350,8 +350,8 @@
       {
         "title": "Dorée",
         "sku": null,
-        "price": "29.90",
-        "compareAtPrice": "37.40",
+        "price": "24.90",
+        "compareAtPrice": "31.10",
         "taxable": true,
         "inventoryPolicy": "CONTINUE",
         "selectedOptions": [
@@ -370,8 +370,8 @@
       {
         "title": "Rosée",
         "sku": null,
-        "price": "29.90",
-        "compareAtPrice": "37.40",
+        "price": "24.90",
+        "compareAtPrice": "31.10",
         "taxable": true,
         "inventoryPolicy": "CONTINUE",
         "selectedOptions": [

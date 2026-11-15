@@ -30,6 +30,7 @@ on y reprend les outils et la méthode, mais **les deux boutiques ne se mélange
   fabrication comprise** (jours calendaires, décision 03/11) ; icône « Mon compte » dans l'en-tête ; accueil = Lou détourée qui
   montre ses bijoux (3 poses + 4 pastilles animées, façon Lily's Treasures, 03/11 soir) ; vignettes produits animées (la personnalisation se « remplit »).
   Machine à mots sous les bijoux (accueil) et sous « Caractéristiques » (jonc, bracelet) ; **Noël : avant le 10 décembre**.
+- **Prix (décision utilisateur 15/11)** : Jonc et Collier Prénom à **24,90 €** (barré 31,10 €), Bracelet Code Secret 24,90 €, Collier Souvenir 34,90 €. Haut des fiches = titre + prix + offre seulement.
 - **Barre du bas des fiches (décision utilisateur 15/11)** : visible seulement une fois le bouton « Ajouter au panier » principal dépassé ; bouton « Graver mon bijou ✨ » qui ramène en haut (n'ajoute pas au panier).
 - **Pages (décision utilisateur 15/11)** : chaque page s'ouvre TOUJOURS tout en haut (chargement, changement de page, rafraîchissement, retour) ; jamais de lien avec ancre `#…` vers une autre page ni de défilement automatique à l'arrivée (script dans `layout/theme.liquid`).
 - **Textes du site (décision utilisateur 04/11)** : l'essentiel seulement, pas de pavés — titres courts, 1 ligne max sous un

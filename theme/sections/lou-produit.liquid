@@ -37,9 +37,8 @@
   </div>
 
   <div class="fiche-info">
-    <span class="eyebrow">💗 Personnalisé pour vous</span>
     <h1>{{ product.title }}</h1>
-    {%- if c.accroche %}<p class="hand" style="margin:0">{{ c.accroche }}</p>{% endif -%}
+    {%- comment -%} 15/11 (décision utilisateur) : haut de fiche réduit à l'essentiel = titre + prix + offre (sur-titre et accroche retirés) {%- endcomment -%}
     <div class="fiche-prix">{%- if v0.compare_at_price > v0.price -%}<s class="prix-avant">{{ v0.compare_at_price | money }}</s>{%- endif -%}<span class="prix" id="prix">{{ v0.price | money }}</span>{%- if v0.compare_at_price > v0.price -%}<span class="etiquette">-{{ v0.compare_at_price | minus: v0.price | times: 100.0 | divided_by: v0.compare_at_price | round }} %</span>{%- endif -%}<span class="duo-prix">🎁 le 2e bijou à -50 %</span></div>
 
     <form id="form-produit" action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" novalidate>

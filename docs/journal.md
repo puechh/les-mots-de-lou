@@ -570,3 +570,11 @@
 - Maintenant : elle n'apparaît que quand on est descendu **plus bas** que le bouton « Ajouter au panier » principal ;
   son bouton devient **« Graver mon bijou ✨ »** et **ramène en haut de la fiche** (il n'ajoute plus au panier).
 - Testé au banc (iPhone 13) puis envoyé (`lou-produit.liquid`, `lou-produit.js`).
+
+## 15/11/2026 — Prix à 24,90 € et haut de fiche allégé
+- Demande utilisateur : « descends les prix à 24,90 € ». Jonc « Mes Mots » et Collier Prénom : 29,90 € → **24,90 €**,
+  prix barré 37,40 € → **31,10 €** (règle ×1,25, -20 %). Bracelet Code Secret déjà à 24,90 € ; Collier Souvenir (photo) laissé à 34,90 €
+  (prix plus élevé, à confirmer par l'utilisateur). Mis à jour aussi : `produits/produits.json`, prix de secours du quiz (`lou.js`).
+- Conseil légal donné : prix barré = plus bas prix des 30 derniers jours (L112-1-1) → afficher 31,10 € alors que le produit était à 29,90 €
+  est risqué si la boutique était déjà ouverte au public ; l'option sûre est de barrer 29,90 €.
+- Haut de fiche réduit à l'essentiel : sur-titre « Personnalisé pour vous » et phrase d'accroche manuscrite retirés (titre + prix + offre).

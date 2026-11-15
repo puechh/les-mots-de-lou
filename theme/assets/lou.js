@@ -778,7 +778,7 @@
     var resultat = function () {
       // Sécurité : s'il manque une réponse ou les données d'un produit, on propose quand même un vrai bijou (jamais une case vide)
       var h = rep.quoi || (rep.qui === "amour" || rep.qui === "mamie" ? "collier-souvenir-photo" : "jonc-mes-mots"), fin = rep.style || "Argentée";
-      var SECOURS = { "jonc-mes-mots": { title: "Le Jonc « Mes Mots »", price: "29,90 €" }, "collier-prenom": { title: "Le Collier Prénom", price: "29,90 €" },
+      var SECOURS = { "jonc-mes-mots": { title: "Le Jonc « Mes Mots »", price: "24,90 €" }, "collier-prenom": { title: "Le Collier Prénom", price: "24,90 €" },
         "collier-souvenir-photo": { title: "Le Collier Souvenir (photo cachée)", price: "34,90 €" }, "bracelet-code-secret": { title: "Le Bracelet Code Secret", price: "24,90 €" } };
       var p = PRODUITS[h] && PRODUITS[h].title ? PRODUITS[h] : (SECOURS[h] || SECOURS["jonc-mes-mots"]);
       var liste = (PAR_QUAND[rep.quand] || []).concat(PAR_QUI[rep.qui] || PHRASES.amitie).filter(function (x, i, a) { return a.indexOf(x) === i && x.length <= 20; }).slice(0, 3);

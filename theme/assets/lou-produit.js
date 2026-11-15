@@ -323,9 +323,13 @@
     }).catch(function (x) { err.textContent = "Oups : " + x.message; }).then(function () { btn.disabled = false; });
   });
 
-  /* --- Barre d'achat (téléphone) : visible quand le bouton du formulaire n'est pas à l'écran --- */
+  /* --- Barre du bas (téléphone, décision utilisateur 15/11) : n'apparaît que quand on est descendu PLUS BAS que le bouton
+     « Ajouter au panier » principal (jamais avant de l'avoir dépassé) ; son bouton « Graver mon bijou » ramène en haut de la fiche. --- */
   var barre = $("#barre-achat"), ajouter = $("#ajouter");
-  if (barre && "IntersectionObserver" in window) new IntersectionObserver(function (es) { barre.classList.toggle("on", !es[0].isIntersecting); }).observe(ajouter);
+  if (barre && ajouter) {
+    var majBarre = function () { barre.classList.toggle("on", ajouter.getBoundingClientRect().bottom < 0); };
+    addEventListener("scroll", majBarre, { passive: true }); addEventListener("resize", majBarre); majBarre();
+  }
   var bb = $("#barre-ajouter");
-  if (bb) bb.addEventListener("click", function () { if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event("submit", { cancelable: true })); });
+  if (bb) bb.addEventListener("click", function () { scrollTo({ top: 0, behavior: reduit ? "auto" : "smooth" }); });
 })();
