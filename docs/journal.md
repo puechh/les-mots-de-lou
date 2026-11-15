@@ -586,3 +586,14 @@
   (Collier Souvenir déjà dans cet ordre). Règle à garder pour toute nouvelle fiche.
 - Jonc : **2e photo = l'image Pinterest des 3 joncs portés au poignet** (argenté « Maman », doré « Toujours », rosé « Léa » + bracelet
   Code Secret), source `contenu/pinterest/idees-2026-11/03-poignet-stack-3-joncs.jpg` (4K, sans texte), ajoutée en position 2 (demande utilisateur).
+
+## 15/11/2026 — Fiches : galerie verticale, 1re photo retirée, nouvelles photos du jonc
+- Jonc : 2e = 3 joncs au poignet (Pinterest `03-poignet-stack-3-joncs`), 3e = jonc sur le paquet cadeau au sapin
+  (`pubs-2026-11/pub-5-jonc-macro.jpg`, sans texte), puis poignet, Lou, café, cœurs, finitions.
+- Galerie : la 1re photo n'est plus répétée (l'aperçu en direct la montre déjà) — sauf bracelet Morse (aperçu = dessin).
+  Elle reste l'image principale du produit (cartes, Google, Pinterest).
+- **Tout en vertical (décision utilisateur)** : 18 photos des fiches prolongées en 3:4 (`scripts/fal_vertical.py`, Bria Expand,
+  bijou intact) et remplacées sur Shopify à la même place ; galerie, cartes produits, miniatures, quiz et panier en 3:4.
+  L'aperçu en direct garde ses calculs carrés, posé au milieu de la même photo prolongée (`assets/*-v.webp`) → sans couture ;
+  idem pour l'animation des cartes (carré au centre de la photo verticale). Testé au banc (iPhone 13), envoyé.
+- Reste horizontal : l'atelier de gravure de l'accueil (bande du jonc 2:1) — à voir avec l'utilisateur.

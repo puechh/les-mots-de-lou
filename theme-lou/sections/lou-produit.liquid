@@ -14,22 +14,27 @@
   endcase
 -%}
 {%- comment -%} 10/11 : l'aperçu est la 1re image vue → préchargé tout de suite (sinon il attend le JavaScript) {%- endcomment -%}
-{%- if type == 'jonc' -%}<link rel="preload" as="image" href="{{ 'jonc-carre.webp' | asset_url }}" fetchpriority="high">{%- elsif type == 'prenom' -%}<link rel="preload" as="image" href="{{ 'collier-vierge.webp' | asset_url }}" fetchpriority="high">{%- elsif type == 'photo' -%}<link rel="preload" as="image" href="{{ 'collier-photo.webp' | asset_url }}" fetchpriority="high">{%- endif -%}
+{%- if type == 'jonc' -%}<link rel="preload" as="image" href="{{ 'jonc-carre-v.webp' | asset_url }}"><link rel="preload" as="image" href="{{ 'jonc-carre.webp' | asset_url }}" fetchpriority="high">{%- elsif type == 'prenom' -%}<link rel="preload" as="image" href="{{ 'collier-vierge.webp' | asset_url }}" fetchpriority="high">{%- elsif type == 'photo' -%}<link rel="preload" as="image" href="{{ 'collier-photo.webp' | asset_url }}" fetchpriority="high">{%- endif -%}
 <div class="wrap fiche" id="fiche" data-apercu="{{ type }}"
   data-img-base="{% if type == 'jonc' %}{{ 'jonc-carre.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge.webp' | asset_url }}{% elsif type == 'photo' %}{{ 'collier-photo.webp' | asset_url }}{% endif %}"
   data-img-doree="{% if type == 'jonc' %}{{ 'jonc-carre-doree.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-doree.webp' | asset_url }}{% endif %}"
-  data-img-rosee="{% if type == 'jonc' %}{{ 'jonc-carre-rosee.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-rosee.webp' | asset_url }}{% endif %}">
+  data-img-rosee="{% if type == 'jonc' %}{{ 'jonc-carre-rosee.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-rosee.webp' | asset_url }}{% endif %}"
+  data-v-base="{% if type == 'jonc' %}{{ 'jonc-carre-v.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-v.webp' | asset_url }}{% elsif type == 'photo' %}{{ 'collier-photo-v.webp' | asset_url }}{% endif %}"
+  data-v-doree="{% if type == 'jonc' %}{{ 'jonc-carre-doree-v.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-doree-v.webp' | asset_url }}{% endif %}"
+  data-v-rosee="{% if type == 'jonc' %}{{ 'jonc-carre-rosee-v.webp' | asset_url }}{% elsif type == 'prenom' %}{{ 'collier-vierge-rosee-v.webp' | asset_url }}{% endif %}">
+  {%- comment -%} 15/11 (décision utilisateur) : l'aperçu en direct montre déjà la 1re photo → on ne la répète pas dans la galerie (sauf bracelet Morse, dont l'aperçu est un dessin) {%- endcomment -%}
+  {%- assign saut = 1 -%}{%- if type == 'morse' -%}{%- assign saut = 0 -%}{%- endif -%}
   <div class="fiche-galerie">
     <button class="coeur coeur-fiche" type="button" data-handle="{{ product.handle }}" aria-label="Ajouter {{ product.title | escape }} à mes coups de cœur"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.6 0 6 3.7 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg></button>
     <div class="galerie" id="galerie" tabindex="0" aria-label="Images du bijou (glissez pour voir les photos)">
       <div class="slide vue-apercu" id="vue-apercu" data-i="-1"><span class="etiquette-apercu">✍️ Aperçu en direct · simulation</span><div class="scene" id="scene" aria-live="polite"></div></div>
-      {%- for img in product.images -%}
+      {%- for img in product.images offset: saut -%}
         <div class="slide" data-i="{{ forloop.index0 }}">{{ img | image_url: width: 1400 | image_tag: alt: product.title, loading: 'lazy', widths: '600,900,1200,1400', sizes: '(min-width: 960px) 50vw, 100vw' }}</div>
       {%- endfor -%}
     </div>
     <div class="galerie-nav" role="tablist" aria-label="Choisir une image">
       <button class="v-apercu is-on" type="button" data-vue="-1" aria-label="Votre aperçu">✍️<br>Mon<br>aperçu</button>
-      {%- for img in product.images -%}
+      {%- for img in product.images offset: saut -%}
         <button type="button" data-vue="{{ forloop.index0 }}" aria-label="Photo {{ forloop.index }}">{{ img | image_url: width: 240 | image_tag: alt: '', loading: 'lazy' }}</button>
       {%- endfor -%}
     </div>

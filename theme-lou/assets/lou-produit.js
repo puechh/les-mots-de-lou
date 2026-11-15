@@ -19,6 +19,13 @@
   var son = LOU.son || function () {};
   var IMG = { "Argentée": fiche.getAttribute("data-img-base"), "Dorée": fiche.getAttribute("data-img-doree") || fiche.getAttribute("data-img-base"), "Rosée": fiche.getAttribute("data-img-rosee") || fiche.getAttribute("data-img-base") };
 
+  /* 15/11 : galerie verticale (3:4). L'aperçu reste carré (ses calculs de gravure en dépendent) et se pose au milieu de la même
+     photo prolongée en vertical (assets/*-v.webp : pixels du carré identiques, décor ajouté en haut et en bas) → aucune couture. */
+  var IMGV = { "Argentée": fiche.getAttribute("data-v-base"), "Dorée": fiche.getAttribute("data-v-doree") || fiche.getAttribute("data-v-base"), "Rosée": fiche.getAttribute("data-v-rosee") || fiche.getAttribute("data-v-base") };
+  var vueA = $("#vue-apercu");
+  var fondV = function () { var u = IMGV[finition] || IMGV["Argentée"]; if (vueA && u) { vueA.style.backgroundImage = 'url("' + u + '")'; vueA.classList.add("a-fond"); } };
+  fondV();
+
   /* --- Scène : photo + calque de dessin --- */
   var photo = null, toile = null;
   if (type === "jonc" || type === "prenom" || type === "photo") {
@@ -221,7 +228,7 @@
     var fn = $("#finition-nom"); if (fn) fn.textContent = finition;
     ["#prix", "#prix-btn", "#prix-barre"].forEach(function (s) { var e = $(s); if (e) e.textContent = b.getAttribute("data-prix"); });
     if (photo && IMG[finition] && photo.src.indexOf(IMG[finition]) < 0) {
-      var im = new Image(); im.onload = function () { photo.src = IMG[finition]; photo.decode ? photo.decode().then(dessiner, dessiner) : dessiner(); }; im.src = IMG[finition];
+      var im = new Image(); im.onload = function () { photo.src = IMG[finition]; fondV(); photo.decode ? photo.decode().then(dessiner, dessiner) : dessiner(); }; im.src = IMG[finition];
     } else dessiner();
     montrer(-1);
   }
